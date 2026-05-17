@@ -101,7 +101,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   verification: {
-    google: "your-google-verification-code",
+    google: "45f91c4ac1c75df2",
   },
 };
 
@@ -114,17 +114,35 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Nexlora",
+    alternateName: "Nexlora Software Agency",
     url: "https://nexlora.io",
     logo: "https://nexlora.io/logo.png",
-    description: "Custom software development, AI automation workflows, and digital platforms.",
+    foundingDate: "2024",
+    description:
+      "Nexlora builds custom software development solutions, AI automation workflows, and digital platforms for businesses — fast, scalable, and built to grow.",
+    slogan: "Build the system behind your business.",
+    serviceType: [
+      "Custom Software Development",
+      "AI Automation",
+      "Digital Platform Development",
+      "SaaS Development",
+      "Workflow Automation",
+    ],
+    areaServed: "Worldwide",
     sameAs: [
       "https://twitter.com/nexlora",
       "https://linkedin.com/company/nexlora",
+      "https://github.com/nexlora",
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      contactType: "sales",
+      contactType: "Customer Support",
       email: "hello@nexlora.io",
+      availableLanguage: "English",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "US",
     },
   };
 
