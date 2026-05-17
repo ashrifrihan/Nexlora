@@ -9,7 +9,7 @@ export default function Nav() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-0 lg:top-6 lg:px-4">
-      <nav className="mx-auto max-w-none border-b border-white/10 bg-black px-6 py-6 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-12 sm:py-8 lg:max-w-[956px] lg:rounded-2xl lg:border lg:border-white/10 lg:bg-[#0c0c0c]/90 lg:px-7 lg:py-4 lg:shadow-[0_18px_60px_rgba(0,0,0,0.45)]">
+      <nav className="mx-auto max-w-none border-b border-white/10 bg-black px-6 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-12 sm:py-5 lg:max-w-[956px] lg:rounded-2xl lg:border lg:border-white/10 lg:bg-[#0c0c0c]/90 lg:px-7 lg:py-4 lg:shadow-[0_18px_60px_rgba(0,0,0,0.45)]">
         <div className="flex items-center justify-between gap-5 [font-family:Satoshi,Inter,sans-serif]">
           <a
             href="#"
@@ -34,7 +34,8 @@ export default function Nav() {
           <div className="hidden items-center gap-4 lg:flex">
             <a
               href="#start-project"
-              className="rounded-full bg-white px-6 py-3 text-[14px] font-medium leading-none text-black transition-colors hover:bg-gray-100"
+              className="rounded-2xl bg-white px-6 py-3 text-[14px] font-semibold leading-none text-black transition-all duration-300 hover:bg-gray-300"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               Start a Project
             </a>
@@ -101,8 +102,9 @@ export default function Nav() {
               >
                 <a
                   href="#start-project"
-                  className="flex min-h-14 w-full items-center justify-center rounded-2xl bg-[#ffffff] px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black transition-all duration-300 hover:bg-gray-100 active:scale-[0.98] sm:min-h-16 sm:text-[18px]"
+                  className="flex min-h-14 w-full items-center justify-center rounded-2xl bg-[#ffffff] px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black transition-all duration-300 hover:bg-gray-300 active:scale-[0.98] sm:min-h-16 sm:text-[18px]"
                   onClick={() => setIsOpen(false)}
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
                   Start a Project
                 </a>

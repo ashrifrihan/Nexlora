@@ -9,11 +9,8 @@ import ShinyText from './ui/shiny-text'
 const Hero = () => {
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Background Ripple Effect - Responsive on all screens */}
+      {/* Background Ripple Effect - Desktop only */}
       <div className="absolute inset-0">
-        <div className="md:hidden">
-          <BackgroundRippleEffect rows={6} cols={12} cellSize={40} />
-        </div>
         <div className="hidden md:block">
           <BackgroundRippleEffect rows={8} cols={27} cellSize={56} />
         </div>
@@ -98,13 +95,14 @@ const Hero = () => {
         {/* CTA Buttons */}
         <div className="flex flex-row gap-3 md:gap-4 justify-center items-center">
           {/* Primary Button - Filled */}
-          <button className="px-6 py-3 md:px-10 md:py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300">
+          <button className="px-6 py-3 md:px-10 md:py-4 bg-white text-black font-semibold rounded-2xl hover:bg-gray-300 transition-all duration-300 active:scale-[0.98]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Start a Project
           </button>
           {/* Secondary Button - Outlined */}
           <HoverBorderGradient
-            containerClassName="rounded-full"
+            containerClassName="rounded-2xl"
             className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
+            style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Explore Nexlora
           </HoverBorderGradient>
