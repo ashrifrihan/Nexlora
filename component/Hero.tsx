@@ -1,0 +1,155 @@
+import React from 'react'
+import { BackgroundRippleEffect } from './ui/background-ripple-effect'
+import { Spotlight } from './ui/Spotlight'
+import { HoverBorderGradient } from './ui/hover-border-gradient'
+import BlurText from './ui/blur-text'
+import LogoLoop from './ui/logo-loop'
+import ShinyText from './ui/shiny-text'
+import { LayoutTextFlip } from './ui/layout-text-flip'
+
+const Hero = () => {
+  return (
+    <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Background Ripple Effect - Hidden on mobile */}
+      <div className="hidden md:block absolute inset-0">
+        <BackgroundRippleEffect rows={8} cols={27} cellSize={56} />
+      </div>
+
+      {/* Background Spotlights - Subtle on mobile, full on desktop */}
+      <div className="absolute inset-0 w-full">
+        <Spotlight className="hidden md:block -top-96 -left-96 h-screen" fill='white' />
+        <Spotlight className="hidden md:block -top-96 -right-96 h-screen" fill='white' />
+        <Spotlight className="md:opacity-100 opacity-30 top-0 left-1/2 transform -translate-x-1/2 h-screen" fill='white' />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 w-full px-3 sm:px-4 md:px-8 text-center flex flex-col items-center pt-16 sm:pt-24 md:pt-40">
+        {/* Badge with Glassy Effect */}
+        <div className="mb-4 md:mb-6 inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300">
+          {/* Sparkle Icon with Shiny Effect */}
+          <ShinyText
+            text="✨"
+            speed={3}
+            color="#999999"
+            shineColor="#ffffff"
+            spread={100}
+            direction="left"
+            className="text-lg md:text-xl"
+          />
+          {/* Text with Shiny Effect */}
+          <ShinyText
+            text="Trusted by 50+ innovative companies"
+            speed={3}
+            color="#999999"
+            shineColor="#ffffff"
+            spread={100}
+            direction="left"
+            className="text-xs md:text-sm font-medium"
+          />
+        </div>
+
+        {/* Main Heading */}
+        <div className="w-full max-w-5xl mb-8 md:mb-10 flex justify-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-none tracking-tight lg:tracking-tighter">
+            <div className="flex flex-col items-center gap-2">
+              <div className="text-center">
+                <BlurText
+                  text="Build the system behind"
+                  delay={50}
+                  animateBy="words"
+                  direction="top"
+                  threshold={0.3}
+                  stepDuration={0.25}
+                  className="text-5xl md:text-7xl lg:text-8xl font-bold text-white inline"
+                />
+              </div>
+              <div className="flex items-center justify-center gap-1">
+                <span className="text-5xl md:text-7xl lg:text-8xl font-bold text-white">your</span>
+                <LayoutTextFlip
+                  text=""
+                  words={["business", "enterprise", "organization", "company", "success", "growth"]}
+                  duration={3000}
+                  textClassName="text-5xl md:text-7xl lg:text-8xl"
+                  mainClassName="relative w-fit overflow-hidden rounded-md border border-white/20 bg-white px-4 pt-1 pb-4 font-sans font-bold tracking-tight text-black dark:bg-neutral-900 dark:text-white"
+                />
+              </div>
+            </div>
+          </h1>
+        </div>
+
+        {/* Description */}
+        <div className="w-full max-w-3xl mb-10 md:mb-12">
+          <BlurText
+            text="Nexlora builds custom software development solutions, AI automation workflows, and digital platforms for businesses fast, scalable, and built to grow."
+            delay={30}
+            animateBy="words"
+            direction="top"
+            threshold={0.3}
+            stepDuration={0.25}
+            className="text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed font-light"
+          />
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-row gap-3 md:gap-4 justify-center items-center">
+          {/* Primary Button - Filled */}
+          <button className="px-6 py-3 md:px-10 md:py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300">
+            Start a Project
+          </button>
+          {/* Secondary Button - Outlined */}
+          <HoverBorderGradient
+            containerClassName="rounded-full"
+            className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
+          >
+            Explore Nexlora
+          </HoverBorderGradient>
+        </div>
+
+        {/* Logos Section */}
+        <div className="mt-10 md:mt-16 pt-12 md:pt-16 w-full">
+          <p className="text-gray-500 text-xs md:text-sm font-semibold mb-8 uppercase tracking-widest">Trusted by leading companies</p>
+          <LogoLoop
+            logos={[
+              {
+                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Ctext x='80' y='30' font-size='24' font-weight='bold' fill='%23fff' text-anchor='middle' font-family='Arial, sans-serif'%3ETECH%3C/text%3E%3C/svg%3E",
+                alt: "Tech Corp",
+                title: "Tech Corp",
+              },
+              {
+                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Ccircle cx='35' cy='25' r='12' fill='%23fff'/%3E%3Ctext x='95' y='30' font-size='22' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3ECLOUD%3C/text%3E%3C/svg%3E",
+                alt: "Cloud Systems",
+                title: "Cloud Systems",
+              },
+              {
+                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Crect x='20' y='20' width='10' height='10' fill='%23fff'/%3E%3Crect x='35' y='20' width='10' height='10' fill='%23fff'/%3E%3Crect x='50' y='20' width='10' height='10' fill='%23fff'/%3E%3Ctext x='105' y='30' font-size='20' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3EDATA%3C/text%3E%3C/svg%3E",
+                alt: "DataFlow",
+                title: "DataFlow",
+              },
+              {
+                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Cpolygon points='30,15 40,35 20,35' fill='%23fff'/%3E%3Ctext x='100' y='30' font-size='20' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3EINNO%3C/text%3E%3C/svg%3E",
+                alt: "Innovate",
+                title: "Innovate",
+              },
+              {
+                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Ccircle cx='30' cy='25' r='10' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='30' y1='15' x2='30' y2='35' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='20' y1='25' x2='40' y2='25' stroke='%23fff' stroke-width='2'/%3E%3Ctext x='95' y='30' font-size='20' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3ENEXT%3C/text%3E%3C/svg%3E",
+                alt: "NextGen",
+                title: "NextGen",
+              },
+            ]}
+            speed={80}
+            direction="left"
+            logoHeight={50}
+            gap={80}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#000000"
+            className="w-full"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Hero
