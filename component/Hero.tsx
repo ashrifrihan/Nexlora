@@ -13,7 +13,7 @@ const Hero = () => {
       {/* Background Spotlights - Subtle on mobile, full on desktop */}
       <div className="absolute inset-0 w-full">
         <Spotlight className="hidden md:block -top-96 -left-96 h-screen" fill='white' />
-        <Spotlight className="hidden md:block -top-96 -right-96 h-screen" fill='white' />
+        <Spotlight className="hidden md:block -top-96 -right-48 h-screen" fill='white' />
         <Spotlight className="md:opacity-100 opacity-30 top-0 left-1/2 transform -translate-x-1/2 h-screen" fill='white' />
       </div>
 
