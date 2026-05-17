@@ -54,9 +54,16 @@ const Hero = () => {
 
         {/* Main Heading */}
         <div className="w-full mb-6 sm:mb-8 md:mb-10 flex justify-center">
-          <h1 className="text-center px-2">
-            <div className="flex flex-col items-center gap-2">
-              <div>
+          <h1
+            className="max-w-[1180px] px-2 text-center text-white"
+            style={{
+              fontFamily: '"Satoshi", "Satoshi Placeholder", sans-serif',
+              fontWeight: 700,
+              letterSpacing: "-0.04em",
+            }}
+          >
+            <div className="flex flex-col items-center gap-0">
+              <div className="w-full overflow-visible">
                 <BlurText
                   text="Build the system behind"
                   delay={50}
@@ -64,10 +71,11 @@ const Hero = () => {
                   direction="top"
                   threshold={0.3}
                   stepDuration={0.25}
-                  className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white inline"
+                  wrap={false}
+                  className="whitespace-nowrap text-[clamp(30px,7.2vw,104px)] leading-[0.96] text-white text-center"
                 />
               </div>
-              <div className="font-satoshi font-bold text-[44px] tracking-[-0.04em] leading-[1.1em] text-white text-center">
+              <div className="whitespace-nowrap text-[clamp(30px,7.2vw,104px)] leading-[0.96] text-white text-center">
                 your success
               </div>
             </div>
