@@ -10,9 +10,14 @@ import { LayoutTextFlip } from './ui/layout-text-flip'
 const Hero = () => {
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Background Ripple Effect - Hidden on mobile */}
-      <div className="hidden md:block absolute inset-0">
-        <BackgroundRippleEffect rows={8} cols={27} cellSize={56} />
+      {/* Background Ripple Effect - Responsive on all screens */}
+      <div className="absolute inset-0">
+        <div className="md:hidden">
+          <BackgroundRippleEffect rows={6} cols={12} cellSize={40} />
+        </div>
+        <div className="hidden md:block">
+          <BackgroundRippleEffect rows={8} cols={27} cellSize={56} />
+        </div>
       </div>
 
       {/* Background Spotlights - Subtle on mobile, full on desktop */}

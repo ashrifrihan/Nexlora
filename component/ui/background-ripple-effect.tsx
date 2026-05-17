@@ -16,7 +16,7 @@ export const BackgroundRippleEffect = ({
     col: number;
   } | null>(null);
   const [rippleKey, setRippleKey] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<any>(null);
 
   return (
     <div
@@ -28,10 +28,10 @@ export const BackgroundRippleEffect = ({
       )}
     >
       <div className="relative h-auto w-auto overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 z-2 h-full w-full overflow-hidden" />
+        <div className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
         <DivGrid
           key={`base-${rippleKey}`}
-          className="mask-radial-from-20% mask-radial-at-top opacity-60"
+          className="mask-radial-from-20% mask-radial-at-top opacity-600"
           rows={rows}
           cols={cols}
           cellSize={cellSize}
@@ -53,7 +53,7 @@ type DivGridProps = {
   className?: string;
   rows: number;
   cols: number;
-  cellSize: number;
+  cellSize: number; // in pixels
   borderColor: string;
   fillColor: string;
   clickedCell: { row: number; col: number } | null;
@@ -92,15 +92,15 @@ const DivGrid = ({
   };
 
   return (
-    <div className={cn("relative z-3", className)} style={gridStyle}>
+    <div className={cn("relative z-[3]", className)} style={gridStyle}>
       {cells.map((idx) => {
         const rowIdx = Math.floor(idx / cols);
         const colIdx = idx % cols;
         const distance = clickedCell
           ? Math.hypot(clickedCell.row - rowIdx, clickedCell.col - colIdx)
           : 0;
-        const delay = clickedCell ? Math.max(0, distance * 55) : 0;
-        const duration = 200 + distance * 80;
+        const delay = clickedCell ? Math.max(0, distance * 55) : 0; // ms
+        const duration = 200 + distance * 80; // ms
 
         const style: CellStyle = clickedCell
           ? {
