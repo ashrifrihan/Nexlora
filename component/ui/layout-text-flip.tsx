@@ -50,7 +50,7 @@ export const LayoutTextFlip = ({
             transition={{
               duration: 0.5,
             }}
-            className={cn("inline-block whitespace-nowrap")}
+            className={cn("inline-block whitespace-nowrap bg-gradient-to-r from-white via-gray-300 to-white bg-[length:200%_100%] animate-pulse text-transparent bg-clip-text", textClassName)}
           >
             {words[currentIndex]}
           </motion.span>
