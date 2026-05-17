@@ -264,13 +264,13 @@ export default function Services() {
     <section
       ref={sectionRef}
       id="solutions"
-      className="relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:py-40"
+      className="relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40"
       aria-labelledby="services-heading"
     >
       {/* Subtle top fade */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent" />
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full max-w-7xl">
         {/* ── Header ── */}
         <div className="mb-14 sm:mb-20 text-center">
           {/* Section label */}
@@ -278,11 +278,15 @@ export default function Services() {
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-1.5"
+            className="mb-5 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.1] px-3 py-1.5"
+            style={{
+              backdropFilter: "blur(5px)",
+              backgroundColor: "rgba(13, 13, 13, 0.4)",
+            }}
           >
             <span
-              className="text-[12px] font-medium uppercase tracking-[0.15em] text-white/50"
-              style={{ fontFamily: '"Inter", sans-serif' }}
+              className="text-[14px] font-medium tracking-[-0.02em] text-white"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               What We Build
             </span>
@@ -298,7 +302,7 @@ export default function Services() {
               delay: 0.1,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="mx-auto max-w-2xl text-[clamp(26px,4.5vw,46px)] font-bold leading-[1.1] tracking-[-0.035em] text-white"
+            className="mx-auto max-w-3xl text-[48px] font-bold leading-[1.1] tracking-[-0.04em] text-white"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Everything needed to run{" "}
@@ -316,16 +320,16 @@ export default function Services() {
               delay: 0.2,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-white/35"
-            style={{ fontFamily: '"Inter", sans-serif' }}
+            className="mx-auto mt-4 max-w-2xl text-[20px] font-medium leading-[1.4] tracking-[-0.02em] text-white/60"
+            style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             End-to-end software development, AI automation, and custom digital
-            solutions — engineered for scale.
+            solutions - engineered for scale.
           </motion.p>
         </div>
 
         {/* ── Bento grid ── */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:gap-6">
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
