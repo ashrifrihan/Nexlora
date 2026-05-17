@@ -49,8 +49,8 @@ const Hero = () => {
         </div>
 
         {/* Main Heading */}
-        <div className="w-full max-w-5xl mb-8 md:mb-10 flex justify-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-none tracking-tight lg:tracking-tighter">
+        <div className="w-full mb-6 sm:mb-8 md:mb-10 flex justify-center">
+          <h1 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white leading-tight sm:leading-none tracking-tight lg:tracking-tighter px-2">
             <div className="flex flex-col items-center gap-2">
               <div className="text-center">
                 <BlurText
@@ -60,17 +60,17 @@ const Hero = () => {
                   direction="top"
                   threshold={0.3}
                   stepDuration={0.25}
-                  className="text-5xl md:text-7xl lg:text-8xl font-bold text-white inline"
+                  className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white inline"
                 />
               </div>
-              <div className="flex items-center justify-center gap-1">
-                <span className="text-5xl md:text-7xl lg:text-8xl font-bold text-white">your</span>
+              <div className="flex items-center justify-center gap-1 flex-wrap">
+                <span className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white">your</span>
                 <LayoutTextFlip
                   text=""
                   words={["business", "enterprise", "organization", "company", "success", "growth"]}
                   duration={3000}
-                  textClassName="text-5xl md:text-7xl lg:text-8xl"
-                  mainClassName="relative w-fit overflow-hidden rounded-md border border-white/20 bg-white px-4 pt-1 pb-4 font-sans font-bold tracking-tight text-black dark:bg-neutral-900 dark:text-white"
+                  textClassName="text-3xl sm:text-4xl md:text-7xl lg:text-8xl"
+                  mainClassName="relative w-fit overflow-hidden rounded-md border border-white/20 bg-white px-2 sm:px-4 pt-1 pb-2 sm:pb-4 font-sans font-bold tracking-tight text-black dark:bg-neutral-900 dark:text-white"
                 />
               </div>
             </div>
