@@ -9,11 +9,11 @@ export default function Nav() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-0 lg:top-6 lg:px-4">
-      <nav className="mx-auto max-w-none border-b border-white/5 bg-black px-6 py-7 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-12 sm:py-10 lg:max-w-[956px] lg:rounded-2xl lg:border lg:border-white/10 lg:bg-[#0c0c0c]/90 lg:px-7 lg:py-4 lg:shadow-[0_18px_60px_rgba(0,0,0,0.45)]">
+      <nav className="mx-auto max-w-none border-b border-white/10 bg-black px-6 py-6 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-12 sm:py-8 lg:max-w-[956px] lg:rounded-2xl lg:border lg:border-white/10 lg:bg-[#0c0c0c]/90 lg:px-7 lg:py-4 lg:shadow-[0_18px_60px_rgba(0,0,0,0.45)]">
         <div className="flex items-center justify-between gap-5 [font-family:Satoshi,Inter,sans-serif]">
           <a
             href="#"
-            className="shrink-0 text-[42px] font-black leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[56px] lg:text-[32px] lg:tracking-[-0.04em]"
+            className="shrink-0 text-[30px] font-black italic leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:not-italic lg:tracking-[-0.04em]"
             aria-label="Nexlora home"
           >
             nexlora
@@ -42,25 +42,29 @@ export default function Nav() {
 
           <button
             type="button"
-            className="group grid h-14 w-16 place-items-center rounded-xl text-white transition-transform duration-300 ease-out hover:scale-105 active:scale-95 sm:h-16 sm:w-20 lg:hidden"
+            className="group grid h-11 w-11 place-items-center rounded-full text-white transition-transform duration-300 ease-out hover:scale-105 active:scale-95 sm:h-12 sm:w-12 lg:hidden"
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((current) => !current)}
           >
-            <span className="relative block h-8 w-12 sm:h-10 sm:w-[88px]">
+            <span className="relative block h-7 w-7">
               <span
-                className={`absolute left-0 top-0 h-1 w-12 rounded-full bg-white transition-all duration-300 ease-out group-hover:w-10 sm:w-[88px] sm:group-hover:w-20 ${
-                  isOpen ? "translate-y-3.5 rotate-45 sm:translate-y-[18px]" : ""
+                className={`absolute left-1/2 h-[2px] rounded-full bg-white transition-all duration-300 ease-out ${
+                  isOpen
+                    ? "top-1/2 w-[31px] -translate-x-1/2 -translate-y-1/2 rotate-45"
+                    : "top-[5px] w-7 -translate-x-1/2 group-hover:w-6"
                 }`}
               />
               <span
-                className={`absolute left-0 top-3.5 h-1 w-12 rounded-full bg-white transition-all duration-300 ease-out group-hover:translate-x-1 sm:top-[18px] sm:w-[88px] ${
-                  isOpen ? "translate-x-3 opacity-0" : "opacity-100"
+                className={`absolute left-1/2 top-1/2 h-[2px] w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-all duration-200 ease-out ${
+                  isOpen ? "scale-x-0 opacity-0" : "scale-x-100 opacity-100 group-hover:translate-x-[-46%]"
                 }`}
               />
               <span
-                className={`absolute bottom-0 left-0 h-1 w-12 rounded-full bg-white transition-all duration-300 ease-out group-hover:w-10 sm:w-[88px] sm:group-hover:w-20 ${
-                  isOpen ? "-translate-y-3.5 -rotate-45 sm:-translate-y-[18px]" : ""
+                className={`absolute left-1/2 h-[2px] rounded-full bg-white transition-all duration-300 ease-out ${
+                  isOpen
+                    ? "top-1/2 w-[31px] -translate-x-1/2 -translate-y-1/2 -rotate-45"
+                    : "bottom-[5px] w-7 -translate-x-1/2 group-hover:w-6"
                 }`}
               />
             </span>
@@ -73,13 +77,13 @@ export default function Nav() {
           }`}
         >
           <div className="min-h-0">
-            <div className="mt-8 border-t border-white/10 pt-6 [font-family:Satoshi,Inter,sans-serif] sm:mt-10 sm:pt-8">
-              <div className="grid gap-1">
+            <div className="mt-5 border-t border-white/10 pt-6 [font-family:Satoshi,Inter,sans-serif] sm:mt-7 sm:pt-7">
+              <div className="grid gap-3 px-1">
                 {links.map((link, index) => (
                   <a
                     key={link}
                     href={`#${link.toLowerCase().replaceAll(" ", "-")}`}
-                    className={`rounded-xl px-2 py-3 text-[24px] font-bold tracking-[-0.04em] text-white/90 transition-all duration-300 ease-out hover:translate-x-2 hover:bg-white/5 hover:text-white sm:text-[34px] ${
+                    className={`w-fit rounded-lg px-0 py-1.5 text-[18px] font-medium leading-tight tracking-[-0.03em] text-white/90 transition-all duration-300 ease-out hover:translate-x-1.5 hover:text-white sm:text-[22px] ${
                       isOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
                     }`}
                     style={{ transitionDelay: isOpen ? `${index * 35}ms` : "0ms" }}
@@ -91,17 +95,27 @@ export default function Nav() {
               </div>
 
               <div
-                className={`mt-6 border-t border-white/10 pt-6 transition-all duration-300 ease-out sm:mt-8 sm:pt-8 ${
+                className={`mt-8 transition-all duration-300 ease-out sm:mt-10 ${
                   isOpen ? "translate-y-0 opacity-100 delay-150" : "-translate-y-2 opacity-0"
                 }`}
               >
                 <a
                   href="#start-project"
-                  className="block w-full rounded-full bg-white px-6 py-4 text-center text-[16px] font-bold leading-none tracking-[-0.02em] text-black transition-all duration-300 hover:scale-[1.01] hover:bg-gray-100 active:scale-[0.98] sm:py-5 sm:text-[18px]"
+                  className="flex min-h-14 w-full items-center justify-center rounded-2xl bg-[#ffffff] px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black transition-all duration-300 hover:bg-gray-100 active:scale-[0.98] sm:min-h-16 sm:text-[18px]"
                   onClick={() => setIsOpen(false)}
                 >
                   Start a Project
                 </a>
+
+                <div className="mt-5 flex items-center justify-center text-[14px] font-medium tracking-[-0.02em] text-white/85 sm:text-[15px]">
+                  <a
+                    href="mailto:hello@nexlora.com"
+                    className="transition-colors hover:text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    hello@nexlora.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>
