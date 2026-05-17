@@ -5,7 +5,6 @@ import { HoverBorderGradient } from './ui/hover-border-gradient'
 import BlurText from './ui/blur-text'
 import LogoLoop from './ui/logo-loop'
 import ShinyText from './ui/shiny-text'
-import { LayoutTextFlip } from './ui/layout-text-flip'
 
 const Hero = () => {
   return (
@@ -55,9 +54,9 @@ const Hero = () => {
 
         {/* Main Heading */}
         <div className="w-full mb-6 sm:mb-8 md:mb-10 flex justify-center">
-          <h1 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white leading-tight sm:leading-none tracking-tight lg:tracking-tighter px-2">
+          <h1 className="text-center px-2">
             <div className="flex flex-col items-center gap-2">
-              <div className="text-center">
+              <div>
                 <BlurText
                   text="Build the system behind"
                   delay={50}
@@ -68,15 +67,8 @@ const Hero = () => {
                   className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white inline"
                 />
               </div>
-              <div className="flex items-center justify-center gap-1 flex-wrap">
-                <span className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold text-white">your</span>
-                <LayoutTextFlip
-                  text=""
-                  words={["business", "enterprise", "organization", "company", "success", "growth"]}
-                  duration={3000}
-                  textClassName="text-3xl sm:text-4xl md:text-7xl lg:text-8xl"
-                  mainClassName="relative w-fit overflow-hidden rounded-md border border-white/20 bg-white px-2 sm:px-4 pt-1 pb-2 sm:pb-4 font-sans font-bold tracking-tight text-black dark:bg-neutral-900 dark:text-white"
-                />
+              <div className="font-satoshi font-bold text-[44px] tracking-[-0.04em] leading-[1.1em] text-white text-center">
+                your success
               </div>
             </div>
           </h1>
