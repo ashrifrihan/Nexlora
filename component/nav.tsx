@@ -9,7 +9,7 @@ export default function Nav() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-0 lg:top-6 lg:px-4">
-      <nav className="mx-auto max-w-none border-b border-white/10 bg-black px-6 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-12 sm:py-5 lg:max-w-[956px] lg:rounded-2xl lg:border lg:border-white/10 lg:bg-[#0c0c0c]/90 lg:px-7 lg:py-4 lg:shadow-[0_18px_60px_rgba(0,0,0,0.45)]">
+      <nav className="mx-auto max-w-none border-b border-white/10 bg-black px-6 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-12 sm:py-5 lg:max-w-[956px] lg:animate-[nav-drop-in_760ms_cubic-bezier(0.16,1,0.3,1)_120ms_both] lg:rounded-2xl lg:border lg:border-white/10 lg:bg-[#0c0c0c]/90 lg:px-7 lg:py-4 lg:shadow-[0_18px_60px_rgba(0,0,0,0.45)] motion-reduce:lg:animate-none">
         <div className="flex items-center justify-between gap-5 [font-family:Satoshi,Inter,sans-serif]">
           <a
             href="#"
@@ -19,12 +19,12 @@ export default function Nav() {
             nexlora
           </a>
 
-          <div className="hidden items-center gap-9 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             {links.map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase().replaceAll(" ", "-")}`}
-                className="text-[14px] font-medium leading-none text-white/90 transition-colors hover:text-white tracking-[-0.02em]"
+                className="rounded-[10px] px-4 py-3 text-[14px] font-medium leading-none tracking-[-0.02em] text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white"
               >
                 {link}
               </a>
@@ -34,7 +34,7 @@ export default function Nav() {
           <div className="hidden items-center gap-4 lg:flex">
             <a
               href="#start-project"
-              className="rounded-2xl bg-white px-6 py-3 text-[14px] font-semibold leading-none text-black transition-all duration-300 hover:bg-gray-300"
+              className="start-project-button flex items-center justify-center gap-2.5 rounded-[10px] bg-white px-[18px] py-[12px] text-[14px] font-semibold leading-none text-black"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               Start a Project
@@ -102,7 +102,7 @@ export default function Nav() {
               >
                 <a
                   href="#start-project"
-                  className="flex min-h-14 w-full items-center justify-center rounded-2xl bg-[#ffffff] px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black transition-all duration-300 hover:bg-gray-300 active:scale-[0.98] sm:min-h-16 sm:text-[18px]"
+                  className="start-project-button flex min-h-14 w-full items-center justify-center rounded-2xl bg-white px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black sm:min-h-16 sm:text-[18px]"
                   onClick={() => setIsOpen(false)}
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >

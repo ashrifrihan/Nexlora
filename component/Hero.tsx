@@ -1,5 +1,4 @@
 import React from 'react'
-import { BackgroundRippleEffect } from './ui/background-ripple-effect'
 import { Spotlight } from './ui/Spotlight'
 import { HoverBorderGradient } from './ui/hover-border-gradient'
 import BlurText from './ui/blur-text'
@@ -10,12 +9,7 @@ const Hero = () => {
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
       {/* Background Ripple Effect - Desktop only */}
-      <div className="absolute inset-0">
-        <div className="hidden md:block">
-          <BackgroundRippleEffect rows={8} cols={27} cellSize={56} />
-        </div>
-      </div>
-
+      
       {/* Background Spotlights - Subtle on mobile, full on desktop */}
       <div className="absolute inset-0 w-full">
         <Spotlight className="hidden md:block -top-96 -left-96 h-screen" fill='white' />
@@ -92,13 +86,8 @@ const Hero = () => {
           />
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-row gap-3 md:gap-4 justify-center items-center">
-          {/* Primary Button - Filled */}
-          <button className="px-6 py-3 md:px-10 md:py-4 bg-white text-black font-semibold rounded-2xl hover:bg-gray-300 transition-all duration-300 active:scale-[0.98]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            Start a Project
-          </button>
-          {/* Secondary Button - Outlined */}
+        {/* CTA Button */}
+        <div className="flex justify-center">
           <HoverBorderGradient
             containerClassName="rounded-2xl"
             className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
