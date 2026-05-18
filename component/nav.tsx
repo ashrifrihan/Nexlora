@@ -13,7 +13,7 @@ export default function Nav() {
         <div className="flex items-center justify-between gap-5 [font-family:Satoshi,Inter,sans-serif]">
           <a
             href="#"
-            className="shrink-0 text-[30px] font-black italic leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:not-italic lg:tracking-[-0.04em]"
+            className="shrink-0 text-[30px] font-black leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:tracking-[-0.04em]"
             aria-label="Nexlora home"
           >
             nexlora

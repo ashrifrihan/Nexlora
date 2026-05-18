@@ -33,7 +33,7 @@ function DiscoveryVisual() {
           <svg className="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
         </div>
         <div>
-          <div className="text-[11px] font-semibold text-white/80" style={{ fontFamily: '"Satoshi", sans-serif' }}>Client: Nexlora</div>
+          <div className="text-[11px] font-semibold text-white/80">Client: Nexlora</div>
           <div className="text-[9px] text-white/30">Onboarded: May 2026</div>
         </div>
         <motion.div className="w-1.5 h-1.5 rounded-full bg-blue-400" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} />
@@ -44,7 +44,7 @@ function DiscoveryVisual() {
         initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}
       >
         <div className="flex items-center justify-between mb-3">
-          <div className="text-[11px] font-semibold text-white/80" style={{ fontFamily: '"Satoshi", sans-serif' }}>Business Goals</div>
+          <div className="text-[11px] font-semibold text-white/80">Business Goals</div>
           <div className="px-1.5 py-0.5 rounded bg-blue-500/15 text-[8px] font-medium text-blue-400">Active</div>
         </div>
         <div className="space-y-2">
@@ -260,7 +260,7 @@ function TestingVisual() {
         initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
         <div className="flex items-center gap-2 px-3 py-2 border-b border-white/[0.04]">
           <svg className="w-3.5 h-3.5 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><path d="m9 15 2 2 4-4" /></svg>
-          <span className="text-[10px] font-semibold text-white/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>Test Suite</span>
+          <span className="text-[10px] font-semibold text-white/60">Test Suite</span>
           <div className="ml-auto px-1.5 py-0.5 rounded bg-emerald-500/15 text-[8px] font-bold text-emerald-400">PASS</div>
         </div>
         <div className="p-3 space-y-2">
@@ -324,9 +324,9 @@ function LaunchVisual() {
       <motion.div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%] w-64 sm:w-72 rounded-xl bg-[#0d0d0d] border border-white/[0.08] p-4"
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}>
         <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[11px] font-semibold text-white/70" style={{ fontFamily: '"Satoshi", sans-serif' }}>Production</span>
+            <span className="text-[11px] font-semibold text-white/70">Production</span>
           </div>
           <span className="text-[9px] font-mono text-emerald-400/50">v1.0.0</span>
         </div>
@@ -403,7 +403,7 @@ function BentoCard({
       onMouseMove={onMove}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
-      className={`group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0a0a] transition-all duration-500 hover:border-white/[0.1] cursor-pointer ${className}`}
+      className={`bento-card group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0a0a] transition-all duration-500 hover:border-white/[0.1] cursor-pointer ${className}`}
     >
       {/* Spotlight */}
       <div
@@ -431,14 +431,12 @@ function BentoCard({
           </span>
           <h3
             className="text-[18px] font-bold tracking-[-0.03em] text-white/95 transition-colors group-hover:text-white"
-            style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             {title}
           </h3>
         </div>
         <p
           className="text-[14px] leading-[1.6] text-white/40 transition-colors duration-300 group-hover:text-white/55"
-          style={{ fontFamily: '"Inter", sans-serif' }}
         >
           {description}
         </p>
@@ -469,7 +467,7 @@ export default function Process() {
             className="mb-5 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.1] px-3 py-1.5"
             style={{ backdropFilter: "blur(5px)", backgroundColor: "rgba(13,13,13,0.4)" }}
           >
-            <span className="text-[14px] font-medium tracking-[-0.02em] text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            <span className="text-[14px] font-medium tracking-[-0.02em] text-white">
               How It Works
             </span>
           </motion.div>
@@ -480,7 +478,6 @@ export default function Process() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white"
-            style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             A simple process from{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
@@ -493,7 +490,6 @@ export default function Process() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/60"
-            style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             From discovery to deployment — a structured, transparent software development workflow engineered for speed and reliability.
           </motion.p>

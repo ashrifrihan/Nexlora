@@ -161,7 +161,7 @@ function ServiceCard({
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="service-card group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-6 sm:p-8 transition-all duration-500 ease-out cursor-pointer h-full"
+        className="service-card bento-card group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-6 sm:p-8 transition-all duration-500 ease-out cursor-pointer h-full"
         style={{
           transform: isHovering
             ? `perspective(800px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg) scale3d(1.01, 1.01, 1.01)`
@@ -215,11 +215,11 @@ function ServiceCard({
 
           {/* Description */}
           <p
-            className="text-[14px] leading-[1.65] font-normal text-white/40 transition-colors duration-300 group-hover:text-white/55"
-            style={{ fontFamily: '"Inter", sans-serif' }}
-          >
-            {service.description}
-          </p>
+  className="text-[14px] leading-[1.65] font-normal text-white/40 transition-colors duration-300 group-hover:text-white/55"
+  style={{ fontStyle: "normal" }}
+>
+  {service.description}
+</p>
 
           {/* Arrow indicator */}
           <div className="mt-5 flex items-center gap-1.5 overflow-hidden">
