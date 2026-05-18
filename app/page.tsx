@@ -6,6 +6,7 @@ import Projects from "@/component/Projects";
 import Process from "@/component/Process";
 import Testimonials from "@/component/Testimonials";
 import FAQ from "@/component/Faq";
+import Compare from "@/component/Compare";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Projects />
         <Process />
         <Testimonials />
+        <Compare />
         <FAQ />
       </main>
     </div>
