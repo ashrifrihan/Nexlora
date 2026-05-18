@@ -38,11 +38,17 @@ function WebDevVisual() {
         <circle cx="24" cy="22" r="3" fill="rgba(239,68,68,0.6)" />
         <circle cx="34" cy="22" r="3" fill="rgba(250,204,21,0.6)" />
         <circle cx="44" cy="22" r="3" fill="rgba(34,197,94,0.6)" />
-        <motion.rect x="24" y="46" width="80" height="8" rx="2" fill="rgba(59,130,246,0.25)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="24" y="62" width="120" height="6" rx="2" fill="rgba(255,255,255,0.06)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.5 }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="24" y="76" width="100" height="6" rx="2" fill="rgba(255,255,255,0.04)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.6 }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="24" y="96" width="60" height="22" rx="6" fill="rgba(59,130,246,0.2)" stroke="rgba(59,130,246,0.3)" strokeWidth="1" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.8 }} />
-        <motion.text x="54" y="111" textAnchor="middle" fill="rgba(59,130,246,0.8)" fontSize="8" fontFamily="monospace" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.9 }}>Deploy</motion.text>
+        {/* Pulsing system dot */}
+        <motion.circle cx="196" cy="22" r="2.5" fill="#10b981" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
+        
+        {/* Looping code blocks */}
+        <motion.rect x="24" y="46" width="80" height="8" rx="2" fill="rgba(59,130,246,0.25)" animate={{ scaleX: [1, 1.06, 1], opacity: [0.75, 1, 0.75] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "left" }} />
+        <motion.rect x="24" y="62" width="120" height="6" rx="2" fill="rgba(255,255,255,0.06)" animate={{ scaleX: [1, 0.95, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} style={{ transformOrigin: "left" }} />
+        <motion.rect x="24" y="76" width="100" height="6" rx="2" fill="rgba(255,255,255,0.04)" animate={{ scaleX: [1, 1.02, 1], opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }} style={{ transformOrigin: "left" }} />
+        
+        {/* Looping pulse deploy button */}
+        <motion.rect x="24" y="96" width="60" height="22" rx="6" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.3)" strokeWidth="1" animate={{ fill: ["rgba(59,130,246,0.1)", "rgba(59,130,246,0.25)", "rgba(59,130,246,0.1)"], stroke: ["rgba(59,130,246,0.25)", "rgba(59,130,246,0.6)", "rgba(59,130,246,0.25)"] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }} />
+        <motion.text x="54" y="110" textAnchor="middle" fill="rgba(59,130,246,0.85)" fontSize="8" fontFamily="monospace" animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>Deploy</motion.text>
       </svg>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
     </div>
@@ -50,22 +56,23 @@ function WebDevVisual() {
 }
 
 function DashboardVisual() {
+  const heights = [30, 45, 35, 60, 40, 75, 55];
   return (
     <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
       <svg className="w-full max-w-[220px] h-auto" viewBox="0 0 220 140" fill="none">
-        {/* chart bars */}
-        {[0,1,2,3,4,5,6].map(i => (
-          <motion.rect key={i} x={30 + i * 26} y={110 - (20 + Math.sin(i * 0.8) * 40)} width="16" height={20 + Math.sin(i * 0.8) * 40} rx="3"
-            fill={i === 4 ? "rgba(245,158,11,0.5)" : "rgba(245,158,11,0.15)"}
+        {/* chart bars with corrected deterministic heights */}
+        {heights.map((h, i) => (
+          <motion.rect key={i} x={30 + i * 26} y={110 - h} width="16" height={h} rx="3"
+            fill={i === 5 ? "rgba(245,158,11,0.5)" : "rgba(245,158,11,0.15)"}
             initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15 * i }} style={{ transformOrigin: "bottom" }} />
+            transition={{ duration: 0.5, delay: 0.1 * i }} style={{ transformOrigin: "bottom" }} />
         ))}
         {/* axis */}
         <line x1="20" y1="110" x2="210" y2="110" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-        {/* trend line */}
-        <motion.path d="M38 85 L64 70 L90 78 L116 45 L142 55 L168 30 L194 40" stroke="rgba(245,158,11,0.6)" strokeWidth="1.5" strokeLinecap="round" fill="none" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.5 }} />
+        {/* trend line aligned with peak coordinates */}
+        <motion.path d="M38 80 L64 65 L90 75 L116 50 L142 70 L168 35 L194 55" stroke="rgba(245,158,11,0.6)" strokeWidth="1.5" strokeLinecap="round" fill="none" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.4 }} />
         {/* KPI badges */}
-        <motion.rect x="140" y="15" width="70" height="24" rx="6" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.2)" strokeWidth="1" initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 1 }} />
+        <motion.rect x="140" y="15" width="70" height="24" rx="6" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.2)" strokeWidth="1" initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.8 }} />
         <text x="175" y="31" textAnchor="middle" fill="rgba(245,158,11,0.8)" fontSize="9" fontFamily="monospace">+42.5%</text>
       </svg>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
@@ -107,17 +114,19 @@ function MobileVisual() {
       <svg className="w-full max-w-[100px] h-auto" viewBox="0 0 100 160" fill="none">
         <rect x="10" y="5" width="80" height="150" rx="14" stroke="rgba(16,185,129,0.25)" strokeWidth="1.5" fill="rgba(16,185,129,0.03)" />
         <rect x="35" y="12" width="30" height="4" rx="2" fill="rgba(16,185,129,0.15)" />
-        {/* App rows */}
+        {/* App rows looping float */}
         {[0,1,2].map(i => (
-          <motion.g key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 + i * 0.15 }}>
+          <motion.g key={i} animate={{ y: [0, -3, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}>
             <rect x="20" y={36 + i * 34} width="60" height="26" rx="6" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.1)" strokeWidth="0.5" />
-            <rect x="28" y={42 + i * 34} width={20 + i * 8} height="4" rx="1" fill={`rgba(16,185,129,${0.3 - i * 0.05})`} />
+            <motion.rect x="28" y={42 + i * 34} width={20 + i * 8} height="4" rx="1" fill={`rgba(16,185,129,${0.3 - i * 0.05})`} animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }} />
             <rect x="28" y={50 + i * 34} width="36" height="3" rx="1" fill="rgba(255,255,255,0.05)" />
           </motion.g>
         ))}
-        {/* Bottom nav */}
+        {/* Bottom nav pulsing loops */}
         <rect x="10" y="135" width="80" height="20" rx="0" fill="rgba(16,185,129,0.04)" />
-        {[0,1,2].map(i => <circle key={i} cx={30 + i * 20} cy="145" r="3" fill="rgba(16,185,129,0.2)" />)}
+        {[0,1,2].map(i => (
+          <motion.circle key={i} cx={30 + i * 20} cy="145" r="3" fill="rgba(16,185,129,0.2)" animate={{ opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }} />
+        ))}
       </svg>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
     </div>
