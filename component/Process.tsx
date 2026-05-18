@@ -495,63 +495,70 @@ export default function Process() {
 
         {/* ── Bento Grid ── */}
         <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Discovery - spans 2 cols on large */}
+          {/* Row 1: Discovery (2-col) + Planning (1-col) */}
           <BentoCard
             className="sm:col-span-2 lg:col-span-2"
             index={0}
             number="01"
             title="Discovery"
-            description="Understanding business goals, operational challenges, and user needs through stakeholder interviews and market research."
+            description="Understanding business goals and operational problems through stakeholder alignment, user research, and competitive analysis."
             accent="#3b82f6"
           >
             <DiscoveryVisual />
           </BentoCard>
 
-          {/* Planning */}
           <BentoCard
             className="sm:col-span-1"
             index={1}
             number="02"
             title="Planning"
-            description="Structuring workflows, systems architecture, and product roadmaps for scalable delivery."
+            description="Structuring workflows, systems, and product architecture for scalable, milestone-driven delivery."
             accent="#f59e0b"
           >
             <PlanningVisual />
           </BentoCard>
 
-          {/* Design */}
+          {/* Row 2: Design (1-col) + Development (2-col) */}
           <BentoCard
             className="sm:col-span-1"
             index={2}
             number="03"
             title="Design"
-            description="Creating scalable UI/UX systems and interaction patterns — research-driven, conversion-focused."
+            description="Creating scalable UI/UX systems and interactions — research-driven, conversion-focused."
             accent="#ec4899"
           >
             <DesignVisual />
           </BentoCard>
 
-          {/* Development - spans 2 cols on large */}
           <BentoCard
             className="sm:col-span-2 lg:col-span-2"
             index={3}
             number="04"
             title="Development"
-            description="Building frontend, backend, APIs, and integrations with clean code, modern frameworks, shipped iteratively with full transparency."
+            description="Building frontend, backend, APIs, and integrations with clean code, modern frameworks, shipped iteratively."
             accent="#a855f7"
           >
             <DevelopmentVisual />
           </BentoCard>
-        </div>
 
-        {/* Launch - full width card */}
-        <div className="mt-4 sm:mt-5">
+          {/* Row 3: Testing (1-col) + Launch (2-col) */}
           <BentoCard
-            className="w-full"
+            className="sm:col-span-1"
             index={4}
             number="05"
+            title="Testing"
+            description="Quality assurance, performance checks, and system validation — ensuring reliability before every release."
+            accent="#f97316"
+          >
+            <TestingVisual />
+          </BentoCard>
+
+          <BentoCard
+            className="sm:col-span-2 lg:col-span-2"
+            index={5}
+            number="06"
             title="Launch"
-            description="Deployment, performance optimization, monitoring setup, and ongoing improvements — your product, live and scaling with 99.9% uptime."
+            description="Deployment, optimization, and ongoing improvements — your product, live and scaling with 99.9% uptime."
             accent="#10b981"
           >
             <LaunchVisual />
