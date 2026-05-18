@@ -213,13 +213,13 @@ export default function Services() {
         <div className="grid grid-cols-12 gap-4 sm:gap-5">
           {services.map((s, i) => (
             <BentoCard key={s.id} index={i} className={s.colSpan}>
-              <div className={`flex ${s.id === "automation-systems" ? "flex-row items-center" : "flex-col"} h-full`}>
+              <div className={`flex ${s.id === "automation-systems" ? "flex-col md:flex-row md:items-center" : "flex-col"} h-full`}>
                 {/* Visual area */}
-                <div className={`${s.id === "automation-systems" ? "w-1/2 h-[200px]" : "h-[200px] w-full"} flex items-center justify-center`}>
+                <div className={`${s.id === "automation-systems" ? "w-full md:w-1/2 h-[200px] md:h-[260px]" : "h-[200px] w-full"} flex items-center justify-center`}>
                   {s.visual}
                 </div>
                 {/* Text */}
-                <div className={`p-6 sm:p-7 ${s.id === "automation-systems" ? "w-1/2" : ""}`}>
+                <div className={`p-6 sm:p-7 ${s.id === "automation-systems" ? "w-full md:w-1/2" : ""}`}>
                   {/* Icon dot */}
                   <div className="w-8 h-8 rounded-lg border border-white/[0.08] bg-white/[0.03] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-[-6deg] transition-transform duration-300">
                     <div className="w-2 h-2 rounded-full" style={{ backgroundColor: s.accent, boxShadow: `0 0 8px ${s.accent}60` }} />
