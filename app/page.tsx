@@ -3,7 +3,7 @@ import Nav from "@/component/nav";
 import Trust from "@/component/Trust";
 import Services from "@/component/Services";
 import Process from "@/component/Process";
-import FAQ from "@/component/FAQ";
+import FAQ from "@/component/Faq";
 
 export default function Home() {
   return (
