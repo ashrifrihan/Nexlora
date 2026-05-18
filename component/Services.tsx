@@ -31,8 +31,8 @@ function BentoCard({ index, children, className = "" }: { index: number; childre
 /* ─── SVG visuals for each card ─── */
 function WebDevVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      <svg width="220" height="140" viewBox="0 0 220 140" fill="none">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
+      <svg className="w-full max-w-[220px] h-auto" viewBox="0 0 220 140" fill="none">
         <rect x="10" y="10" width="200" height="120" rx="8" stroke="rgba(59,130,246,0.2)" strokeWidth="1" />
         <rect x="10" y="10" width="200" height="24" rx="8" fill="rgba(59,130,246,0.06)" />
         <circle cx="24" cy="22" r="3" fill="rgba(239,68,68,0.6)" />
@@ -51,8 +51,8 @@ function WebDevVisual() {
 
 function DashboardVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      <svg width="220" height="140" viewBox="0 0 220 140" fill="none">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
+      <svg className="w-full max-w-[220px] h-auto" viewBox="0 0 220 140" fill="none">
         {/* chart bars */}
         {[0,1,2,3,4,5,6].map(i => (
           <motion.rect key={i} x={30 + i * 26} y={110 - (20 + Math.sin(i * 0.8) * 40)} width="16" height={20 + Math.sin(i * 0.8) * 40} rx="3"
@@ -103,8 +103,8 @@ function AIVisual() {
 
 function MobileVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      <svg width="100" height="160" viewBox="0 0 100 160" fill="none">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
+      <svg className="w-full max-w-[100px] h-auto" viewBox="0 0 100 160" fill="none">
         <rect x="10" y="5" width="80" height="150" rx="14" stroke="rgba(16,185,129,0.25)" strokeWidth="1.5" fill="rgba(16,185,129,0.03)" />
         <rect x="35" y="12" width="30" height="4" rx="2" fill="rgba(16,185,129,0.15)" />
         {/* App rows */}
@@ -126,8 +126,8 @@ function MobileVisual() {
 
 function UIUXVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
+      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 180 140" fill="none">
         {/* Design frame */}
         <rect x="20" y="15" width="140" height="110" rx="8" stroke="rgba(236,72,153,0.15)" strokeWidth="1" strokeDasharray="6 4" />
         {/* Layout blocks */}
@@ -148,8 +148,8 @@ function UIUXVisual() {
 
 function AutomationVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      <svg width="200" height="140" viewBox="0 0 200 140" fill="none">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
+      <svg className="w-full max-w-[200px] h-auto" viewBox="0 0 200 140" fill="none">
         {/* Gear */}
         <motion.g animate={{ rotate: 360 }} transition={{ duration: 8, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "100px 70px" }}>
           <circle cx="100" cy="70" r="25" stroke="rgba(239,68,68,0.2)" strokeWidth="1.5" fill="rgba(239,68,68,0.04)" />
@@ -188,7 +188,7 @@ export default function Services() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} id="solutions" className="relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40 overflow-hidden" aria-labelledby="services-heading">
+    <section ref={sectionRef} id="solutions" className="relative w-full bg-black px-4 pt-24 pb-12 sm:px-6 sm:pt-32 sm:pb-16 md:px-8 md:pt-40 md:pb-20 lg:px-12 lg:pt-48 lg:pb-24 scroll-mt-28 overflow-hidden" aria-labelledby="services-heading">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent" />
       <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-600/[0.03] blur-[140px] rounded-full" />
 
