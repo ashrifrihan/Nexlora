@@ -28,155 +28,252 @@ function BentoCard({ index, children, className = "" }: { index: number; childre
   );
 }
 
-/* ─── SVG visuals for each card ─── */
+/* ─── SVG visuals for each card (Borderless direct floating SaaS layouts) ─── */
 function WebDevVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
-      <svg className="w-full max-w-[220px] h-auto" viewBox="0 0 220 140" fill="none">
-        <rect x="10" y="10" width="200" height="120" rx="8" stroke="rgba(59,130,246,0.2)" strokeWidth="1" />
-        <rect x="10" y="10" width="200" height="24" rx="8" fill="rgba(59,130,246,0.06)" />
-        <circle cx="24" cy="22" r="3" fill="rgba(239,68,68,0.6)" />
-        <circle cx="34" cy="22" r="3" fill="rgba(250,204,21,0.6)" />
-        <circle cx="44" cy="22" r="3" fill="rgba(34,197,94,0.6)" />
-        {/* Pulsing system dot */}
-        <motion.circle cx="196" cy="22" r="2.5" fill="#10b981" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
-        
-        {/* Looping code blocks */}
-        <motion.rect x="24" y="46" width="80" height="8" rx="2" fill="rgba(59,130,246,0.25)" animate={{ scaleX: [1, 1.06, 1], opacity: [0.75, 1, 0.75] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="24" y="62" width="120" height="6" rx="2" fill="rgba(255,255,255,0.06)" animate={{ scaleX: [1, 0.95, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="24" y="76" width="100" height="6" rx="2" fill="rgba(255,255,255,0.04)" animate={{ scaleX: [1, 1.02, 1], opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }} style={{ transformOrigin: "left" }} />
-        
-        {/* Looping pulse deploy button */}
-        <motion.rect x="24" y="96" width="60" height="22" rx="6" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.3)" strokeWidth="1" animate={{ fill: ["rgba(59,130,246,0.1)", "rgba(59,130,246,0.25)", "rgba(59,130,246,0.1)"], stroke: ["rgba(59,130,246,0.25)", "rgba(59,130,246,0.6)", "rgba(59,130,246,0.25)"] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }} />
-        <motion.text x="54" y="110" textAnchor="middle" fill="rgba(59,130,246,0.85)" fontSize="8" fontFamily="monospace" animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>Deploy</motion.text>
-      </svg>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
+    <div className="relative w-full h-full flex items-center justify-center p-6 overflow-hidden">
+      {/* Premium back glow */}
+      <div className="absolute w-[160px] h-[80px] bg-blue-500/[0.04] blur-[30px] rounded-full pointer-events-none" />
+      
+      {/* Floating Browser Mockup */}
+      <div className="relative w-full max-w-[210px] flex flex-col justify-between z-10">
+        {/* Widget Header (Browser bar) */}
+        <div className="flex justify-between items-center mb-3 pb-2 border-b border-white/[0.04]">
+          <div className="flex items-center gap-1.5">
+            <div className="w-1.5 h-1.5 rounded-full bg-red-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-green-500/50" />
+          </div>
+          <span className="text-[9px] font-mono tracking-wider text-white/30 uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>nexlora.dev</span>
+          <motion.div className="w-1.5 h-1.5 rounded-full bg-blue-500" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
+        </div>
+
+        {/* Browser Content */}
+        <div className="flex flex-col gap-2">
+          <motion.div className="h-2 bg-blue-500/20 rounded-sm" animate={{ scaleX: [1, 1.05, 1], opacity: [0.7, 1, 0.7] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "left", width: "50%" }} />
+          <motion.div className="h-1.5 bg-white/5 rounded-sm" animate={{ scaleX: [1, 0.96, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} style={{ transformOrigin: "left", width: "80%" }} />
+          <motion.div className="h-1.5 bg-white/5 rounded-sm" animate={{ scaleX: [1, 1.02, 1], opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }} style={{ transformOrigin: "left", width: "70%" }} />
+          
+          {/* Action Row */}
+          <div className="flex justify-between items-center mt-2 pt-1">
+            <motion.div 
+              className="px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/30 flex items-center justify-center cursor-pointer"
+              animate={{ backgroundColor: ["rgba(59,130,246,0.1)", "rgba(59,130,246,0.25)", "rgba(59,130,246,0.1)"], borderColor: ["rgba(59,130,246,0.25)", "rgba(59,130,246,0.6)", "rgba(59,130,246,0.25)"] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <span className="text-[7.5px] font-mono font-medium text-blue-400 uppercase tracking-wider">DEPLOY</span>
+            </motion.div>
+            <span className="text-[8px] font-mono text-white/20">v1.0.4</span>
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e]/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
 
 function DashboardVisual() {
-  const heights = [30, 45, 35, 60, 40, 75, 55];
+  const heights = [20, 32, 24, 42, 28, 52, 38];
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
-      <svg className="w-full max-w-[220px] h-auto" viewBox="0 0 220 140" fill="none">
-        {/* chart bars with corrected deterministic heights */}
-        {heights.map((h, i) => (
-          <motion.rect key={i} x={30 + i * 26} y={110 - h} width="16" height={h} rx="3"
-            fill={i === 5 ? "rgba(245,158,11,0.5)" : "rgba(245,158,11,0.15)"}
-            initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 * i }} style={{ transformOrigin: "bottom" }} />
-        ))}
-        {/* axis */}
-        <line x1="20" y1="110" x2="210" y2="110" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-        {/* trend line aligned with peak coordinates */}
-        <motion.path d="M38 80 L64 65 L90 75 L116 50 L142 70 L168 35 L194 55" stroke="rgba(245,158,11,0.6)" strokeWidth="1.5" strokeLinecap="round" fill="none" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.4 }} />
-        {/* KPI badges */}
-        <motion.rect x="140" y="15" width="70" height="24" rx="6" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.2)" strokeWidth="1" initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.8 }} />
-        <text x="175" y="31" textAnchor="middle" fill="rgba(245,158,11,0.8)" fontSize="9" fontFamily="monospace">+42.5%</text>
-      </svg>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
+    <div className="relative w-full h-full flex flex-col justify-between p-6 overflow-hidden">
+      {/* Premium back glow */}
+      <div className="absolute w-[160px] h-[80px] bg-amber-500/[0.04] blur-[30px] rounded-full pointer-events-none" />
+
+      {/* Widget Header */}
+      <div className="flex justify-between items-center relative z-10 w-full max-w-[210px] mx-auto mb-2">
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <span className="text-[9px] font-mono tracking-wider text-white/30 uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>Analytics</span>
+        </div>
+        <span className="text-[9px] font-mono font-medium text-amber-500 bg-amber-500/10 px-1.5 py-0.5 rounded-md border border-amber-500/20" style={{ fontFamily: '"Satoshi", sans-serif' }}>+42.5%</span>
+      </div>
+
+      {/* Widget Chart Content */}
+      <div className="relative flex-1 w-full max-w-[210px] mx-auto h-[65px] flex items-end z-10">
+        <svg className="w-full h-full" viewBox="0 0 180 65" fill="none">
+          {/* grid lines */}
+          <line x1="0" y1="20" x2="180" y2="20" stroke="rgba(255,255,255,0.02)" strokeWidth="0.75" />
+          <line x1="0" y1="40" x2="180" y2="40" stroke="rgba(255,255,255,0.02)" strokeWidth="0.75" />
+          <line x1="0" y1="60" x2="180" y2="60" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+          
+          {/* chart bars with corrected deterministic heights */}
+          {heights.map((h, i) => (
+            <motion.rect key={i} x={15 + i * 22} y={60 - h} width="10" height={h} rx="1.5"
+              fill={i === 5 ? "rgba(245,158,11,0.5)" : "rgba(245,158,11,0.15)"}
+              initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.05 * i }} style={{ transformOrigin: "bottom" }} />
+          ))}
+
+          {/* trend line aligned with peak coordinates */}
+          <motion.path 
+            d="M20 40 L42 28 L64 36 L86 18 L108 32 L130 8 L152 22" 
+            stroke="rgba(245,158,11,0.65)" 
+            strokeWidth="1.5" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+            fill="none" 
+            initial={{ pathLength: 0 }} 
+            whileInView={{ pathLength: 1 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 1, delay: 0.3 }} 
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e]/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
 
 function AIVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      <div className="relative w-[160px] h-[160px]">
-        {/* Orbital rings */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 160 160" fill="none">
-          <motion.circle cx="80" cy="80" r="70" stroke="rgba(168,85,247,0.12)" strokeWidth="1" strokeDasharray="4 6" animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "center" }} />
-          <motion.circle cx="80" cy="80" r="50" stroke="rgba(168,85,247,0.08)" strokeWidth="1" animate={{ rotate: -360 }} transition={{ duration: 15, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "center" }} />
-          <motion.circle cx="80" cy="80" r="30" stroke="rgba(168,85,247,0.15)" strokeWidth="1.5" strokeDasharray="8 4" animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "center" }} />
-        </svg>
-        {/* Center brain icon */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <motion.div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center" animate={{ scale: [1, 1.08, 1] }} transition={{ duration: 3, repeat: Infinity }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(168,85,247,0.8)" strokeWidth="1.5" className="w-6 h-6">
-              <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93" /><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93" />
-              <circle cx="12" cy="14" r="3" /><path d="M12 17v5" />
-            </svg>
-          </motion.div>
+    <div className="relative w-full h-full flex flex-col justify-between p-6 overflow-hidden">
+      {/* Premium back glow */}
+      <div className="absolute w-[160px] h-[80px] bg-purple-500/[0.04] blur-[30px] rounded-full pointer-events-none" />
+
+      {/* Widget Header */}
+      <div className="flex justify-between items-center relative z-10 w-full max-w-[210px] mx-auto mb-2">
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+          <span className="text-[9px] font-mono tracking-wider text-white/30 uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>AI Pipeline</span>
         </div>
-        {/* Floating nodes */}
-        {[0, 1, 2, 3].map(i => (
-          <motion.div key={i} className="absolute w-2.5 h-2.5 rounded-full bg-purple-400/60" style={{ left: 80 + Math.cos((i * Math.PI) / 2) * 60 - 5, top: 80 + Math.sin((i * Math.PI) / 2) * 60 - 5 }} animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }} />
-        ))}
+        <span className="text-[9px] font-mono font-medium text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded-md border border-purple-500/20" style={{ fontFamily: '"Satoshi", sans-serif' }}>Active</span>
       </div>
+
+      {/* Center orbital content */}
+      <div className="relative flex-1 w-full max-w-[210px] mx-auto h-[65px] flex items-center justify-center z-10">
+        <div className="relative w-[60px] h-[60px]">
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 80 80" fill="none">
+            <motion.circle cx="40" cy="40" r="35" stroke="rgba(168,85,247,0.15)" strokeWidth="0.75" strokeDasharray="3 4" animate={{ rotate: 360 }} transition={{ duration: 15, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "center" }} />
+            <motion.circle cx="40" cy="40" r="25" stroke="rgba(168,85,247,0.1)" strokeWidth="0.75" animate={{ rotate: -360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "center" }} />
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div className="w-7 h-7 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center" animate={{ scale: [1, 1.08, 1] }} transition={{ duration: 3, repeat: Infinity }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(168,85,247,0.8)" strokeWidth="1.5" className="w-3.5 h-3.5">
+                <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93" /><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93" />
+                <circle cx="12" cy="14" r="3" /><path d="M12 17v5" />
+              </svg>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e]/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
 
 function MobileVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
-      <svg className="w-full max-w-[100px] h-auto" viewBox="0 0 100 160" fill="none">
-        <rect x="10" y="5" width="80" height="150" rx="14" stroke="rgba(16,185,129,0.25)" strokeWidth="1.5" fill="rgba(16,185,129,0.03)" />
-        <rect x="35" y="12" width="30" height="4" rx="2" fill="rgba(16,185,129,0.15)" />
-        {/* App rows looping float */}
-        {[0,1,2].map(i => (
-          <motion.g key={i} animate={{ y: [0, -3, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}>
-            <rect x="20" y={36 + i * 34} width="60" height="26" rx="6" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.1)" strokeWidth="0.5" />
-            <motion.rect x="28" y={42 + i * 34} width={20 + i * 8} height="4" rx="1" fill={`rgba(16,185,129,${0.3 - i * 0.05})`} animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }} />
-            <rect x="28" y={50 + i * 34} width="36" height="3" rx="1" fill="rgba(255,255,255,0.05)" />
-          </motion.g>
-        ))}
-        {/* Bottom nav pulsing loops */}
-        <rect x="10" y="135" width="80" height="20" rx="0" fill="rgba(16,185,129,0.04)" />
-        {[0,1,2].map(i => (
-          <motion.circle key={i} cx={30 + i * 20} cy="145" r="3" fill="rgba(16,185,129,0.2)" animate={{ opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }} />
-        ))}
-      </svg>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
+    <div className="relative w-full h-full flex flex-col justify-between p-6 overflow-hidden">
+      {/* Premium back glow */}
+      <div className="absolute w-[160px] h-[80px] bg-emerald-500/[0.04] blur-[30px] rounded-full pointer-events-none" />
+
+      {/* Floating mobile card */}
+      <div className="relative w-[100px] h-[125px] border border-white/[0.08] bg-white/[0.01] rounded-[18px] p-2 flex flex-col justify-between mx-auto z-10">
+        {/* Speaker bar */}
+        <div className="w-7 h-0.5 bg-white/10 rounded-full mx-auto mb-1.5" />
+
+        {/* Screen Content looping float */}
+        <div className="flex-1 flex flex-col gap-1.5 justify-center">
+          {[0, 1].map(i => (
+            <motion.div 
+              key={i} 
+              className="bg-white/[0.02] border border-white/[0.04] rounded-md p-1 flex flex-col gap-1"
+              animate={{ y: [0, -2, 0] }} 
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
+            >
+              <motion.div className="h-1 bg-emerald-500/20 rounded-full" animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }} style={{ width: i === 0 ? "50%" : "65%" }} />
+              <div className="h-0.5 bg-white/5 rounded-full w-[80%]" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom tab dots */}
+        <div className="flex justify-center gap-1 mt-1.5 pb-0.5">
+          {[0, 1, 2].map(i => (
+            <motion.div 
+              key={i} 
+              className="w-1 h-1 rounded-full bg-emerald-500/20"
+              animate={{ opacity: [0.3, 0.8, 0.3] }} 
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }} 
+            />
+          ))}
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e]/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
 
 function UIUXVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
-      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 180 140" fill="none">
-        {/* Design frame */}
-        <rect x="20" y="15" width="140" height="110" rx="8" stroke="rgba(236,72,153,0.15)" strokeWidth="1" strokeDasharray="6 4" />
-        {/* Layout blocks */}
-        <motion.rect x="30" y="25" width="55" height="40" rx="6" fill="rgba(236,72,153,0.08)" stroke="rgba(236,72,153,0.2)" strokeWidth="1" initial={{ scale: 0.8, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} />
-        <motion.rect x="95" y="25" width="55" height="18" rx="4" fill="rgba(236,72,153,0.06)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 0.35 }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="95" y="49" width="55" height="16" rx="4" fill="rgba(236,72,153,0.04)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 0.45 }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="30" y="75" width="120" height="14" rx="4" fill="rgba(236,72,153,0.05)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 0.55 }} style={{ transformOrigin: "left" }} />
-        <motion.rect x="30" y="97" width="50" height="18" rx="8" fill="rgba(236,72,153,0.15)" stroke="rgba(236,72,153,0.3)" strokeWidth="1" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.7 }} />
-        {/* cursor */}
-        <motion.g animate={{ x: [0, 30, 15], y: [0, -15, 5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-          <path d="M120 90 l0 14 l5 -5 l7 0 z" fill="rgba(236,72,153,0.7)" />
-        </motion.g>
-      </svg>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
+    <div className="relative w-full h-full flex flex-col justify-between p-6 overflow-hidden">
+      {/* Premium back glow */}
+      <div className="absolute w-[160px] h-[80px] bg-pink-500/[0.04] blur-[30px] rounded-full pointer-events-none" />
+
+      {/* Widget Header */}
+      <div className="flex justify-between items-center relative z-10 w-full max-w-[210px] mx-auto mb-2">
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse" />
+          <span className="text-[9px] font-mono tracking-wider text-white/30 uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>Interface</span>
+        </div>
+        <span className="text-[9px] font-mono font-medium text-pink-400 bg-pink-500/10 px-1.5 py-0.5 rounded-md border border-pink-500/20" style={{ fontFamily: '"Satoshi", sans-serif' }}>Figma</span>
+      </div>
+
+      {/* Content */}
+      <div className="relative flex-1 w-full max-w-[210px] mx-auto h-[65px] flex items-center justify-center z-10">
+        <svg className="w-full h-full max-w-[130px]" viewBox="0 0 130 65" fill="none">
+          <rect x="5" y="5" width="120" height="55" rx="4" stroke="rgba(236,72,153,0.15)" strokeWidth="1" strokeDasharray="4 3" />
+          <motion.rect x="15" y="15" width="40" height="20" rx="3" fill="rgba(236,72,153,0.08)" stroke="rgba(236,72,153,0.2)" strokeWidth="0.75" initial={{ scale: 0.9, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} />
+          <motion.rect x="65" y="15" width="50" height="8" rx="2" fill="rgba(236,72,153,0.06)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ transformOrigin: "left" }} />
+          <motion.rect x="65" y="27" width="35" height="8" rx="2" fill="rgba(236,72,153,0.04)" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} style={{ transformOrigin: "left" }} />
+          {/* cursor */}
+          <motion.g animate={{ x: [0, 20, 10], y: [0, -10, 5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
+            <path d="M90 40 l0 10 l4 -4 l5 0 z" fill="rgba(236,72,153,0.7)" />
+          </motion.g>
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e]/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
 
 function AutomationVisual() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
-      <svg className="w-full max-w-[200px] h-auto" viewBox="0 0 200 140" fill="none">
-        {/* Gear */}
-        <motion.g animate={{ rotate: 360 }} transition={{ duration: 8, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "100px 70px" }}>
-          <circle cx="100" cy="70" r="25" stroke="rgba(239,68,68,0.2)" strokeWidth="1.5" fill="rgba(239,68,68,0.04)" />
-          {[0,1,2,3,4,5].map(i => {
-            const a = (i * 60 * Math.PI) / 180;
-            return <rect key={i} x={100 + Math.cos(a) * 25 - 4} y={70 + Math.sin(a) * 25 - 4} width="8" height="8" rx="2" fill="rgba(239,68,68,0.15)" transform={`rotate(${i * 60}, ${100 + Math.cos(a) * 25}, ${70 + Math.sin(a) * 25})`} />;
-          })}
-        </motion.g>
-        <circle cx="100" cy="70" r="10" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.25)" strokeWidth="1" />
-        {/* Connection lines to nodes */}
-        {[{x:35,y:30},{x:165,y:30},{x:35,y:110},{x:165,y:110}].map((n,i) => (
-          <g key={i}>
-            <motion.line x1="100" y1="70" x2={n.x} y2={n.y} stroke="rgba(239,68,68,0.1)" strokeWidth="1" strokeDasharray="4 3" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 + i * 0.15, duration: 0.6 }} />
-            <motion.circle cx={n.x} cy={n.y} r="6" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.2)" strokeWidth="1" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 + i * 0.1, type: "spring" }} />
-          </g>
-        ))}
-      </svg>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
+    <div className="relative w-full h-full flex flex-col justify-between p-6 overflow-hidden">
+      {/* Premium back glow */}
+      <div className="absolute w-[220px] h-[100px] bg-red-500/[0.04] blur-[40px] rounded-full pointer-events-none" />
+
+      {/* Widget Header */}
+      <div className="flex justify-between items-center relative z-10 w-full max-w-[210px] mx-auto mb-2">
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+          <span className="text-[9px] font-mono tracking-wider text-white/30 uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>Workflow</span>
+        </div>
+        <span className="text-[9px] font-mono font-medium text-red-500 bg-red-500/10 px-1.5 py-0.5 rounded-md border border-red-500/20" style={{ fontFamily: '"Satoshi", sans-serif' }}>Cron</span>
+      </div>
+
+      {/* Content */}
+      <div className="relative flex-1 w-full max-w-[210px] mx-auto h-[65px] flex items-center justify-center z-10">
+        <svg className="w-full h-full max-w-[150px]" viewBox="0 0 150 65" fill="none">
+          {/* Gear */}
+          <motion.g animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "75px 32.5px" }}>
+            <circle cx="75" cy="32.5" r="14" stroke="rgba(239,68,68,0.2)" strokeWidth="1" fill="rgba(239,68,68,0.04)" />
+            {[0,1,2,3,4,5].map(i => {
+              const a = (i * 60 * Math.PI) / 180;
+              return <rect key={i} x={75 + Math.cos(a) * 14 - 2} y={32.5 + Math.sin(a) * 14 - 2} width="4" height="4" rx="1" fill="rgba(239,68,68,0.2)" transform={`rotate(${i * 60}, ${75 + Math.cos(a) * 14}, ${32.5 + Math.sin(a) * 14})`} />;
+            })}
+          </motion.g>
+          <circle cx="75" cy="32.5" r="6" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.25)" strokeWidth="0.75" />
+          {/* Connection lines */}
+          {[{x:25,y:15},{x:125,y:15},{x:25,y:50},{x:125,y:50}].map((n,i) => (
+            <g key={i}>
+              <motion.line x1="75" y1="32.5" x2={n.x} y2={n.y} stroke="rgba(239,68,68,0.1)" strokeWidth="0.75" strokeDasharray="3 2" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }} />
+              <motion.circle cx={n.x} cy={n.y} r="4" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.2)" strokeWidth="0.75" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + i * 0.08, type: "spring" }} />
+            </g>
+          ))}
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e]/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
