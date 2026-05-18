@@ -201,7 +201,7 @@ function StabilityCard() {
             {/* uptime bars */}
             <div className="flex gap-[3px] mt-4 items-end justify-center">
               {Array.from({length:24}).map((_,i) => (
-                <motion.div key={i} className="w-[8px] rounded-sm" style={{background: i===18 ? "rgba(239,68,68,0.5)" : "rgba(6,182,212,0.4)", height: i===18 ? 8 : 16+Math.random()*8}} initial={{scaleY:0}} whileInView={{scaleY:1}} viewport={{once:true}} transition={{delay:0.03*i, duration:0.4}} />
+                <motion.div key={i} className="w-[8px] rounded-sm" style={{background: i===18 ? "rgba(239,68,68,0.5)" : "rgba(6,182,212,0.4)", height: i===18 ? 8 : 16 + ((i * 7) % 9)}} initial={{scaleY:0}} whileInView={{scaleY:1}} viewport={{once:true}} transition={{delay:0.03*i, duration:0.4}} />
               ))}
             </div>
             <div className="flex justify-between mt-2 text-[9px] text-white/20 font-mono">
