@@ -12,91 +12,109 @@ const planningCardWidths = [
 ];
 
 function DiscoveryVisual() {
+  const stakeholdersData = [
+    { role: "PM", url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&h=80&q=80" },
+    { role: "CTO", url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&h=80&q=80" },
+    { role: "UX", url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80" },
+    { role: "BD", url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&h=80&q=80" },
+  ];
+
   return (
-    <div className="relative h-52 sm:h-64 w-full overflow-hidden">
+    <div className="relative h-56 sm:h-64 md:h-72 w-full overflow-hidden flex items-center justify-center p-2">
       {/* Dotted grid bg */}
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-      {/* Connection lines SVG */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 600 260" fill="none">
-        <motion.path d="M200 50 C220 50, 240 80, 300 80" stroke="#3b82f6" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.25"
+
+      <svg className="w-full h-full max-w-[600px] max-h-[280px]" viewBox="0 0 600 260" fill="none">
+        {/* Connection lines SVG */}
+        <motion.path d="M190 52 C210 52, 195 100, 210 100" stroke="#3b82f6" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.3"
           initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 0.3 }} />
-        <motion.path d="M300 80 C360 80, 370 130, 400 130" stroke="#818cf8" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.25"
+        <motion.path d="M390 100 C410 100, 395 62, 410 62" stroke="#818cf8" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.3"
           initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 0.6 }} />
-        <motion.path d="M300 80 C310 110, 280 160, 220 180" stroke="#60a5fa" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.25"
+        <motion.path d="M210 160 C195 160, 205 202, 190 202" stroke="#60a5fa" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.3"
           initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 0.9 }} />
-      </svg>
+        <motion.path d="M390 160 C405 160, 395 202, 410 202" stroke="#10b981" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.3"
+          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 1.2 }} />
 
-      {/* Client card - top left */}
-      <motion.div className="absolute top-5 left-5 sm:left-8 flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm"
-        initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }}>
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center">
-          <svg className="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
-        </div>
-        <div>
-          <div className="text-[11px] font-semibold text-white/80">Client: Nexlora</div>
-          <div className="text-[9px] text-white/30">Onboarded: May 2026</div>
-        </div>
-        <motion.div className="w-1.5 h-1.5 rounded-full bg-blue-400" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} />
-      </motion.div>
-
-      {/* Central strategy card */}
-      <motion.div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-56 rounded-xl bg-[#0d0d0d] border border-white/[0.08] p-3.5 backdrop-blur-md"
-        initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}
-      >
-        <div className="flex items-center justify-between mb-3">
-          <div className="text-[11px] font-semibold text-white/80">Business Goals</div>
-          <div className="px-1.5 py-0.5 rounded bg-blue-500/15 text-[8px] font-medium text-blue-400">Active</div>
-        </div>
-        <div className="space-y-2">
-          {["Revenue Growth", "User Retention", "Ops Efficiency"].map((g, i) => (
-            <motion.div key={i} className="flex items-center gap-2"
-              initial={{ opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 + i * 0.1 }}>
-              <div className="w-3.5 h-3.5 rounded border border-blue-400/30 flex items-center justify-center">
-                <motion.svg className="w-2 h-2 text-blue-400" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"
-                  initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ delay: 0.8 + i * 0.15 }}>
-                  <motion.path d="M2 6l3 3 5-5" />
-                </motion.svg>
-              </div>
-              <span className="text-[10px] text-white/50">{g}</span>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Stakeholder card - right */}
-      <motion.div className="absolute top-8 right-4 sm:right-8 rounded-xl bg-white/[0.03] border border-white/[0.06] p-2.5"
-        initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 0.6 }}>
-        <div className="text-[9px] text-white/30 mb-1.5">Stakeholders</div>
-        <div className="flex -space-x-2">
-          {["#3b82f6", "#8b5cf6", "#ec4899", "#f59e0b"].map((c, i) => (
-            <motion.div key={i} className="w-6 h-6 rounded-full border-2 border-[#0a0a0a] flex items-center justify-center text-[8px] font-bold text-white/70"
-              style={{ backgroundColor: c + "30" }}
-              initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.7 + i * 0.08, type: "spring" }}>
-              {["PM", "CTO", "UX", "BD"][i]}
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Research notes - bottom */}
-      <motion.div className="absolute bottom-4 left-6 sm:left-12 flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]"
-        initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.8 }}
-        animate={{ y: [0, -3, 0] }} /*transition loop handled by animate*/>
-        <svg className="w-3.5 h-3.5 text-indigo-400/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /></svg>
-        <span className="text-[10px] text-white/40">research_notes.md</span>
-      </motion.div>
-
-      {/* Tool icons - bottom right */}
-      <motion.div className="absolute bottom-5 right-5 sm:right-10 flex gap-2"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1 }}>
-        {["#3b82f6", "#10b981", "#f59e0b"].map((c, i) => (
-          <motion.div key={i} className="w-7 h-7 rounded-lg border border-white/[0.06] flex items-center justify-center"
-            style={{ backgroundColor: c + "10" }}
-            animate={{ y: [0, -3, 0] }} transition={{ duration: 3, delay: i * 0.4, repeat: Infinity }}>
-            <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: c, opacity: 0.5 }} />
+        {/* Client card - top left */}
+        <foreignObject x="20" y="25" width="170" height="55">
+          <motion.div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm h-full"
+            initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }}>
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center shrink-0">
+              <svg className="w-3.5 h-3.5 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-semibold text-white/80 truncate">Client: Nexlora</div>
+              <div className="text-[8px] text-white/30 truncate">Onboarded: May 2026</div>
+            </div>
+            <motion.div className="w-1.5 h-1.5 rounded-full bg-blue-400 ml-auto shrink-0" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} />
           </motion.div>
-        ))}
-      </motion.div>
+        </foreignObject>
+
+        {/* Central strategy card */}
+        <foreignObject x="210" y="80" width="180" height="120">
+          <motion.div className="rounded-xl bg-[#0d0d0d] border border-white/[0.08] p-3 backdrop-blur-md h-full flex flex-col justify-between"
+            initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="text-[10px] font-semibold text-white/80">Business Goals</div>
+              <div className="px-1.5 py-0.5 rounded bg-blue-500/15 text-[8px] font-medium text-blue-400 leading-none">Active</div>
+            </div>
+            <div className="space-y-1.5">
+              {["Revenue Growth", "User Retention", "Ops Efficiency"].map((g, i) => (
+                <motion.div key={i} className="flex items-center gap-2"
+                  initial={{ opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 + i * 0.1 }}>
+                  <div className="w-3.5 h-3.5 rounded border border-blue-400/30 flex items-center justify-center shrink-0">
+                    <motion.svg className="w-2 h-2 text-blue-400" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"
+                      initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ delay: 0.8 + i * 0.15 }}>
+                      <motion.path d="M2 6l3 3 5-5" />
+                    </motion.svg>
+                  </div>
+                  <span className="text-[9px] text-white/50 truncate">{g}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </foreignObject>
+
+        {/* Stakeholder card - right */}
+        <foreignObject x="410" y="25" width="170" height="75">
+          <motion.div className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-2.5 flex flex-col justify-between h-full"
+            initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 0.6 }}>
+            <div className="text-[8.5px] text-white/30">Stakeholders</div>
+            <div className="flex -space-x-2">
+              {stakeholdersData.map((s, i) => (
+                <motion.img key={i} src={s.url} alt={s.role} title={s.role}
+                  className="w-6 h-6 rounded-full border-2 border-[#0a0a0a] object-cover shrink-0"
+                  initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.7 + i * 0.08, type: "spring" }} />
+              ))}
+            </div>
+          </motion.div>
+        </foreignObject>
+
+        {/* Research notes - bottom left */}
+        <foreignObject x="20" y="180" width="170" height="45">
+          <motion.div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] h-full"
+            initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.8 }}
+            animate={{ y: [0, -3, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+            <svg className="w-3.5 h-3.5 text-indigo-400/60 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /></svg>
+            <span className="text-[9.5px] text-white/40 truncate">research_notes.md</span>
+          </motion.div>
+        </foreignObject>
+
+        {/* Tool icons - bottom right */}
+        <foreignObject x="410" y="180" width="170" height="45">
+          <motion.div className="flex gap-2 items-center justify-end h-full"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1 }}>
+            {["#3b82f6", "#10b981", "#f59e0b"].map((c, i) => (
+              <motion.div key={i} className="w-7 h-7 rounded-lg border border-white/[0.06] flex items-center justify-center shrink-0"
+                style={{ backgroundColor: c + "10" }}
+                animate={{ y: [0, -3, 0] }} transition={{ duration: 3, delay: i * 0.4, repeat: Infinity }}>
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: c, opacity: 0.5 }} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </foreignObject>
+      </svg>
     </div>
   );
 }
@@ -261,7 +279,13 @@ function TestingVisual() {
         <div className="flex items-center gap-2 px-3 py-2 border-b border-white/[0.04]">
           <svg className="w-3.5 h-3.5 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><path d="m9 15 2 2 4-4" /></svg>
           <span className="text-[10px] font-semibold text-white/60">Test Suite</span>
-          <div className="ml-auto px-1.5 py-0.5 rounded bg-emerald-500/15 text-[8px] font-bold text-emerald-400">PASS</div>
+          <div className="ml-auto flex items-center gap-1.5">
+            <motion.div className="px-1.5 py-0.5 rounded bg-orange-500/10 border border-orange-500/20 text-[8px] font-bold text-orange-400 leading-none font-mono"
+              animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 3, repeat: Infinity }}>
+              Cov: 97%
+            </motion.div>
+            <div className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-[8px] font-bold text-emerald-400 leading-none">PASS</div>
+          </div>
         </div>
         <div className="p-3 space-y-2">
           {[
@@ -287,9 +311,6 @@ function TestingVisual() {
             initial={{ width: "0%" }} whileInView={{ width: "100%" }} viewport={{ once: true }} transition={{ delay: 0.8, duration: 1.2, ease: "easeOut" }} />
         </div>
       </motion.div>
-      {/* Coverage badge */}
-      <motion.div className="absolute top-3 right-4 px-2.5 py-1 rounded-md bg-orange-500/10 border border-orange-500/20 text-[10px] text-orange-400 font-medium"
-        animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 3, repeat: Infinity }}>Coverage 97%</motion.div>
     </div>
   );
 }
@@ -301,17 +322,17 @@ function LaunchVisual() {
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
 
       {/* Deployment pipeline - horizontal flow */}
-      <div className="absolute left-6 sm:left-10 top-6 flex items-center gap-1.5">
+      <div className="absolute left-4 sm:left-10 top-4 sm:top-6 flex items-center gap-1 sm:gap-1.5">
         {["Build", "Test", "Stage", "Prod"].map((s, i) => (
-          <motion.div key={i} className="flex items-center gap-1.5"
+          <motion.div key={i} className="flex items-center gap-1 sm:gap-1.5"
             initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.15 }}>
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border" style={{ borderColor: i < 4 ? "#10b98125" : "#ffffff08", backgroundColor: i < 4 ? "#10b98108" : "#ffffff03" }}>
-              <motion.div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#10b981" }}
+            <div className="flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg border" style={{ borderColor: i < 4 ? "#10b98125" : "#ffffff08", backgroundColor: i < 4 ? "#10b98108" : "#ffffff03" }}>
+              <motion.div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full" style={{ backgroundColor: "#10b981" }}
                 initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + i * 0.2, type: "spring" }} />
-              <span className="text-[9px] font-medium" style={{ color: "#10b981", opacity: 0.7 }}>{s}</span>
+              <span className="text-[8.5px] sm:text-[9px] font-medium" style={{ color: "#10b981", opacity: 0.7 }}>{s}</span>
             </div>
             {i < 3 && (
-              <motion.svg width="14" height="8" viewBox="0 0 14 8" className="text-emerald-500/20"
+              <motion.svg width="10" height="8" viewBox="0 0 14 8" className="text-emerald-500/20 shrink-0"
                 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 + i * 0.15 }}>
                 <path d="M0 4h10M8 1l3 3-3 3" stroke="currentColor" strokeWidth="1" fill="none" />
               </motion.svg>
@@ -321,17 +342,17 @@ function LaunchVisual() {
       </div>
 
       {/* Central metrics dashboard */}
-      <motion.div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%] w-64 sm:w-72 rounded-xl bg-[#0d0d0d] border border-white/[0.08] p-4"
+      <motion.div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%] w-[90%] max-w-[245px] sm:max-w-[288px] rounded-xl bg-[#0d0d0d] border border-white/[0.08] p-3 sm:p-4"
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}>
-        <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
+            <div className="flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[11px] font-semibold text-white/70">Production</span>
+            <span className="text-[10px] sm:text-[11px] font-semibold text-white/70">Production</span>
           </div>
-          <span className="text-[9px] font-mono text-emerald-400/50">v1.0.0</span>
+          <span className="text-[8px] sm:text-[9px] font-mono text-emerald-400/50">v1.0.0</span>
         </div>
         {/* Mini bar chart */}
-        <div className="flex items-end gap-1.5 h-12 mb-3">
+        <div className="flex items-end gap-1 sm:gap-1.5 h-10 sm:h-12 mb-2 sm:mb-3">
           {[40, 65, 45, 80, 55, 90, 70, 95, 75, 85].map((h, i) => (
             <motion.div key={i} className="flex-1 rounded-sm" style={{ backgroundColor: i >= 8 ? "#10b98140" : "#10b98120" }}
               initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }}
@@ -341,25 +362,25 @@ function LaunchVisual() {
         <div className="flex justify-between">
           {[{ l: "Uptime", v: "99.9%" }, { l: "Latency", v: "42ms" }, { l: "Users", v: "1.2k" }].map((m, i) => (
             <div key={i} className="text-center">
-              <div className="text-[10px] font-bold text-white/60">{m.v}</div>
-              <div className="text-[8px] text-white/25">{m.l}</div>
+              <div className="text-[9px] sm:text-[10px] font-bold text-white/60">{m.v}</div>
+              <div className="text-[7.5px] sm:text-[8px] text-white/25">{m.l}</div>
             </div>
           ))}
         </div>
       </motion.div>
 
       {/* Status badge bottom left */}
-      <motion.div className="absolute bottom-4 left-6 flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/8 border border-emerald-500/15"
+      <motion.div className="absolute bottom-4 left-4 sm:left-6 flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-emerald-500/8 border border-emerald-500/15"
         initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1 }}>
-        <svg className="w-3.5 h-3.5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-        <span className="text-[10px] text-emerald-400/70 font-medium">All systems operational</span>
+        <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+        <span className="text-[8.5px] sm:text-[10px] text-emerald-400/70 font-medium">All systems operational</span>
       </motion.div>
 
       {/* Activity indicator - bottom right */}
-      <motion.div className="absolute bottom-4 right-6 flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]"
+      <motion.div className="absolute bottom-4 right-4 sm:right-6 hidden sm:flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]"
         initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1.1 }}>
-        <span className="text-[10px] text-white/40">Last deploy:</span>
-        <span className="text-[10px] text-white/60 font-mono">2 min ago</span>
+        <span className="text-[8.5px] sm:text-[10px] text-white/40">Last deploy:</span>
+        <span className="text-[8.5px] sm:text-[10px] text-white/60 font-mono">2m ago</span>
       </motion.div>
     </div>
   );
