@@ -94,8 +94,9 @@ function DiscoveryVisual() {
         {/* Research notes - bottom left */}
         <foreignObject x="20" y="180" width="170" height="45">
           <motion.div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] h-full"
-            initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.8 }}
-            animate={{ y: [0, -3, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+            initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            animate={{ y: [0, -3, 0] }}
+            transition={{ delay: 0.8, y: { repeat: Infinity, duration: 3, ease: "easeInOut" } }}>
             <svg className="w-3.5 h-3.5 text-indigo-400/60 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /></svg>
             <span className="text-[9.5px] text-white/40 truncate">research_notes.md</span>
           </motion.div>
