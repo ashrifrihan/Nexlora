@@ -3,6 +3,7 @@ import Nav from "@/component/nav";
 import Trust from "@/component/Trust";
 import Services from "@/component/Services";
 import Process from "@/component/Process";
+import Testimonials from "@/component/Testimonials";
 import FAQ from "@/component/Faq";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <Trust />
         <Services />
         <Process />
+        <Testimonials />
         <FAQ />
       </main>
     </div>
