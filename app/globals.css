@@ -247,4 +247,12 @@
       font-style: normal !important;
     }
 
+    /* Override large screen section padding-block from 40 to 15 */
+    @media (min-width: 1024px) {
+      .lg\:py-40 {
+        padding-block: calc(var(--spacing) * 15) !important;
+      }
+    }
+
+
 
