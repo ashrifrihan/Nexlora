@@ -230,7 +230,7 @@ export default function Trust() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} id="trust" className="relative w-full bg-black px-4 py-20 sm:px-6 sm:py-28 md:px-8 lg:px-12 lg:py-32 overflow-hidden" aria-labelledby="trust-heading">
+    <section ref={sectionRef} id="trust" className="relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40 overflow-hidden" aria-labelledby="trust-heading">
       {/* Background glows */}
       <div className="pointer-events-none absolute -top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-indigo-500/[0.04] blur-[120px] rounded-full" />
       <div className="pointer-events-none absolute bottom-0 right-0 w-[400px] h-[300px] bg-purple-600/[0.03] blur-[100px] rounded-full" />
