@@ -1,9 +1,219 @@
+"use client";
+
 import React from 'react'
 import { Spotlight } from './ui/Spotlight'
 import { HoverBorderGradient } from './ui/hover-border-gradient'
 import BlurText from './ui/blur-text'
 import LogoLoop from './ui/logo-loop'
 import ShinyText from './ui/shiny-text'
+import { motion } from 'motion/react'
+
+const techStack = [
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-white" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="90" cy="90" r="90" fill="black"/>
+          <path d="M149.508 157.52L69.142 54H54V126H65.045V69.72L135.253 159.638C140.244 153.254 145.109 146.126 149.508 138.15V157.52Z" fill="url(#nextjs-glow)"/>
+          <rect x="115" y="54" width="11" height="72" fill="url(#nextjs-glow)"/>
+          <defs>
+            <linearGradient id="nextjs-glow" x1="109" y1="54" x2="144.5" y2="142" gradientUnits="userSpaceOnUse">
+              <stop stopColor="white"/>
+              <stop offset="1" stopColor="white" stopOpacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <ShinyText
+          text="Next.js"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "Next.js"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-cyan-400 animate-[spin_20s_linear_infinite]" viewBox="-11.5 -10.23174 23 20.46348" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
+          <g stroke="currentColor" strokeWidth="1" fill="none">
+            <ellipse rx="11" ry="4.2"/>
+            <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+            <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+          </g>
+        </svg>
+        <ShinyText
+          text="React"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "React"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-[#3178c6]" viewBox="0 0 100 100" fill="currentColor">
+          <rect width="100" height="100" fill="#3178c6" rx="15"/>
+          <text x="65" y="85" fill="white" fontSize="48" fontWeight="bold" textAnchor="middle" fontFamily="Arial, sans-serif">TS</text>
+        </svg>
+        <ShinyText
+          text="TypeScript"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "TypeScript"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-sky-400" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C7.666 17.818 9.027 19 12.001 19c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/>
+        </svg>
+        <ShinyText
+          text="Tailwind CSS"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "Tailwind CSS"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M0 0h24v12H12L0 0zm0 12h12l12 12H0V12z"/>
+        </svg>
+        <ShinyText
+          text="Framer Motion"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "Framer Motion"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7.7v11.5L12 22l10-5.8V7.7L12 2zm-1 16.5l-6-3.5V9.3l6 3.5v5.7zm1-7.2L6 7.8l6-3.5 6 3.5-6 3.5zm7 5.7l-6 3.5v-5.7l6-3.5v5.7z"/>
+        </svg>
+        <ShinyText
+          text="Node.js"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "Node.js"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-[#3776ab]" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm-1.5 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5.5 13a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.3-3.2l-1.3 1.3-3-3 1.3-1.3 3 3z"/>
+        </svg>
+        <ShinyText
+          text="Python"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "Python"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-indigo-400" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+        </svg>
+        <ShinyText
+          text="PostgreSQL"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "PostgreSQL"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm4-9H8v2h8z"/>
+        </svg>
+        <ShinyText
+          text="Redis"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "Redis"
+  },
+  {
+    node: (
+      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <svg className="w-5 h-5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.98 9.27h-8.4c-.7 0-1.28.58-1.28 1.28v3.4c0 .7.58 1.28 1.28 1.28h8.4c.7 0 1.28-.58 1.28-1.28v-3.4c0-.7-.58-1.28-1.28-1.28zm-9.15-5.1h1.7v1.7h-1.7zm3.4 0h1.7v1.7h-1.7zm3.4 0h1.7v1.7H11.6zm3.4 0h1.7v1.7h-1.7z"/>
+        </svg>
+        <ShinyText
+          text="Docker"
+          speed={3}
+          color="rgba(255, 255, 255, 0.45)"
+          shineColor="#ffffff"
+          spread={80}
+          direction="left"
+          className="text-[13.5px] font-semibold tracking-tight"
+        />
+      </div>
+    ),
+    title: "Docker"
+  }
+];
 
 const Hero = () => {
   return (
@@ -20,7 +230,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 w-full px-3 sm:px-4 md:px-8 text-center flex flex-col items-center pt-16 sm:pt-24 md:pt-40">
         {/* Badge with Glassy Effect */}
-        <div className="mb-4 md:mb-6 inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300">
+        <motion.div
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-4 md:mb-6 inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
+        >
           {/* Sparkle Icon with Shiny Effect */}
           <ShinyText
             text="✨"
@@ -41,7 +256,7 @@ const Hero = () => {
             direction="left"
             className="text-xs md:text-sm font-medium"
           />
-        </div>
+        </motion.div>
 
         {/* Main Heading */}
         <div className="w-full mb-6 sm:mb-8 md:mb-10 flex justify-center">
@@ -57,17 +272,27 @@ const Hero = () => {
               <div className="w-full overflow-visible">
                 <BlurText
                   text="Build the system behind"
-                  delay={50}
+                  delay={40}
                   animateBy="words"
                   direction="top"
-                  threshold={0.3}
-                  stepDuration={0.25}
+                  threshold={0.1}
+                  stepDuration={0.2}
                   wrap={false}
                   className="whitespace-nowrap text-[clamp(30px,7.2vw,104px)] leading-[0.96] text-white text-center"
                 />
               </div>
-              <div className="whitespace-nowrap text-[clamp(30px,7.2vw,104px)] leading-[0.96] text-white text-center">
-                your success
+              <div className="w-full overflow-visible">
+                <BlurText
+                  text="your success"
+                  delay={40}
+                  animateBy="words"
+                  direction="top"
+                  threshold={0.1}
+                  stepDuration={0.2}
+                  wrap={false}
+                  className="whitespace-nowrap text-[clamp(30px,7.2vw,104px)] leading-[0.96] text-white text-center mt-1"
+                  animationFrom={{ filter: 'blur(10px)', opacity: 0, y: 30 }}
+                />
               </div>
             </div>
           </h1>
@@ -77,17 +302,22 @@ const Hero = () => {
         <div className="w-full max-w-3xl mb-10 md:mb-12">
           <BlurText
             text="Nexlora builds custom software development solutions, AI automation workflows, and digital platforms for businesses fast, scalable, and built to grow."
-            delay={30}
+            delay={20}
             animateBy="words"
             direction="top"
-            threshold={0.3}
-            stepDuration={0.25}
+            threshold={0.1}
+            stepDuration={0.2}
             className="text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed font-light"
           />
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center"
+        >
           <HoverBorderGradient
             containerClassName="rounded-2xl"
             className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
@@ -95,50 +325,32 @@ const Hero = () => {
           >
             Explore Nexlora
           </HoverBorderGradient>
-        </div>
+        </motion.div>
 
-        {/* Logos Section */}
-        <div className="mt-10 md:mt-16 pt-12 md:pt-16 w-full">
-          <p className="text-gray-500 text-xs md:text-sm font-semibold mb-8 uppercase tracking-widest">Trusted by leading companies</p>
+        {/* Core Tech Stack Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-10 md:mt-16 pt-12 md:pt-16 w-full"
+        >
+          <p className="text-gray-500 text-xs md:text-sm font-semibold mb-8 uppercase tracking-widest" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            Technologies powering our custom software & platforms
+          </p>
           <LogoLoop
-            logos={[
-              {
-                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Ctext x='80' y='30' font-size='24' font-weight='bold' fill='%23fff' text-anchor='middle' font-family='Arial, sans-serif'%3ETECH%3C/text%3E%3C/svg%3E",
-                alt: "Tech Corp",
-                title: "Tech Corp",
-              },
-              {
-                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Ccircle cx='35' cy='25' r='12' fill='%23fff'/%3E%3Ctext x='95' y='30' font-size='22' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3ECLOUD%3C/text%3E%3C/svg%3E",
-                alt: "Cloud Systems",
-                title: "Cloud Systems",
-              },
-              {
-                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Crect x='20' y='20' width='10' height='10' fill='%23fff'/%3E%3Crect x='35' y='20' width='10' height='10' fill='%23fff'/%3E%3Crect x='50' y='20' width='10' height='10' fill='%23fff'/%3E%3Ctext x='105' y='30' font-size='20' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3EDATA%3C/text%3E%3C/svg%3E",
-                alt: "DataFlow",
-                title: "DataFlow",
-              },
-              {
-                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Cpolygon points='30,15 40,35 20,35' fill='%23fff'/%3E%3Ctext x='100' y='30' font-size='20' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3EINNO%3C/text%3E%3C/svg%3E",
-                alt: "Innovate",
-                title: "Innovate",
-              },
-              {
-                src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 50'%3E%3Crect fill='%23000' width='160' height='50'/%3E%3Ccircle cx='30' cy='25' r='10' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='30' y1='15' x2='30' y2='35' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='20' y1='25' x2='40' y2='25' stroke='%23fff' stroke-width='2'/%3E%3Ctext x='95' y='30' font-size='20' font-weight='bold' fill='%23fff' font-family='Arial, sans-serif'%3ENEXT%3C/text%3E%3C/svg%3E",
-                alt: "NextGen",
-                title: "NextGen",
-              },
-            ]}
-            speed={80}
+            logos={techStack}
+            speed={100}
             direction="left"
-            logoHeight={50}
-            gap={80}
-            pauseOnHover
+            logoHeight={60}
+            gap={60}
+            hoverSpeed={0}
             scaleOnHover
             fadeOut
             fadeOutColor="#000000"
+            ariaLabel="Technology partners"
             className="w-full"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   )
