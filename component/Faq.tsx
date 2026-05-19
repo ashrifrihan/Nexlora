@@ -79,7 +79,10 @@ function AccordionItem({ item, isOpen, onClick, index }: { item: FAQItem; isOpen
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 className="overflow-hidden"
               >
-                <p className="text-[13px] sm:text-[14px] leading-[1.6] text-white/50">
+                <p 
+                  className="text-[13px] sm:text-[14px] leading-[1.6] text-white/50"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
                   {item.answer}
                 </p>
               </motion.div>
