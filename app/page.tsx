@@ -7,6 +7,7 @@ import Process from "@/component/Process";
 import Testimonials from "@/component/Testimonials";
 import FAQ from "@/component/Faq";
 import Compare from "@/component/Compare";
+import Footer from "@/component/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Testimonials />
         <Compare />
         <FAQ />
+        <Footer />
       </main>
     </div>
   );
