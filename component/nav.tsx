@@ -16,7 +16,7 @@ export default function Nav() {
             className="shrink-0 text-[30px] font-black leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:tracking-[-0.04em]"
             aria-label="Nexlora home"
           >
-            nexlora
+            nexlora<span className="text-white/40 font-normal">*</span>
           </a>
 
           <div className="hidden items-center gap-2 lg:flex">

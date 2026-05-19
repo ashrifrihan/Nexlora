@@ -38,6 +38,12 @@ export default function Footer() {
           
           {/* Left Column: Brand Info and Social Links */}
           <div className="col-span-12 md:col-span-5 flex flex-col gap-6">
+            <div className="flex items-center gap-1.5 select-none">
+              <span className="text-[18px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                nexlora<span className="text-white/40 font-bold">*</span>
+              </span>
+            </div>
+
             {/* Short SEO Optimized Text */}
             <p 
               className="text-[14.5px] leading-[1.65] text-white/50 max-w-md"

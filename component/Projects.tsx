@@ -17,32 +17,32 @@ const projectsData: ProjectItem[] = [
     id: "riceops",
     number: "01",
     title: "RiceOps",
-    tag: "Factory management dashboard",
-    description: "A secure factory management dashboard built for real-time operations, providing custom inventory tracking pipelines, operational reporting, and core database metrics for industrial production scales.",
+    tag: "Operations Dashboard",
+    description: "A secure operations dashboard and factory management system built for realtime tracking, featuring automated inventory management pipelines, core performance metrics, and seamless payment integration options.",
     accent: "#f59e0b", // Amber
   },
   {
     id: "transitflow",
     number: "02",
     title: "TransitFlow",
-    tag: "Transport management platform",
-    description: "An automated transport management platform designed for regional operators, featuring a high-performance booking system, vehicle tracking, and real-time seat configuration grids.",
+    tag: "Booking Platform",
+    description: "An automated logistics platform and transport booking platform designed for regional operators, utilizing a robust workflow system to configure real-time seat tracking and booking pipelines.",
     accent: "#3b82f6", // Blue
   },
   {
     id: "learnmate",
     number: "03",
     title: "LearnMate AI",
-    tag: "AI assistant platform",
-    description: "A conversational educational AI assistant platform integrating Large Language Models (LLM) to deliver automated student support workflows, custom course recommendations, and real-time support tickets.",
+    tag: "AI-Powered Platform",
+    description: "An AI-powered platform and educational AI assistant designed to automate learning operations, featuring a Conversational AI integration to handle support tickets and smart workflow coordination.",
     accent: "#a855f7", // Purple
   },
   {
     id: "deliveryos",
     number: "04",
     title: "DeliveryOS",
-    tag: "Logistics dashboard",
-    description: "A fast delivery and logistics dashboard featuring custom GPS dispatch routes, real-time driver tracking, automated dispatch APIs, and unified product inventory management integrations.",
+    tag: "Delivery Platform",
+    description: "A high-speed delivery platform and dispatch system featuring realtime tracking coordinates, automated route dispatch APIs, and unified logistics platform dashboard integrations.",
     accent: "#10b981", // Emerald
   },
 ];
@@ -156,7 +156,7 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
 
             {/* Description */}
             <p 
-              className="text-[13px] leading-[1.6] text-white/40 group-hover:text-white/60 transition-colors duration-300 mb-6" 
+              className="text-[13.5px] leading-[1.6] text-white/40 group-hover:text-white/60 transition-colors duration-300 mb-6 font-medium" 
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               {item.description}
@@ -214,7 +214,7 @@ export default function Projects() {
             style={{ backdropFilter: "blur(5px)", backgroundColor: "rgba(13,13,13,0.4)" }}
           >
             <span className="text-[14px] font-medium tracking-[-0.02em] text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              What We Build
+              Featured Projects
             </span>
           </motion.div>
 
@@ -223,12 +223,12 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }} 
             animate={isInView ? { opacity: 1, y: 0 } : {}} 
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} 
-            className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" 
+            className="mx-auto max-w-4xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" 
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Everything needed to run{" "}
+            Software systems built for{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
-              modern digital operations.
+              real business operations.
             </span>
           </motion.h2>
 
@@ -236,10 +236,10 @@ export default function Projects() {
             initial={{ opacity: 0, y: 16 }} 
             animate={isInView ? { opacity: 1, y: 0 } : {}} 
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }} 
-            className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50" 
+            className="mx-auto mt-4 max-w-3xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50" 
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            End-to-end software development, AI automation, and custom digital solutions engineered for scale.
+            A selection of platforms, dashboards, AI workflows, and operational systems designed to solve practical business problems with scalable technology.
           </motion.p>
         </div>
 
