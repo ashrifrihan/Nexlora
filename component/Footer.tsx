@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
-
 /* ─── Social Media Icons ─── */
 function XIcon() {
   return (
@@ -32,59 +30,24 @@ function LinkedinIcon() {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-black border-t border-white/[0.04] pt-24 pb-12 overflow-hidden z-10">
-      {/* Soft silver glow behind the large typography */}
-      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.005] blur-[130px] rounded-full" />
-
+    <footer className="relative w-full bg-black border-t border-white/[0.04] pt-16 pb-12 overflow-hidden z-10">
       <div className="relative mx-auto w-full max-w-7xl px-4 z-10">
         
-        {/* Giant Resend-Style 3D Metallic/Reflective Outline Branding Typography */}
-        <div className="relative w-full overflow-hidden flex justify-center mb-20 select-none border-b border-white/[0.03]">
-          <h2 
-            className="text-[clamp(64px,17.5vw,230px)] font-black tracking-[-0.05em] leading-none text-center bg-gradient-to-b from-white/[0.1] via-white/[0.02] to-transparent bg-clip-text text-transparent transition-all duration-700"
-            style={{ fontFamily: '"Satoshi", sans-serif' }}
-          >
-            nexlora
-          </h2>
-        </div>
-
         {/* Links & Info Grid */}
         <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Brand Info, Pulse Status Badge, and Social Links */}
+          {/* Left Column: Brand Info and Social Links */}
           <div className="col-span-12 md:col-span-5 flex flex-col gap-6">
-            <div className="flex items-center gap-1.5 select-none">
-              <span className="text-[18px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                nexlora<span className="text-white/40">*</span>
-              </span>
-            </div>
-
             {/* Short SEO Optimized Text */}
             <p 
-              className="text-[14px] leading-[1.65] text-white/50 max-w-md"
+              className="text-[14.5px] leading-[1.65] text-white/50 max-w-md"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               Nexlora builds <span className="text-white/80 font-medium">websites</span>, <span className="text-white/80 font-medium">AI systems</span>, <span className="text-white/80 font-medium">dashboard platforms</span>, <span className="text-white/80 font-medium">mobile apps</span>, and <span className="text-white/80 font-medium">custom software</span> for modern businesses.
             </p>
 
-            {/* Pulsing Systems normal badge */}
-            <div className="flex items-center">
-              <div 
-                className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 select-none"
-                style={{ backdropFilter: "blur(5px)" }}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="text-[12px] font-semibold text-emerald-400" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                  All systems operational
-                </span>
-              </div>
-            </div>
-
             {/* Social Links */}
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex items-center gap-3">
               <a 
                 href="https://x.com" 
                 target="_blank" 
