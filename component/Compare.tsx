@@ -44,10 +44,10 @@ const templateAgencies = [
   "Rigid service terms",
 ];
 
-/* ─── Check / Cross icons matching Reference Design ─── */
+/* ─── Check / Cross icons in Brand Indigo/Purple Design ─── */
 function CheckIcon() {
   return (
-    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="shrink-0 text-[#ff3120]">
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="shrink-0 text-[#785aff]">
       <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -83,7 +83,7 @@ export default function Compare() {
       aria-labelledby="compare-heading"
     >
       {/* Soft moving ambient backdrop glow centered behind compare section */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#ff3120]/[0.01] blur-[160px] rounded-full" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#785aff]/[0.01] blur-[160px] rounded-full" />
 
       {/* Grid lines background */}
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -100,7 +100,7 @@ export default function Compare() {
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl z-10">
-        {/* Header (Exact User-provided Custom Design) */}
+        {/* Header (Exact User-provided Custom Design with customized text labels) */}
         <div className="mb-14 sm:mb-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -143,7 +143,7 @@ export default function Compare() {
         {/* Desktop Comparison Table (4 Columns aligned perfectly by row heights) */}
         <div className="hidden lg:grid lg:grid-cols-4 gap-6 xl:gap-8 items-stretch mt-12">
           
-          {/* Column 1: Nexlora (Standalone Highlighted Card - Orange/Red themed exactly as reference) */}
+          {/* Column 1: Nexlora (Standalone Highlighted Card - Indigo/Purple Brand Accent exactly as reference layout) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -155,26 +155,26 @@ export default function Compare() {
               onMouseMove={onMove}
               onMouseEnter={() => setHov(true)}
               onMouseLeave={() => setHov(false)}
-              className="relative overflow-hidden rounded-[24px] border border-[#ff3120]/30 h-full p-6 xl:p-8 transition-all duration-500 hover:border-[#ff3120]/50 group shadow-[0_0_50px_-15px_rgba(255,49,32,0.08)] hover:shadow-[0_0_60px_-10px_rgba(255,49,32,0.15)]"
+              className="relative overflow-hidden rounded-[24px] border border-[#785aff]/30 h-full p-6 xl:p-8 transition-all duration-500 hover:border-[#785aff]/50 group shadow-[0_0_50px_-15px_rgba(120,90,255,0.08)] hover:shadow-[0_0_60px_-10px_rgba(120,90,255,0.15)]"
               style={{
                 backgroundColor: "rgba(12,12,14,0.95)",
               }}
             >
-              {/* Beautiful red/orange corner ambient glow on the top-right */}
-              <div className="absolute top-0 right-0 w-[240px] h-[240px] bg-gradient-to-br from-[#ff3120]/35 to-transparent blur-[45px] pointer-events-none rounded-tr-[24px]" />
+              {/* Beautiful brand Indigo/Purple corner ambient glow on the top-right */}
+              <div className="absolute top-0 right-0 w-[240px] h-[240px] bg-gradient-to-br from-[#785aff]/35 to-transparent blur-[45px] pointer-events-none rounded-tr-[24px]" />
 
-              {/* Mouse-follow glow */}
+              {/* Mouse-follow glow (using brand purple) */}
               <div
                 className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500"
                 style={{
                   opacity: hov ? 1 : 0,
-                  background: `radial-gradient(400px circle at ${mp.x}px ${mp.y}px, rgba(255,49,32,0.05), transparent 60%)`,
+                  background: `radial-gradient(400px circle at ${mp.x}px ${mp.y}px, rgba(120,90,255,0.05), transparent 60%)`,
                 }}
               />
 
               {/* Glowing vertical gradient light on the left side of the card */}
               <div 
-                className="pointer-events-none absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#ff3120]/50 via-[#ff3120]/15 to-transparent transition-opacity duration-500 opacity-80 group-hover:opacity-100" 
+                className="pointer-events-none absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#785aff]/50 via-[#785aff]/15 to-transparent transition-opacity duration-500 opacity-80 group-hover:opacity-100" 
               />
 
               {/* Moving light beam */}
@@ -185,7 +185,7 @@ export default function Compare() {
                 <motion.div
                   className="absolute w-[150px] h-full"
                   style={{
-                    background: "linear-gradient(90deg, transparent, rgba(255,49,32,0.03), transparent)",
+                    background: "linear-gradient(90deg, transparent, rgba(120,90,255,0.03), transparent)",
                   }}
                   animate={{ x: ["-150px", "500px"] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "linear", repeatDelay: 1.5 }}
@@ -198,7 +198,7 @@ export default function Compare() {
                   className="text-[20px] font-bold text-white tracking-tight mb-8"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
-                  nexlora<span className="text-[#ff3120]">*</span>
+                  nexlora<span className="text-[#785aff]">*</span>
                 </h3>
 
                 {/* Features */}
@@ -326,7 +326,7 @@ export default function Compare() {
   );
 }
 
-/* ─── Mobile Compare View Component (Orange/Red themed exactly as reference) ─── */
+/* ─── Mobile Compare View Component ─── */
 function MobileCompareView() {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -347,7 +347,7 @@ function MobileCompareView() {
             onClick={() => setActiveTab(i)}
             className={`shrink-0 px-3.5 py-2 rounded-xl text-[12px] font-bold tracking-tight transition-all duration-300 border ${
               activeTab === i
-                ? "bg-[#ff3120]/10 border-[#ff3120]/30 text-white"
+                ? "bg-[#785aff]/10 border-[#785aff]/30 text-white"
                 : "bg-transparent border-white/[0.04] text-white/40 hover:text-white/60"
             }`}
             style={{ fontFamily: '"Satoshi", sans-serif' }}
@@ -364,13 +364,13 @@ function MobileCompareView() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
-            className="relative overflow-hidden rounded-[24px] border border-[#ff3120]/30 p-6"
+            className="relative overflow-hidden rounded-[24px] border border-[#785aff]/30 p-6"
             style={{ backgroundColor: "rgba(12,12,14,0.95)" }}
           >
-            <div className="absolute top-0 right-0 w-[180px] h-[180px] bg-gradient-to-br from-[#ff3120]/25 to-transparent blur-[35px] pointer-events-none rounded-tr-[24px]" />
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[3px] bg-[#ff3120]/60" />
+            <div className="absolute top-0 right-0 w-[180px] h-[180px] bg-gradient-to-br from-[#785aff]/25 to-transparent blur-[35px] pointer-events-none rounded-tr-[24px]" />
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[3px] bg-[#785aff]/60" />
             <h3 className="text-[17px] font-bold text-white tracking-tight mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              nexlora<span className="text-[#ff3120]">*</span>
+              nexlora<span className="text-[#785aff]">*</span>
             </h3>
             <div className="flex flex-col gap-0">
               {nexloraFeatures.map((feature, i) => (
