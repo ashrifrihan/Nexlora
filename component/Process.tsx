@@ -492,7 +492,7 @@ export default function Process() {
           </motion.h2>
 
           <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }} className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            From discovery to deployment — a structured, transparent software development workflow engineered for speed and reliability.
+            From discovery to deployment a structured, transparent software development workflow engineered for speed and reliability.
           </motion.p>
         </div>
 

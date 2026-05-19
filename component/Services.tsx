@@ -183,12 +183,12 @@ function AutomationVisual() {
 
 /* ─── service data ─── */
 const services = [
-  { id: "web-development", title: "Web Development", desc: "Modern responsive websites built for performance, SEO, and conversion — from landing pages to full-stack platforms.", accent: "#3b82f6", visual: <WebDevVisual />, colSpan: "md:col-span-7 col-span-12" },
+  { id: "web-development", title: "Web Development", desc: "Modern responsive websites built for performance, SEO, and conversion from landing pages to full-stack platforms.", accent: "#3b82f6", visual: <WebDevVisual />, colSpan: "md:col-span-7 col-span-12" },
   { id: "dashboard-systems", title: "Dashboard Systems", desc: "Realtime operational dashboards for business workflows, analytics, and data-driven decision making.", accent: "#f59e0b", visual: <DashboardVisual />, colSpan: "md:col-span-5 col-span-12" },
-  { id: "ai-workflows", title: "AI Workflows", desc: "AI-powered automation systems connected to real business operations — smarter pipelines, fewer bottlenecks.", accent: "#a855f7", visual: <AIVisual />, colSpan: "md:col-span-4 col-span-12" },
-  { id: "mobile-apps", title: "Mobile Apps", desc: "Fast mobile experiences for customers, teams, and field operations — built cross-platform, shipped fast.", accent: "#10b981", visual: <MobileVisual />, colSpan: "md:col-span-4 col-span-12" },
-  { id: "ui-ux-design", title: "UI/UX Design", desc: "Clean interfaces designed for usability, clarity, and scale — research-driven design that users love.", accent: "#ec4899", visual: <UIUXVisual />, colSpan: "md:col-span-4 col-span-12" },
-  { id: "automation-systems", title: "Automation Systems", desc: "Internal tools and automated workflows for repetitive processes — reduce manual work, scale faster.", accent: "#ef4444", visual: <AutomationVisual />, colSpan: "md:col-span-12 col-span-12" },
+  { id: "ai-workflows", title: "AI Workflows", desc: "AI-powered automation systems connected to real business operations smarter pipelines, fewer bottlenecks.", accent: "#a855f7", visual: <AIVisual />, colSpan: "md:col-span-4 col-span-12" },
+  { id: "mobile-apps", title: "Mobile Apps", desc: "Fast mobile experiences for customers, teams, and field operations built cross-platform, shipped fast.", accent: "#10b981", visual: <MobileVisual />, colSpan: "md:col-span-4 col-span-12" },
+  { id: "ui-ux-design", title: "UI/UX Design", desc: "Clean interfaces designed for usability, clarity, and scale research-driven design that users love.", accent: "#ec4899", visual: <UIUXVisual />, colSpan: "md:col-span-4 col-span-12" },
+  { id: "automation-systems", title: "Automation Systems", desc: "Internal tools and automated workflows for repetitive processes reduce manual work, scale faster.", accent: "#ef4444", visual: <AutomationVisual />, colSpan: "md:col-span-12 col-span-12" },
 ];
 
 /* ─── main section ─── */
@@ -214,7 +214,7 @@ export default function Services() {
           </motion.h2>
 
           <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }} className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            End-to-end software development, AI automation, and custom digital solutions — engineered for scale.
+            End-to-end software development, AI automation, and custom digital solutions engineered for scale.
           </motion.p>
         </div>
 

@@ -157,7 +157,7 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
             {/* Description */}
             <p 
               className="text-[13px] leading-[1.6] text-white/40 group-hover:text-white/60 transition-colors duration-300 mb-6" 
-              style={{ fontFamily: '"Inter", sans-serif' }}
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               {item.description}
             </p>
@@ -165,9 +165,9 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
 
           {/* Action Link */}
           <div 
-            className="flex items-center gap-1.5 text-[12px] font-medium transition-colors duration-300 select-none border-t border-white/[0.04] pt-4"
+            className="flex items-center gap-1.5 text-[12px] font-semibold transition-colors duration-300 select-none border-t border-white/[0.04] pt-4"
             style={{ 
-              fontFamily: '"Inter", sans-serif', 
+              fontFamily: '"Satoshi", sans-serif', 
               color: item.accent,
             }}
           >
@@ -203,8 +203,9 @@ export default function Projects() {
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-white/[0.01] blur-[150px]" />
 
       <div className="relative mx-auto w-full max-w-7xl">
-        {/* Section Header */}
-        <div className="mb-16 sm:mb-24 text-center">
+        
+        {/* Header */}
+        <div className="mb-14 sm:mb-20 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 12 }} 
             animate={isInView ? { opacity: 1, y: 0 } : {}} 
@@ -213,7 +214,7 @@ export default function Projects() {
             style={{ backdropFilter: "blur(5px)", backgroundColor: "rgba(13,13,13,0.4)" }}
           >
             <span className="text-[14px] font-medium tracking-[-0.02em] text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              Portfolio
+              What We Build
             </span>
           </motion.div>
 
@@ -225,11 +226,21 @@ export default function Projects() {
             className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" 
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Real software built for{" "}
-            <span className="bg-gradient-to-r from-white/95 via-white/70 to-white/40 bg-clip-text text-transparent">
-              real operations.
+            Everything needed to run{" "}
+            <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
+              modern digital operations.
             </span>
           </motion.h2>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 16 }} 
+            animate={isInView ? { opacity: 1, y: 0 } : {}} 
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }} 
+            className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50" 
+            style={{ fontFamily: '"Satoshi", sans-serif' }}
+          >
+            End-to-end software development, AI automation, and custom digital solutions engineered for scale.
+          </motion.p>
         </div>
 
         {/* Asymmetric & Responsive Grid of Projects */}
