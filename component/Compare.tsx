@@ -3,61 +3,65 @@
 import { useRef, useState, useCallback } from "react";
 import { motion, useInView } from "motion/react";
 
-/* ─── 7 Exact Comparison Points from Reference Image ─── */
+/* ─── 7 Exact Comparison Points Provided by the User ─── */
 const nexloraFeatures = [
-  "Start now!",
-  "Flat monthly rate",
-  "One synchronized team",
-  "Dedicated account manager",
-  "Dedicated senior talent",
-  "Unlimited design revisions",
-  "Flexible contracts",
+  "Fast product delivery",
+  "Modern scalable systems",
+  "Direct builder communication",
+  "Premium UI/UX quality",
+  "SEO-ready development",
+  "AI-powered workflows",
+  "Long-term technical support",
 ];
 
-const traditionalCompanies = [
-  "Hiring takes 4-8 weeks",
-  "Salary + overhead",
-  "Hard to scale fast",
-  "You manage everything",
-  "Costly senior hires",
-  "Limited bandwidth",
-  "Strict contracts + notice periods",
+const traditionalAgenciesFeatures = [
+  "Slow project execution",
+  "Generic design systems",
+  "Multiple communication layers",
+  "Weak scalability planning",
+  "Poor SEO structure",
+  "Outdated workflows",
+  "Expensive long-term changes",
 ];
 
-const freelancers = [
-  "Days or weeks to begin",
-  "Hourly + scope creep",
-  "Disconnected contributors",
-  "Requires constant follow-up",
-  "Inconsistent quality",
-  "Extra charges likely",
-  "No long-term reliability",
+const freelancersFeatures = [
+  "Inconsistent delivery quality",
+  "Unclear timelines",
+  "Limited technical depth",
+  "Weak support after launch",
+  "Hard to scale projects",
+  "Communication delays",
+  "No structured workflow",
 ];
 
-const templateAgencies = [
-  "Usually 3–10 days to begin",
-  "Confusing custom pricing",
-  "Multi-team communication gap",
-  "Shared or rotating contacts",
-  "Juniors often assigned",
-  "Limited revision scope",
-  "Rigid service terms",
+const inhouseTeamsFeatures = [
+  "Expensive hiring process",
+  "High operational costs",
+  "Long onboarding time",
+  "Slower execution cycles",
+  "Resource limitations",
+  "Difficult scaling",
+  "Heavy management overhead",
 ];
 
-/* ─── Check / Cross icons in Brand Indigo/Purple Design ─── */
+/* ─── Check / Cross icons in a highly styled Silver/White Glassmorphic Design ─── */
 function CheckIcon() {
   return (
-    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="shrink-0 text-[#785aff]">
-      <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <div className="w-5 h-5 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+      <svg width="10" height="10" viewBox="0 0 16 16" fill="none" className="text-white">
+        <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
   );
 }
 
 function CrossIcon() {
   return (
-    <svg width="10" height="10" viewBox="0 0 16 16" fill="none" className="shrink-0 text-white/20">
-      <path d="M4.5 4.5L11.5 11.5M11.5 4.5L4.5 11.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
+    <div className="w-5 h-5 rounded-full bg-white/[0.02] border border-white/[0.04] flex items-center justify-center shrink-0">
+      <svg width="8" height="8" viewBox="0 0 16 16" fill="none" className="text-white/25">
+        <path d="M4.5 4.5L11.5 11.5M11.5 4.5L4.5 11.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    </div>
   );
 }
 
@@ -82,8 +86,8 @@ export default function Compare() {
       className="relative w-full bg-black px-4 py-20 sm:py-28 md:py-32 lg:py-36 overflow-hidden"
       aria-labelledby="compare-heading"
     >
-      {/* Soft moving ambient backdrop glow centered behind compare section */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#785aff]/[0.01] blur-[160px] rounded-full" />
+      {/* Premium ambient backdrop glow (White/Silver themed) */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-white/[0.015] blur-[160px] rounded-full" />
 
       {/* Grid lines background */}
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -143,89 +147,112 @@ export default function Compare() {
         {/* Desktop Comparison Table (4 Columns aligned perfectly by row heights) */}
         <div className="hidden lg:grid lg:grid-cols-4 gap-6 xl:gap-8 items-stretch mt-12">
           
-          {/* Column 1: Nexlora (Standalone Highlighted Card - Indigo/Purple Brand Accent exactly as reference layout) */}
+          {/* Column 1: Nexlora (Standalone Highlighted Card with WOW border & sweeping glare animations) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="h-full"
           >
-            <div
-              ref={cardRef}
-              onMouseMove={onMove}
-              onMouseEnter={() => setHov(true)}
-              onMouseLeave={() => setHov(false)}
-              className="relative overflow-hidden rounded-[24px] border border-[#785aff]/30 h-full p-6 xl:p-8 transition-all duration-500 hover:border-[#785aff]/50 group shadow-[0_0_50px_-15px_rgba(120,90,255,0.08)] hover:shadow-[0_0_60px_-10px_rgba(120,90,255,0.15)]"
-              style={{
-                backgroundColor: "rgba(12,12,14,0.95)",
-              }}
-            >
-              {/* Beautiful brand Indigo/Purple corner ambient glow on the top-right */}
-              <div className="absolute top-0 right-0 w-[240px] h-[240px] bg-gradient-to-br from-[#785aff]/35 to-transparent blur-[45px] pointer-events-none rounded-tr-[24px]" />
-
-              {/* Mouse-follow glow (using brand purple) */}
-              <div
-                className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500"
-                style={{
-                  opacity: hov ? 1 : 0,
-                  background: `radial-gradient(400px circle at ${mp.x}px ${mp.y}px, rgba(120,90,255,0.05), transparent 60%)`,
-                }}
-              />
-
-              {/* Glowing vertical gradient light on the left side of the card */}
-              <div 
-                className="pointer-events-none absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#785aff]/50 via-[#785aff]/15 to-transparent transition-opacity duration-500 opacity-80 group-hover:opacity-100" 
-              />
-
-              {/* Moving light beam */}
+            {/* Parent Wrapper enabling the 1px Sweeping Border light trail */}
+            <div className="relative p-[1.5px] rounded-[24px] overflow-hidden h-full">
+              {/* Sweeping Liquid Silver border trail */}
               <motion.div
-                className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[24px]"
-                style={{ opacity: 0.25 }}
+                className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,transparent_35%,rgba(255,255,255,0.35)_50%,transparent_65%)] pointer-events-none z-0"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+              />
+
+              {/* Card Content Mask */}
+              <div
+                ref={cardRef}
+                onMouseMove={onMove}
+                onMouseEnter={() => setHov(true)}
+                onMouseLeave={() => setHov(false)}
+                className="relative rounded-[23px] h-full p-6 xl:p-8 z-10 overflow-hidden transition-all duration-500 shadow-[0_0_50px_-15px_rgba(255,255,255,0.015)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.035)]"
+                style={{
+                  backgroundColor: "rgba(10,10,12,0.96)",
+                }}
               >
-                <motion.div
-                  className="absolute w-[150px] h-full"
+                {/* Beautiful luxury corner ambient glow on the top-right */}
+                <div className="absolute top-0 right-0 w-[240px] h-[240px] bg-gradient-to-br from-white/[0.04] to-transparent blur-[45px] pointer-events-none rounded-tr-[23px]" />
+
+                {/* Mouse-follow spotlight glow */}
+                <div
+                  className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500"
                   style={{
-                    background: "linear-gradient(90deg, transparent, rgba(120,90,255,0.03), transparent)",
+                    opacity: hov ? 1 : 0,
+                    background: `radial-gradient(400px circle at ${mp.x}px ${mp.y}px, rgba(255,255,255,0.035), transparent 60%)`,
                   }}
-                  animate={{ x: ["-150px", "500px"] }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: "linear", repeatDelay: 1.5 }}
                 />
-              </motion.div>
 
-              <div className="relative z-10">
-                {/* Title */}
-                <h3
-                  className="text-[20px] font-bold text-white tracking-tight mb-8"
-                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                {/* Sweeping Glare light beam that triggers across the face of the card on hover */}
+                <motion.div
+                  className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[23px]"
+                  style={{ opacity: hov ? 0.35 : 0 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  nexlora<span className="text-[#785aff]">*</span>
-                </h3>
+                  <motion.div
+                    className="absolute w-[200px] h-full top-0"
+                    style={{
+                      background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
+                      transform: "skewX(-20deg)",
+                    }}
+                    animate={hov ? { x: ["-250px", "600px"] } : { x: "-250px" }}
+                    transition={{ duration: 1.4, ease: "easeInOut" }}
+                  />
+                </motion.div>
 
-                {/* Features */}
-                <div className="flex flex-col gap-0">
-                  {nexloraFeatures.map((feature, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -6 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.4, delay: 0.2 + i * 0.04 }}
-                      className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
-                    >
-                      <CheckIcon />
-                      <span
-                        className="text-[14.5px] font-semibold text-white"
-                        style={{ fontFamily: '"Satoshi", sans-serif' }}
+                {/* Subtle infinite moving light beam */}
+                <motion.div
+                  className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[23px]"
+                  style={{ opacity: 0.15 }}
+                >
+                  <motion.div
+                    className="absolute w-[150px] h-full"
+                    style={{
+                      background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.015), transparent)",
+                    }}
+                    animate={{ x: ["-150px", "500px"] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
+                  />
+                </motion.div>
+
+                <div className="relative z-10">
+                  {/* Title */}
+                  <h3
+                    className="text-[20px] font-bold text-white tracking-tight mb-8"
+                    style={{ fontFamily: '"Satoshi", sans-serif' }}
+                  >
+                    nexlora<span className="text-white/40">*</span>
+                  </h3>
+
+                  {/* Features */}
+                  <div className="flex flex-col gap-0">
+                    {nexloraFeatures.map((feature, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -6 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.4, delay: 0.2 + i * 0.04 }}
+                        className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
                       >
-                        {feature}
-                      </span>
-                    </motion.div>
-                  ))}
+                        <CheckIcon />
+                        <span
+                          className="text-[14.5px] font-semibold text-white/90"
+                          style={{ fontFamily: '"Satoshi", sans-serif' }}
+                        >
+                          {feature}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Column 2: In-house Hire */}
+          {/* Column 2: Traditional Agencies */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -233,13 +260,13 @@ export default function Compare() {
             className="p-6 xl:p-8 flex flex-col h-full bg-transparent"
           >
             <h3
-              className="text-[17px] xl:text-[18px] font-bold text-white tracking-tight mb-8"
+              className="text-[17px] xl:text-[18px] font-bold text-white/70 tracking-tight mb-8"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
-              In-house Hire
+              Traditional Agencies
             </h3>
             <div className="flex flex-col gap-0">
-              {traditionalCompanies.map((feature, i) => (
+              {traditionalAgenciesFeatures.map((feature, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
@@ -264,13 +291,13 @@ export default function Compare() {
             className="p-6 xl:p-8 flex flex-col h-full bg-transparent"
           >
             <h3
-              className="text-[17px] xl:text-[18px] font-bold text-white tracking-tight mb-8"
+              className="text-[17px] xl:text-[18px] font-bold text-white/70 tracking-tight mb-8"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               Freelancers
             </h3>
             <div className="flex flex-col gap-0">
-              {freelancers.map((feature, i) => (
+              {freelancersFeatures.map((feature, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
@@ -287,7 +314,7 @@ export default function Compare() {
             </div>
           </motion.div>
 
-          {/* Column 4: Agencies */}
+          {/* Column 4: In-house Teams */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -295,13 +322,13 @@ export default function Compare() {
             className="p-6 xl:p-8 flex flex-col h-full bg-transparent"
           >
             <h3
-              className="text-[17px] xl:text-[18px] font-bold text-white tracking-tight mb-8"
+              className="text-[17px] xl:text-[18px] font-bold text-white/70 tracking-tight mb-8"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
-              Agencies
+              In-house Teams
             </h3>
             <div className="flex flex-col gap-0">
-              {templateAgencies.map((feature, i) => (
+              {inhouseTeamsFeatures.map((feature, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
@@ -332,9 +359,9 @@ function MobileCompareView() {
 
   const tabs = [
     { title: "nexlora", accent: true },
-    { title: "In-house Hire", accent: false },
+    { title: "Traditional Agencies", accent: false },
     { title: "Freelancers", accent: false },
-    { title: "Agencies", accent: false },
+    { title: "In-house Teams", accent: false },
   ];
 
   return (
@@ -347,7 +374,7 @@ function MobileCompareView() {
             onClick={() => setActiveTab(i)}
             className={`shrink-0 px-3.5 py-2 rounded-xl text-[12px] font-bold tracking-tight transition-all duration-300 border ${
               activeTab === i
-                ? "bg-[#785aff]/10 border-[#785aff]/30 text-white"
+                ? "bg-white/10 border-white/20 text-white"
                 : "bg-transparent border-white/[0.04] text-white/40 hover:text-white/60"
             }`}
             style={{ fontFamily: '"Satoshi", sans-serif' }}
@@ -364,23 +391,33 @@ function MobileCompareView() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
-            className="relative overflow-hidden rounded-[24px] border border-[#785aff]/30 p-6"
-            style={{ backgroundColor: "rgba(12,12,14,0.95)" }}
+            className="relative p-[1.5px] rounded-[24px] overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-[180px] h-[180px] bg-gradient-to-br from-[#785aff]/25 to-transparent blur-[35px] pointer-events-none rounded-tr-[24px]" />
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[3px] bg-[#785aff]/60" />
-            <h3 className="text-[17px] font-bold text-white tracking-tight mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              nexlora<span className="text-[#785aff]">*</span>
-            </h3>
-            <div className="flex flex-col gap-0">
-              {nexloraFeatures.map((feature, i) => (
-                <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
-                  <CheckIcon />
-                  <span className="text-[14px] font-semibold text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    {feature}
-                  </span>
-                </div>
-              ))}
+            {/* Sweeping Liquid Silver border trail for active mobile tab */}
+            <motion.div
+              className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,transparent_35%,rgba(255,255,255,0.3)_50%,transparent_65%)] pointer-events-none z-0"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+            />
+
+            <div
+              className="relative rounded-[23px] p-6 z-10 bg-gradient-to-b from-white/[0.015] to-white/[0.003]"
+              style={{ backgroundColor: "rgba(10,10,12,0.95)" }}
+            >
+              <div className="absolute top-0 right-0 w-[180px] h-[180px] bg-gradient-to-br from-white/[0.03] to-transparent blur-[35px] pointer-events-none rounded-tr-[23px]" />
+              <h3 className="text-[17px] font-bold text-white tracking-tight mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                nexlora<span className="text-white/40">*</span>
+              </h3>
+              <div className="flex flex-col gap-0">
+                {nexloraFeatures.map((feature, i) => (
+                  <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
+                    <CheckIcon />
+                    <span className="text-[14px] font-semibold text-white/90" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
@@ -393,10 +430,10 @@ function MobileCompareView() {
             className="p-4"
           >
             <h3 className="text-[16px] font-bold text-white/80 mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              In-house Hire
+              Traditional Agencies
             </h3>
             <div className="flex flex-col gap-0">
-              {traditionalCompanies.map((feature, i) => (
+              {traditionalAgenciesFeatures.map((feature, i) => (
                 <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
                   <CrossIcon />
                   <span className="text-[13.5px] text-white/35 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
@@ -419,7 +456,7 @@ function MobileCompareView() {
               Freelancers
             </h3>
             <div className="flex flex-col gap-0">
-              {freelancers.map((feature, i) => (
+              {freelancersFeatures.map((feature, i) => (
                 <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
                   <CrossIcon />
                   <span className="text-[13.5px] text-white/35 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
@@ -439,10 +476,10 @@ function MobileCompareView() {
             className="p-4"
           >
             <h3 className="text-[16px] font-bold text-white/80 mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              Agencies
+              In-house Teams
             </h3>
             <div className="flex flex-col gap-0">
-              {templateAgencies.map((feature, i) => (
+              {inhouseTeamsFeatures.map((feature, i) => (
                 <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
                   <CrossIcon />
                   <span className="text-[13.5px] text-white/35 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
