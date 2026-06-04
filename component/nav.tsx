@@ -23,6 +23,7 @@ export default function Nav() {
             {links.map((link) => {
               let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
               if (link === "Work") href = "/work";
+              if (link === "Solutions") href = "/solutions";
               if (link === "Contact") href = "mailto:hello@nexzoa.com";
               return (
                 <a
@@ -88,6 +89,7 @@ export default function Nav() {
                 {links.map((link, index) => {
                   let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
                   if (link === "Work") href = "/work";
+                  if (link === "Solutions") href = "/solutions";
                   if (link === "Contact") href = "mailto:hello@nexzoa.com";
                   return (
                     <a

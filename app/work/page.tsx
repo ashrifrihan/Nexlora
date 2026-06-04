@@ -357,11 +357,11 @@ export default function WorkPage() {
 
       {/* 1. Hero Section */}
       <section className="perf-section relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
-        <div className="perf-glow pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-purple-500/5 blur-[120px]" />
+        <div className="perf-glow pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-white/[0.02] blur-[120px]" />
 
         <div className="text-center max-w-3xl mx-auto">
           <div className="mb-4 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.08] px-3.5 py-1.5 bg-white/[0.02]">
-            <span className="text-[12.5px] font-semibold uppercase tracking-wider text-purple-400" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            <span className="text-[12.5px] font-semibold uppercase tracking-wider text-white/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               Our Case Studies
             </span>
           </div>
@@ -415,7 +415,7 @@ export default function WorkPage() {
                   <div className="flex flex-wrap items-center gap-2 text-[10.5px] font-bold uppercase tracking-wider text-white/45 mb-2.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     <span>{project.category.join(" & ")}</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
-                    <span style={{ color: project.accent }}>{project.role}</span>
+                    <span className="text-white/80">{project.role}</span>
                   </div>
 
                   <h2 className="text-[24px] sm:text-[28px] font-black tracking-tight mb-4 leading-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
@@ -500,7 +500,7 @@ export default function WorkPage() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-purple-400 hover:text-purple-300 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-white/80 hover:text-white transition-colors"
                         style={{ fontFamily: '"Satoshi", sans-serif' }}
                       >
                         GitHub Project Repository ↗
@@ -532,7 +532,7 @@ export default function WorkPage() {
                           onClick={() => setActiveScreenshot((prev) => ({ ...prev, [project.id]: idxScreen }))}
                           className={`relative w-14 sm:w-16 aspect-[16/10] rounded-lg overflow-hidden border transition-all ${
                             (activeScreenshot[project.id] || 0) === idxScreen
-                              ? "border-purple-500 scale-[0.98]"
+                              ? "border-white/60 scale-[0.98]"
                               : "border-white/[0.06] opacity-40 hover:opacity-100"
                           }`}
                         >
@@ -590,7 +590,7 @@ export default function WorkPage() {
             <div key={idx} className="bg-[#0b0b0d] border border-white/[0.06] rounded-2xl p-6 flex flex-col justify-between">
               <div>
                 <div className="text-[32px] font-black text-white leading-none tracking-tight font-mono mb-1">{result.metric}</div>
-                <div className="text-[12px] font-bold uppercase tracking-wider text-purple-400 mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>{result.subtitle}</div>
+                <div className="text-[12px] font-bold uppercase tracking-wider text-white/60 mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>{result.subtitle}</div>
                 <p className="text-[13px] leading-relaxed text-white/40" style={{ fontFamily: '"Satoshi", sans-serif' }}>{result.desc}</p>
               </div>
             </div>
@@ -631,7 +631,7 @@ export default function WorkPage() {
 
       {/* 6. CTA Section */}
       <section className="perf-section py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center border-t border-white/[0.04] relative overflow-hidden">
-        <div className="perf-glow pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] rounded-full bg-purple-500/5 blur-[100px]" />
+        <div className="perf-glow pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] rounded-full bg-white/[0.02] blur-[100px]" />
 
         <div className="max-w-2xl mx-auto relative z-10">
           <h2 className="text-[26px] sm:text-[34px] font-bold tracking-tight mb-4" style={{ fontFamily: '"Satoshi", sans-serif' }}>
