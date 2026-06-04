@@ -20,8 +20,8 @@ interface SolutionItem {
 
 function CustomSoftwareVisual() {
   return (
-    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
-      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[160px] h-auto" viewBox="0 0 200 140" fill="none">
         {/* Main mainframe database */}
         <rect x="80" y="20" width="40" height="45" rx="6" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
         <line x1="80" y1="35" x2="120" y2="35" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
@@ -63,8 +63,8 @@ function CustomSoftwareVisual() {
 
 function WebAppVisual() {
   return (
-    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
-      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[160px] h-auto" viewBox="0 0 200 140" fill="none">
         {/* Browser Mockup */}
         <rect x="20" y="20" width="160" height="100" rx="8" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
         <rect x="20" y="20" width="160" height="20" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
@@ -99,8 +99,8 @@ function WebAppVisual() {
 
 function MobileAppVisual() {
   return (
-    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
-      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[160px] h-auto" viewBox="0 0 200 140" fill="none">
         {/* Smartphone Shell */}
         <rect x="65" y="10" width="70" height="120" rx="12" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
         <line x1="85" y1="16" x2="115" y2="16" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" strokeLinecap="round" />
@@ -150,8 +150,8 @@ function MobileAppVisual() {
 
 function AIAutomationVisual() {
   return (
-    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
-      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[160px] h-auto" viewBox="0 0 200 140" fill="none">
         {/* Node Network Map */}
         <line x1="40" y1="70" x2="90" y2="40" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
         <line x1="40" y1="70" x2="90" y2="100" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
@@ -181,8 +181,8 @@ function AIAutomationVisual() {
 
 function UIUXVisual() {
   return (
-    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
-      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[160px] h-auto" viewBox="0 0 200 140" fill="none">
         {/* Wireframe grids */}
         <rect x="25" y="20" width="150" height="100" rx="2" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" strokeDasharray="3 3" />
         <line x1="100" y1="20" x2="100" y2="120" stroke="rgba(255,255,255,0.05)" strokeWidth="0.8" />
@@ -211,8 +211,8 @@ function UIUXVisual() {
 
 function CloudInfraVisual() {
   return (
-    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
-      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[160px] h-auto" viewBox="0 0 200 140" fill="none">
         {/* Storage server racks */}
         <rect x="60" y="25" width="80" height="24" rx="4" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
         <circle cx="75" cy="37" r="2.5" fill="rgba(255,255,255,0.7)" />
@@ -471,20 +471,20 @@ export default function SolutionsPage() {
 
         <div className="text-center max-w-3xl mx-auto">
           <div className="mb-4 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.08] px-3.5 py-1.5 bg-white/[0.02]">
-            <span className="text-[12.5px] font-semibold uppercase tracking-wider text-white/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            <span className="text-[12.5px] font-semibold uppercase tracking-wider text-white/60 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               Our Services
             </span>
           </div>
 
           <h1
-            className="text-[clamp(32px,6vw,56px)] font-black tracking-[-0.04em] leading-[1.05]"
+            className="text-[clamp(32px,6vw,56px)] font-black tracking-[-0.04em] leading-[1.05] not-italic"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Software Solutions Built for Growth
           </h1>
 
           <p
-            className="mt-4 text-[clamp(15px,2vw,19px)] text-white/50 font-medium leading-relaxed"
+            className="mt-4 text-[clamp(15px,2vw,19px)] text-white/50 font-medium leading-relaxed not-italic"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Nexzoa helps businesses automate operations, improve customer experiences, and scale through custom software, AI systems, and digital platforms.
@@ -493,14 +493,14 @@ export default function SolutionsPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href="mailto:hello@nexzoa.com"
-              className="inline-flex items-center justify-center rounded-[12px] bg-white px-6 py-3.5 text-[14px] font-bold text-black hover:bg-white/90 transition-colors"
+              className="inline-flex items-center justify-center rounded-[12px] bg-white px-6 py-3.5 text-[14px] font-bold text-black hover:bg-white/90 transition-colors not-italic"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               Start a Project
             </a>
             <a
               href="/work"
-              className="inline-flex items-center justify-center rounded-[12px] border border-white/[0.1] bg-white/[0.02] px-6 py-3.5 text-[14px] font-bold text-white hover:bg-white/[0.08] transition-colors"
+              className="inline-flex items-center justify-center rounded-[12px] border border-white/[0.1] bg-white/[0.02] px-6 py-3.5 text-[14px] font-bold text-white hover:bg-white/[0.08] transition-colors not-italic"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               View Our Work
@@ -511,7 +511,7 @@ export default function SolutionsPage() {
 
       {/* 2. Overview Banner */}
       <section className="perf-section py-8 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
-        <p className="text-[14.5px] text-white/40 leading-relaxed font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <p className="text-[14.5px] text-white/40 leading-relaxed font-medium not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
           Every business faces different challenges. We design and build custom solutions tailored to your goals, workflows, and industry requirements.
         </p>
       </section>
@@ -519,11 +519,11 @@ export default function SolutionsPage() {
       {/* 3. Core Solutions Bento Grid */}
       <section className="perf-section py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.04]">
         <div className="mb-10 text-center lg:text-left">
-          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Core Solutions
           </h2>
-          <p className="text-[13.5px] text-white/40" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            Explore our service catalog. Click any solution to review examples and operational benefits.
+          <p className="text-[13.5px] text-white/40 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            Explore our service catalog. Click any solution to review examples and operational benefits in a focused preview.
           </p>
         </div>
 
@@ -544,22 +544,22 @@ export default function SolutionsPage() {
                   {sol.renderVisual()}
                 </div>
 
-                <div className="text-[10px] font-bold uppercase tracking-wider text-white/30 mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-white/30 mb-1 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                   Solution 0{sol.id}
                 </div>
 
-                <h3 className="text-[16px] font-bold text-white mb-2 tracking-tight group-hover:text-white transition-colors" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                <h3 className="text-[16px] font-bold text-white mb-2 tracking-tight not-italic group-hover:text-white transition-colors" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                   {sol.title}
                 </h3>
 
-                <p className="text-[12.5px] text-white/40 leading-relaxed font-medium mb-4" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                <p className="text-[12.5px] text-white/40 leading-relaxed font-medium not-italic mb-4" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                   {sol.shortDesc}
                 </p>
               </div>
 
               <div className="relative z-10 pt-3 border-t border-white/[0.04] flex items-center justify-between">
-                <span className="text-[12px] font-bold text-white/60 group-hover:text-white transition-colors" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                  Learn More
+                <span className="text-[12px] font-bold text-white/50 group-hover:text-white transition-colors not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  View Details
                 </span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-white/40 group-hover:translate-x-1 transition-transform">
                   <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -570,117 +570,118 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* Slide-over Side Drawer Modal */}
+      {/* Centered Modal Lightbox Overlay */}
       <AnimatePresence>
         {selectedSolutionId !== null && activeSolution && (
-          <>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedSolutionId(null)}
-              className="fixed inset-0 bg-black z-50 pointer-events-auto"
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm pointer-events-auto"
             />
 
-            {/* Slide-over Panel */}
+            {/* Modal Card */}
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed right-0 top-0 bottom-0 w-full max-w-lg bg-[#0d0d0f] border-l border-white/[0.08] shadow-2xl z-50 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto"
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              className="relative w-full max-w-lg bg-[#0d0d0f] border border-white/[0.08] rounded-2xl p-6 sm:p-8 overflow-hidden z-10 shadow-2xl flex flex-col gap-5"
+              style={{ background: "linear-gradient(145deg, rgba(14,14,16,1) 0%, rgba(8,8,10,1) 100%)" }}
             >
-              <div className="flex flex-col gap-6">
-                {/* Drawer Header */}
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-white/35" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Solution Catalog
-                  </span>
-                  <button
-                    onClick={() => setSelectedSolutionId(null)}
-                    className="p-1 rounded-lg hover:bg-white/[0.06] transition-colors"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 text-white/60">
-                      <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                </div>
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedSolutionId(null)}
+                className="absolute top-4 right-4 p-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.08] transition-colors"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-white/60">
+                  <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
 
-                {/* Content */}
+              {/* SVG Visual Header */}
+              <div className="bg-white/[0.01] border border-white/[0.04] rounded-xl py-2 flex items-center justify-center">
+                {activeSolution.renderVisual()}
+              </div>
+
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-white/30 mb-1 block not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  Solution 0{activeSolution.id}
+                </span>
+                <h3 className="text-[20px] sm:text-[22px] font-black tracking-tight text-white mb-2.5 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  {activeSolution.title}
+                </h3>
+                <p className="text-[13px] leading-relaxed text-white/50 not-italic font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  {activeSolution.description}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4.5 border-t border-white/[0.06] mb-2">
+                {/* Examples */}
                 <div>
-                  <h3 className="text-[24px] font-black tracking-tight text-white mb-3 leading-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    {activeSolution.title}
-                  </h3>
-                  <p className="text-[13.5px] leading-relaxed text-white/50 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    {activeSolution.description}
-                  </p>
+                  <h4 className="text-[10.5px] font-bold uppercase tracking-wider text-white/60 not-italic mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    {activeSolution.examplesTitle}
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {activeSolution.examples.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2.5 text-[12px] text-white/40 not-italic font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-white/20 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <div className="flex flex-col gap-6 pt-6 border-t border-white/[0.06]">
-                  {/* Examples */}
-                  <div>
-                    <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/60 mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                      {activeSolution.examplesTitle}
-                    </h4>
-                    <ul className="space-y-2">
-                      {activeSolution.examples.map((item, i) => (
-                        <li key={i} className="flex items-center gap-2.5 text-[13px] text-white/40 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                          <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Benefits */}
-                  <div>
-                    <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/60 mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                      Operational Benefits
-                    </h4>
-                    <ul className="space-y-2.5">
-                      {activeSolution.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-[13px] text-white/50 leading-snug font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-white/80 shrink-0 mt-0.5">
-                            <path d="M2 6l3 3 5-5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                {/* Benefits */}
+                <div>
+                  <h4 className="text-[10.5px] font-bold uppercase tracking-wider text-white/60 not-italic mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Operational Benefits
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {activeSolution.benefits.map((benefit, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-[12px] text-white/50 not-italic leading-snug font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-white/85 shrink-0 mt-0.5">
+                          <path d="M2 6l3 3 5-5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-8 mt-8 border-t border-white/[0.06] flex flex-col gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 pt-3">
                 <a
                   href="mailto:hello@nexzoa.com"
-                  className="w-full inline-flex items-center justify-center rounded-[12px] bg-white py-3.5 text-[13.5px] font-bold text-black hover:bg-white/90 transition-colors"
+                  className="flex-1 inline-flex items-center justify-center rounded-[12px] bg-white py-3 text-[13px] font-bold text-black hover:bg-white/90 transition-colors not-italic"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
                   Start Project Intake
                 </a>
                 <button
                   onClick={() => setSelectedSolutionId(null)}
-                  className="w-full inline-flex items-center justify-center rounded-[12px] border border-white/[0.1] bg-white/[0.02] py-3.5 text-[13.5px] font-bold text-white hover:bg-white/[0.06] transition-colors"
+                  className="flex-1 inline-flex items-center justify-center rounded-[12px] border border-white/[0.1] bg-white/[0.02] py-3 text-[13px] font-bold text-white hover:bg-white/[0.08] transition-colors not-italic"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
-                  Back to grid
+                  Close
                 </button>
               </div>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
 
       {/* 4. Industries We Serve */}
       <section className="perf-section py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.04]">
         <div className="text-center mb-10 max-w-2xl mx-auto">
-          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Industries We Serve
           </h2>
-          <p className="text-[13.5px] text-white/40" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <p className="text-[13.5px] text-white/40 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             We adapt our system engineering to match specific industry workflows and rules.
           </p>
         </div>
@@ -696,10 +697,10 @@ export default function SolutionsPage() {
                 {ind.renderIcon()}
               </div>
               <div>
-                <h3 className="text-[14.5px] font-bold text-white mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                <h3 className="text-[14.5px] font-bold text-white mb-1 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                   {ind.name}
                 </h3>
-                <p className="text-[12.5px] text-white/40 leading-relaxed font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                <p className="text-[12.5px] text-white/40 leading-relaxed font-medium not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                   {ind.desc}
                 </p>
               </div>
@@ -711,10 +712,10 @@ export default function SolutionsPage() {
       {/* 5. Technologies Section */}
       <section className="perf-section py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.04]">
         <div className="text-center mb-10 max-w-2xl mx-auto">
-          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Technologies We Use
           </h2>
-          <p className="text-[13.5px] text-white/40" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <p className="text-[13.5px] text-white/40 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Stable frameworks and tools selected for reliability, speed, and long-term support.
           </p>
         </div>
@@ -723,7 +724,7 @@ export default function SolutionsPage() {
           {techStack.map((tech) => (
             <div
               key={tech}
-              className="bg-[#0b0b0d] border border-white/[0.06] rounded-xl px-4 py-2.5 text-[13px] font-semibold text-white/60 hover:text-white hover:border-white/20 transition-all cursor-default"
+              className="bg-[#0b0b0d] border border-white/[0.06] rounded-xl px-4 py-2.5 text-[13px] font-semibold text-white/60 hover:text-white hover:border-white/20 transition-all cursor-default not-italic"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               {tech}
@@ -735,10 +736,10 @@ export default function SolutionsPage() {
       {/* 6. How We Work (Process) */}
       <section className="perf-section py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.04]">
         <div className="mb-10 text-center max-w-2xl mx-auto">
-          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             How We Work
           </h2>
-          <p className="text-[13.5px] text-white/40" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <p className="text-[13.5px] text-white/40 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             A transparent and step-by-step path from first discovery to production release.
           </p>
         </div>
@@ -748,8 +749,8 @@ export default function SolutionsPage() {
             <div key={proc.step} className="bg-[#0c0c0e] border border-white/[0.06] rounded-2xl p-4.5 flex flex-col gap-3">
               <span className="text-[18px] font-black text-white/10 font-mono leading-none">{proc.step}</span>
               <div>
-                <h4 className="text-[13px] font-bold text-white mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>{proc.name}</h4>
-                <p className="text-[11px] text-white/40 leading-relaxed font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>{proc.desc}</p>
+                <h4 className="text-[13px] font-bold text-white mb-1 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>{proc.name}</h4>
+                <p className="text-[11px] text-white/40 leading-relaxed font-medium not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>{proc.desc}</p>
               </div>
             </div>
           ))}
@@ -761,10 +762,10 @@ export default function SolutionsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {whyChooseUs.map((w, idx) => (
             <div key={idx} className="bg-[#0b0b0d] border border-white/[0.06] rounded-xl p-5">
-              <h3 className="text-[14px] font-bold text-white mb-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              <h3 className="text-[14px] font-bold text-white mb-1.5 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                 {w.title}
               </h3>
-              <p className="text-[12.5px] text-white/40 leading-relaxed font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              <p className="text-[12.5px] text-white/40 leading-relaxed font-medium not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                 {w.desc}
               </p>
             </div>
@@ -775,10 +776,10 @@ export default function SolutionsPage() {
       {/* 8. Frequently Asked Questions */}
       <section className="perf-section py-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto border-t border-white/[0.04]">
         <div className="text-center mb-10">
-          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Frequently Asked Questions
           </h2>
-          <p className="text-[13.5px] text-white/40" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <p className="text-[13.5px] text-white/40 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Answers to common questions about our custom software development process.
           </p>
         </div>
@@ -793,7 +794,7 @@ export default function SolutionsPage() {
               >
                 <button
                   onClick={() => setActiveFaq(isOpen ? null : idx)}
-                  className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 font-semibold text-[14px]"
+                  className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 font-semibold text-[14px] not-italic"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
                   <span className="text-white/80">{faq.q}</span>
@@ -815,7 +816,7 @@ export default function SolutionsPage() {
                 >
                   <div className="min-h-0">
                     <p
-                      className="px-5 pb-4.5 pt-0.5 text-[13px] leading-relaxed text-white/40 font-medium border-t border-white/[0.03]"
+                      className="px-5 pb-4.5 pt-0.5 text-[13px] leading-relaxed text-white/40 font-medium border-t border-white/[0.03] not-italic"
                       style={{ fontFamily: '"Satoshi", sans-serif' }}
                     >
                       {faq.a}
@@ -833,15 +834,15 @@ export default function SolutionsPage() {
         <div className="perf-glow pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] rounded-full bg-white/[0.02] blur-[100px]" />
 
         <div className="max-w-2xl mx-auto relative z-10">
-          <h2 className="text-[26px] sm:text-[34px] font-bold tracking-tight mb-4" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <h2 className="text-[26px] sm:text-[34px] font-bold tracking-tight mb-4 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Ready to Build Something Exceptional?
           </h2>
-          <p className="text-[14.5px] text-white/45 mb-7 font-medium leading-relaxed" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <p className="text-[14.5px] text-white/45 mb-7 font-medium leading-relaxed not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Let&apos;s discuss your idea and create a solution tailored to your business.
           </p>
           <a
             href="mailto:hello@nexzoa.com"
-            className="inline-flex items-center justify-center rounded-[12px] bg-white px-7 py-3.5 text-[14px] font-bold text-black hover:bg-white/90 transition-colors"
+            className="inline-flex items-center justify-center rounded-[12px] bg-white px-7 py-3.5 text-[14px] font-bold text-black hover:bg-white/90 transition-colors not-italic"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Start a Project
