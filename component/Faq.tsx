@@ -123,11 +123,11 @@ export default function FAQ() {
     <section
       ref={sectionRef}
       id="faq"
-      className="relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40 overflow-hidden"
+      className="perf-section relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40 overflow-hidden"
       aria-labelledby="faq-heading"
     >
       {/* Subtle brand ambient glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-white/[0.01] blur-[150px]" />
+      <div className="perf-glow pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-white/[0.01] blur-[150px]" />
 
       <div className="relative mx-auto w-full max-w-7xl">
         {/* ── Header ── */}

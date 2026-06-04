@@ -83,11 +83,11 @@ export default function Compare() {
     <section
       ref={sectionRef}
       id="compare"
-      className="relative w-full bg-black px-4 py-20 sm:py-28 md:py-32 lg:py-36 overflow-hidden"
+      className="perf-section relative w-full bg-black px-4 py-20 sm:py-28 md:py-32 lg:py-36 overflow-hidden"
       aria-labelledby="compare-heading"
     >
       {/* Premium ambient backdrop glow (White/Silver themed) */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-white/[0.015] blur-[160px] rounded-full" />
+      <div className="perf-glow pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-white/[0.015] blur-[160px] rounded-full" />
 
       {/* Grid lines background */}
       <div className="pointer-events-none absolute inset-0 z-0">

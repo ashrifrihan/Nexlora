@@ -11,7 +11,7 @@ import Compare from "@/component/Compare";
 import Footer from "@/component/Footer";
 
 export const metadata: Metadata = {
-  title: "Nexzoa — Engineering Intelligent Systems | AI SaaS & Automation",
+  title: "Nexzoa - Engineering Intelligent Systems | AI SaaS & Automation",
   description: "Nexzoa delivers AI-native software, full-stack SaaS platforms, automation workflows and scalable digital solutions for ambitious businesses.",
   alternates: { canonical: "https://nexzoa.in" }
 };

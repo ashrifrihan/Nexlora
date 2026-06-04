@@ -489,7 +489,7 @@ export default function Process() {
     <section
       ref={sectionRef}
       id="process"
-      className="relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40"
+      className="perf-section relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40"
       aria-labelledby="process-heading"
     >
       <div className="relative mx-auto w-full max-w-7xl">
@@ -575,7 +575,7 @@ export default function Process() {
             index={5}
             number="06"
             title="Launch"
-            description="Deployment, optimization, and ongoing improvements — your product, live and scaling with 99.9% uptime."
+            description="Deployment, optimization, and ongoing improvements your product, live and scaling with 99.9% uptime."
             accent="#10b981"
           >
             <LaunchVisual />
