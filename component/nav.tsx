@@ -20,15 +20,20 @@ export default function Nav() {
           </a>
 
           <div className="hidden items-center gap-2 lg:flex">
-            {links.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replaceAll(" ", "-")}`}
-                className="rounded-[10px] px-4 py-3 text-[14px] font-medium leading-none tracking-[-0.02em] text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white"
-              >
-                {link}
-              </a>
-            ))}
+            {links.map((link) => {
+              let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
+              if (link === "Work") href = "/work";
+              if (link === "Contact") href = "mailto:hello@nexzoa.com";
+              return (
+                <a
+                  key={link}
+                  href={href}
+                  className="rounded-[10px] px-4 py-3 text-[14px] font-medium leading-none tracking-[-0.02em] text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white"
+                >
+                  {link}
+                </a>
+              );
+            })}
           </div>
 
           <div className="hidden items-center gap-4 lg:flex">
@@ -80,19 +85,24 @@ export default function Nav() {
           <div className="min-h-0">
             <div className="mt-5 border-t border-white/10 pt-6 [font-family:Satoshi,Inter,sans-serif] sm:mt-7 sm:pt-7">
               <div className="grid gap-3 px-1">
-                {links.map((link, index) => (
-                  <a
-                    key={link}
-                    href={`#${link.toLowerCase().replaceAll(" ", "-")}`}
-                    className={`w-fit rounded-lg px-0 py-1.5 text-[18px] font-medium leading-tight tracking-[-0.03em] text-white/90 transition-all duration-300 ease-out hover:translate-x-1.5 hover:text-white sm:text-[22px] ${
-                      isOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
-                    }`}
-                    style={{ transitionDelay: isOpen ? `${index * 35}ms` : "0ms" }}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link}
-                  </a>
-                ))}
+                {links.map((link, index) => {
+                  let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
+                  if (link === "Work") href = "/work";
+                  if (link === "Contact") href = "mailto:hello@nexzoa.com";
+                  return (
+                    <a
+                      key={link}
+                      href={href}
+                      className={`w-fit rounded-lg px-0 py-1.5 text-[18px] font-medium leading-tight tracking-[-0.03em] text-white/90 transition-all duration-300 ease-out hover:translate-x-1.5 hover:text-white sm:text-[22px] ${
+                        isOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+                      }`}
+                      style={{ transitionDelay: isOpen ? `${index * 35}ms` : "0ms" }}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link}
+                    </a>
+                  );
+                })}
               </div>
 
               <div
