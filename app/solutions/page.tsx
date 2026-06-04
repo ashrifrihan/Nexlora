@@ -13,6 +13,280 @@ interface SolutionItem {
   examplesTitle: string;
   examples: string[];
   benefits: string[];
+  renderVisual: () => React.ReactNode;
+}
+
+/* ─── Light-weight, High-performance Interactive SVGs for the Bento Grid ─── */
+
+function CustomSoftwareVisual() {
+  return (
+    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+        {/* Main mainframe database */}
+        <rect x="80" y="20" width="40" height="45" rx="6" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+        <line x1="80" y1="35" x2="120" y2="35" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+        <line x1="80" y1="50" x2="120" y2="50" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+        <circle cx="100" cy="27" r="2.5" fill="rgba(255,255,255,0.8)" />
+        <circle cx="100" cy="42" r="2" fill="rgba(255,255,255,0.4)" />
+        <circle cx="100" cy="57" r="2" fill="rgba(255,255,255,0.4)" />
+
+        {/* Client terminal 1 (Desktop) */}
+        <rect x="20" y="85" width="45" height="30" rx="4" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+        <line x1="30" y1="120" x2="55" y2="120" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+        <line x1="42.5" y1="115" x2="42.5" y2="120" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+
+        {/* Client terminal 2 (Tablet) */}
+        <rect x="140" y="85" width="35" height="26" rx="4" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+        <circle cx="157.5" cy="107" r="1.5" fill="rgba(255,255,255,0.4)" />
+
+        {/* Connections */}
+        <motion.path
+          d="M 42.5 85 L 42.5 50 L 80 50"
+          stroke="rgba(255,255,255,0.2)"
+          strokeWidth="1"
+          strokeDasharray="4 4"
+          animate={{ strokeDashoffset: [0, -20] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.path
+          d="M 157.5 85 L 157.5 50 L 120 50"
+          stroke="rgba(255,255,255,0.2)"
+          strokeWidth="1"
+          strokeDasharray="4 4"
+          animate={{ strokeDashoffset: [0, 20] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+        />
+      </svg>
+    </div>
+  );
+}
+
+function WebAppVisual() {
+  return (
+    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+        {/* Browser Mockup */}
+        <rect x="20" y="20" width="160" height="100" rx="8" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+        <rect x="20" y="20" width="160" height="20" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+        <circle cx="32" cy="30" r="2.5" fill="rgba(255,255,255,0.4)" />
+        <circle cx="42" cy="30" r="2.5" fill="rgba(255,255,255,0.2)" />
+        <circle cx="52" cy="30" r="2.5" fill="rgba(255,255,255,0.2)" />
+
+        {/* Dynamic dashboard graphs */}
+        <motion.rect
+          x="35"
+          y="55"
+          width="40"
+          height="45"
+          rx="4"
+          fill="rgba(255,255,255,0.03)"
+          stroke="rgba(255,255,255,0.12)"
+          strokeWidth="1"
+          whileHover={{ scale: 1.05 }}
+        />
+        <circle cx="55" cy="78" r="12" stroke="rgba(255,255,255,0.15)" strokeWidth="2" strokeDasharray="30 40" />
+
+        {/* Bar charts */}
+        <rect x="90" y="55" width="75" height="45" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+        <motion.rect x="100" y="80" width="8" height="15" rx="1.5" fill="rgba(255,255,255,0.2)" animate={{ scaleY: [1, 1.3, 1] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "bottom" }} />
+        <motion.rect x="112" y="70" width="8" height="25" rx="1.5" fill="rgba(255,255,255,0.4)" animate={{ scaleY: [1, 0.8, 1] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "bottom" }} />
+        <motion.rect x="124" y="75" width="8" height="20" rx="1.5" fill="rgba(255,255,255,0.2)" animate={{ scaleY: [1, 1.2, 1] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "bottom" }} />
+        <motion.rect x="136" y="65" width="8" height="30" rx="1.5" fill="rgba(255,255,255,0.3)" animate={{ scaleY: [1, 0.9, 1] }} transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }} style={{ transformOrigin: "bottom" }} />
+      </svg>
+    </div>
+  );
+}
+
+function MobileAppVisual() {
+  return (
+    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+        {/* Smartphone Shell */}
+        <rect x="65" y="10" width="70" height="120" rx="12" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+        <line x1="85" y1="16" x2="115" y2="16" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="100" cy="120" r="4.5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+
+        {/* UI cards inside mobile screen */}
+        <motion.rect
+          x="73"
+          y="28"
+          width="54"
+          height="22"
+          rx="4"
+          fill="rgba(255,255,255,0.04)"
+          stroke="rgba(255,255,255,0.1)"
+          strokeWidth="1"
+          animate={{ y: [28, 32, 28] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.rect
+          x="73"
+          y="56"
+          width="54"
+          height="22"
+          rx="4"
+          fill="rgba(255,255,255,0.04)"
+          stroke="rgba(255,255,255,0.1)"
+          strokeWidth="1"
+          animate={{ y: [56, 52, 56] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.rect
+          x="73"
+          y="84"
+          width="54"
+          height="22"
+          rx="4"
+          fill="rgba(255,255,255,0.04)"
+          stroke="rgba(255,255,255,0.1)"
+          strokeWidth="1"
+          animate={{ y: [84, 86, 84] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </svg>
+    </div>
+  );
+}
+
+function AIAutomationVisual() {
+  return (
+    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+        {/* Node Network Map */}
+        <line x1="40" y1="70" x2="90" y2="40" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+        <line x1="40" y1="70" x2="90" y2="100" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+        <line x1="90" y1="40" x2="150" y2="40" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+        <line x1="90" y1="100" x2="150" y2="100" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+        <line x1="90" y1="40" x2="150" y2="100" stroke="rgba(255,255,255,0.1)" strokeWidth="0.8" />
+        <line x1="90" y1="100" x2="150" y2="40" stroke="rgba(255,255,255,0.1)" strokeWidth="0.8" />
+
+        {/* Input node */}
+        <circle cx="40" cy="70" r="7" fill="#000" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+        <motion.circle cx="40" cy="70" r="3" fill="rgba(255,255,255,0.8)" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity }} />
+
+        {/* Middle nodes */}
+        <circle cx="90" cy="40" r="6" fill="#000" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2" />
+        <circle cx="90" cy="100" r="6" fill="#000" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2" />
+
+        {/* Output nodes */}
+        <circle cx="150" cy="40" r="7" fill="#000" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+        <motion.circle cx="150" cy="40" r="3.5" fill="rgba(255,255,255,0.9)" animate={{ scale: [0.8, 1.2, 0.8] }} transition={{ duration: 2.5, repeat: Infinity }} />
+
+        <circle cx="150" cy="100" r="7" fill="#000" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+        <motion.circle cx="150" cy="100" r="3.5" fill="rgba(255,255,255,0.9)" animate={{ scale: [1.2, 0.8, 1.2] }} transition={{ duration: 2.5, repeat: Infinity }} />
+      </svg>
+    </div>
+  );
+}
+
+function UIUXVisual() {
+  return (
+    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+        {/* Wireframe grids */}
+        <rect x="25" y="20" width="150" height="100" rx="2" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" strokeDasharray="3 3" />
+        <line x1="100" y1="20" x2="100" y2="120" stroke="rgba(255,255,255,0.05)" strokeWidth="0.8" />
+        <line x1="25" y1="70" x2="175" y2="70" stroke="rgba(255,255,255,0.05)" strokeWidth="0.8" />
+
+        {/* Vector Pen shape creation */}
+        <rect x="40" y="35" width="45" height="30" rx="3" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" />
+        <circle cx="40" cy="35" r="3" fill="rgba(255,255,255,0.9)" />
+        <circle cx="85" cy="35" r="3" fill="rgba(255,255,255,0.9)" />
+        <circle cx="85" cy="65" r="3" fill="rgba(255,255,255,0.9)" />
+        <circle cx="40" cy="65" r="3" fill="rgba(255,255,255,0.9)" />
+
+        {/* Floating cursor selection tool */}
+        <motion.path
+          d="M 115 80 L 130 90 L 123 93 L 132 103 L 128 106 L 119 96 L 115 101 Z"
+          fill="rgba(255,255,255,0.9)"
+          stroke="#000"
+          strokeWidth="0.8"
+          animate={{ x: [0, 15, -10, 0], y: [0, -10, 10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </svg>
+    </div>
+  );
+}
+
+function CloudInfraVisual() {
+  return (
+    <div className="relative w-full h-44 flex items-center justify-center overflow-hidden">
+      <svg className="w-full max-w-[180px] h-auto" viewBox="0 0 200 140" fill="none">
+        {/* Storage server racks */}
+        <rect x="60" y="25" width="80" height="24" rx="4" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+        <circle cx="75" cy="37" r="2.5" fill="rgba(255,255,255,0.7)" />
+        <line x1="90" y1="37" x2="130" y2="37" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+
+        <rect x="60" y="58" width="80" height="24" rx="4" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+        <circle cx="75" cy="70" r="2.5" fill="rgba(255,255,255,0.7)" />
+        <line x1="90" y1="70" x2="130" y2="70" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+
+        <rect x="60" y="91" width="80" height="24" rx="4" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+        <circle cx="75" cy="103" r="2.5" fill="rgba(255,255,255,0.7)" />
+        <line x1="90" y1="103" x2="130" y2="103" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+
+        {/* Pulsing server status lights */}
+        <motion.circle cx="130" cy="37" r="2" fill="#10b981" animate={{ opacity: [0.2, 1, 0.2] }} transition={{ duration: 1.5, repeat: Infinity }} />
+        <motion.circle cx="130" cy="70" r="2" fill="#10b981" animate={{ opacity: [0.2, 1, 0.2] }} transition={{ duration: 2, repeat: Infinity, delay: 0.3 }} />
+        <motion.circle cx="130" cy="103" r="2" fill="#10b981" animate={{ opacity: [0.2, 1, 0.2] }} transition={{ duration: 1.8, repeat: Infinity, delay: 0.6 }} />
+      </svg>
+    </div>
+  );
+}
+
+/* ─── Vector SVGs for Industries We Serve (Replacing Emojis) ─── */
+
+function AgricultureIcon() {
+  return (
+    <svg className="w-5 h-5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M12 2v20M17 5H7M19 9H5M21 13H3M17 17H7M15 21H9" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function HospitalityIcon() {
+  return (
+    <svg className="w-5 h-5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M3 22V2M21 22V10M12 18h.01M12 14h.01M16 18h.01M16 14h.01M8 18h.01M8 14h.01M12 10h.01M8 10h.01M16 10h.01" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function EducationIcon() {
+  return (
+    <svg className="w-5 h-5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function HealthcareIcon() {
+  return (
+    <svg className="w-5 h-5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function RetailIcon() {
+  return (
+    <svg className="w-5 h-5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function LogisticsIcon() {
+  return (
+    <svg className="w-5 h-5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <rect x="1" y="3" width="15" height="13" rx="2" />
+      <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+      <circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" />
+    </svg>
+  );
 }
 
 const solutionsList: SolutionItem[] = [
@@ -35,7 +309,8 @@ const solutionsList: SolutionItem[] = [
       "Increase efficiency",
       "Centralize business operations",
       "Improve reporting"
-    ]
+    ],
+    renderVisual: () => <CustomSoftwareVisual />
   },
   {
     id: 2,
@@ -55,7 +330,8 @@ const solutionsList: SolutionItem[] = [
       "Secure cloud infrastructure",
       "Easy maintenance",
       "Scalable architecture"
-    ]
+    ],
+    renderVisual: () => <WebAppVisual />
   },
   {
     id: 3,
@@ -74,7 +350,8 @@ const solutionsList: SolutionItem[] = [
       "Mobile accessibility",
       "Real-time notifications",
       "Improved convenience"
-    ]
+    ],
+    renderVisual: () => <MobileAppVisual />
   },
   {
     id: 4,
@@ -94,7 +371,8 @@ const solutionsList: SolutionItem[] = [
       "Reduce operational costs",
       "Improve customer support",
       "Increase productivity"
-    ]
+    ],
+    renderVisual: () => <AIAutomationVisual />
   },
   {
     id: 5,
@@ -115,7 +393,8 @@ const solutionsList: SolutionItem[] = [
       "Improved engagement",
       "Stronger brand perception",
       "Higher conversion rates"
-    ]
+    ],
+    renderVisual: () => <UIUXVisual />
   },
   {
     id: 6,
@@ -135,17 +414,18 @@ const solutionsList: SolutionItem[] = [
       "Faster performance",
       "Scalability",
       "Security"
-    ]
+    ],
+    renderVisual: () => <CloudInfraVisual />
   }
 ];
 
 const industries = [
-  { name: "Agriculture", desc: "Digital solutions for farming and rice mill operations." },
-  { name: "Hospitality", desc: "Booking, housekeeping, and reservation platforms." },
-  { name: "Education", desc: "Learning systems and student progress portals." },
-  { name: "Healthcare", desc: "Appointment and patient dashboard management." },
-  { name: "Retail", desc: "Inventory, stock POS, and e-commerce platforms." },
-  { name: "Logistics", desc: "Fleet booking, delivery, and tracking systems." }
+  { name: "Agriculture", desc: "Digital solutions for farming and rice mill operations.", renderIcon: () => <AgricultureIcon /> },
+  { name: "Hospitality", desc: "Booking, housekeeping, and reservation platforms.", renderIcon: () => <HospitalityIcon /> },
+  { name: "Education", desc: "Learning systems and student progress portals.", renderIcon: () => <EducationIcon /> },
+  { name: "Healthcare", desc: "Appointment and patient dashboard management.", renderIcon: () => <HealthcareIcon /> },
+  { name: "Retail", desc: "Inventory, stock POS, and e-commerce platforms.", renderIcon: () => <RetailIcon /> },
+  { name: "Logistics", desc: "Fleet booking, delivery, and tracking systems.", renderIcon: () => <LogisticsIcon /> }
 ];
 
 const techStack = ["Next.js", "React", "Node.js", "MongoDB", "Supabase", "PostgreSQL", "Python", "OpenAI", "Tailwind CSS", "TypeScript"];
@@ -174,12 +454,12 @@ const faqs = [
 ];
 
 export default function SolutionsPage() {
-  const [activeSolutionId, setActiveSolutionId] = useState(1);
+  const [selectedSolutionId, setSelectedSolutionId] = useState<number | null>(null);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const activeSolution = useMemo(() => {
-    return solutionsList.find(s => s.id === activeSolutionId) || solutionsList[0];
-  }, [activeSolutionId]);
+    return solutionsList.find(s => s.id === selectedSolutionId) || null;
+  }, [selectedSolutionId]);
 
   return (
     <div className="bg-black min-h-screen text-white select-none">
@@ -236,56 +516,100 @@ export default function SolutionsPage() {
         </p>
       </section>
 
-      {/* 3. Core Solutions Interactive Section */}
+      {/* 3. Core Solutions Bento Grid */}
       <section className="perf-section py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.04]">
-        <div className="mb-10">
+        <div className="mb-10 text-center lg:text-left">
           <h2 className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Core Solutions
           </h2>
           <p className="text-[13.5px] text-white/40" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            Select a solution catalog to view detailed parameters, examples, and operational benefits.
+            Explore our service catalog. Click any solution to review examples and operational benefits.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left: Solution List */}
-          <div className="lg:col-span-5 flex flex-col gap-2">
-            {solutionsList.map((sol) => (
-              <button
-                key={sol.id}
-                onClick={() => setActiveSolutionId(sol.id)}
-                className={`w-full text-left p-4.5 rounded-xl border transition-all ${
-                  activeSolutionId === sol.id
-                    ? "bg-white/[0.04] border-white/20"
-                    : "bg-[#0b0b0d] border-white/[0.06] hover:bg-white/[0.02]"
-                }`}
-              >
-                <h3 className="text-[15.5px] font-bold text-white mb-1.5 tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {solutionsList.map((sol) => (
+            <div
+              key={sol.id}
+              onClick={() => setSelectedSolutionId(sol.id)}
+              className="group relative rounded-2xl border border-white/[0.08] bg-[#0b0b0d] p-5 cursor-pointer transition-all duration-300 hover:border-white/20 flex flex-col justify-between overflow-hidden"
+              style={{ background: "linear-gradient(145deg, rgba(14,14,16,1) 0%, rgba(8,8,10,1) 100%)" }}
+            >
+              {/* Highlight spotlight */}
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-white/[0.02] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+              <div className="relative z-10">
+                {/* SVG Visual */}
+                <div className="mb-2">
+                  {sol.renderVisual()}
+                </div>
+
+                <div className="text-[10px] font-bold uppercase tracking-wider text-white/30 mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  Solution 0{sol.id}
+                </div>
+
+                <h3 className="text-[16px] font-bold text-white mb-2 tracking-tight group-hover:text-white transition-colors" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                   {sol.title}
                 </h3>
-                <p className="text-[12.5px] text-white/40 leading-relaxed font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+
+                <p className="text-[12.5px] text-white/40 leading-relaxed font-medium mb-4" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                   {sol.shortDesc}
                 </p>
-              </button>
-            ))}
-          </div>
+              </div>
 
-          {/* Right: Detailed Card */}
-          <div className="lg:col-span-7 bg-[#0b0b0d] border border-white/[0.08] rounded-2xl p-6 sm:p-8 min-h-[380px] flex flex-col justify-between">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSolution.id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.25 }}
-                className="flex flex-col gap-6"
-              >
+              <div className="relative z-10 pt-3 border-t border-white/[0.04] flex items-center justify-between">
+                <span className="text-[12px] font-bold text-white/60 group-hover:text-white transition-colors" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  Learn More
+                </span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-white/40 group-hover:translate-x-1 transition-transform">
+                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Slide-over Side Drawer Modal */}
+      <AnimatePresence>
+        {selectedSolutionId !== null && activeSolution && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedSolutionId(null)}
+              className="fixed inset-0 bg-black z-50 pointer-events-auto"
+            />
+
+            {/* Slide-over Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed right-0 top-0 bottom-0 w-full max-w-lg bg-[#0d0d0f] border-l border-white/[0.08] shadow-2xl z-50 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto"
+            >
+              <div className="flex flex-col gap-6">
+                {/* Drawer Header */}
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-white/35" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Solution Catalog
+                  </span>
+                  <button
+                    onClick={() => setSelectedSolutionId(null)}
+                    className="p-1 rounded-lg hover:bg-white/[0.06] transition-colors"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 text-white/60">
+                      <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Content */}
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-white/40 mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Solution 0{activeSolution.id}
-                  </div>
-                  <h3 className="text-[22px] font-black tracking-tight text-white mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <h3 className="text-[24px] font-black tracking-tight text-white mb-3 leading-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     {activeSolution.title}
                   </h3>
                   <p className="text-[13.5px] leading-relaxed text-white/50 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
@@ -293,16 +617,16 @@ export default function SolutionsPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-white/[0.06]">
+                <div className="flex flex-col gap-6 pt-6 border-t border-white/[0.06]">
                   {/* Examples */}
                   <div>
-                    <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/60 mb-2.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/60 mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                       {activeSolution.examplesTitle}
                     </h4>
-                    <ul className="space-y-1.5">
+                    <ul className="space-y-2">
                       {activeSolution.examples.map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-[12.5px] text-white/40 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                          <span className="w-1 h-1 rounded-full bg-white/30" />
+                        <li key={i} className="flex items-center gap-2.5 text-[13px] text-white/40 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -311,13 +635,13 @@ export default function SolutionsPage() {
 
                   {/* Benefits */}
                   <div>
-                    <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/60 mb-2.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/60 mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                       Operational Benefits
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2.5">
                       {activeSolution.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-[12.5px] text-white/50 leading-snug font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-white/80 shrink-0 mt-0.5">
+                        <li key={i} className="flex items-start gap-2.5 text-[13px] text-white/50 leading-snug font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-white/80 shrink-0 mt-0.5">
                             <path d="M2 6l3 3 5-5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>{benefit}</span>
@@ -326,11 +650,29 @@ export default function SolutionsPage() {
                     </ul>
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-      </section>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-8 mt-8 border-t border-white/[0.06] flex flex-col gap-3">
+                <a
+                  href="mailto:hello@nexzoa.com"
+                  className="w-full inline-flex items-center justify-center rounded-[12px] bg-white py-3.5 text-[13.5px] font-bold text-black hover:bg-white/90 transition-colors"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
+                  Start Project Intake
+                </a>
+                <button
+                  onClick={() => setSelectedSolutionId(null)}
+                  className="w-full inline-flex items-center justify-center rounded-[12px] border border-white/[0.1] bg-white/[0.02] py-3.5 text-[13.5px] font-bold text-white hover:bg-white/[0.06] transition-colors"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
+                  Back to grid
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* 4. Industries We Serve */}
       <section className="perf-section py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.04]">
@@ -347,14 +689,20 @@ export default function SolutionsPage() {
           {industries.map((ind) => (
             <div
               key={ind.name}
-              className="bg-[#0b0b0d] border border-white/[0.06] rounded-xl p-5"
+              className="bg-[#0b0b0d] border border-white/[0.06] rounded-xl p-5 flex items-start gap-4"
+              style={{ background: "linear-gradient(145deg, rgba(14,14,16,1) 0%, rgba(8,8,10,1) 100%)" }}
             >
-              <h3 className="text-[14.5px] font-bold text-white mb-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                {ind.name}
-              </h3>
-              <p className="text-[12.5px] text-white/40 leading-relaxed font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                {ind.desc}
-              </p>
+              <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0">
+                {ind.renderIcon()}
+              </div>
+              <div>
+                <h3 className="text-[14.5px] font-bold text-white mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  {ind.name}
+                </h3>
+                <p className="text-[12.5px] text-white/40 leading-relaxed font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  {ind.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
