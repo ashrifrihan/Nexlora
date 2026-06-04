@@ -2,15 +2,14 @@
 
 import { useRef, useState, useCallback } from "react";
 import { motion, useInView } from "motion/react";
+import Image from "next/image";
 
 interface ProjectItem {
   id: number;
   title: string;
   description: string;
-  category: string[];
+  category: string;
   image: string;
-  role: string;
-  technologies: string[];
   accent: string;
   github?: string;
 }
@@ -18,103 +17,76 @@ interface ProjectItem {
 const projectsData: ProjectItem[] = [
   {
     id: 1,
-    title: "Smart Rice Mill Management System",
-    description:
-      "A multi-role business management system designed to digitize rice mill operations, combining web dashboards, real-time data management, and AI-driven insights.",
-    category: ["Development", "System Design"],
+    title: "Smart Rice Mill System",
+    description: "A business platform digitizing mill operations, inventory, and sales with real-time analytics.",
+    category: "System Design",
     image: "/projects/rice-mill/rice-mill.jpg",
-    role: "Full Stack Developer & UI/UX Designer",
-    technologies: ["React", "Vite", "Python", "FastAPI", "Firebase", "scikit-learn", "Tailwind CSS"],
     accent: "#f59e0b",
   },
   {
     id: 2,
-    title: "QuickStay – Hotel Booking & Management",
-    description:
-      "A multi-role hotel booking and management system enabling online reservations, front-desk operations, billing, and role-based workflows within a unified platform.",
-    category: ["Development", "System Design"],
+    title: "QuickStay Booking Engine",
+    description: "A unified reservation and front-desk platform for online bookings, billing, and role workflows.",
+    category: "Full Stack Development",
     image: "/projects/quickstay/QuickStay.jpg",
-    role: "Full Stack Developer & System Designer",
-    technologies: ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Stripe API"],
     accent: "#3b82f6",
   },
   {
     id: 3,
-    title: "Photography CMS & Booking Platform",
-    description:
-      "A full-stack, CMS-driven photography website with dynamic galleries, booking management, and a secure admin panel for complete business control.",
-    category: ["Development", "UI/UX"],
+    title: "Photography CMS & Portal",
+    description: "A dynamic portfolio website with custom galleries and integrated client booking management.",
+    category: "Web Application",
     image: "/projects/MalcolmLismore/Malcolm.jpg",
-    role: "Full Stack Developer",
-    technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap 5", "CSS"],
     accent: "#a855f7",
   },
   {
     id: 4,
-    title: "QuickSticker – AI-Powered Sticker Studio",
-    description:
-      "A full-stack AI-powered sticker creation platform that turns any image or text prompt into WhatsApp-ready stickers in seconds using intelligent background removal.",
-    category: ["Development", "AI/ML"],
-    image: "/projects/rice-mill/rice-mill.jpg",
-    role: "Full Stack Developer & AI Engineer",
-    technologies: ["Python", "Flask", "Pollinations AI", "rembg", "Canvas API", "Web Share API"],
+    title: "QuickSticker AI Studio",
+    description: "An AI sticker generator converting images and text prompts into WhatsApp stickers.",
+    category: "AI/ML App",
+    image: "/projects/quickSticker/QuickSticker.jpg",
     accent: "#ec4899",
     github: "https://github.com/ashrifrihan/QuickSticker",
   },
   {
     id: 5,
-    title: "QuickCompress – Batch Image Compression",
-    description:
-      "A full-stack batch image compression web application enabling users to compress up to 20 images simultaneously with customizable quality and format conversion.",
-    category: ["Development", "Web App"],
-    image: "/projects/rice-mill/rice-mill.jpg",
-    role: "Full Stack Developer",
-    technologies: ["Python", "Flask", "Pillow", "Tailwind CSS", "REST API", "Gunicorn"],
+    title: "QuickCompress Batch Optimizer",
+    description: "A batch compression utility supporting custom formats and secure local processing.",
+    category: "Web Application",
+    image: "/projects/QuickCompress/quick.jpg",
     accent: "#06b6d4",
     github: "https://github.com/ashrifrihan/QuickCompress",
   },
   {
     id: 6,
-    title: "Wander Sphere Travel UX Platform",
-    description:
-      "A modern travel planning UI/UX concept focused on seamless destination discovery, intuitive booking flows, and immersive visual storytelling.",
-    category: ["UI/UX", "Product Design"],
+    title: "Wander Sphere Platform",
+    description: "A travel planning UI/UX concept focused on seamless discovery and itineraries.",
+    category: "Product Design",
     image: "/projects/Wander-Spheres/Wander-Spheres.jpg",
-    role: "UI/UX Designer",
-    technologies: ["Figma", "UI Design Systems", "Prototyping", "User Flow Mapping"],
     accent: "#10b981",
   },
   {
     id: 7,
-    title: "Quick Eats Food Delivery UX",
-    description:
-      "A mobile-first food delivery UI/UX design focused on fast decision-making, simplified ordering flows, and real-time delivery interaction.",
-    category: ["UI/UX", "Product Design"],
+    title: "Quick Eats Ordering App",
+    description: "A mobile-first delivery interface designed to simplify ordering, search, and checkout.",
+    category: "UI/UX Design",
     image: "/projects/QucikEats/QucikEats.jpg",
-    role: "UI/UX Designer",
-    technologies: ["Figma", "Adobe Photoshop", "Wireframing", "Prototyping"],
     accent: "#ef4444",
   },
   {
     id: 8,
-    title: "CaféSpot Coffee Ordering App",
-    description:
-      "A mobile-first coffee ordering experience designed for Sri Lanka's growing café culture, enabling users to quickly browse, customize, and order from nearby coffee shops.",
-    category: ["UI/UX", "Product Design"],
+    title: "CaféSpot Coffee App",
+    description: "A localized coffee pre-ordering experience tailored for Sri Lanka's growing café culture.",
+    category: "UI/UX Design",
     image: "/projects/cafe-spot/cafe-spot.jpg",
-    role: "UI/UX Designer",
-    technologies: ["Figma", "User Research", "Wireframing", "Design Systems"],
     accent: "#d97706",
   },
   {
     id: 9,
-    title: "StarEvent – ASP.NET Event Management",
-    description:
-      "A comprehensive web-based event management system built with ASP.NET MVC (C#), enabling users to create, manage, explore, and organize events with responsive UI.",
-    category: ["Development", "System Design"],
+    title: "StarEvent Management",
+    description: "A web platform built with ASP.NET MVC for creating and organizing community events.",
+    category: "Full Stack Development",
     image: "/projects/starevent/starevent.jpg",
-    role: "Full Stack Developer & System Architect",
-    technologies: ["C#", "ASP.NET MVC", "Razor Views", "SQL Server", "Bootstrap", "jQuery"],
     accent: "#6366f1",
     github: "https://github.com/ashrifrihan/StarEvent",
   },
@@ -177,7 +149,7 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
         <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
         {/* Project Thumbnail Image */}
-        <div className="relative w-full overflow-hidden bg-white/[0.01] border-b border-white/[0.06] z-10">
+        <div className="relative w-full overflow-hidden bg-white/[0.01] border-b border-white/[0.06] z-10 aspect-[16/10]">
           {/* Browser Top Bar */}
           <div className="h-8 bg-[#0a0a0c] px-4 flex items-center gap-1.5 border-b border-white/[0.04] select-none">
             <div className="flex items-center gap-1">
@@ -194,14 +166,15 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
             <div className="w-2" />
           </div>
 
-          {/* Thumbnail with Smooth Parallax Zoom */}
-          <div className="relative h-44 sm:h-52 overflow-hidden">
-            <img
+          {/* Thumbnail with Next.js Image Optimization */}
+          <div className="relative w-full h-full overflow-hidden">
+            <Image
               src={item.image}
               alt={`${item.title} — Project by Nexzoa`}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover object-top filter saturate-[0.8] brightness-[0.75] group-hover:saturate-100 group-hover:brightness-95 group-hover:scale-[1.03] transition-all duration-700 ease-[0.16,1,0.3,1]"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              priority={index < 3} // Priority load top 3 images above fold
+              className="object-cover object-top filter saturate-[0.8] brightness-[0.75] group-hover:saturate-100 group-hover:brightness-95 group-hover:scale-[1.03] transition-all duration-700 ease-[0.16,1,0.3,1]"
             />
             {/* Bottom fade */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent pointer-events-none" />
@@ -209,29 +182,24 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
         </div>
 
         {/* Card Body */}
-        <div className="p-6 sm:p-7 flex flex-col justify-between flex-1 relative z-10">
+        <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 relative z-10">
           <div>
             {/* Category & Number */}
-            <div className="flex justify-between items-center mb-3">
-              <div className="flex items-center gap-2">
-                {item.category.slice(0, 2).map((cat) => (
-                  <span
-                    key={cat}
-                    className="text-[10px] font-semibold tracking-[0.06em] uppercase text-white/40 group-hover:text-white/60 transition-colors duration-300"
-                    style={{ fontFamily: '"Satoshi", sans-serif' }}
-                  >
-                    {cat}
-                  </span>
-                ))}
-              </div>
-              <span className="text-[12px] font-bold text-white/20 select-none font-mono">
+            <div className="flex justify-between items-center mb-2.5">
+              <span
+                className="text-[9.5px] font-semibold tracking-[0.06em] uppercase text-white/40 group-hover:text-white/60 transition-colors duration-300"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                {item.category}
+              </span>
+              <span className="text-[11px] font-bold text-white/20 select-none font-mono">
                 {number}
               </span>
             </div>
 
             {/* Title */}
             <h3
-              className="text-[18px] sm:text-[20px] font-bold text-white tracking-[-0.03em] mb-2 group-hover:text-white transition-colors duration-300"
+              className="text-[17px] sm:text-[18px] font-bold text-white tracking-[-0.03em] mb-1.5 group-hover:text-white transition-colors duration-300 line-clamp-1"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               {item.title}
@@ -239,46 +207,25 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
 
             {/* Description */}
             <p
-              className="text-[13px] leading-[1.6] text-white/40 group-hover:text-white/60 transition-colors duration-300 mb-4 font-medium line-clamp-3"
+              className="text-[13px] leading-[1.5] text-white/40 group-hover:text-white/60 transition-colors duration-300 mb-4 font-medium line-clamp-2"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               {item.description}
             </p>
-
-            {/* Tech Stack Tags */}
-            <div className="flex flex-wrap gap-1.5 mb-4">
-              {item.technologies.slice(0, 5).map((tech) => (
-                <span
-                  key={tech}
-                  className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/40 font-medium"
-                  style={{ fontFamily: '"Satoshi", sans-serif' }}
-                >
-                  {tech}
-                </span>
-              ))}
-              {item.technologies.length > 5 && (
-                <span
-                  className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.02] text-white/25 font-medium"
-                  style={{ fontFamily: '"Satoshi", sans-serif' }}
-                >
-                  +{item.technologies.length - 5}
-                </span>
-              )}
-            </div>
           </div>
 
           {/* Action Links */}
-          <div className="flex items-center justify-between border-t border-white/[0.04] pt-4">
+          <div className="flex items-center justify-between border-t border-white/[0.04] pt-3.5 mt-auto">
             <div
-              className="flex items-center gap-1.5 text-[12px] font-semibold transition-colors duration-300 select-none"
+              className="flex items-center gap-1 text-[11.5px] font-semibold transition-colors duration-300 select-none"
               style={{ fontFamily: '"Satoshi", sans-serif', color: item.accent }}
             >
               <span className="opacity-70 group-hover:opacity-100 transition-opacity duration-300">
                 View Project
               </span>
               <svg
-                width="12"
-                height="12"
+                width="11"
+                height="11"
                 viewBox="0 0 16 16"
                 fill="none"
                 className="opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
