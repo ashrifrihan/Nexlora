@@ -5,6 +5,12 @@ import { motion, useInView } from "motion/react";
 
 /* ─── Visual illustrations for each card ─── */
 
+const planningCardWidths = [
+  ["78%", "66%", "88%"],
+  ["94%", "72%"],
+  ["86%", "64%"],
+];
+
 function DiscoveryVisual() {
   return (
     <div className="relative h-52 sm:h-64 w-full overflow-hidden">
@@ -125,7 +131,7 @@ function PlanningVisual() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: ci * 0.15 + ri * 0.1 + 0.3, duration: 0.4 }}
-                style={{ transformOrigin: "left", width: `${60 + Math.random() * 40}%` }}
+                style={{ transformOrigin: "left", width: planningCardWidths[ci][ri] }}
               />
             ))}
           </motion.div>
