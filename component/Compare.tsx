@@ -4,7 +4,7 @@ import { useRef, useState, useCallback } from "react";
 import { motion, useInView } from "motion/react";
 
 /* ─── 7 Exact Comparison Points Provided by the User ─── */
-const nexloraFeatures = [
+const nexzoaFeatures = [
   "Fast product delivery",
   "Modern scalable systems",
   "Direct builder communication",
@@ -140,14 +140,14 @@ export default function Compare() {
             className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Nexlora vs. Traditional Alternatives
+            Nexzoa vs. Traditional Alternatives
           </motion.p>
         </div>
 
         {/* Desktop Comparison Table (4 Columns aligned perfectly by row heights) */}
         <div className="hidden lg:grid lg:grid-cols-4 gap-6 xl:gap-8 items-stretch mt-12">
           
-          {/* Column 1: Nexlora (Standalone Highlighted Card with WOW border & sweeping glare animations) */}
+          {/* Column 1: Nexzoa (Standalone Highlighted Card with WOW border & sweeping glare animations) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -224,12 +224,12 @@ export default function Compare() {
                     className="text-[20px] font-bold text-white tracking-tight mb-8"
                     style={{ fontFamily: '"Satoshi", sans-serif' }}
                   >
-                    nexlora<span className="text-white/40">*</span>
+                    nexzoa<span className="text-white/40">*</span>
                   </h3>
 
                   {/* Features */}
                   <div className="flex flex-col gap-0">
-                    {nexloraFeatures.map((feature, i) => (
+                    {nexzoaFeatures.map((feature, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, x: -6 }}
@@ -358,7 +358,7 @@ function MobileCompareView() {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { title: "nexlora", accent: true },
+    { title: "nexzoa", accent: true },
     { title: "Traditional Agencies", accent: false },
     { title: "Freelancers", accent: false },
     { title: "In-house Teams", accent: false },
@@ -406,10 +406,10 @@ function MobileCompareView() {
             >
               <div className="absolute top-0 right-0 w-[180px] h-[180px] bg-gradient-to-br from-white/[0.03] to-transparent blur-[35px] pointer-events-none rounded-tr-[23px]" />
               <h3 className="text-[17px] font-bold text-white tracking-tight mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                nexlora<span className="text-white/40">*</span>
+                nexzoa<span className="text-white/40">*</span>
               </h3>
               <div className="flex flex-col gap-0">
-                {nexloraFeatures.map((feature, i) => (
+                {nexzoaFeatures.map((feature, i) => (
                   <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
                     <CheckIcon />
                     <span className="text-[14px] font-semibold text-white/90" style={{ fontFamily: '"Satoshi", sans-serif' }}>

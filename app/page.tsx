@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/component/Hero";
 import Nav from "@/component/nav";
 import Trust from "@/component/Trust";
@@ -8,6 +9,12 @@ import Testimonials from "@/component/Testimonials";
 import FAQ from "@/component/Faq";
 import Compare from "@/component/Compare";
 import Footer from "@/component/Footer";
+
+export const metadata: Metadata = {
+  title: "Nexzoa — Engineering Intelligent Systems | AI SaaS & Automation",
+  description: "Nexzoa delivers AI-native software, full-stack SaaS platforms, automation workflows and scalable digital solutions for ambitious businesses.",
+  alternates: { canonical: "https://nexzoa.in" }
+};
 
 export default function Home() {
   return (

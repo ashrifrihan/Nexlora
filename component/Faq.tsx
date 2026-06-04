@@ -41,6 +41,10 @@ const faqData: FAQItem[] = [
     question: "How do you handle client communication and collaboration?",
     answer: "We support a transparent, close client collaboration process. You will have a dedicated Slack workspace for daily syncs, a shared Notion hub to track progress in real-time, and live bi-weekly video sprint reviews where we demonstrate functional updates and plan the next phase.",
   },
+  {
+    question: "Is Nexzoa related to Nexon or Tata Nexon?",
+    answer: "No. Nexzoa is an independent, premium custom software engineering and AI automation solutions firm. We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Nexon Co., Ltd. (the video game developer and publisher) or Tata Motors (the manufacturer of Tata Nexon cars). We design and build bespoke SaaS platforms, custom CRM systems, and AI workflows for modern business operations.",
+  },
 ];
 
 function AccordionItem({ item, isOpen, onClick, index }: { item: FAQItem; isOpen: boolean; onClick: () => void; index: number }) {

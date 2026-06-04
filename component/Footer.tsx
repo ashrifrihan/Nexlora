@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-5 flex flex-col gap-6">
             <div className="flex items-center gap-1.5 select-none">
               <span className="text-[18px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                nexlora<span className="text-white/40 font-bold">*</span>
+                nexzoa<span className="text-white/40 font-bold">*</span>
               </span>
             </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
               className="text-[14.5px] leading-[1.65] text-white/50 max-w-md"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
-              Nexlora builds <span className="text-white/80 font-medium">websites</span>, <span className="text-white/80 font-medium">AI systems</span>, <span className="text-white/80 font-medium">dashboard platforms</span>, <span className="text-white/80 font-medium">mobile apps</span>, and <span className="text-white/80 font-medium">custom software</span> for modern businesses.
+              Nexzoa builds <span className="text-white/80 font-medium">websites</span>, <span className="text-white/80 font-medium">AI systems</span>, <span className="text-white/80 font-medium">dashboard platforms</span>, <span className="text-white/80 font-medium">mobile apps</span>, and <span className="text-white/80 font-medium">custom software</span> for modern businesses.
             </p>
 
             {/* Social Links */}
@@ -59,7 +59,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.06] hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
-                aria-label="Follow Nexlora on X"
+                aria-label="Follow Nexzoa on X"
               >
                 <XIcon />
               </a>
@@ -68,7 +68,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.06] hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
-                aria-label="Check Nexlora on GitHub"
+                aria-label="Check Nexzoa on GitHub"
               >
                 <GithubIcon />
               </a>
@@ -77,7 +77,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.06] hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
-                aria-label="Connect with Nexlora on LinkedIn"
+                aria-label="Connect with Nexzoa on LinkedIn"
               >
                 <LinkedinIcon />
               </a>
@@ -173,7 +173,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Legal */}
         <div className="mt-20 pt-8 border-t border-white/[0.03] flex flex-col sm:flex-row items-center justify-between gap-4 select-none">
           <p className="text-[12px] text-white/30" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            &copy; {new Date().getFullYear()} Nexlora. All rights reserved.
+            &copy; {new Date().getFullYear()} Nexzoa. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#Privacy" className="text-[12px] text-white/30 hover:text-white/50 transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>

@@ -14,9 +14,9 @@ export default function Nav() {
           <a
             href="#"
             className="shrink-0 text-[30px] font-black leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:tracking-[-0.04em]"
-            aria-label="Nexlora home"
+            aria-label="Nexzoa home"
           >
-            nexlora<span className="text-white/40 font-normal">*</span>
+            nexzoa<span className="text-white/40 font-normal">*</span>
           </a>
 
           <div className="hidden items-center gap-2 lg:flex">
@@ -111,11 +111,11 @@ export default function Nav() {
 
                 <div className="mt-5 flex items-center justify-center text-[14px] font-medium tracking-[-0.02em] text-white/85 sm:text-[15px]">
                   <a
-                    href="mailto:hello@nexlora.com"
+                    href="mailto:hello@nexzoa.com"
                     className="transition-colors hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
-                    hello@nexlora.com
+                    hello@nexzoa.com
                   </a>
                 </div>
               </div>

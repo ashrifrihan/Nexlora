@@ -245,7 +245,7 @@ export default function Trust() {
           </motion.div>
 
           <motion.h2 id="trust-heading" initial={{opacity:0,y:20}} animate={isInView?{opacity:1,y:0}:{}} transition={{duration:0.6,delay:0.1,ease:[0.16,1,0.3,1]}} className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" style={{fontFamily:'"Satoshi",sans-serif'}}>
-            <span className="sr-only">Nexlora Platform Trust: </span>
+            <span className="sr-only">Nexzoa Platform Trust: </span>
             Helping teams build faster with{" "}
             <span className="bg-gradient-to-r from-white/95 via-white/70 to-white/45 bg-clip-text text-transparent">better software.</span>
           </motion.h2>

@@ -3,7 +3,7 @@ import FAQ from "@/component/Faq";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ | Nexlora Custom Software Agency",
+  title: "FAQ | Nexzoa Custom Software Agency",
   description: "Everything you want to know about our custom software development process, enterprise applications, cross-platform mobile apps, website redesigns, and AI automation integrations.",
 };
 

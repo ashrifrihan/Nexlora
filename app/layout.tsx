@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Nexlora - Build the System Behind Your Business",
-    template: "%s | Nexlora",
+    default: "Nexzoa - Build the System Behind Your Business",
+    template: "%s | Nexzoa",
   },
   description:
-    "Nexlora builds custom software development solutions, AI automation workflows, and digital platforms for businesses — fast, scalable, and built to grow.",
+    "Nexzoa builds custom software development solutions, AI automation workflows, and digital platforms for businesses — fast, scalable, and built to grow.",
   keywords: [
     // Easy / broad terms
     "software company",
@@ -47,10 +47,64 @@ export const metadata: Metadata = {
     "end-to-end digital platform development",
     "operational software for growing companies",
     "AI automation for enterprise workflows",
-    "nexlora software agency",
-    "nexlora.io",
+    "nexzoa software agency",
+    "nexzoa.io",
     "build system behind your business",
-    // Competitor, variant, & misspelling search terms (for ranking #1)
+    // Brand (Nexzoa) & Misspellings
+    "nexzoa",
+    "nexzoa solutions",
+    "nexzoa labs",
+    "nexzoa technologies",
+    "nexzoa ltd",
+    "nexzoa.io",
+    "nexzoa.in",
+    "nexzoasolutions.com",
+    "nexzoalabs.com",
+    "nexzoatech.com",
+    "nexzoa software engineering",
+    "nexzoa crm",
+    "oneflow crm",
+    "fixly app nexzoa",
+    "unsaid app nexzoa",
+    "crypto church nexzoa",
+    "power bi dashboards nexzoa",
+    "nexzoa ai solutions",
+    "nexzoa digital product agency",
+    "nexzoa smart web",
+    "nexzoa team",
+    "nexzoa founders",
+    "nexzoa portfolio",
+    "nexzoa reviews",
+    "nexzoa pricing",
+    "nexzoa official",
+    "nexzoa login",
+    "nexzoa vs nexlora",
+    "nexzo",
+    "nexza",
+    "nezzoa",
+    "nexzora",
+    "nexoa",
+    "naxzoa",
+    "nixzoa",
+    "nexzoaa",
+    "nexzoas",
+    "nexzoai",
+    "nexzora solutions",
+    "nexzora ai",
+    "nexzora.in",
+    "nezoza",
+    "nexzova",
+    "nexzoia",
+    "AI software development",
+    "SaaS platform development",
+    "AI automation agency",
+    "custom software company",
+    "Next.js development company",
+    "intelligent systems",
+    "AI CRM solutions",
+    "business automation",
+    "Power BI dashboards",
+    // Old Brand (Nexlora) & Misspellings for seamless transition
     "nexlora",
     "nexlora solutions",
     "nexlora labs",
@@ -62,7 +116,6 @@ export const metadata: Metadata = {
     "nexloralabs.com",
     "nexlora software engineering",
     "nexlora crm",
-    "oneflow crm",
     "fixly app nexlora",
     "unsaid app nexlora",
     "crypto church nexlora",
@@ -79,18 +132,13 @@ export const metadata: Metadata = {
     "nexloira",
     "nexlpra",
     "nexl0ra",
-    "nexloraa",
     "nexloera",
     "nexlorea",
     "nixlora",
-    "nexloras",
-    "nexlorai",
     "nexlore",
     "nexluara",
     "nextlora",
     "nexlura",
-    "nexora ai",
-    "necora solutions",
     "nexloar",
     "nekslora",
     "nexloora",
@@ -116,17 +164,17 @@ export const metadata: Metadata = {
     "scalable software architecture",
     "Next.js experts",
     "AI native application development",
-    "hire Nexlora",
-    "Nexlora cost",
-    "Nexlora vs competitors",
-    "Nexlora case studies",
-    "Nexlora clients",
-    "Nexlora address",
-    "Nexlora headquarters",
-    "Nexlora official contact",
-    "Nexlora consultation",
-    "Nexlora quote",
-    "Nexlora services",
+    "hire Nexzoa",
+    "Nexzoa cost",
+    "Nexzoa vs competitors",
+    "Nexzoa case studies",
+    "Nexzoa clients",
+    "Nexzoa address",
+    "Nexzoa headquarters",
+    "Nexzoa official contact",
+    "Nexzoa consultation",
+    "Nexzoa quote",
+    "Nexzoa services",
     "Power BI dashboard development",
     "business intelligence solutions",
     "data dashboard agency",
@@ -139,19 +187,33 @@ export const metadata: Metadata = {
     "automation company Sri Lanka",
     "digital agency Sri Lanka",
   ],
-  authors: [{ name: "Nexlora", url: "https://nexlora.io" }],
-  creator: "Nexlora",
-  publisher: "Nexlora",
-  metadataBase: new URL("https://nexlora.io"),
+  authors: [{ name: "Nexzoa Global Team", url: "https://nexzoa.in/about" }],
+  creator: "Nexzoa",
+  publisher: "Nexzoa",
+  metadataBase: new URL("https://nexzoa.in"),
   alternates: {
-    canonical: "/",
+    canonical: "https://nexzoa.in",
+    languages: {
+      "en-US": "https://nexzoa.in/en-us",
+      "en-GB": "https://nexzoa.in/en-gb",
+      "en-IN": "https://nexzoa.in/en-in",
+      "en-AU": "https://nexzoa.in/en-au",
+      "en-CA": "https://nexzoa.in/en-ca",
+      "ar-AE": "https://nexzoa.in/ar-ae",
+      "de-DE": "https://nexzoa.in/de-de",
+      "fr-FR": "https://nexzoa.in/fr-fr",
+      "es-ES": "https://nexzoa.in/es-es",
+      "ja-JP": "https://nexzoa.in/ja-jp",
+      "zh-CN": "https://nexzoa.in/zh-cn",
+      "hi-IN": "https://nexzoa.in/hi-in",
+    },
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://nexlora.io",
-    siteName: "Nexlora",
-    title: "Nexlora — Build the System Behind Your Business",
+    locale: "en_IN",
+    url: "https://nexzoa.in",
+    siteName: "Nexzoa",
+    title: "Nexzoa — Build the System Behind Your Business",
     description:
       "Custom software development, AI automation workflows, and scalable digital platforms — designed to feel fast, clear, and built to grow.",
     images: [
@@ -159,17 +221,17 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Nexlora — Build the System Behind Your Business",
+        alt: "Nexzoa — Build the System Behind Your Business",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexlora — Build the System Behind Your Business",
+    title: "Nexzoa — Build the System Behind Your Business",
     description:
       "Custom software, AI workflows, and digital platforms for businesses — fast, scalable, built to grow.",
     images: ["/og-image.png"],
-    creator: "@nexlora",
+    creator: "@nexzoa",
   },
   robots: {
     index: true,
@@ -183,9 +245,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/nexlora.jpg",
-    shortcut: "/nexlora.jpg",
-    apple: "/nexlora.jpg",
+    icon: "/nexzoa.jpg",
+    shortcut: "/nexzoa.jpg",
+    apple: "/nexzoa.jpg",
   },
   manifest: "/site.webmanifest",
   verification: {
@@ -201,15 +263,24 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Nexlora",
+    name: "Nexzoa",
     alternateName: [
+      "Nexzo",
+      "Nexoza",
+      "Nexzoa AI",
+      "Nexzoa Software Agency",
+      "Nexzoa Solutions",
+      "Nexzoa Labs",
+      "Nexzoa Technologies",
+      "Nexzoa Ltd",
+      "Nexzoa Smart Web & AI Solutions",
+      "Nexzoa CRM & AI Solutions",
+      "Nexlora",
       "Nexlora Software Agency",
       "Nexlora Solutions",
       "Nexlora Labs",
       "Nexlora Technologies",
       "Nexlora Ltd",
-      "Nexlora Smart Web & AI Solutions",
-      "Nexlora CRM & AI Solutions",
       "Nexora",
       "Necora",
       "Neclora",
@@ -221,11 +292,11 @@ export default function RootLayout({
       "Nexlra",
       "Naxlora"
     ],
-    url: "https://nexlora.io",
-    logo: "https://nexlora.io/logo.png",
+    url: "https://nexzoa.in",
+    logo: "https://nexzoa.in/logo.png",
     foundingDate: "2024",
     description:
-      "Nexlora builds custom software development solutions, AI automation workflows, and digital platforms for businesses — fast, scalable, and built to grow.",
+      "Nexzoa builds custom software development solutions, AI automation workflows, and digital platforms for businesses — fast, scalable, and built to grow.",
     slogan: "Build the system behind your business.",
     serviceType: [
       "Custom Software Development",
@@ -238,20 +309,24 @@ export default function RootLayout({
     ],
     areaServed: "Worldwide",
     sameAs: [
-      "https://twitter.com/nexlora",
-      "https://linkedin.com/company/nexlora",
-      "https://github.com/nexlora",
-      "https://nexlorasolutions.com",
+      "https://twitter.com/nexzoa",
+      "https://linkedin.com/company/nexzoa",
+      "https://github.com/nexzoa",
+      "https://nexzoasolutions.com",
+      "https://nexzoa.in",
+      "https://nexzoalabs.com",
+      "https://nexzoatech.com",
+      "https://instagram.com/nexzoalabs",
+      "https://facebook.com/nexzoadigital",
+      "https://nexlora.io",
       "https://nexlora.in",
       "https://nexloralabs.com",
-      "https://nexloratech.com",
-      "https://instagram.com/nexloralabs",
-      "https://facebook.com/nexloradigital"
+      "https://nexloratech.com"
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Support",
-      email: "hello@nexlora.io",
+      email: "hello@nexzoa.in",
       availableLanguage: "English",
     },
     address: {
@@ -281,8 +356,8 @@ export default function RootLayout({
                   "name": "Web Development",
                   "provider": {
                     "@type": "Organization",
-                    "name": "Nexlora",
-                    "url": "https://nexlora.io"
+                    "name": "Nexzoa",
+                    "url": "https://nexzoa.in"
                   },
                   "description": "Modern responsive websites built for performance, SEO, and conversion from landing pages to full-stack platforms.",
                   "serviceType": "Software Development",
@@ -293,8 +368,8 @@ export default function RootLayout({
                   "name": "Dashboard Systems",
                   "provider": {
                     "@type": "Organization",
-                    "name": "Nexlora",
-                    "url": "https://nexlora.io"
+                    "name": "Nexzoa",
+                    "url": "https://nexzoa.in"
                   },
                   "description": "Realtime operational dashboards for business workflows, analytics, and data-driven decision making.",
                   "serviceType": "Business Intelligence Software",
@@ -305,8 +380,8 @@ export default function RootLayout({
                   "name": "AI Workflows",
                   "provider": {
                     "@type": "Organization",
-                    "name": "Nexlora",
-                    "url": "https://nexlora.io"
+                    "name": "Nexzoa",
+                    "url": "https://nexzoa.in"
                   },
                   "description": "AI-powered automation systems connected to real business operations smarter pipelines, fewer bottlenecks.",
                   "serviceType": "Artificial Intelligence Integration",
@@ -317,8 +392,8 @@ export default function RootLayout({
                   "name": "Mobile Apps",
                   "provider": {
                     "@type": "Organization",
-                    "name": "Nexlora",
-                    "url": "https://nexlora.io"
+                    "name": "Nexzoa",
+                    "url": "https://nexzoa.in"
                   },
                   "description": "Fast mobile experiences for customers, teams, and field operations built cross-platform, shipped fast.",
                   "serviceType": "Mobile Application Development",
@@ -329,8 +404,8 @@ export default function RootLayout({
                   "name": "UI/UX Design",
                   "provider": {
                     "@type": "Organization",
-                    "name": "Nexlora",
-                    "url": "https://nexlora.io"
+                    "name": "Nexzoa",
+                    "url": "https://nexzoa.in"
                   },
                   "description": "Clean interfaces designed for usability, clarity, and scale research-driven design that users love.",
                   "serviceType": "User Interface & Experience Design",
@@ -341,8 +416,8 @@ export default function RootLayout({
                   "name": "Automation Systems",
                   "provider": {
                     "@type": "Organization",
-                    "name": "Nexlora",
-                    "url": "https://nexlora.io"
+                    "name": "Nexzoa",
+                    "url": "https://nexzoa.in"
                   },
                   "description": "Internal tools and automated workflows for repetitive processes reduce manual work, scale faster.",
                   "serviceType": "Workflow Automation Development",
@@ -353,26 +428,34 @@ export default function RootLayout({
                   "mainEntity": [
                     {
                       "@type": "Question",
-                      "name": "What services does Nexlora provide?",
+                      "name": "What services does Nexzoa provide?",
                       "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Nexlora builds custom software solutions, realtime dashboard systems, AI workflows, cross-platform mobile apps, UI/UX designs, and workflow automation systems."
+                        "text": "Nexzoa builds custom software solutions, realtime dashboard systems, AI workflows, cross-platform mobile apps, UI/UX designs, and workflow automation systems."
                       }
                     },
                     {
                       "@type": "Question",
-                      "name": "What is Nexlora's average delivery timeline?",
+                      "name": "What is Nexzoa's average delivery timeline?",
                       "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Nexlora's average delivery cycle is 12 weeks, running through Discovery, Planning, Design, Development, Testing, and Launch phases."
+                        "text": "Nexzoa's average delivery cycle is 12 weeks, running through Discovery, Planning, Design, Development, Testing, and Launch phases."
                       }
                     },
                     {
                       "@type": "Question",
-                      "name": "How does Nexlora ensure software reliability?",
+                      "name": "How does Nexzoa ensure software reliability?",
                       "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Nexlora engineers fault-tolerant backend infrastructures, maintains 99.9% platform stability, and runs rigorous testing suites covering Unit, Integration, E2E, and performance benchmarks."
+                        "text": "Nexzoa engineers fault-tolerant backend infrastructures, maintains 99.9% platform stability, and runs rigorous testing suites covering Unit, Integration, E2E, and performance benchmarks."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Is Nexzoa related to Nexon or Tata Nexon?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Nexzoa is an independent, premium custom software development and AI automation solutions firm. We are not affiliated, associated, or in any way officially connected with Nexon Co., Ltd. (the video game developer and publisher) or Tata Motors (the manufacturer of Tata Nexon cars). We design and build bespoke SaaS platforms, custom CRM systems, and AI workflows for modern business operations."
                       }
                     }
                   ]

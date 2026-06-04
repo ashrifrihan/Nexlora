@@ -1,28 +1,31 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://nexzoa.com";
+  const currentDate = new Date();
+
   return [
     {
-      url: "https://nexlora.io",
-      lastModified: new Date(),
+      url: `${baseUrl}`,
+      lastModified: currentDate,
       changeFrequency: "weekly",
-      priority: 1,
+      priority: 1.0,
     },
     {
-      url: "https://nexlora.io/projects",
-      lastModified: new Date(),
+      url: `${baseUrl}/projects`,
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: "https://nexlora.io/testimonials",
-      lastModified: new Date(),
+      url: `${baseUrl}/testimonials`,
+      lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://nexlora.io/faq",
-      lastModified: new Date(),
+      url: `${baseUrl}/faq`,
+      lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },

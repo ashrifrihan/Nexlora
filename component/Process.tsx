@@ -43,7 +43,7 @@ function DiscoveryVisual() {
               <svg className="w-3.5 h-3.5 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
             </div>
             <div className="min-w-0">
-              <div className="text-[10px] font-semibold text-white/80 truncate">Client: Nexlora</div>
+              <div className="text-[10px] font-semibold text-white/80 truncate">Client: Nexzoa</div>
               <div className="text-[8px] text-white/30 truncate">Onboarded: May 2026</div>
             </div>
             <motion.div className="w-1.5 h-1.5 rounded-full bg-blue-400 ml-auto shrink-0" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} />
@@ -500,7 +500,7 @@ export default function Process() {
           </motion.div>
 
           <motion.h2 id="process-heading" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            <span className="sr-only">Nexlora Development Process: </span>
+            <span className="sr-only">Nexzoa Development Process: </span>
             A simple process from{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">idea to launch.</span>
           </motion.h2>

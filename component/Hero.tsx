@@ -256,7 +256,9 @@ const Hero = () => {
             }}
           >
             <span className="sr-only">
-              Nexlora — Official Site. AI-Native Software, SaaS Development, CRM &amp; Automation Systems. Build the system behind your success.
+              Nexzoa — Global AI-Native Software Engineering Company Operating in 50+ Countries.
+              Official Nexzoa Offices Worldwide: USA • UK • India • UAE • Germany • Canada • Australia • Singapore.
+              Trusted by Enterprises Across North America, Europe, Middle East, Asia Pacific &amp; Africa.
             </span>
             <div className="flex flex-col items-center gap-0">
               <div className="w-full overflow-visible">
@@ -291,7 +293,7 @@ const Hero = () => {
         {/* Description */}
         <div className="w-full max-w-3xl mb-10 md:mb-12">
           <BlurText
-            text="Nexlora builds custom software development solutions, AI automation workflows, and digital platforms for businesses fast, scalable, and built to grow."
+            text="Nexzoa builds custom software development solutions, AI automation workflows, and digital platforms for businesses fast, scalable, and built to grow."
             delay={20}
             animateBy="words"
             direction="top"
@@ -313,7 +315,7 @@ const Hero = () => {
             className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Explore Nexlora
+            Explore Nexzoa
           </HoverBorderGradient>
         </motion.div>
 

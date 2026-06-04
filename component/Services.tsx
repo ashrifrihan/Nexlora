@@ -211,7 +211,7 @@ export default function Services() {
           </motion.div>
 
           <motion.h2 id="services-heading" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            <span className="sr-only">Nexlora Solutions &amp; Custom Software Services: </span>
+            <span className="sr-only">Nexzoa Solutions &amp; Custom Software Services: </span>
             Everything needed to run{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">modern digital operations.</span>
           </motion.h2>

@@ -3,7 +3,7 @@ import Projects from "@/component/Projects";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Featured Software Portfolio | Nexlora Engineering",
+  title: "Featured Software Portfolio | Nexzoa Engineering",
   description: "Explore real-world software platforms, factory management dashboards, booking engines, AI assistants, and logistics trackers we have designed and built to scale enterprise operations.",
 };
 

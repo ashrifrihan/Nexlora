@@ -30,7 +30,7 @@ export default function NotFound() {
 
           <Link
             href="/"
-            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-full border border-white/10 bg-white px-5 text-sm font-semibold leading-none tracking-[-0.02em] text-black shadow-[0_12px_36px_rgba(255,255,255,0.13)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#ff3120] hover:text-white focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black"
+            className="mt-7 inline-flex min-h-11 items-center justify-center rounded-full border border-white/10 bg-white px-5 text-sm font-semibold leading-none tracking-[-0.02em] text-black shadow-[0_12px_36px_rgba(255,255,255,0.13)] transition duration-200 hover:-translate-y-0.5 hover:bg-neutral-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black"
           >
             Back to homepage
             <span className="ml-2" aria-hidden="true">

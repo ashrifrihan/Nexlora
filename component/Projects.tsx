@@ -113,7 +113,7 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
               <div className="w-1.5 h-1.5 rounded-full bg-green-500/40" />
             </div>
             <div className="mx-auto bg-white/[0.03] text-[9px] text-white/30 rounded px-6 py-0.5 max-w-[130px] text-center truncate font-mono tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              {item.id}.nexlora.com
+              {item.id}.nexzoa.com
             </div>
             <div className="w-2" /> {/* spacer to balance browser dots */}
           </div>
@@ -226,7 +226,7 @@ export default function Projects() {
             className="mx-auto max-w-4xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" 
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            <span className="sr-only">Nexlora Case Studies &amp; Projects: </span>
+            <span className="sr-only">Nexzoa Case Studies &amp; Projects: </span>
             Software systems built for{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
               real business operations.
