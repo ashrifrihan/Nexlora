@@ -90,6 +90,16 @@ const BlurText: React.FC<BlurTextProps> = ({
   const totalDuration = stepDuration * (stepCount - 1);
   const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)));
 
+  const isLowEnd = typeof window !== 'undefined' && document.documentElement.getAttribute('data-low-end') === 'true';
+
+  if (isLowEnd) {
+    return (
+      <p ref={ref} className={`blur-text ${className}`}>
+        {text}
+      </p>
+    );
+  }
+
   return (
     <p
       ref={ref}

@@ -39,8 +39,10 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   const animationDuration = speed * 1000;
   const delayDuration = delay * 1000;
 
+  const isLowEnd = typeof window !== 'undefined' && document.documentElement.getAttribute('data-low-end') === 'true';
+
   useAnimationFrame(time => {
-    if (disabled || isPaused) {
+    if (disabled || isPaused || isLowEnd) {
       lastTimeRef.current = null;
       return;
     }

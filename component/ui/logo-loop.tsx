@@ -133,10 +133,15 @@ const useAnimationLoop = (
     const track = trackRef.current;
     if (!track) return;
 
-    const prefersReduced =
+    const isLowEnd =
       typeof window !== 'undefined' &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.documentElement.getAttribute('data-low-end') === 'true';
+
+    const prefersReduced =
+      (typeof window !== 'undefined' &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      isLowEnd;
 
     const seqSize = isVertical ? seqHeight : seqWidth;
 

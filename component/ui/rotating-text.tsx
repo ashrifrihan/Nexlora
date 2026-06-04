@@ -180,6 +180,8 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
       return () => clearInterval(intervalId);
     }, [next, rotationInterval, auto]);
 
+    const isLowEnd = typeof window !== 'undefined' && document.documentElement.getAttribute('data-low-end') === 'true';
+
     return (
       <motion.span
         className={cn('flex flex-wrap whitespace-pre-wrap relative', mainClassName)}
@@ -201,24 +203,30 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
                 .reduce((sum, word) => sum + word.characters.length, 0);
               return (
                 <span key={wordIndex} className={cn('inline-flex', splitLevelClassName)}>
-                  {wordObj.characters.map((char, charIndex) => (
-                    <motion.span
-                      key={charIndex}
-                      initial={initial}
-                      animate={animate}
-                      exit={exit}
-                      transition={{
-                        ...transition,
-                        delay: getStaggerDelay(
-                          previousCharsCount + charIndex,
-                          array.reduce((sum, word) => sum + word.characters.length, 0)
-                        )
-                      }}
-                      className={cn('inline-block', elementLevelClassName)}
-                    >
-                      {char}
-                    </motion.span>
-                  ))}
+                  {isLowEnd ? (
+                    <span className={cn('inline-block', elementLevelClassName)}>
+                      {wordObj.characters.join('')}
+                    </span>
+                  ) : (
+                    wordObj.characters.map((char, charIndex) => (
+                      <motion.span
+                        key={charIndex}
+                        initial={initial}
+                        animate={animate}
+                        exit={exit}
+                        transition={{
+                          ...transition,
+                          delay: getStaggerDelay(
+                            previousCharsCount + charIndex,
+                            array.reduce((sum, word) => sum + word.characters.length, 0)
+                          )
+                        }}
+                        className={cn('inline-block', elementLevelClassName)}
+                      >
+                        {char}
+                      </motion.span>
+                    ))
+                  )}
                   {wordObj.needsSpace && <span className="whitespace-pre"> </span>}
                 </span>
               );
