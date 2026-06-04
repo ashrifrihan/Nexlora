@@ -17,7 +17,9 @@ function BentoCard({ index, children, className = "" }: { index: number; childre
   return (
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }} className={className}>
       <div ref={ref} onMouseMove={onMove} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
-        className="service-card relative overflow-hidden rounded-[20px] border border-white/[0.08] h-full group cursor-pointer transition-all duration-500"
+        onCopy={(e: React.ClipboardEvent<HTMLDivElement>) => e.preventDefault()}
+        onDragStart={(e: React.DragEvent<HTMLDivElement>) => e.preventDefault()}
+        className="service-card relative overflow-hidden rounded-[20px] border border-white/[0.08] h-full group cursor-pointer transition-all duration-500 select-none"
         style={{ background: "linear-gradient(145deg, rgba(18,18,22,1) 0%, rgba(10,10,14,1) 100%)" }}>
         <div className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500" style={{ opacity: hov ? 1 : 0, background: `radial-gradient(500px circle at ${mp.x}px ${mp.y}px, rgba(120,90,255,0.06), transparent 60%)` }} />
         <div className="pointer-events-none absolute inset-0 z-0 rounded-[20px] transition-opacity duration-500" style={{ opacity: hov ? 1 : 0, boxShadow: "inset 0 0 0 1px rgba(120,90,255,0.15), 0 0 30px -10px rgba(120,90,255,0.1)" }} />
@@ -209,6 +211,7 @@ export default function Services() {
           </motion.div>
 
           <motion.h2 id="services-heading" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            <span className="sr-only">Nexlora Solutions &amp; Custom Software Services: </span>
             Everything needed to run{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">modern digital operations.</span>
           </motion.h2>

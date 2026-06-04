@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { motion, useInView } from "motion/react";
 
 /* ─── Visual illustrations for each card ─── */
@@ -104,7 +104,7 @@ function DiscoveryVisual() {
 
         {/* Tool icons - bottom right */}
         <foreignObject x="410" y="180" width="170" height="45">
-          <motion.div className="flex gap-2 items-center justify-end h-full"
+          <motion.div className="flex gap-2 items-center justify-start h-full"
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1 }}>
             {["#3b82f6", "#10b981", "#f59e0b"].map((c, i) => (
               <motion.div key={i} className="w-7 h-7 rounded-lg border border-white/[0.06] flex items-center justify-center shrink-0"
@@ -346,7 +346,7 @@ function LaunchVisual() {
       <motion.div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%] w-[90%] max-w-[245px] sm:max-w-[288px] rounded-xl bg-[#0d0d0d] border border-white/[0.08] p-3 sm:p-4"
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}>
         <div className="flex items-center justify-between mb-2 sm:mb-3">
-            <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-[10px] sm:text-[11px] font-semibold text-white/70">Production</span>
           </div>
@@ -415,6 +415,18 @@ function BentoCard({
     setMouse({ x: e.clientX - r.left, y: e.clientY - r.top });
   }, []);
 
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const handleDragStart = (e: DragEvent) => {
+      e.preventDefault();
+    };
+    el.addEventListener("dragstart", handleDragStart);
+    return () => {
+      el.removeEventListener("dragstart", handleDragStart);
+    };
+  }, []);
+
   return (
     <motion.div
       ref={ref}
@@ -425,7 +437,8 @@ function BentoCard({
       onMouseMove={onMove}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
-      className={`bento-card group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0a0a] transition-all duration-500 hover:border-white/[0.1] cursor-pointer ${className}`}
+      onCopy={(e: React.ClipboardEvent<HTMLDivElement>) => e.preventDefault()}
+      className={`bento-card group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0a0a] transition-all duration-500 hover:border-white/[0.1] cursor-pointer select-none ${className}`}
     >
       {/* Spotlight */}
       <div
@@ -487,6 +500,7 @@ export default function Process() {
           </motion.div>
 
           <motion.h2 id="process-heading" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            <span className="sr-only">Nexlora Development Process: </span>
             A simple process from{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">idea to launch.</span>
           </motion.h2>
@@ -527,7 +541,7 @@ export default function Process() {
             index={2}
             number="03"
             title="Design"
-            description="Creating scalable UI/UX systems and interactions — research-driven, conversion-focused."
+            description="Creating scalable UI/UX systems and interactions research-driven, conversion-focused."
             accent="#ec4899"
           >
             <DesignVisual />
@@ -550,7 +564,7 @@ export default function Process() {
             index={4}
             number="05"
             title="Testing"
-            description="Quality assurance, performance checks, and system validation — ensuring reliability before every release."
+            description="Quality assurance, performance checks, and system validation ensuring reliability before every release."
             accent="#f97316"
           >
             <TestingVisual />

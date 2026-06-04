@@ -64,7 +64,9 @@ function BentoCard({ index, children, className = "" }: { index: number; childre
         onMouseMove={onMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="relative overflow-hidden rounded-[20px] border border-white/[0.08] h-full group transition-all duration-500"
+        onCopy={(e: React.ClipboardEvent<HTMLDivElement>) => e.preventDefault()}
+        onDragStart={(e: React.DragEvent<HTMLDivElement>) => e.preventDefault()}
+        className="relative overflow-hidden rounded-[20px] border border-white/[0.08] h-full group transition-all duration-500 select-none"
         style={{ background: "linear-gradient(145deg, rgba(18,18,22,1) 0%, rgba(10,10,14,1) 100%)" }}
       >
         {/* cursor spotlight */}
@@ -243,6 +245,7 @@ export default function Trust() {
           </motion.div>
 
           <motion.h2 id="trust-heading" initial={{opacity:0,y:20}} animate={isInView?{opacity:1,y:0}:{}} transition={{duration:0.6,delay:0.1,ease:[0.16,1,0.3,1]}} className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" style={{fontFamily:'"Satoshi",sans-serif'}}>
+            <span className="sr-only">Nexlora Platform Trust: </span>
             Helping teams build faster with{" "}
             <span className="bg-gradient-to-r from-white/95 via-white/70 to-white/45 bg-clip-text text-transparent">better software.</span>
           </motion.h2>

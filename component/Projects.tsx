@@ -226,6 +226,7 @@ export default function Projects() {
             className="mx-auto max-w-4xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" 
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
+            <span className="sr-only">Nexlora Case Studies &amp; Projects: </span>
             Software systems built for{" "}
             <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
               real business operations.

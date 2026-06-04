@@ -9,46 +9,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://nexlora.io/work",
+      url: "https://nexlora.io/projects",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: "https://nexlora.io/solutions",
+      url: "https://nexlora.io/testimonials",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://nexlora.io/products",
+      url: "https://nexlora.io/faq",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
-    },
-    {
-      url: "https://nexlora.io/journal",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: "https://nexlora.io/about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: "https://nexlora.io/careers",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: "https://nexlora.io/contact",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.4,
     },
   ];
 }

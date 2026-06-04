@@ -246,7 +246,6 @@ const Hero = () => {
           />
         </motion.div>
 
-        {/* Main Heading */}
         <div className="w-full mb-6 sm:mb-8 md:mb-10 flex justify-center">
           <h1
             className="max-w-[1180px] px-2 text-center text-white"
@@ -256,6 +255,9 @@ const Hero = () => {
               letterSpacing: "-0.04em",
             }}
           >
+            <span className="sr-only">
+              Nexlora — Official Site. AI-Native Software, SaaS Development, CRM &amp; Automation Systems. Build the system behind your success.
+            </span>
             <div className="flex flex-col items-center gap-0">
               <div className="w-full overflow-visible">
                 <BlurText
