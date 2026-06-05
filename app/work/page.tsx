@@ -63,13 +63,14 @@ const projectsData: ProjectItem[] = [
   },
   {
     id: 2,
-    title: "QuickStay – Hotel Booking & Management System",
+    title: "QuickStay - Hotel Booking & Management System",
     description: "A multi-role hotel booking and management system enabling online reservations, front-desk operations, billing, and role-based workflows within a unified platform.",
     category: ["Development", "System Design"],
     image: "/projects/quickstay/QuickStay.jpg",
     screenshots: [
-      "/projects/quickstay/Customer/customer.jpg",
+
       "/projects/quickstay/quickstay_1.jpg",
+      "/projects/quickstay/Customer/customer.jpg",
       "/projects/quickstay/Customer/Room_search.jpg",
       "/projects/quickstay/Customer/Room_details.jpg",
       "/projects/quickstay/Customer/Booking_and_payment.jpg",
@@ -132,7 +133,7 @@ const projectsData: ProjectItem[] = [
   },
   {
     id: 4,
-    title: "QuickSticker – AI-Powered Sticker Studio",
+    title: "QuickSticker - AI-Powered Sticker Studio",
     description: "A full-stack AI-powered sticker creation platform that turns any image or text-to-image prompt into WhatsApp-ready stickers in seconds using intelligent background removal and optimized compression.",
     category: ["Development", "AI/ML", "Full Stack"],
     image: "/projects/quickSticker/QuickSticker.jpg",
@@ -173,7 +174,7 @@ const projectsData: ProjectItem[] = [
   },
   {
     id: 5,
-    title: "QuickCompress – Batch Image Compression Platform",
+    title: "QuickCompress - Batch Image Compression Platform",
     description: "A full-stack batch image compression web application enabling users to compress up to 20 images simultaneously with customizable quality, format conversion, and automated file management.",
     category: ["Development", "Full Stack", "Web App"],
     image: "/projects/QuickCompress/quick.jpg",
@@ -292,7 +293,7 @@ const projectsData: ProjectItem[] = [
   },
   {
     id: 9,
-    title: "StarEvent – ASP.NET Event Management System",
+    title: "StarEvent - ASP.NET Event Management System",
     description: "A comprehensive web-based event management system built with ASP.NET MVC (C#), enabling users to create, manage, explore, and organize events with responsive UI and secure routing.",
     category: ["Development", "System Design", "Full Stack"],
     image: "/projects/starevent/starevent.jpg",
@@ -357,24 +358,40 @@ export default function WorkPage() {
 
       {/* 1. Hero Section */}
       <section className="perf-section relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
-        <div className="perf-glow pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-white/[0.02] blur-[120px]" />
+        {/* Subtle technical Grid pattern background */}
+        <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+        
+        {/* Slowly breathing accent glow */}
+        <motion.div
+          animate={{
+            scale: [1, 1.12, 1],
+            opacity: [0.015, 0.03, 0.015]
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-white blur-[130px]"
+        />
 
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto relative z-10">
           <div className="mb-4 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.08] px-3.5 py-1.5 bg-white/[0.02]">
+            <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse" />
             <span className="text-[12.5px] font-semibold uppercase tracking-wider text-white/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               Our Case Studies
             </span>
           </div>
 
           <h1
-            className="text-[clamp(32px,6vw,56px)] font-black tracking-[-0.04em] leading-[1.05]"
+            className="text-[clamp(34px,6.5vw,60px)] font-black tracking-[-0.04em] leading-[1.02] text-white"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Our Work
           </h1>
 
           <p
-            className="mt-4 text-[clamp(16px,2vw,20px)] text-white/50 font-medium"
+            className="mt-4.5 text-[clamp(15px,2vw,18px)] text-white/50 font-medium leading-relaxed max-w-xl mx-auto"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Real software, real products, real results.
@@ -382,7 +399,7 @@ export default function WorkPage() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto relative z-10">
           {[
             { value: "25+", label: "Projects Completed" },
             { value: "8+", label: "Industries Served" },

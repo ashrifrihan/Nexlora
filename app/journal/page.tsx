@@ -431,24 +431,40 @@ export default function JournalPage() {
 
       {/* 1. Hero Section */}
       <section className="perf-section relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
-        <div className="perf-glow pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-white/[0.02] blur-[120px]" />
+        {/* Subtle technical Grid pattern background */}
+        <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+        
+        {/* Slowly breathing accent glow */}
+        <motion.div
+          animate={{
+            scale: [1, 1.12, 1],
+            opacity: [0.015, 0.03, 0.015]
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-white blur-[130px]"
+        />
 
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto relative z-10">
           <div className="mb-4 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.08] px-3.5 py-1.5 bg-white/[0.02]">
+            <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse" />
             <span className="text-[12.5px] font-semibold uppercase tracking-wider text-white/60 not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               The Nexzoa Journal
             </span>
           </div>
 
           <h1
-            className="text-[clamp(32px,6vw,56px)] font-black tracking-[-0.04em] leading-[1.05] not-italic"
+            className="text-[clamp(34px,6.5vw,60px)] font-black tracking-[-0.04em] leading-[1.02] text-white not-italic"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Engineering, Design & Product Insights
+            Engineering, Design &amp; Product Insights
           </h1>
 
           <p
-            className="mt-4 text-[clamp(15px,2vw,19px)] text-white/50 font-medium leading-relaxed not-italic"
+            className="mt-4.5 text-[clamp(15px,2vw,18px)] text-white/50 font-medium leading-relaxed max-w-2xl mx-auto not-italic"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Articles, case studies, and lessons learned from software development, AI systems, and digital product design.
@@ -597,83 +613,85 @@ export default function JournalPage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="relative w-full max-w-2xl bg-[#0d0d0f] border border-white/[0.08] rounded-2xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto z-10 shadow-2xl flex flex-col gap-6"
+              className="relative w-full max-w-2xl bg-[#0d0d0f] border border-white/[0.08] rounded-2xl p-5 sm:p-7 max-h-[85vh] flex flex-col z-10 shadow-2xl overflow-hidden"
               style={{ background: "linear-gradient(145deg, rgba(14,14,16,1) 0%, rgba(8,8,10,1) 100%)" }}
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedArticleId(null)}
-                className="absolute top-4 right-4 p-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.08] transition-colors"
+                className="absolute top-4 right-4 p-1.5 rounded-lg bg-[#141417]/80 border border-white/[0.08] hover:bg-white/[0.08] transition-colors z-20"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-white/60">
                   <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
 
-              {/* Meta details */}
-              <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-wider text-white/40 pt-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                <span className="text-white/60">{activeArticle.category}</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
-                <span>{activeArticle.readTime}</span>
-              </div>
-
-              {/* Title */}
-              <div>
-                <h2 className="text-[20px] sm:text-[24px] font-black tracking-tight text-white mb-3 leading-snug not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                  {activeArticle.title}
-                </h2>
-                <p className="text-[13.5px] leading-relaxed text-white/60 not-italic font-medium border-l-2 border-white/20 pl-4 py-1 bg-white/[0.01]">
-                  {activeArticle.intro}
-                </p>
-              </div>
-
-              {/* Body Sections */}
-              <div className="flex flex-col gap-6 pt-2 border-t border-white/[0.06]">
-                {activeArticle.sections.map((sec, idx) => (
-                  <div key={idx} className="flex flex-col gap-2">
-                    <h3 className="text-[14.5px] font-bold text-white not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                      {sec.title}
-                    </h3>
-                    <p className="text-[13px] leading-relaxed text-white/40 not-italic font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                      {sec.body}
-                    </p>
-                  </div>
-                ))}
-
-                {/* Lessons Learned */}
-                <div className="bg-white/[0.02] border border-white/[0.04] rounded-xl p-4.5">
-                  <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/70 not-italic mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Key Lessons Learned
-                  </h4>
-                  <ul className="space-y-2.5">
-                    {activeArticle.lessons.map((lesson, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-[12.5px] text-white/50 not-italic leading-snug font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-white/80 shrink-0 mt-0.5">
-                          <path d="M2 6l3 3 5-5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        <span>{lesson}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <div className="overflow-y-auto pr-1 flex-1 flex flex-col gap-5 scrollbar-thin">
+                {/* Meta details */}
+                <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-wider text-white/40 pt-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <span className="text-white/60">{activeArticle.category}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  <span>{activeArticle.readTime}</span>
                 </div>
-              </div>
 
-              {/* Footer Actions */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/[0.06]">
-                <a
-                  href="mailto:hello@nexzoa.com"
-                  className="flex-1 inline-flex items-center justify-center rounded-[12px] bg-white py-3 text-[13px] font-bold text-black hover:bg-white/90 transition-colors not-italic"
-                  style={{ fontFamily: '"Satoshi", sans-serif' }}
-                >
-                  Start Project Intake
-                </a>
-                <button
-                  onClick={() => setSelectedArticleId(null)}
-                  className="flex-1 inline-flex items-center justify-center rounded-[12px] border border-white/[0.1] bg-white/[0.02] py-3 text-[13px] font-bold text-white hover:bg-white/[0.08] transition-colors not-italic"
-                  style={{ fontFamily: '"Satoshi", sans-serif' }}
-                >
-                  Close Insights
-                </button>
+                {/* Title */}
+                <div>
+                  <h2 className="text-[20px] sm:text-[24px] font-black tracking-tight text-white mb-3 leading-snug not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    {activeArticle.title}
+                  </h2>
+                  <p className="text-[13.5px] leading-relaxed text-white/60 not-italic font-medium border-l-2 border-white/20 pl-4 py-1 bg-white/[0.01]">
+                    {activeArticle.intro}
+                  </p>
+                </div>
+
+                {/* Body Sections */}
+                <div className="flex flex-col gap-6 pt-2 border-t border-white/[0.06]">
+                  {activeArticle.sections.map((sec, idx) => (
+                    <div key={idx} className="flex flex-col gap-2">
+                      <h3 className="text-[14.5px] font-bold text-white not-italic" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                        {sec.title}
+                      </h3>
+                      <p className="text-[13px] leading-relaxed text-white/40 not-italic font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                        {sec.body}
+                      </p>
+                    </div>
+                  ))}
+
+                  {/* Lessons Learned */}
+                  <div className="bg-white/[0.02] border border-white/[0.04] rounded-xl p-4.5">
+                    <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-white/70 not-italic mb-3" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                      Key Lessons Learned
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {activeArticle.lessons.map((lesson, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-[12.5px] text-white/50 not-italic leading-snug font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-white/80 shrink-0 mt-0.5">
+                            <path d="M2 6l3 3 5-5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>{lesson}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Footer Actions */}
+                <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/[0.06] shrink-0 mt-auto">
+                  <a
+                    href="mailto:hello@nexzoa.com"
+                    className="flex-1 inline-flex items-center justify-center rounded-[12px] bg-white py-3 text-[13px] font-bold text-black hover:bg-white/90 transition-colors not-italic"
+                    style={{ fontFamily: '"Satoshi", sans-serif' }}
+                  >
+                    Start Project Intake
+                  </a>
+                  <button
+                    onClick={() => setSelectedArticleId(null)}
+                    className="flex-1 inline-flex items-center justify-center rounded-[12px] border border-white/[0.1] bg-white/[0.02] py-3 text-[13px] font-bold text-white hover:bg-white/[0.08] transition-colors not-italic"
+                    style={{ fontFamily: '"Satoshi", sans-serif' }}
+                  >
+                    Close Insights
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
