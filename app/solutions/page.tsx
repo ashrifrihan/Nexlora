@@ -465,23 +465,30 @@ export default function SolutionsPage() {
     <div className="bg-black min-h-screen text-white select-none">
       <Nav />
 
+      {/* Hero Glow CSS Animation (no white flash on load) */}
+      <style>{`
+        @keyframes heroGlowBreath {
+          0%, 100% { opacity: 0.018; transform: translate(-50%, 0) scale(1); }
+          50% { opacity: 0.04; transform: translate(-50%, 0) scale(1.12); }
+        }
+        .hero-glow-breath {
+          animation: heroGlowBreath 9s ease-in-out infinite;
+          opacity: 0.018;
+        }
+        @keyframes heroOrbit {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
+
       {/* 1. Hero Section */}
       <section className="perf-section relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         {/* Subtle technical Grid pattern background */}
         <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
         
-        {/* Slowly breathing accent glow */}
-        <motion.div
-          animate={{
-            scale: [1, 1.12, 1],
-            opacity: [0.015, 0.03, 0.015]
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-white blur-[130px]"
+        {/* CSS-only breathing glow (starts at correct opacity, no flash) */}
+        <div
+          className="hero-glow-breath pointer-events-none absolute -top-40 left-1/2 w-[800px] h-[400px] rounded-full bg-white blur-[130px]"
         />
 
         <div className="text-center max-w-3xl mx-auto relative z-10">
@@ -505,6 +512,44 @@ export default function SolutionsPage() {
           >
             Nexzoa helps businesses automate operations, improve customer experiences, and scale through custom software, AI systems, and digital platforms.
           </p>
+
+          {/* Animated SVG - Interconnected Services Illustration */}
+          <div className="mt-8 mx-auto max-w-[360px]">
+            <svg viewBox="0 0 360 100" fill="none" className="w-full h-auto">
+              {/* Horizontal connection line */}
+              <line x1="30" y1="50" x2="330" y2="50" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+
+              {/* Service hexagons with pulse */}
+              {[60, 140, 220, 300].map((cx, i) => (
+                <g key={i}>
+                  <polygon
+                    points={`${cx},30 ${cx+15},38 ${cx+15},54 ${cx},62 ${cx-15},54 ${cx-15},38`}
+                    fill="rgba(255,255,255,0.02)"
+                    stroke="rgba(255,255,255,0.12)"
+                    strokeWidth="1"
+                  />
+                  <circle cx={cx} cy="46" r="3" fill="rgba(255,255,255,0.5)">
+                    <animate attributeName="r" values="2;4;2" dur={`${3 + i * 0.5}s`} repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.3;1;0.3" dur={`${3 + i * 0.5}s`} repeatCount="indefinite" />
+                  </circle>
+                </g>
+              ))}
+
+              {/* Data flow dots */}
+              <circle r="1.5" fill="rgba(255,255,255,0.7)">
+                <animateMotion path="M60 50 L140 50 L220 50 L300 50" dur="3s" repeatCount="indefinite" />
+              </circle>
+              <circle r="1.2" fill="rgba(255,255,255,0.4)">
+                <animateMotion path="M300 50 L220 50 L140 50 L60 50" dur="4s" begin="0.5s" repeatCount="indefinite" />
+              </circle>
+
+              {/* Service labels below */}
+              <text x="60" y="78" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="7" fontFamily="monospace">WEB</text>
+              <text x="140" y="78" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="7" fontFamily="monospace">MOBILE</text>
+              <text x="220" y="78" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="7" fontFamily="monospace">AI</text>
+              <text x="300" y="78" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="7" fontFamily="monospace">CLOUD</text>
+            </svg>
+          </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a

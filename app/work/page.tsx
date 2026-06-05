@@ -356,23 +356,42 @@ export default function WorkPage() {
     <div className="bg-black min-h-screen text-white select-none">
       <Nav />
 
+      {/* Hero Glow CSS Animation (no white flash on load) */}
+      <style>{`
+        @keyframes heroGlowBreath {
+          0%, 100% { opacity: 0.018; transform: translate(-50%, 0) scale(1); }
+          50% { opacity: 0.04; transform: translate(-50%, 0) scale(1.12); }
+        }
+        .hero-glow-breath {
+          animation: heroGlowBreath 9s ease-in-out infinite;
+          opacity: 0.018;
+        }
+        @keyframes heroGridFloat {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+        }
+        @keyframes heroLineDraw {
+          0% { stroke-dashoffset: 200; }
+          100% { stroke-dashoffset: 0; }
+        }
+        @keyframes heroPulseNode {
+          0%, 100% { r: 3; opacity: 0.4; }
+          50% { r: 5; opacity: 1; }
+        }
+        @keyframes heroOrbit {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
+
       {/* 1. Hero Section */}
       <section className="perf-section relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         {/* Subtle technical Grid pattern background */}
         <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
         
-        {/* Slowly breathing accent glow */}
-        <motion.div
-          animate={{
-            scale: [1, 1.12, 1],
-            opacity: [0.015, 0.03, 0.015]
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-white blur-[130px]"
+        {/* CSS-only breathing glow (starts at correct opacity, no flash) */}
+        <div
+          className="hero-glow-breath pointer-events-none absolute -top-40 left-1/2 w-[800px] h-[400px] rounded-full bg-white blur-[130px]"
         />
 
         <div className="text-center max-w-3xl mx-auto relative z-10">
@@ -396,10 +415,103 @@ export default function WorkPage() {
           >
             Real software, real products, real results.
           </p>
+
+          {/* Animated SVG Blueprint Illustration */}
+          <div className="mt-10 mx-auto max-w-[480px]">
+            <svg viewBox="0 0 480 160" fill="none" className="w-full h-auto">
+              {/* Grid lines - architectural blueprint feel */}
+              <line x1="40" y1="80" x2="440" y2="80" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+              <line x1="120" y1="30" x2="120" y2="130" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+              <line x1="240" y1="30" x2="240" y2="130" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+              <line x1="360" y1="30" x2="360" y2="130" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+
+              {/* Connection paths with draw animation */}
+              <path
+                d="M80 80 L160 50 L240 80 L320 45 L400 80"
+                stroke="rgba(255,255,255,0.15)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray="200"
+                style={{ animation: "heroLineDraw 3s ease-out forwards" }}
+              />
+              <path
+                d="M80 80 L160 110 L240 80 L320 115 L400 80"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray="200"
+                style={{ animation: "heroLineDraw 3.5s ease-out 0.3s forwards" }}
+              />
+
+              {/* Active nodes with pulse */}
+              <circle cx="80" cy="80" r="4" fill="#000" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5">
+                <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.9)" />
+
+              <circle cx="160" cy="50" r="3.5" fill="#000" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2">
+                <animate attributeName="r" values="3;4.5;3" dur="4s" begin="0.5s" repeatCount="indefinite" />
+              </circle>
+
+              <circle cx="240" cy="80" r="5" fill="#000" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5">
+                <animate attributeName="r" values="4;6;4" dur="3s" begin="0.2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="0.2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="240" cy="80" r="2.5" fill="rgba(255,255,255,0.9)" />
+
+              <circle cx="320" cy="45" r="3.5" fill="#000" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2">
+                <animate attributeName="r" values="3;4.5;3" dur="3.5s" begin="0.8s" repeatCount="indefinite" />
+              </circle>
+
+              <circle cx="400" cy="80" r="4" fill="#000" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5">
+                <animate attributeName="r" values="3;5;3" dur="3s" begin="0.4s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="0.4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="400" cy="80" r="2" fill="rgba(255,255,255,0.9)" />
+
+              {/* Lower nodes */}
+              <circle cx="160" cy="110" r="3" fill="#000" stroke="rgba(255,255,255,0.2)" strokeWidth="1">
+                <animate attributeName="r" values="2.5;4;2.5" dur="4s" begin="1s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="320" cy="115" r="3" fill="#000" stroke="rgba(255,255,255,0.2)" strokeWidth="1">
+                <animate attributeName="r" values="2.5;4;2.5" dur="3.5s" begin="0.6s" repeatCount="indefinite" />
+              </circle>
+
+              {/* Orbiting indicator around center node */}
+              <g style={{ transformOrigin: "240px 80px", animation: "heroOrbit 12s linear infinite" }}>
+                <circle cx="240" cy="64" r="1.5" fill="rgba(255,255,255,0.7)" />
+              </g>
+
+              {/* Data flow dots traveling along path */}
+              <circle r="1.5" fill="rgba(255,255,255,0.8)">
+                <animateMotion
+                  path="M80 80 L160 50 L240 80 L320 45 L400 80"
+                  dur="4s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+              <circle r="1.2" fill="rgba(255,255,255,0.5)">
+                <animateMotion
+                  path="M80 80 L160 110 L240 80 L320 115 L400 80"
+                  dur="5s"
+                  begin="1s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+
+              {/* Small label rects at nodes */}
+              <rect x="60" y="90" width="40" height="12" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" />
+              <rect x="220" y="90" width="40" height="12" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" />
+              <rect x="380" y="90" width="40" height="12" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" />
+            </svg>
+          </div>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto relative z-10">
           {[
             { value: "25+", label: "Projects Completed" },
             { value: "8+", label: "Industries Served" },
@@ -428,6 +540,14 @@ export default function WorkPage() {
                 
                 {/* Text Content Column */}
                 <div className={`lg:col-span-6 flex flex-col ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
+                  {/* Accent bar + Project number */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-[3px] rounded-full" style={{ backgroundColor: project.accent }} />
+                    <span className="text-[11px] font-black uppercase tracking-widest font-mono" style={{ color: project.accent, fontFamily: '"Satoshi", sans-serif' }}>
+                      Project 0{project.id}
+                    </span>
+                  </div>
+
                   {/* Category and Role */}
                   <div className="flex flex-wrap items-center gap-2 text-[10.5px] font-bold uppercase tracking-wider text-white/45 mb-2.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     <span>{project.category.join(" & ")}</span>
