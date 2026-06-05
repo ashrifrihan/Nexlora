@@ -24,6 +24,7 @@ export default function Nav() {
               let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
               if (link === "Work") href = "/work";
               if (link === "Solutions") href = "/solutions";
+              if (link === "Journal") href = "/journal";
               if (link === "Contact") href = "mailto:hello@nexzoa.com";
               return (
                 <a
@@ -90,6 +91,7 @@ export default function Nav() {
                   let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
                   if (link === "Work") href = "/work";
                   if (link === "Solutions") href = "/solutions";
+                  if (link === "Journal") href = "/journal";
                   if (link === "Contact") href = "mailto:hello@nexzoa.com";
                   return (
                     <a

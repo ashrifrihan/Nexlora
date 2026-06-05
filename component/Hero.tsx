@@ -236,7 +236,7 @@ const Hero = () => {
           />
           {/* Text with Shiny Effect */}
           <ShinyText
-            text="Trusted by 50+ innovative companies"
+            text="Independent Software Studio based in Sri Lanka"
             speed={3}
             color="#999999"
             shineColor="#ffffff"
@@ -245,7 +245,7 @@ const Hero = () => {
             className="text-xs md:text-sm font-medium"
           />
         </motion.div>
-
+ 
         <div className="w-full mb-6 sm:mb-8 md:mb-10 flex justify-center">
           <h1
             className="max-w-[1180px] px-2 text-center text-white"
@@ -256,9 +256,7 @@ const Hero = () => {
             }}
           >
             <span className="sr-only">
-              Nexzoa — Global AI-Native Software Engineering Company Operating in 50+ Countries.
-              Official Nexzoa Offices Worldwide: USA • UK • India • UAE • Germany • Canada • Australia • Singapore.
-              Trusted by Enterprises Across North America, Europe, Middle East, Asia Pacific &amp; Africa.
+              Nexzoa — Independent Software Engineering Studio building modern web, AI, and business systems. Based in Sri Lanka.
             </span>
             <div className="flex flex-col items-center gap-0">
               <div className="w-full overflow-visible">
