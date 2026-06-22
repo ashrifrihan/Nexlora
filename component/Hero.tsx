@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Spotlight } from './ui/Spotlight'
-import { HoverBorderGradient } from './ui/hover-border-gradient'
 import BlurText from './ui/blur-text'
 import LogoLoop from './ui/logo-loop'
 import ShinyText from './ui/shiny-text'
@@ -115,6 +114,14 @@ const techStack = [
 ];
 
 const Hero = () => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
       {/* Background Spotlights */}
@@ -226,21 +233,28 @@ const Hero = () => {
           />
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto select-none"
         >
-          <a href="#contact">
-            <HoverBorderGradient
-              containerClassName="rounded-2xl"
-              className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
-              style={{ fontFamily: '"Satoshi", sans-serif' }}
-            >
-              Start Your Project
-            </HoverBorderGradient>
+          <a
+            href="#contact"
+            onClick={(e) => handleScroll(e, "contact")}
+            className="start-project-button flex items-center justify-center rounded-2xl bg-gradient-to-b from-white to-neutral-200 border border-white/10 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.6)] px-8 py-4 text-[15px] md:text-[16px] font-semibold text-black w-full sm:w-auto"
+            style={{ fontFamily: '"Satoshi", sans-serif' }}
+          >
+            Start Your Project
+          </a>
+          <a
+            href="#solutions"
+            onClick={(e) => handleScroll(e, "solutions")}
+            className="flex items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/10 hover:border-white/20 px-8 py-4 text-[15px] md:text-[16px] font-semibold text-white transition-all duration-300 w-full sm:w-auto"
+            style={{ fontFamily: '"Satoshi", sans-serif' }}
+          >
+            Explore Solutions
           </a>
         </motion.div>
 

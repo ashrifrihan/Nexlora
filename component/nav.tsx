@@ -26,10 +26,10 @@ export default function Nav() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="shrink-0 text-[30px] font-black leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:tracking-[-0.04em]"
+            className="logo-chromatic shrink-0 text-[30px] font-bold leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:tracking-[-0.04em]"
             aria-label="Nexzoa home"
           >
-            nexzoa<span className="text-white/40 font-normal">*</span>
+            nexzoa<span className="text-white/40 font-bold">*</span>
           </a>
 
           <div className="hidden items-center gap-2 lg:flex">
@@ -60,7 +60,7 @@ export default function Nav() {
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, "contact")}
-              className="start-project-button flex items-center justify-center gap-2.5 rounded-[10px] bg-white px-[18px] py-[12px] text-[14px] font-semibold leading-none text-black"
+              className="start-project-button flex items-center justify-center gap-2.5 rounded-[10px] bg-gradient-to-b from-white to-neutral-200 border border-white/10 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.6)] px-[18px] py-[12px] text-[14px] font-semibold leading-none text-black"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               Start a Project
@@ -146,7 +146,7 @@ export default function Nav() {
                     setIsOpen(false);
                     handleScroll(e, "contact");
                   }}
-                  className="start-project-button flex min-h-14 w-full items-center justify-center rounded-2xl bg-white px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black sm:min-h-16 sm:text-[18px]"
+                  className="start-project-button flex min-h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-b from-white to-neutral-200 border border-white/10 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.6)] px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black sm:min-h-16 sm:text-[18px]"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
                   Start a Project
