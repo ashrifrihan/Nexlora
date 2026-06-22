@@ -232,10 +232,10 @@ function DevelopmentVisual() {
           <div className="w-2 h-2 rounded-full bg-red-500/50" />
           <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
           <div className="w-2 h-2 rounded-full bg-green-500/50" />
-          <span className="ml-2 text-[9px] text-white/25" style={{ fontFamily: '"Satoshi", sans-serif' }}>api/routes.ts</span>
+          <span className="ml-2 text-[9px] text-white/25 font-mono">api/routes.ts</span>
         </div>
         {/* Code lines */}
-        <div className="p-3 space-y-1.5 text-[10px]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+        <div className="p-3 space-y-1.5 font-mono text-[10px]">
           {[
             { indent: 0, parts: [{ t: "export", c: "#c084fc" }, { t: " async ", c: "#93c5fd" }, { t: "function", c: "#c084fc" }, { t: " handler() {", c: "#e5e7eb80" }] },
             { indent: 1, parts: [{ t: "const", c: "#c084fc" }, { t: " data = ", c: "#e5e7eb80" }, { t: "await", c: "#c084fc" }, { t: " fetch(", c: "#e5e7eb80" }, { t: "api", c: "#34d399" }, { t: ")", c: "#e5e7eb80" }] },
@@ -263,7 +263,7 @@ function DevelopmentVisual() {
         </div>
       </div>
       {/* Terminal badge */}
-      <motion.div className="absolute bottom-4 right-4 px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-[10px] text-purple-400" style={{ fontFamily: '"Satoshi", sans-serif' }}
+      <motion.div className="absolute bottom-4 right-4 px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-[10px] text-purple-400 font-mono"
         animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2.5, repeat: Infinity }}>
         ✓ compiled
       </motion.div>
@@ -281,7 +281,7 @@ function TestingVisual() {
           <svg className="w-3.5 h-3.5 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><path d="m9 15 2 2 4-4" /></svg>
           <span className="text-[10px] font-semibold text-white/60">Test Suite</span>
           <div className="ml-auto flex items-center gap-1.5">
-            <motion.div className="px-1.5 py-0.5 rounded bg-orange-500/10 border border-orange-500/20 text-[8px] font-bold text-orange-400 leading-none" style={{ fontFamily: '"Satoshi", sans-serif' }}
+            <motion.div className="px-1.5 py-0.5 rounded bg-orange-500/10 border border-orange-500/20 text-[8px] font-bold text-orange-400 leading-none font-mono"
               animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 3, repeat: Infinity }}>
               Cov: 97%
             </motion.div>
@@ -302,7 +302,7 @@ function TestingVisual() {
                 <svg className="w-2 h-2 text-emerald-400" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M2 6l3 3 5-5" /></svg>
               </motion.div>
               <span className="text-[10px] text-white/45 flex-1">{t.name}</span>
-              <span className="text-[9px] text-emerald-400/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>{t.count}</span>
+              <span className="text-[9px] font-mono text-emerald-400/60">{t.count}</span>
             </motion.div>
           ))}
         </div>
@@ -350,7 +350,7 @@ function LaunchVisual() {
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-[10px] sm:text-[11px] font-semibold text-white/70">Production</span>
           </div>
-          <span className="text-[8px] sm:text-[9px] text-emerald-400/50" style={{ fontFamily: '"Satoshi", sans-serif' }}>v1.0.0</span>
+          <span className="text-[8px] sm:text-[9px] font-mono text-emerald-400/50">v1.0.0</span>
         </div>
         {/* Mini bar chart */}
         <div className="flex items-end gap-1 sm:gap-1.5 h-10 sm:h-12 mb-2 sm:mb-3">
@@ -381,7 +381,7 @@ function LaunchVisual() {
       <motion.div className="absolute bottom-4 right-4 sm:right-6 hidden sm:flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-white/[0.03] border border-white/[0.06]"
         initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1.1 }}>
         <span className="text-[8.5px] sm:text-[10px] text-white/40">Last deploy:</span>
-        <span className="text-[8.5px] sm:text-[10px] text-white/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>2m ago</span>
+        <span className="text-[8.5px] sm:text-[10px] text-white/60 font-mono">2m ago</span>
       </motion.div>
     </div>
   );
@@ -461,7 +461,7 @@ function BentoCard({
       {/* Text content */}
       <div className="relative z-10 p-5 sm:p-6">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-[12px] font-bold tracking-wider" style={{ color: accent, opacity: 0.5, fontFamily: '"Satoshi", sans-serif' }}>
+          <span className="text-[12px] font-bold font-mono tracking-wider" style={{ color: accent, opacity: 0.5 }}>
             {number}
           </span>
           <h3
@@ -560,7 +560,7 @@ export default function Process() {
 
           {/* Row 3: Testing (1-col) + Launch (2-col) */}
           <BentoCard
-            className="sm:col-span-1"
+            className="sm:col-span-2 lg:col-span-1"
             index={4}
             number="05"
             title="Testing"

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Hero from "@/component/Hero";
 import Nav from "@/component/nav";
 import Trust from "@/component/Trust";
@@ -11,6 +11,10 @@ import Compare from "@/component/Compare";
 import About from "@/component/About";
 import Contact from "@/component/Contact";
 import Footer from "@/component/Footer";
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+};
 
 export const metadata: Metadata = {
   title: "Nexzoa - Engineering Intelligent Systems | AI SaaS & Automation",

@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+html,
+body {
+  background-color: #000000 !important;
+  color: #ffffff;
+}
+
 /* Fragment Mono Font */
 @font-face {
   font-family: "Fragment Mono";
