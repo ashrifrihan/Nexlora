@@ -192,7 +192,7 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
               >
                 {item.category}
               </span>
-              <span className="text-[11px] font-bold text-white/20 select-none font-mono">
+              <span className="text-[11px] font-bold text-white/20 select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                 {number}
               </span>
             </div>

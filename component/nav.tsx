@@ -1,11 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 
-const links = ["Work", "Solutions", "Products", "Journal", "Careers", "About", "Contact"];
+const links = ["Work", "Services", "Process", "Why Us", "About", "FAQ", "Contact"];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      // Perform smooth scroll
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-0 lg:top-6 lg:px-4">
@@ -13,6 +22,10 @@ export default function Nav() {
         <div className="flex items-center justify-between gap-5 [font-family:Satoshi,Inter,sans-serif]">
           <a
             href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="shrink-0 text-[30px] font-black leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:tracking-[-0.04em]"
             aria-label="Nexzoa home"
           >
@@ -21,15 +34,20 @@ export default function Nav() {
 
           <div className="hidden items-center gap-2 lg:flex">
             {links.map((link) => {
-              let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
-              if (link === "Work") href = "/work";
-              if (link === "Solutions") href = "/solutions";
-              if (link === "Journal") href = "/journal";
-              if (link === "Contact") href = "mailto:hello@nexzoa.com";
+              let href = `#${link.toLowerCase().replaceAll(" ", "-")}`;
+              let targetId = link.toLowerCase().replaceAll(" ", "-");
+              if (link === "Work") { href = "#projects"; targetId = "projects"; }
+              if (link === "Services") { href = "#solutions"; targetId = "solutions"; }
+              if (link === "Why Us") { href = "#compare"; targetId = "compare"; }
+              if (link === "About") { href = "#about"; targetId = "about"; }
+              if (link === "FAQ") { href = "#faq"; targetId = "faq"; }
+              if (link === "Contact") { href = "#contact"; targetId = "contact"; }
+
               return (
                 <a
                   key={link}
                   href={href}
+                  onClick={(e) => handleScroll(e, targetId)}
                   className="rounded-[10px] px-4 py-3 text-[14px] font-medium leading-none tracking-[-0.02em] text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white"
                 >
                   {link}
@@ -40,7 +58,8 @@ export default function Nav() {
 
           <div className="hidden items-center gap-4 lg:flex">
             <a
-              href="#start-project"
+              href="#contact"
+              onClick={(e) => handleScroll(e, "contact")}
               className="start-project-button flex items-center justify-center gap-2.5 rounded-[10px] bg-white px-[18px] py-[12px] text-[14px] font-semibold leading-none text-black"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
@@ -88,20 +107,27 @@ export default function Nav() {
             <div className="mt-5 border-t border-white/10 pt-6 [font-family:Satoshi,Inter,sans-serif] sm:mt-7 sm:pt-7">
               <div className="grid gap-3 px-1">
                 {links.map((link, index) => {
-                  let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
-                  if (link === "Work") href = "/work";
-                  if (link === "Solutions") href = "/solutions";
-                  if (link === "Journal") href = "/journal";
-                  if (link === "Contact") href = "mailto:hello@nexzoa.com";
+                  let href = `#${link.toLowerCase().replaceAll(" ", "-")}`;
+                  let targetId = link.toLowerCase().replaceAll(" ", "-");
+                  if (link === "Work") { href = "#projects"; targetId = "projects"; }
+                  if (link === "Services") { href = "#solutions"; targetId = "solutions"; }
+                  if (link === "Why Us") { href = "#compare"; targetId = "compare"; }
+                  if (link === "About") { href = "#about"; targetId = "about"; }
+                  if (link === "FAQ") { href = "#faq"; targetId = "faq"; }
+                  if (link === "Contact") { href = "#contact"; targetId = "contact"; }
+
                   return (
                     <a
                       key={link}
                       href={href}
+                      onClick={(e) => {
+                        setIsOpen(false);
+                        handleScroll(e, targetId);
+                      }}
                       className={`w-fit rounded-lg px-0 py-1.5 text-[18px] font-medium leading-tight tracking-[-0.03em] text-white/90 transition-all duration-300 ease-out hover:translate-x-1.5 hover:text-white sm:text-[22px] ${
                         isOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
                       }`}
                       style={{ transitionDelay: isOpen ? `${index * 35}ms` : "0ms" }}
-                      onClick={() => setIsOpen(false)}
                     >
                       {link}
                     </a>
@@ -115,9 +141,12 @@ export default function Nav() {
                 }`}
               >
                 <a
-                  href="#start-project"
+                  href="#contact"
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    handleScroll(e, "contact");
+                  }}
                   className="start-project-button flex min-h-14 w-full items-center justify-center rounded-2xl bg-white px-5 text-center text-[17px] font-semibold leading-none tracking-[-0.02em] text-black sm:min-h-16 sm:text-[18px]"
-                  onClick={() => setIsOpen(false)}
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
                   Start a Project

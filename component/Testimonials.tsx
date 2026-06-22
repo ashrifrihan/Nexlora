@@ -164,28 +164,32 @@ export default function Testimonials() {
 
       <div className="relative mx-auto w-full max-w-7xl">
         {/* Header */}
-        <div className="mb-16 sm:mb-24 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 12 }} 
-            animate={isInView ? { opacity: 1, y: 0 } : {}} 
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }} 
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-md" 
+        <div className="mb-14 sm:mb-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-5 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.1] px-3 py-1.5"
+            style={{ backdropFilter: "blur(5px)", backgroundColor: "rgba(13,13,13,0.4)" }}
           >
-            <span className="text-[12px] font-semibold tracking-[0.1em] uppercase text-white/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            <span
+              className="text-[14px] font-medium tracking-[-0.02em] text-white"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
+            >
               Client Feedback
             </span>
           </motion.div>
 
-          <motion.h2 
-            id="testimonials-heading" 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={isInView ? { opacity: 1, y: 0 } : {}} 
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} 
-            className="mx-auto max-w-3xl text-[clamp(28px,5vw,46px)] font-bold leading-[1.1] tracking-[-0.04em] text-white" 
+          <motion.h2
+            id="testimonials-heading"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Trusted by startups and{" "}
-            <span className="bg-gradient-to-r from-white via-white/80 to-white/40 bg-clip-text text-transparent">
+            Trusted by startups &amp;{" "}
+            <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
               growing companies.
             </span>
           </motion.h2>
@@ -200,6 +204,13 @@ export default function Testimonials() {
               index={index}
             />
           ))}
+        </div>
+
+        {/* Confidentiality Disclaimer */}
+        <div className="mt-12 text-center select-none opacity-40 hover:opacity-100 transition-opacity duration-300">
+          <p className="text-[10px] sm:text-[11px] text-white/30 uppercase tracking-widest" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            * Names and corporate entities modified for client confidentiality.
+          </p>
         </div>
       </div>
     </section>

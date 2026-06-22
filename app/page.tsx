@@ -8,6 +8,8 @@ import Process from "@/component/Process";
 import Testimonials from "@/component/Testimonials";
 import FAQ from "@/component/Faq";
 import Compare from "@/component/Compare";
+import About from "@/component/About";
+import Contact from "@/component/Contact";
 import Footer from "@/component/Footer";
 
 export const metadata: Metadata = {
@@ -28,7 +30,9 @@ export default function Home() {
         <Process />
         <Testimonials />
         <Compare />
+        <About />
         <FAQ />
+        <Contact />
         <Footer />
       </main>
     </div>

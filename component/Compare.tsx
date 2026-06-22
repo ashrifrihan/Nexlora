@@ -1,65 +1,76 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
-import { motion, useInView } from "motion/react";
+import { useRef, useState, MouseEvent } from "react";
+import { motion, useInView, AnimatePresence } from "motion/react";
 
-/* ─── 7 Exact Comparison Points Provided by the User ─── */
+/* ─── Comparison Data ─── */
+const alternatives = [
+  {
+    id: "agencies",
+    label: "Traditional Agencies",
+    shortLabel: "Agencies",
+    points: [
+      "Slow project execution and bloated development cycles",
+      "Template-based, generic design systems without originality",
+      "Multiple communication layers (PMs, account executives)",
+      "Weak long-term scalability planning and architecture",
+      "Poor default SEO, indexing, and page load speed structures",
+      "Expensive hourly rates and retainers for post-launch updates"
+    ]
+  },
+  {
+    id: "freelancers",
+    label: "Freelancers",
+    shortLabel: "Freelancers",
+    points: [
+      "Inconsistent quality and delivery schedules",
+      "Vague timelines and unpredictable day-to-day availability",
+      "Limited overall software engineering and database depth",
+      "Lack of post-launch support and project handoff systems",
+      "Hard to scale or maintain codebases built without standards",
+      "Frequent communication delays, drop-offs, and silos"
+    ]
+  },
+  {
+    id: "inhouse",
+    label: "In-house Teams",
+    shortLabel: "In-House",
+    points: [
+      "Expensive recruitment, onboarding, and training processes",
+      "High ongoing overhead, benefits, and tooling expenses",
+      "Long setup time to establish project workflows",
+      "Slower execution cycles due to excessive meeting bloat",
+      "Skill gaps and limited external industry exposure",
+      "Difficult organizational scaling and flexibility to pivot"
+    ]
+  }
+];
+
 const nexzoaFeatures = [
-  "Fast product delivery",
-  "Modern scalable systems",
-  "Direct builder communication",
-  "Premium UI/UX quality",
-  "SEO-ready development",
-  "AI-powered workflows",
-  "Long-term technical support",
+  "Fast product delivery driven by automated workflows",
+  "Custom scalable systems built from the ground up",
+  "Direct communication with the engineer building your system",
+  "Premium UI/UX layout and blazing fast page speed",
+  "SEO-ready configuration and semantic architecture",
+  "Dedicated ongoing systems support and maintenance"
 ];
 
-const traditionalAgenciesFeatures = [
-  "Slow project execution",
-  "Generic design systems",
-  "Multiple communication layers",
-  "Weak scalability planning",
-  "Poor SEO structure",
-  "Outdated workflows",
-  "Expensive long-term changes",
-];
-
-const freelancersFeatures = [
-  "Inconsistent delivery quality",
-  "Unclear timelines",
-  "Limited technical depth",
-  "Weak support after launch",
-  "Hard to scale projects",
-  "Communication delays",
-  "No structured workflow",
-];
-
-const inhouseTeamsFeatures = [
-  "Expensive hiring process",
-  "High operational costs",
-  "Long onboarding time",
-  "Slower execution cycles",
-  "Resource limitations",
-  "Difficult scaling",
-  "Heavy management overhead",
-];
-
-/* ─── Check / Cross icons in a highly styled Silver/White Glassmorphic Design ─── */
-function CheckIcon() {
+/* ─── Consistent Sized Icons ─── */
+function WarningIcon() {
   return (
-    <div className="w-5 h-5 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
-      <svg width="10" height="10" viewBox="0 0 16 16" fill="none" className="text-white">
-        <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <div className="w-5 h-5 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0 mt-[3px] shadow-sm">
+      <svg width="10" height="10" viewBox="0 0 16 16" fill="none" className="text-red-400">
+        <path d="M8 4v5M8 11.5h.01" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
       </svg>
     </div>
   );
 }
 
-function CrossIcon() {
+function SuccessCheckIcon() {
   return (
-    <div className="w-5 h-5 rounded-full bg-white/[0.02] border border-white/[0.04] flex items-center justify-center shrink-0">
-      <svg width="8" height="8" viewBox="0 0 16 16" fill="none" className="text-white/25">
-        <path d="M4.5 4.5L11.5 11.5M11.5 4.5L4.5 11.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <div className="w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-[3px] shadow-sm">
+      <svg width="9" height="9" viewBox="0 0 16 16" fill="none" className="text-emerald-400">
+        <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   );
@@ -69,42 +80,50 @@ export default function Compare() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [mp, setMp] = useState({ x: 0, y: 0 });
-  const [hov, setHov] = useState(false);
+  const [activeTab, setActiveTab] = useState("agencies");
 
-  const onMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const r = cardRef.current.getBoundingClientRect();
-    setMp({ x: e.clientX - r.left, y: e.clientY - r.top });
-  }, []);
+  // Spotlight effect for the highlighted Nexzoa card
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCoords({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  const activeAlternative = alternatives.find((alt) => alt.id === activeTab) || alternatives[0];
 
   return (
     <section
       ref={sectionRef}
       id="compare"
-      className="perf-section relative w-full bg-black px-4 py-20 sm:py-28 md:py-32 lg:py-36 overflow-hidden"
+      className="relative w-full bg-black px-4 py-20 sm:px-6 sm:py-28 md:px-8 lg:px-12 lg:py-40 overflow-hidden"
       aria-labelledby="compare-heading"
     >
-      {/* Premium ambient backdrop glow (White/Silver themed) */}
-      <div className="perf-glow pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-white/[0.015] blur-[160px] rounded-full" />
-
-      {/* Grid lines background */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="w-full h-full opacity-20" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)
-          `,
-          backgroundSize: "60px 60px",
-        }} />
-        {/* Fade grid lines into black edges */}
+      {/* Background Mesh Grid */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div
+          className="w-full h-full opacity-[0.12]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl z-10">
-        {/* Header (Exact User-provided Custom Design with customized text labels) */}
+      {/* Ambient backdrop glow */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.012] blur-[150px] rounded-full z-0" />
+
+      <div className="mx-auto w-full max-w-7xl relative z-10">
+        
+        {/* Header Section */}
         <div className="mb-14 sm:mb-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -117,7 +136,7 @@ export default function Compare() {
               className="text-[14px] font-medium tracking-[-0.02em] text-white"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
-              Compare
+              Why Choose Us
             </span>
           </motion.div>
 
@@ -129,8 +148,10 @@ export default function Compare() {
             className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Why choose{" "}
-            <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">us?</span>
+            Built for{" "}
+            <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
+              execution.
+            </span>
           </motion.h2>
 
           <motion.p
@@ -140,357 +161,157 @@ export default function Compare() {
             className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Nexzoa vs. Traditional Alternatives
+            See how Nexzoa replaces conventional development overhead with direct, high-speed engineering.
           </motion.p>
         </div>
 
-        {/* Desktop Comparison Table (4 Columns aligned perfectly by row heights) */}
-        <div className="hidden lg:grid lg:grid-cols-4 gap-6 xl:gap-8 items-stretch mt-12">
+        {/* 12-Column Responsive Split Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
           
-          {/* Column 1: Nexzoa (Standalone Highlighted Card with WOW border & sweeping glare animations) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="h-full"
-          >
-            {/* Parent Wrapper enabling the 1px Sweeping Border light trail */}
-            <div className="relative p-[1.5px] rounded-[24px] overflow-hidden h-full">
-              {/* Sweeping Liquid Silver border trail */}
-              <motion.div
-                className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,transparent_35%,rgba(255,255,255,0.35)_50%,transparent_65%)] pointer-events-none z-0"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+          {/* Left Column (5 cols): Alternatives with Custom Tabs */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                The Alternatives
+              </h3>
+              <p className="text-[14px] text-white/40 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Select an option to see the common pain points clients face when outsourcing development.
+              </p>
+            </div>
+
+            {/* Custom Sliding Tab Selector - Responsive & Overflow Safe */}
+            <div className="p-1 rounded-xl bg-white/[0.02] border border-white/[0.06] flex gap-1 overflow-x-auto scrollbar-none">
+              {alternatives.map((alt) => (
+                <button
+                  key={alt.id}
+                  onClick={() => setActiveTab(alt.id)}
+                  className="relative flex-1 py-2.5 px-3 rounded-lg text-[12px] sm:text-[13px] font-semibold tracking-tight transition-all duration-300 z-10 whitespace-nowrap"
+                  style={{
+                    fontFamily: '"Satoshi", sans-serif',
+                    color: activeTab === alt.id ? "#ffffff" : "rgba(255, 255, 255, 0.4)"
+                  }}
+                >
+                  {activeTab === alt.id && (
+                    <motion.div
+                      layoutId="activeTabIndicator"
+                      className="absolute inset-0 bg-white/[0.04] border border-white/[0.08] rounded-lg -z-10"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  {alt.shortLabel}
+                </button>
+              ))}
+            </div>
+
+            {/* Render Tab Points */}
+            <div className="flex-1 bg-white/[0.01] border border-white/[0.04] rounded-2xl p-5 sm:p-8 space-y-4">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.25 }}
+                  className="space-y-4"
+                >
+                  <p className="text-[11px] font-bold tracking-wider text-white/30 uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Typical {activeAlternative.label} issues
+                  </p>
+                  <ul className="space-y-4">
+                    {activeAlternative.points.map((point, idx) => (
+                      <li key={idx} className="flex items-start gap-3.5 text-[14px] text-white/50 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                        <WarningIcon />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Right Column (7 cols): The Innovation (Nexzoa Card with animated direct engineering route) */}
+          <div className="lg:col-span-7 flex">
+            <motion.div
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="relative w-full rounded-[28px] border border-white/[0.08] p-5 sm:p-12 transition-all duration-500 overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.8)] flex flex-col justify-between gap-8"
+              style={{
+                backgroundColor: "rgba(10, 10, 12, 0.94)",
+                backdropFilter: "blur(20px)"
+              }}
+            >
+              {/* Spotlight Glow Overlay */}
+              <div
+                className="pointer-events-none absolute -inset-px rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  opacity: isHovered ? 1 : 0,
+                  background: `radial-gradient(500px circle at ${coords.x}px ${coords.y}px, rgba(255,255,255,0.035), transparent 70%)`,
+                }}
               />
 
-              {/* Card Content Mask */}
-              <div
-                ref={cardRef}
-                onMouseMove={onMove}
-                onMouseEnter={() => setHov(true)}
-                onMouseLeave={() => setHov(false)}
-                className="relative rounded-[23px] h-full p-6 xl:p-8 z-10 overflow-hidden transition-all duration-500 shadow-[0_0_50px_-15px_rgba(255,255,255,0.015)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.035)]"
-                style={{
-                  backgroundColor: "rgba(10,10,12,0.96)",
-                }}
-              >
-                {/* Beautiful luxury corner ambient glow on the top-right */}
-                <div className="absolute top-0 right-0 w-[240px] h-[240px] bg-gradient-to-br from-white/[0.04] to-transparent blur-[45px] pointer-events-none rounded-tr-[23px]" />
+              {/* Luxury Corner Light Flare */}
+              <div className="absolute top-0 right-0 w-[240px] h-[240px] bg-gradient-to-br from-white/[0.03] to-transparent blur-[45px] pointer-events-none rounded-tr-[28px]" />
 
-                {/* Mouse-follow spotlight glow */}
-                <div
-                  className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500"
-                  style={{
-                    opacity: hov ? 1 : 0,
-                    background: `radial-gradient(400px circle at ${mp.x}px ${mp.y}px, rgba(255,255,255,0.035), transparent 60%)`,
-                  }}
-                />
-
-                {/* Sweeping Glare light beam that triggers across the face of the card on hover */}
-                <motion.div
-                  className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[23px]"
-                  style={{ opacity: hov ? 0.35 : 0 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <motion.div
-                    className="absolute w-[200px] h-full top-0"
-                    style={{
-                      background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
-                      transform: "skewX(-20deg)",
-                    }}
-                    animate={hov ? { x: ["-250px", "600px"] } : { x: "-250px" }}
-                    transition={{ duration: 1.4, ease: "easeInOut" }}
-                  />
-                </motion.div>
-
-                {/* Subtle infinite moving light beam */}
-                <motion.div
-                  className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[23px]"
-                  style={{ opacity: 0.15 }}
-                >
-                  <motion.div
-                    className="absolute w-[150px] h-full"
-                    style={{
-                      background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.015), transparent)",
-                    }}
-                    animate={{ x: ["-150px", "500px"] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
-                  />
-                </motion.div>
-
-                <div className="relative z-10">
-                  {/* Title */}
-                  <h3
-                    className="text-[20px] font-bold text-white tracking-tight mb-8"
-                    style={{ fontFamily: '"Satoshi", sans-serif' }}
-                  >
-                    nexzoa<span className="text-white/40">*</span>
+              <div className="relative z-10 space-y-8 flex-1 flex flex-col justify-between">
+                
+                {/* Header inside Nexzoa Card */}
+                <div>
+                  <h3 className="text-2xl font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Partnering with Nexzoa
                   </h3>
+                  <p className="text-[13.5px] text-white/50 mt-1.5 font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Engineered to eliminate project management layers and accelerate delivery.
+                  </p>
+                </div>
 
-                  {/* Features */}
-                  <div className="flex flex-col gap-0">
-                    {nexzoaFeatures.map((feature, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: -6 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.4, delay: 0.2 + i * 0.04 }}
-                        className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
-                      >
-                        <CheckIcon />
-                        <span
-                          className="text-[14.5px] font-semibold text-white/90"
-                          style={{ fontFamily: '"Satoshi", sans-serif' }}
-                        >
-                          {feature}
-                        </span>
-                      </motion.div>
-                    ))}
+                {/* Direct Connection Pipeline Visual - Responsive Gap/Width protection */}
+                <div className="relative py-4 sm:py-5 px-4 sm:px-6 bg-white/[0.015] border border-white/[0.05] rounded-2xl flex items-center justify-between overflow-hidden">
+                  <div className="flex flex-col items-center gap-1 z-10 shrink-0">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-white/40 text-[10px] sm:text-[11px] font-bold select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                      YOU
+                    </div>
+                    <span className="text-[9px] sm:text-[10px] text-white/45 font-medium tracking-wide" style={{ fontFamily: '"Satoshi", sans-serif' }}>Client</span>
+                  </div>
+
+                  {/* Connected animated pipeline route */}
+                  <div className="flex-1 relative h-[1.5px] mx-3 sm:mx-4 bg-white/[0.08] overflow-hidden">
+                    <motion.div
+                      className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-transparent via-white/70 to-transparent"
+                      animate={{ x: ["-100%", "400%"] }}
+                      transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  </div>
+
+                  <div className="flex flex-col items-center gap-1 z-10 shrink-0">
+                    <div
+                      className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-white/10 flex items-center justify-center text-black text-[10px] sm:text-[11px] font-black select-none shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                      style={{ fontFamily: '"Satoshi", sans-serif' }}
+                    >
+                      NZ
+                    </div>
+                    <span className="text-[9px] sm:text-[10px] text-white/90 font-bold tracking-wide" style={{ fontFamily: '"Satoshi", sans-serif' }}>Lead Engineer</span>
                   </div>
                 </div>
+
+                {/* Features List */}
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 pt-2">
+                  {nexzoaFeatures.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3.5 text-[14px] text-white/80 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                      <SuccessCheckIcon />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          {/* Column 2: Traditional Agencies */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="p-6 xl:p-8 flex flex-col h-full bg-transparent"
-          >
-            <h3
-              className="text-[17px] xl:text-[18px] font-bold text-white/70 tracking-tight mb-8"
-              style={{ fontFamily: '"Satoshi", sans-serif' }}
-            >
-              Traditional Agencies
-            </h3>
-            <div className="flex flex-col gap-0">
-              {traditionalAgenciesFeatures.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
-                >
-                  <CrossIcon />
-                  <span
-                    className="text-[14px] text-white/35 font-medium"
-                    style={{ fontFamily: '"Satoshi", sans-serif' }}
-                  >
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Column 3: Freelancers */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="p-6 xl:p-8 flex flex-col h-full bg-transparent"
-          >
-            <h3
-              className="text-[17px] xl:text-[18px] font-bold text-white/70 tracking-tight mb-8"
-              style={{ fontFamily: '"Satoshi", sans-serif' }}
-            >
-              Freelancers
-            </h3>
-            <div className="flex flex-col gap-0">
-              {freelancersFeatures.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
-                >
-                  <CrossIcon />
-                  <span
-                    className="text-[14px] text-white/35 font-medium"
-                    style={{ fontFamily: '"Satoshi", sans-serif' }}
-                  >
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Column 4: In-house Teams */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="p-6 xl:p-8 flex flex-col h-full bg-transparent"
-          >
-            <h3
-              className="text-[17px] xl:text-[18px] font-bold text-white/70 tracking-tight mb-8"
-              style={{ fontFamily: '"Satoshi", sans-serif' }}
-            >
-              In-house Teams
-            </h3>
-            <div className="flex flex-col gap-0">
-              {inhouseTeamsFeatures.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 h-14 border-b border-white/[0.04] last:border-0 hover:translate-x-1 transition-transform duration-200"
-                >
-                  <CrossIcon />
-                  <span
-                    className="text-[14px] text-white/35 font-medium"
-                    style={{ fontFamily: '"Satoshi", sans-serif' }}
-                  >
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
 
-        {/* Mobile Swipeable / Tabbed View (Clean & Overflow Safe) */}
-        <MobileCompareView />
       </div>
     </section>
-  );
-}
-
-/* ─── Mobile Compare View Component ─── */
-function MobileCompareView() {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const tabs = [
-    { title: "nexzoa", accent: true },
-    { title: "Traditional Agencies", accent: false },
-    { title: "Freelancers", accent: false },
-    { title: "In-house Teams", accent: false },
-  ];
-
-  return (
-    <div className="lg:hidden mt-8">
-      {/* Sticky Tab Navigator */}
-      <div className="sticky top-[72px] z-20 -mx-4 px-4 py-3 bg-black/95 backdrop-blur-md border-b border-white/[0.04] overflow-x-auto scrollbar-none flex gap-2">
-        {tabs.map((tab, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveTab(i)}
-            className={`shrink-0 px-3.5 py-2 rounded-xl text-[12px] font-bold tracking-tight transition-all duration-300 border ${
-              activeTab === i
-                ? "bg-white/10 border-white/20 text-white"
-                : "bg-transparent border-white/[0.04] text-white/40 hover:text-white/60"
-            }`}
-            style={{ fontFamily: '"Satoshi", sans-serif' }}
-          >
-            {tab.title}
-          </button>
-        ))}
-      </div>
-
-      {/* Tab Contents */}
-      <div className="mt-6 min-h-[460px]">
-        {activeTab === 0 && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="relative p-[1.5px] rounded-[24px] overflow-hidden"
-          >
-            {/* Sweeping Liquid Silver border trail for active mobile tab */}
-            <motion.div
-              className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,transparent_35%,rgba(255,255,255,0.3)_50%,transparent_65%)] pointer-events-none z-0"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-            />
-
-            <div
-              className="relative rounded-[23px] p-6 z-10 bg-gradient-to-b from-white/[0.015] to-white/[0.003]"
-              style={{ backgroundColor: "rgba(10,10,12,0.95)" }}
-            >
-              <div className="absolute top-0 right-0 w-[180px] h-[180px] bg-gradient-to-br from-white/[0.03] to-transparent blur-[35px] pointer-events-none rounded-tr-[23px]" />
-              <h3 className="text-[17px] font-bold text-white tracking-tight mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                nexzoa<span className="text-white/40">*</span>
-              </h3>
-              <div className="flex flex-col gap-0">
-                {nexzoaFeatures.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
-                    <CheckIcon />
-                    <span className="text-[14px] font-semibold text-white/90" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {activeTab === 1 && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="p-4"
-          >
-            <h3 className="text-[16px] font-bold text-white/80 mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              Traditional Agencies
-            </h3>
-            <div className="flex flex-col gap-0">
-              {traditionalAgenciesFeatures.map((feature, i) => (
-                <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
-                  <CrossIcon />
-                  <span className="text-[13.5px] text-white/35 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-
-        {activeTab === 2 && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="p-4"
-          >
-            <h3 className="text-[16px] font-bold text-white/80 mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              Freelancers
-            </h3>
-            <div className="flex flex-col gap-0">
-              {freelancersFeatures.map((feature, i) => (
-                <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
-                  <CrossIcon />
-                  <span className="text-[13.5px] text-white/35 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-
-        {activeTab === 3 && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="p-4"
-          >
-            <h3 className="text-[16px] font-bold text-white/80 mb-6" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              In-house Teams
-            </h3>
-            <div className="flex flex-col gap-0">
-              {inhouseTeamsFeatures.map((feature, i) => (
-                <div key={i} className="flex items-center gap-3 py-3.5 border-b border-white/[0.04] last:border-0">
-                  <CrossIcon />
-                  <span className="text-[13.5px] text-white/35 font-medium" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </div>
   );
 }

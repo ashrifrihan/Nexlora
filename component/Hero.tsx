@@ -233,13 +233,15 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="flex justify-center"
         >
-          <HoverBorderGradient
-            containerClassName="rounded-2xl"
-            className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
-            style={{ fontFamily: '"Satoshi", sans-serif' }}
-          >
-            Explore Nexzoa
-          </HoverBorderGradient>
+          <a href="#contact">
+            <HoverBorderGradient
+              containerClassName="rounded-2xl"
+              className="text-white dark:text-white px-6 py-3 md:px-10 md:py-4 font-semibold"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
+            >
+              Start Your Project
+            </HoverBorderGradient>
+          </a>
         </motion.div>
 
         {/* Core Tech Stack Section */}

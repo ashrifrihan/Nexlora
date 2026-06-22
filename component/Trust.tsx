@@ -111,39 +111,43 @@ export default function Trust() {
       {/* Ambient center glow behind content */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-white/[0.015] blur-[150px] rounded-full z-0" />
 
-      <div className="mx-auto w-full max-w-6xl relative z-10">
+      <div className="mx-auto w-full max-w-7xl relative z-10">
         {/* Header */}
-        <div className="mb-16 sm:mb-24 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 12 }} 
-            animate={isInView ? { opacity: 1, y: 0 } : {}} 
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }} 
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 backdrop-blur-md" 
+        <div className="mb-14 sm:mb-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-5 inline-flex items-center gap-2 rounded-[12px] border border-white/[0.1] px-3 py-1.5"
+            style={{ backdropFilter: "blur(5px)", backgroundColor: "rgba(13,13,13,0.4)" }}
           >
-            <span className="text-[12px] font-semibold tracking-[0.1em] uppercase text-white/60" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              OPERATIONS & ARCHITECTURE
+            <span
+              className="text-[14px] font-medium tracking-[-0.02em] text-white"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
+            >
+              Operations &amp; Architecture
             </span>
           </motion.div>
 
-          <motion.h2 
-            id="trust-heading" 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={isInView ? { opacity: 1, y: 0 } : {}} 
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} 
-            className="mx-auto max-w-3xl text-[clamp(28px,5vw,46px)] font-bold leading-[1.15] tracking-[-0.04em] text-white" 
+          <motion.h2
+            id="trust-heading"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="mx-auto max-w-3xl text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.04em] text-white"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Trusted Operations &{" "}
-            <span className="bg-gradient-to-r from-white via-white/80 to-white/40 bg-clip-text text-transparent">
+            Trusted Operations &amp;{" "}
+            <span className="bg-gradient-to-r from-white/90 via-white/60 to-white/40 bg-clip-text text-transparent">
               Integrations.
             </span>
           </motion.h2>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 16 }} 
-            animate={isInView ? { opacity: 1, y: 0 } : {}} 
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }} 
-            className="mx-auto mt-5 max-w-2xl text-[15px] sm:text-[17px] leading-relaxed text-white/45 font-light" 
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             We connect custom APIs, payment gateways, and databases to build secure, automated pipelines that power your business workflows.
@@ -251,7 +255,7 @@ export default function Trust() {
                       <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-blue-400/40 transition-all duration-500">
                         <FaAws className="w-4.5 h-4.5 text-white/40 group-hover:text-[#ff9900] transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] font-mono text-white/20 group-hover:text-white/40 transition-colors duration-500">AWS</span>
+                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>AWS</span>
                     </div>
 
                     {/* Vercel Node */}
@@ -259,7 +263,7 @@ export default function Trust() {
                       <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-white/40 transition-all duration-500">
                         <SiVercel className="w-4.5 h-4.5 text-white/40 group-hover:text-white transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] font-mono text-white/20 group-hover:text-white/40 transition-colors duration-500">Vercel</span>
+                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>Vercel</span>
                     </div>
 
                     {/* GCP Node */}
@@ -267,7 +271,7 @@ export default function Trust() {
                       <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-blue-400/40 transition-all duration-500">
                         <SiGooglecloud className="w-4.5 h-4.5 text-white/40 group-hover:text-[#4285f4] transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] font-mono text-white/20 group-hover:text-white/40 transition-colors duration-500">GCP</span>
+                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>GCP</span>
                     </div>
 
                     {/* Docker Node */}
@@ -275,7 +279,7 @@ export default function Trust() {
                       <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-cyan-400/40 transition-all duration-500">
                         <SiDocker className="w-4.5 h-4.5 text-white/40 group-hover:text-[#2496ed] transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] font-mono text-white/20 group-hover:text-white/40 transition-colors duration-500">Docker</span>
+                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>Docker</span>
                     </div>
 
                   </div>
@@ -297,7 +301,7 @@ export default function Trust() {
                 {/* Small indicator light */}
                 <div className="absolute top-7 right-10 flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#10b981]/10 border border-[#10b981]/20">
                   <div className="w-1 h-1 rounded-full bg-[#10b981] animate-ping" />
-                  <span className="text-[7.5px] font-mono text-[#10b981] font-semibold tracking-wide">SECURE</span>
+                  <span className="text-[7.5px] text-[#10b981] font-semibold tracking-wide" style={{ fontFamily: '"Satoshi", sans-serif' }}>SECURE</span>
                 </div>
               </div>
             }
