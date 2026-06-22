@@ -1,9 +1,10 @@
 User-agent: *
 Allow: /
 
-User-agent: Googlebot
-Allow: /
-
-Sitemap: https://nexzoa.io/sitemap.xml
+# Block internal/private paths
 Disallow: /api/
 Disallow: /_next/
+Disallow: /admin/
+Disallow: /dashboard/
+
+Sitemap: https://nexzoa.in/sitemap.xml

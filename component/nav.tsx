@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const links = ["Work", "Solutions", "Products", "Journal", "Careers", "About", "Contact"];
+const links = ["Work", "Solutions", "Process", "Testimonials", "FAQ", "Contact"];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +21,10 @@ export default function Nav() {
 
           <div className="hidden items-center gap-2 lg:flex">
             {links.map((link) => {
-              let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
-              if (link === "Work") href = "/work";
-              if (link === "Solutions") href = "/solutions";
-              if (link === "Journal") href = "/journal";
-              if (link === "Contact") href = "mailto:hello@nexzoa.com";
+              let href = `#${link.toLowerCase().replaceAll(" ", "-")}`;
+              if (link === "Work") href = "#projects";
+              if (link === "Solutions") href = "#solutions";
+              if (link === "Contact") href = "mailto:hello@nexzoa.in";
               return (
                 <a
                   key={link}
@@ -88,11 +87,10 @@ export default function Nav() {
             <div className="mt-5 border-t border-white/10 pt-6 [font-family:Satoshi,Inter,sans-serif] sm:mt-7 sm:pt-7">
               <div className="grid gap-3 px-1">
                 {links.map((link, index) => {
-                  let href = `/#${link.toLowerCase().replaceAll(" ", "-")}`;
-                  if (link === "Work") href = "/work";
-                  if (link === "Solutions") href = "/solutions";
-                  if (link === "Journal") href = "/journal";
-                  if (link === "Contact") href = "mailto:hello@nexzoa.com";
+                  let href = `#${link.toLowerCase().replaceAll(" ", "-")}`;
+                  if (link === "Work") href = "#projects";
+                  if (link === "Solutions") href = "#solutions";
+                  if (link === "Contact") href = "mailto:hello@nexzoa.in";
                   return (
                     <a
                       key={link}
@@ -125,11 +123,11 @@ export default function Nav() {
 
                 <div className="mt-5 flex items-center justify-center text-[14px] font-medium tracking-[-0.02em] text-white/85 sm:text-[15px]">
                   <a
-                    href="mailto:hello@nexzoa.com"
+                    href="mailto:hello@nexzoa.in"
                     className="transition-colors hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
-                    hello@nexzoa.com
+                    hello@nexzoa.in
                   </a>
                 </div>
               </div>

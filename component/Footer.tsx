@@ -94,22 +94,22 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     AI systems
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Dashboard platforms
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Mobile apps
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Custom software
                   </a>
                 </li>
@@ -123,26 +123,28 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#Work" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#projects" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Work
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Solutions
                   </a>
                 </li>
                 <li>
-                  <a href="#Products" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Products
+                  <a href="#process" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Process
                   </a>
                 </li>
                 <li>
-                  <a href="#Careers" className="group text-[14px] text-white/60 hover:text-white transition-colors duration-200 flex items-center gap-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Careers
-                    <span className="text-[9px] font-bold tracking-tight text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full select-none scale-90 group-hover:scale-95 transition-transform duration-200">
-                      Hiring
-                    </span>
+                  <a href="#testimonials" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Testimonials
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    FAQ
                   </a>
                 </li>
               </ul>
@@ -155,12 +157,7 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#About" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#Contact" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="mailto:hello@nexzoa.in" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Contact
                   </a>
                 </li>
