@@ -300,3 +300,26 @@ export default function Contact() {
                     className="w-full min-h-[54px] bg-white text-black font-bold rounded-xl flex items-center justify-center gap-2.5 hover:bg-white/90 active:scale-[0.99] transition-all disabled:opacity-50 text-[14.5px] shadow-[0_8px_30px_rgba(255,255,255,0.12)]"
                     style={{ fontFamily: '"Satoshi", sans-serif' }}
                   >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />
+                        <span>Sending Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <FaPaperPlane className="w-3.5 h-3.5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
+            </motion.div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
