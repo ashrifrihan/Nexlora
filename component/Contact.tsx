@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, MouseEvent, FormEvent } from "react";
+import { useRef, useState, MouseEvent, FormEvent } from "react";
 import { motion, useInView } from "motion/react";
 import { FaLinkedin, FaGithub, FaPaperPlane, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -11,27 +11,11 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    specs: "",
     message: ""
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
-  // Sync state with local storage scope updates from Estimator
-  useEffect(() => {
-    const handleSpecUpdate = () => {
-      const savedSpec = localStorage.getItem("nexzoa_project_spec");
-      if (savedSpec) {
-        setFormData(prev => ({ ...prev, specs: savedSpec }));
-      }
-    };
-    window.addEventListener("nexzoa_spec_update", handleSpecUpdate);
-    handleSpecUpdate(); // check immediately
-    return () => {
-      window.removeEventListener("nexzoa_spec_update", handleSpecUpdate);
-    };
-  }, []);
 
   // Spotlight coordinates for card
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -52,9 +36,7 @@ export default function Contact() {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSubmitting(false);
     setIsSuccess(true);
-    // Clear storage and state on success
-    localStorage.removeItem("nexzoa_project_spec");
-    setFormData({ name: "", email: "", specs: "", message: "" });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
