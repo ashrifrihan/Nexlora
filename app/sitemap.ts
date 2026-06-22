@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nexzoa.in";
+  const baseUrl = "https://nexzoa.i0";
   const currentDate = new Date();
 
   return [

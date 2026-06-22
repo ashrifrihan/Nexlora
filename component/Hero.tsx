@@ -20,20 +20,12 @@ import {
   SiDocker
 } from 'react-icons/si'
 
+/* ─── Sleek, minimal grayscale icons for the scroll strip ─── */
 const techStack = [
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiNextdotjs className="w-5 h-5 text-white" />
-        <ShinyText
-          text="Next.js"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiNextdotjs className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "Next.js",
@@ -41,17 +33,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiReact className="w-5 h-5 text-cyan-400 animate-[spin_20s_linear_infinite]" />
-        <ShinyText
-          text="React"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiReact className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "React",
@@ -59,17 +42,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiTypescript className="w-5 h-5 text-[#3178c6]" />
-        <ShinyText
-          text="TypeScript"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiTypescript className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "TypeScript",
@@ -77,17 +51,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiTailwindcss className="w-5 h-5 text-sky-400" />
-        <ShinyText
-          text="Tailwind CSS"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiTailwindcss className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "Tailwind CSS",
@@ -95,17 +60,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiFramer className="w-5 h-5 text-pink-400" />
-        <ShinyText
-          text="Framer Motion"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiFramer className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "Framer Motion",
@@ -113,17 +69,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiNodedotjs className="w-5 h-5 text-green-500" />
-        <ShinyText
-          text="Node.js"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiNodedotjs className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "Node.js",
@@ -131,17 +78,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiPython className="w-5 h-5 text-[#3776ab]" />
-        <ShinyText
-          text="Python"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiPython className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "Python",
@@ -149,17 +87,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiPostgresql className="w-5 h-5 text-indigo-400" />
-        <ShinyText
-          text="PostgreSQL"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiPostgresql className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "PostgreSQL",
@@ -167,17 +96,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiRedis className="w-5 h-5 text-red-500" />
-        <ShinyText
-          text="Redis"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiRedis className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "Redis",
@@ -185,17 +105,8 @@ const techStack = [
   },
   {
     node: (
-      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-white/[0.02] border border-white/[0.05] rounded-xl backdrop-blur-md hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 select-none group" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-        <SiDocker className="w-5 h-5 text-blue-400" />
-        <ShinyText
-          text="Docker"
-          speed={3}
-          color="rgba(255, 255, 255, 0.45)"
-          shineColor="#ffffff"
-          spread={80}
-          direction="left"
-          className="text-[13.5px] font-semibold tracking-tight"
-        />
+      <div className="flex items-center justify-center px-4 opacity-40 hover:opacity-90 transition-opacity duration-300 select-none">
+        <SiDocker className="w-6.5 h-6.5 text-white" />
       </div>
     ),
     title: "Docker",
@@ -206,13 +117,27 @@ const techStack = [
 const Hero = () => {
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Background Ripple Effect - Desktop only */}
-      
-      {/* Background Spotlights - Subtle on mobile, full on desktop */}
+      {/* Background Spotlights */}
       <div className="absolute inset-0 w-full">
         <Spotlight className="hidden md:block -top-96 -left-96 h-screen" fill='white' />
         <Spotlight className="hidden md:block -top-96 -right-48 h-screen" fill='white' />
         <Spotlight className="md:opacity-100 opacity-30 top-0 left-1/2 transform -translate-x-1/2 h-screen" fill='white' />
+      </div>
+
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div 
+          className="w-full h-full opacity-[0.18]" 
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
+            `,
+            backgroundSize: "45px 45px",
+          }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black" />
       </div>
 
       {/* Content */}
@@ -322,19 +247,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 md:mt-16 pt-12 md:pt-16 w-full"
+          className="mt-14 md:mt-24 pt-8 w-full max-w-2xl"
         >
-          <p className="text-gray-500 text-xs md:text-sm font-semibold mb-8 uppercase tracking-widest" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+          <p className="text-white/20 text-[11px] md:text-xs font-semibold mb-6 uppercase tracking-[0.2em]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Technologies powering our custom software & platforms
           </p>
           <LogoLoop
             logos={techStack}
-            speed={100}
+            speed={60}
             direction="left"
-            logoHeight={60}
-            gap={60}
+            logoHeight={36}
+            gap={24}
             hoverSpeed={0}
-            scaleOnHover
             fadeOut
             fadeOutColor="#000000"
             ariaLabel="Technology partners"
