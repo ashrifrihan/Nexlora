@@ -1,5 +1,7 @@
 "use client";
 
+import { MouseEvent } from "react";
+
 /* ─── Social Media Icons ─── */
 function XIcon() {
   return (
@@ -29,6 +31,14 @@ function LinkedinIcon() {
 }
 
 export default function Footer() {
+  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <footer className="relative w-full bg-black border-t border-white/[0.04] pt-16 pb-12 overflow-hidden z-10">
       <div className="relative mx-auto w-full max-w-7xl px-4 z-10">
@@ -39,7 +49,7 @@ export default function Footer() {
           {/* Left Column: Brand Info and Social Links */}
           <div className="col-span-12 md:col-span-5 flex flex-col gap-6">
             <div className="flex items-center gap-1.5 select-none">
-              <span className="logo-chromatic text-[18px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              <span className="text-[18px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                 nexzoa<span className="text-white/40 font-bold">*</span>
               </span>
             </div>
@@ -94,22 +104,22 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     AI systems
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Dashboard platforms
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Mobile apps
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Custom software
                   </a>
                 </li>
@@ -123,26 +133,23 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#Work" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#projects" onClick={(e) => handleScroll(e, "projects")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Work
                   </a>
                 </li>
                 <li>
-                  <a href="#Solutions" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Solutions
                   </a>
                 </li>
                 <li>
-                  <a href="#Products" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Products
+                  <a href="#process" onClick={(e) => handleScroll(e, "process")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Process
                   </a>
                 </li>
                 <li>
-                  <a href="#Careers" className="group text-[14px] text-white/60 hover:text-white transition-colors duration-200 flex items-center gap-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Careers
-                    <span className="text-[9px] font-bold tracking-tight text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full select-none scale-90 group-hover:scale-95 transition-transform duration-200">
-                      Hiring
-                    </span>
+                  <a href="#compare" onClick={(e) => handleScroll(e, "compare")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Why Us
                   </a>
                 </li>
               </ul>
@@ -155,12 +162,12 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#About" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#about" onClick={(e) => handleScroll(e, "about")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#Contact" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                  <a href="#contact" onClick={(e) => handleScroll(e, "contact")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Contact
                   </a>
                 </li>

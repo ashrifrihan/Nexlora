@@ -26,7 +26,8 @@ export default function Nav() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="logo-chromatic shrink-0 text-[30px] font-bold leading-none tracking-[-0.06em] text-white transition-transform duration-300 hover:scale-[1.02] sm:text-[38px] lg:text-[32px] lg:tracking-[-0.04em]"
+            className="shrink-0 text-[20px] font-bold text-white tracking-tight transition-transform duration-300 hover:scale-[1.02] sm:text-[24px] lg:text-[22px]"
+            style={{ fontFamily: '"Satoshi", sans-serif' }}
             aria-label="Nexzoa home"
           >
             nexzoa<span className="text-white/40 font-bold">*</span>
