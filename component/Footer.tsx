@@ -40,7 +40,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative w-full bg-black border-t border-white/[0.04] pt-16 pb-12 overflow-hidden z-10">
+    <footer className="relative w-full bg-black border-t border-white/[0.04] pt-12 pb-10 overflow-hidden z-10">
       <div className="relative mx-auto w-full max-w-7xl px-4 z-10">
         
         {/* Links & Info Grid */}

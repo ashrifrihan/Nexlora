@@ -148,7 +148,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-3 sm:px-4 md:px-8 text-center flex flex-col items-center pt-16 sm:pt-24 md:pt-40">
+      <div className="relative z-10 w-full px-3 sm:px-4 md:px-8 text-center flex flex-col items-center pt-16 sm:pt-24 md:pt-32 pb-10 sm:pb-14">
         {/* Badge with Glassy Effect */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
@@ -263,7 +263,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-14 md:mt-24 pt-8 w-full max-w-2xl"
+          className="mt-8 sm:mt-12 md:mt-14 pt-4 w-full max-w-2xl"
         >
           <p className="text-white/20 text-[11px] md:text-xs font-semibold mb-6 uppercase tracking-[0.2em]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             Technologies powering our custom software & platforms

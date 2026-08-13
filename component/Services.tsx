@@ -331,7 +331,7 @@ export default function Services() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} id="solutions" className="perf-section relative w-full bg-black px-4 pt-24 pb-12 sm:px-6 sm:pt-32 sm:pb-16 md:px-8 md:pt-40 md:pb-20 lg:px-12 lg:pt-48 lg:pb-24 scroll-mt-28 overflow-hidden" aria-labelledby="services-heading">
+    <section ref={sectionRef} id="solutions" className="perf-section relative w-full bg-black px-4 py-14 sm:px-6 sm:py-18 md:px-8 md:py-20 lg:px-12 lg:py-24 scroll-mt-28 overflow-hidden" aria-labelledby="services-heading">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent" />
       <div className="perf-glow pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-600/[0.03] blur-[140px] rounded-full" />
 

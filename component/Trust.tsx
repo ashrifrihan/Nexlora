@@ -88,7 +88,7 @@ export default function Trust() {
     <section 
       ref={sectionRef} 
       id="trust" 
-      className="relative w-full bg-black px-4 py-24 sm:px-6 sm:py-32 md:px-8 lg:px-12 lg:py-40 overflow-hidden" 
+      className="relative w-full bg-black px-4 py-14 sm:px-6 sm:py-18 md:px-8 md:py-20 lg:px-12 lg:py-24 overflow-hidden" 
       aria-labelledby="trust-heading"
     >
       {/* ── Background Grid Pattern ── */}
@@ -200,9 +200,11 @@ export default function Trust() {
                   <line x1="140" y1="90" x2="220" y2="140" stroke="url(#glowGrad)" strokeWidth="1.5" className="flow-line" />
                 </svg>
 
-                {/* Central Hub Node */}
-                <div className="absolute w-14 h-14 rounded-full bg-white/[0.05] border border-white/20 md:bg-white/[0.03] md:border-white/10 flex items-center justify-center shadow-[0_0_24px_rgba(255,255,255,0.05)] z-10">
-                  <span className="text-[10px] tracking-[-0.04em] text-white/80 md:text-white/50 font-bold">NEXZOA</span>
+                {/* Central Hub Node with Real Nexzoa Logo */}
+                <div className="absolute w-16 h-16 rounded-full bg-white/[0.05] border border-white/20 md:bg-white/[0.03] md:border-white/10 flex items-center justify-center shadow-[0_0_24px_rgba(255,255,255,0.05)] z-10">
+                  <span className="text-[11px] font-bold text-white tracking-tight select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    nexzoa<span className="text-white/40 font-bold">*</span>
+                  </span>
                 </div>
 
                 {/* Outer Node 1: Stripe */}

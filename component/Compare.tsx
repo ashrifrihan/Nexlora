@@ -99,7 +99,7 @@ export default function Compare() {
     <section
       ref={sectionRef}
       id="compare"
-      className="relative w-full bg-black px-4 py-20 sm:px-6 sm:py-28 md:px-8 lg:px-12 lg:py-40 overflow-hidden"
+      className="relative w-full bg-black px-4 py-14 sm:px-6 sm:py-18 md:px-8 md:py-20 lg:px-12 lg:py-24 overflow-hidden"
       aria-labelledby="compare-heading"
     >
       {/* Background Mesh Grid */}
@@ -266,32 +266,32 @@ export default function Compare() {
                   </p>
                 </div>
 
-                {/* Direct Connection Pipeline Visual - Responsive Gap/Width protection */}
-                <div className="relative py-4 sm:py-5 px-4 sm:px-6 bg-white/[0.015] border border-white/[0.05] rounded-2xl flex items-center justify-between overflow-hidden">
-                  <div className="flex flex-col items-center gap-1 z-10 shrink-0">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-white/40 text-[10px] sm:text-[11px] font-bold select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                      YOU
+                {/* ─── Simple Direct Collaboration Cards ─── */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {/* Client Card */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-white/40 tracking-wider uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>01 / YOU</span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
                     </div>
-                    <span className="text-[9px] sm:text-[10px] text-white/45 font-medium tracking-wide" style={{ fontFamily: '"Satoshi", sans-serif' }}>Client</span>
+                    <div>
+                      <h4 className="text-[14px] sm:text-[16px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>Client</h4>
+                      <p className="text-[11px] sm:text-[12px] text-white/50 font-light mt-0.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>Direct Vision</p>
+                    </div>
                   </div>
 
-                  {/* Connected animated pipeline route */}
-                  <div className="flex-1 relative h-[1.5px] mx-3 sm:mx-4 bg-white/[0.08] overflow-hidden">
-                    <motion.div
-                      className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-transparent via-white/70 to-transparent"
-                      animate={{ x: ["-100%", "400%"] }}
-                      transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                  </div>
-
-                  <div className="flex flex-col items-center gap-1 z-10 shrink-0">
-                    <div
-                      className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-white/10 flex items-center justify-center text-black text-[10px] sm:text-[11px] font-black select-none shadow-[0_0_15px_rgba(255,255,255,0.15)]"
-                      style={{ fontFamily: '"Satoshi", sans-serif' }}
-                    >
-                      NZ
+                  {/* Lead Engineer Card */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/[0.1] flex flex-col justify-between space-y-3 shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                        nexzoa<span className="text-white/40 font-bold">*</span>
+                      </span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                     </div>
-                    <span className="text-[9px] sm:text-[10px] text-white/90 font-bold tracking-wide" style={{ fontFamily: '"Satoshi", sans-serif' }}>Lead Engineer</span>
+                    <div>
+                      <h4 className="text-[14px] sm:text-[16px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>Lead Engineer</h4>
+                      <p className="text-[11px] sm:text-[12px] text-emerald-400 font-medium mt-0.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>Direct Delivery</p>
+                    </div>
                   </div>
                 </div>
 
