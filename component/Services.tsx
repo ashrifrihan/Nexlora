@@ -58,54 +58,120 @@ function WebDevVisual() {
 }
 
 function DashboardVisual() {
-  const heights = [35, 50, 40, 70, 48, 85, 60];
+  const bars = [
+    { x: 28, h: 32 },
+    { x: 54, h: 46 },
+    { x: 80, h: 38 },
+    { x: 106, h: 66 },
+    { x: 132, h: 46 },
+    { x: 158, h: 80, active: true },
+    { x: 184, h: 58 },
+  ];
+
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden p-4 select-none">
       <svg className="w-full max-w-[220px] h-auto" viewBox="0 0 220 140" fill="none">
-        {/* Thicker columns with gradients */}
-        {heights.map((h, i) => (
+        <defs>
+          <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.45" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.05" />
+          </linearGradient>
+          <linearGradient id="barGradActive" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#d97706" stopOpacity="0.3" />
+          </linearGradient>
+          <linearGradient id="areaGlow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.22" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.0" />
+          </linearGradient>
+          <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2.5" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        {/* Background Dashboard Gridlines */}
+        <line x1="15" y1="40" x2="205" y2="40" stroke="rgba(255,255,255,0.05)" strokeDasharray="3 3" />
+        <line x1="15" y1="65" x2="205" y2="65" stroke="rgba(255,255,255,0.05)" strokeDasharray="3 3" />
+        <line x1="15" y1="90" x2="205" y2="90" stroke="rgba(255,255,255,0.05)" strokeDasharray="3 3" />
+
+        {/* Area Glow Beneath Curve */}
+        <motion.path
+          d="M 37 74 C 47 74, 53 60, 63 60 C 73 60, 79 68, 89 68 C 99 68, 105 40, 115 40 C 125 40, 131 60, 141 60 C 151 60, 157 26, 167 26 C 177 26, 183 48, 193 48 L 193 110 L 37 110 Z"
+          fill="url(#areaGlow)"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+        />
+
+        {/* Columns / Bars */}
+        {bars.map((b, i) => (
           <motion.rect
             key={i}
-            x={28 + i * 26}
-            y={110 - h}
+            x={b.x}
+            y={110 - b.h}
             width="18"
-            height={h}
+            height={b.h}
             rx="4"
-            fill={i === 5 ? "url(#orangeGradActive)" : "url(#orangeGrad)"}
+            fill={b.active ? "url(#barGradActive)" : "url(#barGrad)"}
+            stroke={b.active ? "rgba(251,191,36,0.6)" : "rgba(245,158,11,0.15)"}
+            strokeWidth="1"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.08 * i, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 0.07 * i, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformOrigin: "bottom" }}
           />
         ))}
-        <defs>
-          <linearGradient id="orangeGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#d97706" stopOpacity="0.1" />
-          </linearGradient>
-          <linearGradient id="orangeGradActive" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#d97706" stopOpacity="0.4" />
-          </linearGradient>
-        </defs>
-        {/* Axis line */}
+
+        {/* Bottom Axis Base line */}
         <line x1="15" y1="110" x2="205" y2="110" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
-        {/* Bold trend line */}
+
+        {/* Smooth Curved Bezier Trend Line */}
         <motion.path
-          d="M37 75 L63 60 L89 70 L115 40 L141 62 L167 25 L193 50"
-          stroke="#f59e0b"
+          d="M 37 74 C 47 74, 53 60, 63 60 C 73 60, 79 68, 89 68 C 99 68, 105 40, 115 40 C 125 40, 131 60, 141 60 C 151 60, 157 26, 167 26 C 177 26, 183 48, 193 48"
+          stroke="#fbbf24"
           strokeWidth="2.5"
           strokeLinecap="round"
+          strokeLinejoin="round"
           fill="none"
           initial={{ pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, delay: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
         />
-        {/* KPI Tag */}
-        <motion.rect x="15" y="15" width="65" height="22" rx="6" fill="rgba(10,10,14,0.85)" stroke="rgba(245,158,11,0.3)" strokeWidth="1.5" />
-        <text x="47.5" y="29" textAnchor="middle" fill="#f59e0b" fontSize="8.5" fontWeight="bold" style={{ fontFamily: '"Satoshi", sans-serif' }}>+42.5%</text>
+
+        {/* Peak Glowing Data Node on Active Bar */}
+        <g filter="url(#glowFilter)">
+          <circle cx="167" cy="26" r="4" fill="#fbbf24" />
+          <motion.circle
+            cx="167"
+            cy="26"
+            r="7"
+            fill="none"
+            stroke="#f59e0b"
+            strokeWidth="1.5"
+            animate={{ scale: [0.8, 1.4, 0.8], opacity: [0.8, 0.2, 0.8] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            style={{ transformOrigin: "167px 26px" }}
+          />
+        </g>
+
+        {/* KPI Pill Badge (+42.5%) */}
+        <motion.g
+          initial={{ opacity: 0, y: -5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <rect x="15" y="12" width="70" height="22" rx="7" fill="rgba(18,18,22,0.9)" stroke="rgba(245,158,11,0.4)" strokeWidth="1.2" />
+          {/* Trending up arrow */}
+          <path d="M 23 25 L 28 20 M 28 20 L 24 20 M 28 20 L 28 24" stroke="#f59e0b" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          <text x="50" y="26.5" textAnchor="middle" fill="#fbbf24" fontSize="8.5" fontWeight="bold" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            +42.5%
+          </text>
+        </motion.g>
       </svg>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent" />
     </div>

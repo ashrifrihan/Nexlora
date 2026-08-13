@@ -42,18 +42,18 @@ function IntegrationCard({
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       onMouseMove={handleMouseMove}
-      className="group relative rounded-[28px] border border-white/[0.04] bg-[#0c0c0c]/40 p-8 md:p-10 hover:bg-[#0c0c0c]/80 hover:border-white/[0.12] transition-all duration-500 flex flex-col justify-between overflow-hidden h-full shadow-[0_24px_50px_rgba(0,0,0,0.7)]"
+      className="group relative rounded-[28px] border border-white/[0.12] bg-[#0c0c0c]/80 md:border-white/[0.04] md:bg-[#0c0c0c]/40 p-8 md:p-10 md:hover:bg-[#0c0c0c]/80 md:hover:border-white/[0.12] transition-all duration-500 flex flex-col justify-between overflow-hidden h-full shadow-[0_24px_50px_rgba(0,0,0,0.7)]"
     >
-      {/* Spotlight overlay */}
+      {/* Spotlight overlay (desktop only) */}
       <div
-        className="pointer-events-none absolute -inset-px rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        className="pointer-events-none absolute -inset-px rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block"
         style={{
           background: `radial-gradient(400px circle at ${coords.x}px ${coords.y}px, rgba(255,255,255,0.06), transparent 85%)`,
         }}
       />
 
       {/* Top ambient highlight */}
-      <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700" />
 
       {/* SVG Animation Canvas / Illustration Container */}
       <div className="flex-1 w-full flex items-center justify-center min-h-[220px] mb-8 select-none">
@@ -69,7 +69,7 @@ function IntegrationCard({
           {title}
         </h3>
         <p 
-          className="text-[14px] md:text-[15px] leading-relaxed text-white/45 group-hover:text-white/60 transition-colors duration-500 font-light" 
+          className="text-[14px] md:text-[15px] leading-relaxed text-white/60 md:text-white/45 md:group-hover:text-white/60 transition-colors duration-500 font-light" 
           style={{ fontFamily: '"Satoshi", sans-serif' }}
         >
           {description}
@@ -201,28 +201,28 @@ export default function Trust() {
                 </svg>
 
                 {/* Central Hub Node */}
-                <div className="absolute w-14 h-14 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center shadow-[0_0_24px_rgba(255,255,255,0.02)] z-10">
-                  <span className="text-[10px] tracking-[-0.04em] text-white/50 font-bold">NEXZOA</span>
+                <div className="absolute w-14 h-14 rounded-full bg-white/[0.05] border border-white/20 md:bg-white/[0.03] md:border-white/10 flex items-center justify-center shadow-[0_0_24px_rgba(255,255,255,0.05)] z-10">
+                  <span className="text-[10px] tracking-[-0.04em] text-white/80 md:text-white/50 font-bold">NEXZOA</span>
                 </div>
 
                 {/* Outer Node 1: Stripe */}
-                <div className="absolute top-[15px] left-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-indigo-400/40 transition-colors duration-500 shadow-lg">
-                  <SiStripe className="w-5 h-5 text-white/50 group-hover:text-[#635bff] transition-colors duration-500" />
+                <div className="absolute top-[15px] left-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-indigo-400/40 md:border-white/[0.06] md:group-hover:border-indigo-400/40 flex items-center justify-center transition-colors duration-500 shadow-lg">
+                  <SiStripe className="w-5 h-5 text-[#635bff] md:text-white/50 md:group-hover:text-[#635bff] transition-colors duration-500" />
                 </div>
 
                 {/* Outer Node 2: HubSpot */}
-                <div className="absolute top-[15px] right-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-orange-400/40 transition-colors duration-500 shadow-lg">
-                  <SiHubspot className="w-5 h-5 text-white/50 group-hover:text-[#ff7a59] transition-colors duration-500" />
+                <div className="absolute top-[15px] right-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-orange-400/40 md:border-white/[0.06] md:group-hover:border-orange-400/40 flex items-center justify-center transition-colors duration-500 shadow-lg">
+                  <SiHubspot className="w-5 h-5 text-[#ff7a59] md:text-white/50 md:group-hover:text-[#ff7a59] transition-colors duration-500" />
                 </div>
 
                 {/* Outer Node 3: Salesforce */}
-                <div className="absolute bottom-[15px] left-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-sky-400/40 transition-colors duration-500 shadow-lg">
-                  <SiSalesforce className="w-5 h-5 text-white/50 group-hover:text-[#00a1e0] transition-colors duration-500" />
+                <div className="absolute bottom-[15px] left-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-sky-400/40 md:border-white/[0.06] md:group-hover:border-sky-400/40 flex items-center justify-center transition-colors duration-500 shadow-lg">
+                  <SiSalesforce className="w-5 h-5 text-[#00a1e0] md:text-white/50 md:group-hover:text-[#00a1e0] transition-colors duration-500" />
                 </div>
 
                 {/* Outer Node 4: Slack */}
-                <div className="absolute bottom-[15px] right-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-emerald-400/40 transition-colors duration-500 shadow-lg">
-                  <SiSlack className="w-5 h-5 text-white/50 group-hover:text-[#4a154b] transition-colors duration-500" />
+                <div className="absolute bottom-[15px] right-[35px] w-11 h-11 rounded-full bg-white/[0.02] border border-emerald-400/40 md:border-white/[0.06] md:group-hover:border-emerald-400/40 flex items-center justify-center transition-colors duration-500 shadow-lg">
+                  <SiSlack className="w-5 h-5 text-[#4a154b] md:text-white/50 md:group-hover:text-[#4a154b] transition-colors duration-500" />
                 </div>
               </div>
             }
@@ -236,15 +236,15 @@ export default function Trust() {
             illustration={
               <div className="relative w-[280px] h-[180px] flex items-center justify-center">
                 {/* Architecture grid outline background */}
-                <div className="absolute inset-x-8 inset-y-4 rounded-xl border border-white/[0.02] bg-white/[0.005] overflow-hidden flex flex-col justify-between p-3 select-none">
+                <div className="absolute inset-x-8 inset-y-4 rounded-xl border border-white/[0.06] bg-white/[0.015] md:border-white/[0.02] md:bg-white/[0.005] overflow-hidden flex flex-col justify-between p-3 select-none">
                   {/* System Header bar mock */}
-                  <div className="flex items-center justify-between border-b border-white/[0.04] pb-2 w-full">
+                  <div className="flex items-center justify-between border-b border-white/[0.08] md:border-white/[0.04] pb-2 w-full">
                     <div className="flex gap-1">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                      <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                      <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/40 md:bg-white/20" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/40 md:bg-white/20" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/40 md:bg-white/20" />
                     </div>
-                    <div className="h-1.5 w-12 bg-white/10 rounded-sm" />
+                    <div className="h-1.5 w-12 bg-white/20 md:bg-white/10 rounded-sm" />
                   </div>
                   
                   {/* System visual nodes */}
@@ -252,34 +252,34 @@ export default function Trust() {
                     
                     {/* Database Node */}
                     <div className="flex flex-col items-center gap-1 group/node">
-                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-blue-400/40 transition-all duration-500">
-                        <FaAws className="w-4.5 h-4.5 text-white/40 group-hover:text-[#ff9900] transition-colors duration-500" />
+                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-amber-400/40 md:border-white/[0.06] md:group-hover:border-amber-400/40 flex items-center justify-center transition-all duration-500">
+                        <FaAws className="w-4.5 h-4.5 text-[#ff9900] md:text-white/40 md:group-hover:text-[#ff9900] transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>AWS</span>
+                      <span className="text-[8px] text-white/50 md:text-white/20 md:group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>AWS</span>
                     </div>
 
                     {/* Vercel Node */}
                     <div className="flex flex-col items-center gap-1 group/node">
-                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-white/40 transition-all duration-500">
-                        <SiVercel className="w-4.5 h-4.5 text-white/40 group-hover:text-white transition-colors duration-500" />
+                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/40 md:border-white/[0.06] md:group-hover:border-white/40 flex items-center justify-center transition-all duration-500">
+                        <SiVercel className="w-4.5 h-4.5 text-white md:text-white/40 md:group-hover:text-white transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>Vercel</span>
+                      <span className="text-[8px] text-white/50 md:text-white/20 md:group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>Vercel</span>
                     </div>
 
                     {/* GCP Node */}
                     <div className="flex flex-col items-center gap-1 group/node">
-                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-blue-400/40 transition-all duration-500">
-                        <SiGooglecloud className="w-4.5 h-4.5 text-white/40 group-hover:text-[#4285f4] transition-colors duration-500" />
+                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-blue-400/40 md:border-white/[0.06] md:group-hover:border-blue-400/40 flex items-center justify-center transition-all duration-500">
+                        <SiGooglecloud className="w-4.5 h-4.5 text-[#4285f4] md:text-white/40 md:group-hover:text-[#4285f4] transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>GCP</span>
+                      <span className="text-[8px] text-white/50 md:text-white/20 md:group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>GCP</span>
                     </div>
 
                     {/* Docker Node */}
                     <div className="flex flex-col items-center gap-1 group/node">
-                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-white/[0.06] flex items-center justify-center group-hover:border-cyan-400/40 transition-all duration-500">
-                        <SiDocker className="w-4.5 h-4.5 text-white/40 group-hover:text-[#2496ed] transition-colors duration-500" />
+                      <div className="w-10 h-10 rounded-lg bg-white/[0.02] border border-cyan-400/40 md:border-white/[0.06] md:group-hover:border-cyan-400/40 flex items-center justify-center transition-all duration-500">
+                        <SiDocker className="w-4.5 h-4.5 text-[#2496ed] md:text-white/40 md:group-hover:text-[#2496ed] transition-colors duration-500" />
                       </div>
-                      <span className="text-[8px] text-white/20 group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>Docker</span>
+                      <span className="text-[8px] text-white/50 md:text-white/20 md:group-hover:text-white/40 transition-colors duration-500" style={{ fontFamily: '"Satoshi", sans-serif' }}>Docker</span>
                     </div>
 
                   </div>

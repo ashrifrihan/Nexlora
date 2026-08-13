@@ -243,7 +243,7 @@ const Hero = () => {
           <a
             href="#contact"
             onClick={(e) => handleScroll(e, "contact")}
-            className="start-project-button flex items-center justify-center rounded-2xl bg-gradient-to-b from-white to-neutral-200 border border-white/10 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.6)] px-8 py-4 text-[15px] md:text-[16px] font-semibold text-black w-full sm:w-auto"
+            className="start-project-button flex items-center justify-center rounded-2xl px-8 py-4 text-[15px] md:text-[16px] font-semibold w-full sm:w-auto"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Start Your Project
@@ -251,7 +251,7 @@ const Hero = () => {
           <a
             href="#solutions"
             onClick={(e) => handleScroll(e, "solutions")}
-            className="flex items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/10 hover:border-white/20 px-8 py-4 text-[15px] md:text-[16px] font-semibold text-white transition-all duration-300 w-full sm:w-auto"
+            className="flex items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/10 hover:border-white/20 px-8 py-4 text-[15px] md:text-[16px] font-semibold text-white transition-colors duration-300 w-full sm:w-auto"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
             Explore Solutions
