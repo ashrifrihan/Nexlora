@@ -23,10 +23,9 @@ function StickyShellClient({ index, total, isMobile, children }: {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const isLast = index === total - 1;
   const scale = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.94]);
-  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.72]);
   return (
     <div ref={ref} className="relative h-full" style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}>
-      <motion.div className="h-full" style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
+      <motion.div className="h-full bg-[#0c0c0c] rounded-[28px] shadow-[0_12px_40px_rgba(0,0,0,0.9)]" style={isMobile ? { scale, transformOrigin: "top center", willChange: "transform" } : undefined}>
         {children}
       </motion.div>
     </div>
@@ -142,7 +141,7 @@ function TestimonialCard({ item, index }: { item: TestimonialItem; index: number
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       onMouseMove={handleMouseMove}
-      className="group relative rounded-[28px] border border-white/[0.04] bg-[#0c0c0c]/40 p-8 hover:bg-[#0c0c0c]/80 hover:border-white/[0.12] transition-all duration-500 flex flex-col justify-between h-full overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.6)]"
+      className="group relative rounded-[28px] border border-white/[0.04] bg-[#0c0c0c] p-8 hover:bg-[#0f0f0f] hover:border-white/[0.12] transition-all duration-500 flex flex-col justify-between h-full overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.8)]"
     >
       {/* Interactive mouse spotlight overlay */}
       <div

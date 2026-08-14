@@ -23,14 +23,13 @@ function StickyShellClient({ index, total, isMobile, className, children }: {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const isLast = index === total - 1;
   const scale = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.94]);
-  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.72]);
   return (
     <div
       ref={ref}
       className={`relative h-full ${className || ""}`}
       style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}
     >
-      <motion.div className="h-full" style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
+      <motion.div className="h-full bg-[#0a0a0a] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.9)]" style={isMobile ? { scale, transformOrigin: "top center", willChange: "transform" } : undefined}>
         {children}
       </motion.div>
     </div>
