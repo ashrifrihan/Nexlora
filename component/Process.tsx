@@ -1,7 +1,55 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
-import { motion, useInView } from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
+import dynamic from "next/dynamic";
+
+function useIsMobile() {
+  const [mob, setMob] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setMob(mq.matches);
+    const h = (e: MediaQueryListEvent) => setMob(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+  return mob;
+}
+
+function StickyShellClient({ index, total, isMobile, className, children }: {
+  index: number; total: number; isMobile: boolean; className?: string; children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const isLast = index === total - 1;
+  const scale = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.94]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.72]);
+  return (
+    <div
+      ref={ref}
+      className={`relative h-full ${className || ""}`}
+      style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}
+    >
+      <motion.div className="h-full" style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+const StickyShellDynamic = dynamic(
+  () => Promise.resolve(StickyShellClient),
+  { ssr: false }
+);
+
+function StickyShell({ index, total, className, children }: { index: number; total: number; className?: string; children: React.ReactNode }) {
+  const isMobile = useIsMobile();
+  return (
+    <StickyShellDynamic index={index} total={total} isMobile={isMobile} className={className}>
+      {children}
+    </StickyShellDynamic>
+  );
+}
 
 /* ─── Visual illustrations for each card ─── */
 
@@ -408,12 +456,18 @@ function BentoCard({
   const ref = useRef<HTMLDivElement>(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
+  const isMobile = useIsMobile();
 
   const onMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
     const r = ref.current.getBoundingClientRect();
     setMouse({ x: e.clientX - r.left, y: e.clientY - r.top });
   }, []);
+
+  /* parallax for the visual area on mobile */
+  const outerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: outerRef, offset: ["start end", "end start"] });
+  const visualY = useTransform(scrollYProgress, [0, 1], [-10, 10]);
 
   useEffect(() => {
     const el = ref.current;
@@ -429,7 +483,7 @@ function BentoCard({
 
   return (
     <motion.div
-      ref={ref}
+      ref={outerRef}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -457,9 +511,14 @@ function BentoCard({
         }}
       />
       {/* Visual area */}
-      <div className="relative z-10 border-b border-white/[0.04]">{children}</div>
+      <motion.div
+        className="relative z-10 border-b border-white/[0.04]"
+        style={{ y: isMobile ? visualY : 0, willChange: "transform" }}
+      >
+        {children}
+      </motion.div>
       {/* Text content */}
-      <div className="relative z-10 p-5 sm:p-6">
+      <div ref={ref} className="relative z-10 p-5 sm:p-6">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-[12px] font-bold font-mono tracking-wider" style={{ color: accent, opacity: 0.5 }}>
             {number}
@@ -511,75 +570,87 @@ export default function Process() {
         </div>
 
         {/* ── Bento Grid ── */}
-        <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 relative">
           {/* Row 1: Discovery (2-col) + Planning (1-col) */}
-          <BentoCard
-            className="sm:col-span-2 lg:col-span-2"
-            index={0}
-            number="01"
-            title="Discovery"
-            description="Understanding business goals and operational problems through stakeholder alignment, user research, and competitive analysis."
-            accent="#3b82f6"
-          >
-            <DiscoveryVisual />
-          </BentoCard>
+          <StickyShell index={0} total={6} className="sm:col-span-2 lg:col-span-2">
+            <BentoCard
+              className="h-full"
+              index={0}
+              number="01"
+              title="Discovery"
+              description="Understanding business goals and operational problems through stakeholder alignment, user research, and competitive analysis."
+              accent="#3b82f6"
+            >
+              <DiscoveryVisual />
+            </BentoCard>
+          </StickyShell>
 
-          <BentoCard
-            className="sm:col-span-1"
-            index={1}
-            number="02"
-            title="Planning"
-            description="Structuring workflows, systems, and product architecture for scalable, milestone-driven delivery."
-            accent="#f59e0b"
-          >
-            <PlanningVisual />
-          </BentoCard>
+          <StickyShell index={1} total={6} className="sm:col-span-1">
+            <BentoCard
+              className="h-full"
+              index={1}
+              number="02"
+              title="Planning"
+              description="Structuring workflows, systems, and product architecture for scalable, milestone-driven delivery."
+              accent="#f59e0b"
+            >
+              <PlanningVisual />
+            </BentoCard>
+          </StickyShell>
 
           {/* Row 2: Design (1-col) + Development (2-col) */}
-          <BentoCard
-            className="sm:col-span-1"
-            index={2}
-            number="03"
-            title="Design"
-            description="Creating scalable UI/UX systems and interactions research-driven, conversion-focused."
-            accent="#ec4899"
-          >
-            <DesignVisual />
-          </BentoCard>
+          <StickyShell index={2} total={6} className="sm:col-span-1">
+            <BentoCard
+              className="h-full"
+              index={2}
+              number="03"
+              title="Design"
+              description="Creating scalable UI/UX systems and interactions research-driven, conversion-focused."
+              accent="#ec4899"
+            >
+              <DesignVisual />
+            </BentoCard>
+          </StickyShell>
 
-          <BentoCard
-            className="sm:col-span-2 lg:col-span-2"
-            index={3}
-            number="04"
-            title="Development"
-            description="Building frontend, backend, APIs, and integrations with clean code, modern frameworks, shipped iteratively."
-            accent="#a855f7"
-          >
-            <DevelopmentVisual />
-          </BentoCard>
+          <StickyShell index={3} total={6} className="sm:col-span-2 lg:col-span-2">
+            <BentoCard
+              className="h-full"
+              index={3}
+              number="04"
+              title="Development"
+              description="Building frontend, backend, APIs, and integrations with clean code, modern frameworks, shipped iteratively."
+              accent="#a855f7"
+            >
+              <DevelopmentVisual />
+            </BentoCard>
+          </StickyShell>
 
           {/* Row 3: Testing (1-col) + Launch (2-col) */}
-          <BentoCard
-            className="sm:col-span-2 lg:col-span-1"
-            index={4}
-            number="05"
-            title="Testing"
-            description="Quality assurance, performance checks, and system validation ensuring reliability before every release."
-            accent="#f97316"
-          >
-            <TestingVisual />
-          </BentoCard>
+          <StickyShell index={4} total={6} className="sm:col-span-2 lg:col-span-1">
+            <BentoCard
+              className="h-full"
+              index={4}
+              number="05"
+              title="Testing"
+              description="Quality assurance, performance checks, and system validation ensuring reliability before every release."
+              accent="#f97316"
+            >
+              <TestingVisual />
+            </BentoCard>
+          </StickyShell>
 
-          <BentoCard
-            className="sm:col-span-2 lg:col-span-2"
-            index={5}
-            number="06"
-            title="Launch"
-            description="Deployment, optimization, and ongoing improvements your product, live and scaling with 99.9% uptime."
-            accent="#10b981"
-          >
-            <LaunchVisual />
-          </BentoCard>
+          <StickyShell index={5} total={6} className="sm:col-span-2 lg:col-span-2">
+            <BentoCard
+              className="h-full"
+              index={5}
+              number="06"
+              title="Launch"
+              description="Deployment, optimization, and ongoing improvements your product, live and scaling with 99.9% uptime."
+              accent="#10b981"
+            >
+              <LaunchVisual />
+            </BentoCard>
+          </StickyShell>
         </div>
       </div>
     </section>

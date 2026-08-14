@@ -1,8 +1,52 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
-import { motion, useInView } from "motion/react";
+import { useRef, useState, useCallback, useEffect } from "react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+function useIsMobile() {
+  const [mob, setMob] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setMob(mq.matches);
+    const h = (e: MediaQueryListEvent) => setMob(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+  return mob;
+}
+
+function StickyShellClient({ index, total, isMobile, children }: {
+  index: number; total: number; isMobile: boolean; children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const isLast = index === total - 1;
+  const scale = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.94]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.72]);
+  return (
+    <div ref={ref} className="relative h-full" style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}>
+      <motion.div className="h-full" style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+const StickyShellDynamic = dynamic(
+  () => Promise.resolve(StickyShellClient),
+  { ssr: false }
+);
+
+function StickyShell({ index, total, children }: { index: number; total: number; children: React.ReactNode }) {
+  const isMobile = useIsMobile();
+  return (
+    <StickyShellDynamic index={index} total={total} isMobile={isMobile}>
+      {children}
+    </StickyShellDynamic>
+  );
+}
 
 interface ProjectItem {
   id: number;
@@ -96,12 +140,18 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mp, setMp] = useState({ x: 0, y: 0 });
   const [hov, setHov] = useState(false);
+  const isMobile = useIsMobile();
 
   const onMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const r = cardRef.current.getBoundingClientRect();
     setMp({ x: e.clientX - r.left, y: e.clientY - r.top });
   }, []);
+
+  /* parallax for the image on mobile */
+  const imgRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: imgScroll } = useScroll({ target: imgRef, offset: ["start end", "end start"] });
+  const imgY = useTransform(imgScroll, [0, 1], [-12, 12]);
 
   const number = String(index + 1).padStart(2, "0");
 
@@ -167,15 +217,20 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
           </div>
 
           {/* Thumbnail with Next.js Image Optimization */}
-          <div className="relative w-full h-full overflow-hidden">
-            <Image
-              src={item.image}
-              alt={`${item.title} — Project by Nexzoa`}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              priority={index < 3} // Priority load top 3 images above fold
-              className="object-cover object-top filter saturate-[0.8] brightness-[0.75] group-hover:saturate-100 group-hover:brightness-95 group-hover:scale-[1.03] transition-all duration-700 ease-[0.16,1,0.3,1]"
-            />
+          <div ref={imgRef} className="relative w-full h-full overflow-hidden">
+            <motion.div
+              className="relative w-full h-full"
+              style={{ y: isMobile ? imgY : 0, willChange: "transform" }}
+            >
+              <Image
+                src={item.image}
+                alt={`${item.title} — Project by Nexzoa`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                priority={index < 3}
+                className="object-cover object-top filter saturate-[0.8] brightness-[0.75] group-hover:saturate-100 group-hover:brightness-95 group-hover:scale-[1.03] transition-all duration-700 ease-[0.16,1,0.3,1]"
+              />
+            </motion.div>
             {/* Bottom fade */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent pointer-events-none" />
           </div>
@@ -314,9 +369,12 @@ export default function Projects() {
         </div>
 
         {/* Project Grid — 3 columns on desktop, 2 on tablet, 1 on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
+        {/* On mobile the grid collapses to 1-col; StickyShell adds the stacking effect */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch relative">
           {projectsData.map((item, index) => (
-            <ProjectCard key={item.id} item={item} index={index} />
+            <StickyShell key={item.id} index={index} total={projectsData.length}>
+              <ProjectCard item={item} index={index} />
+            </StickyShell>
           ))}
         </div>
       </div>

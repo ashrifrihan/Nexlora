@@ -1,7 +1,51 @@
 "use client";
 
-import { useRef, useState, MouseEvent } from "react";
-import { motion, useInView } from "motion/react";
+import { useRef, useState, useEffect, MouseEvent } from "react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
+import dynamic from "next/dynamic";
+
+function useIsMobile() {
+  const [mob, setMob] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setMob(mq.matches);
+    const h = (e: MediaQueryListEvent) => setMob(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+  return mob;
+}
+
+function StickyShellClient({ index, total, isMobile, children }: {
+  index: number; total: number; isMobile: boolean; children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const isLast = index === total - 1;
+  const scale = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.94]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.72]);
+  return (
+    <div ref={ref} className="relative h-full" style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}>
+      <motion.div className="h-full" style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+const StickyShellDynamic = dynamic(
+  () => Promise.resolve(StickyShellClient),
+  { ssr: false }
+);
+
+function StickyShell({ index, total, children }: { index: number; total: number; children: React.ReactNode }) {
+  const isMobile = useIsMobile();
+  return (
+    <StickyShellDynamic index={index} total={total} isMobile={isMobile}>
+      {children}
+    </StickyShellDynamic>
+  );
+}
 
 interface TestimonialItem {
   name: string;
@@ -80,17 +124,19 @@ function StarIcon({ className }: { className?: string }) {
 
 function TestimonialCard({ item, index }: { item: TestimonialItem; index: number }) {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const isMobile = useIsMobile();
+  const cardRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: cardRef, offset: ["start end", "end start"] });
+  const avatarY = useTransform(scrollYProgress, [0, 1], [-8, 8]);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setCoords({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -129,12 +175,12 @@ function TestimonialCard({ item, index }: { item: TestimonialItem; index: number
 
       {/* Author Profile */}
       <div className="relative z-10 flex items-center gap-4 border-t border-white/[0.05] pt-6 mt-auto">
-        <div 
+        <motion.div
           className="w-11 h-11 rounded-full flex items-center justify-center border border-white/[0.08] text-[13.5px] font-bold text-white shadow-[0_4px_12px_rgba(0,0,0,0.3)] shrink-0 select-none"
-          style={{ background: item.badgeBg }}
+          style={{ background: item.badgeBg, y: isMobile ? avatarY : 0, willChange: "transform" }}
         >
           {item.initials}
-        </div>
+        </motion.div>
         <div className="min-w-0">
           <h4 className="text-[14.5px] font-bold text-white tracking-[-0.01em]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             {item.name}
@@ -196,13 +242,11 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch relative">
           {testimonialsData.map((item, index) => (
-            <TestimonialCard
-              key={index}
-              item={item}
-              index={index}
-            />
+            <StickyShell key={index} index={index} total={testimonialsData.length}>
+              <TestimonialCard item={item} index={index} />
+            </StickyShell>
           ))}
         </div>
 

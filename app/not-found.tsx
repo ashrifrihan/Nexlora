@@ -11,7 +11,20 @@ export default function NotFound() {
         aria-labelledby="not-found-title"
       >
         <p
-          className="select-none bg-[linear-gradient(90deg,rgba(255,255,255,0.92),rgba(255,255,255,0.14))] bg-clip-text text-[clamp(8rem,30vw,24rem)] font-bold leading-none tracking-[-0.09em] text-transparent"
+          className="select-non
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          e bg-[linear-gradient(90deg,rgba(255,255,255,0.92),rgba(255,255,255,0.14))] bg-clip-text text-[clamp(8rem,30vw,24rem)] font-bold leading-none tracking-[-0.09em] text-transparent"
           aria-hidden="true"
         >
           404
