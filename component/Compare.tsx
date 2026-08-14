@@ -1,7 +1,51 @@
 "use client";
 
-import { useRef, useState, MouseEvent } from "react";
-import { motion, useInView, AnimatePresence } from "motion/react";
+import { useRef, useState, useEffect, MouseEvent } from "react";
+import { motion, useInView, AnimatePresence, useScroll, useTransform } from "motion/react";
+import dynamic from "next/dynamic";
+
+function useIsMobile() {
+  const [mob, setMob] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setMob(mq.matches);
+    const h = (e: MediaQueryListEvent) => setMob(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+  return mob;
+}
+
+function StickyShellClient({ index, total, isMobile, children }: {
+  index: number; total: number; isMobile: boolean; children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const isLast = index === total - 1;
+  const scale = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.94]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.72]);
+  return (
+    <div
+      ref={ref}
+      style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}
+    >
+      <motion.div style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+const StickyShellDynamic = dynamic(() => Promise.resolve(StickyShellClient), { ssr: false });
+
+function StickyShell({ index, total, children }: { index: number; total: number; children: React.ReactNode }) {
+  const isMobile = useIsMobile();
+  return (
+    <StickyShellDynamic index={index} total={total} isMobile={isMobile}>
+      {children}
+    </StickyShellDynamic>
+  );
+}
 
 /* ─── Comparison Data ─── */
 const alternatives = [
@@ -267,8 +311,9 @@ export default function Compare() {
                 </div>
 
                 {/* ─── Simple Direct Collaboration Cards ─── */}
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {/* Client Card */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 relative">
+                  {/* Client Card — sticky stack on mobile */}
+                  <StickyShell index={0} total={2}>
                   <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] sm:text-[11px] font-bold text-white/40 tracking-wider uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>01 / YOU</span>
@@ -279,8 +324,10 @@ export default function Compare() {
                       <p className="text-[11px] sm:text-[12px] text-white/50 font-light mt-0.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>Direct Vision</p>
                     </div>
                   </div>
+                  </StickyShell>
 
-                  {/* Lead Engineer Card */}
+                  {/* Lead Engineer Card — sticky stack on mobile */}
+                  <StickyShell index={1} total={2}>
                   <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/[0.1] flex flex-col justify-between space-y-3 shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
                     <div className="flex items-center justify-between">
                       <span className="text-[11px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
@@ -293,15 +340,18 @@ export default function Compare() {
                       <p className="text-[11px] sm:text-[12px] text-emerald-400 font-medium mt-0.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>Direct Delivery</p>
                     </div>
                   </div>
+                  </StickyShell>
                 </div>
 
-                {/* Features List */}
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 pt-2">
+                {/* Features List — sticky stack on mobile */}
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 pt-2 relative">
                   {nexzoaFeatures.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3.5 text-[14px] text-white/80 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    <StickyShell key={idx} index={idx} total={nexzoaFeatures.length}>
+                    <li className="flex items-start gap-3.5 text-[14px] text-white/80 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                       <SuccessCheckIcon />
                       <span>{feature}</span>
                     </li>
+                    </StickyShell>
                   ))}
                 </ul>
 

@@ -32,7 +32,7 @@ function StickyShellClient({ index, total, isMobile, className, children }: {
       className={`relative h-full ${className || ""}`}
       style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}
     >
-      <motion.div className="h-full bg-[#0c0c0e] rounded-[20px] shadow-[0_12px_40px_rgba(0,0,0,0.9)]" style={isMobile ? { scale, transformOrigin: "top center", willChange: "transform" } : undefined}>
+      <motion.div className="h-full bg-[#0a0a0a] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.9)]" style={isMobile ? { scale, transformOrigin: "top center", willChange: "transform" } : undefined}>
         {children}
       </motion.div>
     </div>
@@ -54,7 +54,21 @@ function StickyShell({ index, total, className, children }: { index: number; tot
 }
 
 /* ─── bento card shell ─── */
-function BentoCard({ index, children, className = "" }: { index: number; children: React.ReactNode; className?: string }) {
+function BentoCard({
+  index,
+  accent = "#3b82f6",
+  visual,
+  children,
+  className = "",
+  isRow = false,
+}: {
+  index: number;
+  accent?: string;
+  visual?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+  isRow?: boolean;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [mp, setMp] = useState({ x: 0, y: 0 });
   const [hov, setHov] = useState(false);
@@ -71,19 +85,45 @@ function BentoCard({ index, children, className = "" }: { index: number; childre
   const visualY = useTransform(scrollYProgress, [0, 1], [-10, 10]);
 
   return (
-    <motion.div ref={outerRef} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }} className={`relative ${className || ""}`}>
-      <div ref={ref} onMouseMove={onMove} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+    <motion.div
+      ref={outerRef}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative ${className || ""}`}
+    >
+      <div
+        ref={ref}
+        onMouseMove={onMove}
+        onMouseEnter={() => setHov(true)}
+        onMouseLeave={() => setHov(false)}
         onCopy={(e: React.ClipboardEvent<HTMLDivElement>) => e.preventDefault()}
         onDragStart={(e: React.DragEvent<HTMLDivElement>) => e.preventDefault()}
-        className="service-card relative overflow-hidden rounded-[20px] border border-white/[0.08] h-full group cursor-pointer transition-all duration-500 select-none"
-        style={{ background: "linear-gradient(145deg, rgba(18,18,22,1) 0%, rgba(10,10,14,1) 100%)" }}>
-        <div className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500" style={{ opacity: hov ? 1 : 0, background: `radial-gradient(500px circle at ${mp.x}px ${mp.y}px, rgba(120,90,255,0.06), transparent 60%)` }} />
-        <div className="pointer-events-none absolute inset-0 z-0 rounded-[20px] transition-opacity duration-500" style={{ opacity: hov ? 1 : 0, boxShadow: "inset 0 0 0 1px rgba(120,90,255,0.15), 0 0 30px -10px rgba(120,90,255,0.1)" }} />
-        <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-        <motion.div
-          className="relative z-10 h-full"
-          style={{ y: isMobile ? visualY : 0, willChange: "transform" }}
-        >{children}</motion.div>
+        className="service-card relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0a0a] h-full group cursor-pointer transition-all duration-500 select-none shadow-[0_12px_40px_rgba(0,0,0,0.9)] hover:border-white/[0.1]"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500"
+          style={{ opacity: hov ? 1 : 0, background: `radial-gradient(500px circle at ${mp.x}px ${mp.y}px, ${accent}12, transparent 60%)` }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-500"
+          style={{ opacity: hov ? 1 : 0, boxShadow: `inset 0 0 0 1px ${accent}25, 0 0 30px -10px ${accent}15` }}
+        />
+
+        <div className={`flex ${isRow ? "flex-col md:flex-row md:items-center" : "flex-col"} h-full`}>
+          {/* Visual area with isolated mobile parallax matching Process */}
+          <motion.div
+            className={`relative z-10 border-b border-white/[0.04] ${isRow ? "w-full md:w-1/2 h-[200px] md:h-[260px] md:border-b-0 md:border-r" : "h-[200px] w-full"} flex items-center justify-center`}
+            style={{ y: isMobile ? visualY : 0, willChange: "transform" }}
+          >
+            {visual}
+          </motion.div>
+          {/* Text content */}
+          <div className={`relative z-10 p-6 sm:p-7 ${isRow ? "w-full md:w-1/2" : ""}`}>
+            {children}
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -416,25 +456,22 @@ export default function Services() {
         <div className="grid grid-cols-12 gap-4 sm:gap-5 relative">
           {services.map((s, i) => (
             <StickyShell key={s.id} index={i} total={services.length} className={s.colSpan}>
-              <BentoCard index={i} className="h-full">
-                <div className={`flex ${s.id === "automation-systems" ? "flex-col md:flex-row md:items-center" : "flex-col"} h-full`}>
-                  {/* Visual area */}
-                  <div className={`${s.id === "automation-systems" ? "w-full md:w-1/2 h-[200px] md:h-[260px]" : "h-[200px] w-full"} flex items-center justify-center`}>
-                    {s.visual}
-                  </div>
-                  {/* Text */}
-                  <div className={`p-6 sm:p-7 ${s.id === "automation-systems" ? "w-full md:w-1/2" : ""}`}>
-                    {/* Icon dot */}
-                    <div className="w-8 h-8 rounded-lg border border-white/[0.08] bg-white/[0.03] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-[-6deg] transition-transform duration-300">
-                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: s.accent, boxShadow: `0 0 8px ${s.accent}60` }} />
-                    </div>
-                    <h3 className="text-[17px] font-semibold tracking-[-0.02em] text-white/95 mb-2 group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Satoshi", sans-serif' }}>{s.title}</h3>
-                    <p className="text-[13px] leading-[1.65] text-white/40 group-hover:text-white/55 transition-colors duration-300" style={{ fontFamily: '"Satoshi", sans-serif' }}>{s.desc}</p>
-                    <div className="mt-4 flex items-center gap-1.5">
-                      <span className="text-[12px] font-medium opacity-60 group-hover:opacity-100 transition-opacity duration-300" style={{ color: s.accent }}>Learn more</span>
-                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" style={{ color: s.accent }}><path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    </div>
-                  </div>
+              <BentoCard
+                index={i}
+                accent={s.accent}
+                visual={s.visual}
+                isRow={s.id === "automation-systems"}
+                className="h-full"
+              >
+                {/* Icon dot */}
+                <div className="w-8 h-8 rounded-lg border border-white/[0.08] bg-white/[0.03] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-[-6deg] transition-transform duration-300">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: s.accent, boxShadow: `0 0 8px ${s.accent}60` }} />
+                </div>
+                <h3 className="text-[17px] font-semibold tracking-[-0.02em] text-white/95 mb-2 group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Satoshi", sans-serif' }}>{s.title}</h3>
+                <p className="text-[13px] leading-[1.65] text-white/40 group-hover:text-white/55 transition-colors duration-300" style={{ fontFamily: '"Satoshi", sans-serif' }}>{s.desc}</p>
+                <div className="mt-4 flex items-center gap-1.5">
+                  <span className="text-[12px] font-medium opacity-60 group-hover:opacity-100 transition-opacity duration-300" style={{ color: s.accent }}>Learn more</span>
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" style={{ color: s.accent }}><path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </div>
               </BentoCard>
             </StickyShell>

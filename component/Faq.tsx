@@ -1,7 +1,51 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, AnimatePresence, useInView } from "motion/react";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
+import dynamic from "next/dynamic";
+
+function useIsMobile() {
+  const [mob, setMob] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setMob(mq.matches);
+    const h = (e: MediaQueryListEvent) => setMob(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+  return mob;
+}
+
+function StickyShellClient({ index, total, isMobile, children }: {
+  index: number; total: number; isMobile: boolean; children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const isLast = index === total - 1;
+  const scale = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.95]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, isLast ? 1 : 0.75]);
+  return (
+    <div
+      ref={ref}
+      style={isMobile ? { position: "sticky", top: 80 + index * 5, zIndex: index + 1, willChange: "transform" } : undefined}
+    >
+      <motion.div style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+const StickyShellDynamic = dynamic(() => Promise.resolve(StickyShellClient), { ssr: false });
+
+function StickyShell({ index, total, children }: { index: number; total: number; children: React.ReactNode }) {
+  const isMobile = useIsMobile();
+  return (
+    <StickyShellDynamic index={index} total={total} isMobile={isMobile}>
+      {children}
+    </StickyShellDynamic>
+  );
+}
 
 interface FAQItem {
   question: string;
@@ -161,30 +205,32 @@ export default function FAQ() {
 
         {/* ── Accordion Lists (2 Columns on Desktop) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-start">
-          {/* Left Column */}
-          <div className="space-y-3 sm:space-y-4">
+          {/* Left Column — sticky stack on mobile */}
+          <div className="space-y-3 sm:space-y-4 relative">
             {faqData.slice(0, Math.ceil(faqData.length / 2)).map((item, index) => (
-              <AccordionItem
-                key={index}
-                item={item}
-                isOpen={openIndex === index}
-                onClick={() => toggleIndex(index)}
-                index={index}
-              />
+              <StickyShell key={index} index={index} total={Math.ceil(faqData.length / 2)}>
+                <AccordionItem
+                  item={item}
+                  isOpen={openIndex === index}
+                  onClick={() => toggleIndex(index)}
+                  index={index}
+                />
+              </StickyShell>
             ))}
           </div>
-          {/* Right Column */}
-          <div className="space-y-3 sm:space-y-4">
+          {/* Right Column — sticky stack on mobile */}
+          <div className="space-y-3 sm:space-y-4 relative">
             {faqData.slice(Math.ceil(faqData.length / 2)).map((item, index) => {
               const actualIndex = index + Math.ceil(faqData.length / 2);
               return (
-                <AccordionItem
-                  key={actualIndex}
-                  item={item}
-                  isOpen={openIndex === actualIndex}
-                  onClick={() => toggleIndex(actualIndex)}
-                  index={actualIndex}
-                />
+                <StickyShell key={actualIndex} index={index} total={faqData.length - Math.ceil(faqData.length / 2)}>
+                  <AccordionItem
+                    item={item}
+                    isOpen={openIndex === actualIndex}
+                    onClick={() => toggleIndex(actualIndex)}
+                    index={actualIndex}
+                  />
+                </StickyShell>
               );
             })}
           </div>
