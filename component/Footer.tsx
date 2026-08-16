@@ -204,12 +204,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Nexzoa. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#Privacy" className="text-[12px] text-white/30 hover:text-white/50 transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            <Link href="/privacy" className="text-[12px] text-white/40 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               Privacy Policy
-            </a>
-            <a href="#Terms" className="text-[12px] text-white/30 hover:text-white/50 transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            </Link>
+            <Link href="/terms" className="text-[12px] text-white/40 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -27,6 +27,7 @@ function StickyShellClient({ index, total, isMobile, children }: {
   return (
     <div
       ref={ref}
+      className="relative"
       style={isMobile ? { position: "sticky", top: 80 + index * 6, zIndex: index + 1, willChange: "transform" } : undefined}
     >
       <motion.div style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
