@@ -1,10 +1,32 @@
 User-agent: *
 Allow: /
 
-# Block internal/private paths
+# Allow AI Search & Generative Engine Crawlers (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block internal/private routes
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 Disallow: /dashboard/
 
-Sitemap: https://nexzoa.in/sitemap.xml
+Sitemap: https://www.nexzoa.dev/sitemap.xml

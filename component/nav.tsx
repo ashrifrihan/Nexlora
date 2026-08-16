@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, MouseEvent } from "react";
+import Link from "next/link";
+import { CONTACT_EMAIL } from "@/lib/siteConfig";
 
 const links = ["Work", "Services", "Process", "Why Us", "About", "FAQ", "Contact"];
 
@@ -153,20 +155,20 @@ export default function Nav() {
                   Start a Project
                 </a>
 
-                <div className="mt-5 flex items-center justify-center text-[14px] font-medium tracking-[-0.02em] text-white/85 sm:text-[15px]">
-                  <a
-                    href="mailto:hello@nexzoa.com"
-                    className="transition-colors hover:text-white"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    hello@nexzoa.com
-                  </a>
+                  <div className="mt-5 flex items-center justify-center text-[14px] font-medium tracking-[-0.02em] text-white/85 sm:text-[15px]">
+                    <a
+                      href={`mailto:${CONTACT_EMAIL}`}
+                      className="transition-colors hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {CONTACT_EMAIL}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
-  );
-}
+        </nav>
+      </header>
+    );
+  }

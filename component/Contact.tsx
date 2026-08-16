@@ -3,6 +3,13 @@
 import { useRef, useState, MouseEvent, FormEvent } from "react";
 import { motion, useInView } from "motion/react";
 import { FaLinkedin, FaGithub, FaPaperPlane, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  CONTACT_EMAIL,
+  BUSINESS_CITY,
+  BUSINESS_COUNTRY,
+  SOCIAL_LINKEDIN,
+  SOCIAL_GITHUB,
+} from "@/lib/siteConfig";
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -114,7 +121,7 @@ export default function Contact() {
             </div>
 
             {/* Direct Channels */}
-            <div className="pt-6 space-y-6 border-t border-white/[0.05]">
+            <address className="not-italic pt-6 space-y-6 border-t border-white/[0.05]">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-center text-white/40 shrink-0">
                   <FaEnvelope className="w-4 h-4" />
@@ -124,11 +131,11 @@ export default function Contact() {
                     Direct Email
                   </p>
                   <a
-                    href="mailto:hello@nexzoa.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     className="text-[17px] font-bold text-white hover:text-white/70 transition-colors"
                     style={{ fontFamily: '"Satoshi", sans-serif' }}
                   >
-                    hello@nexzoa.com
+                    {CONTACT_EMAIL}
                   </a>
                 </div>
               </div>
@@ -142,30 +149,30 @@ export default function Contact() {
                     Location
                   </p>
                   <p className="text-[16px] font-semibold text-white/85" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Colombo, Sri Lanka
+                    {BUSINESS_CITY}, {BUSINESS_COUNTRY}
                   </p>
                   <p className="text-[12px] text-white/40 mt-0.5 font-light">
                     Serving partners globally
                   </p>
                 </div>
               </div>
-            </div>
+            </address>
 
             {/* Social Handles */}
             <div className="flex gap-3 pt-2">
               <a
-                href="https://linkedin.com/company/nexzoa"
+                href={SOCIAL_LINKEDIN}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Nexzoa LinkedIn"
                 className="w-10 h-10 rounded-full border border-white/[0.06] bg-white/[0.02] flex items-center justify-center text-white/40 hover:text-white hover:border-white/20 transition-all duration-300"
               >
                 <FaLinkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://github.com/nexzoa"
+                href={SOCIAL_GITHUB}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Nexzoa GitHub"
                 className="w-10 h-10 rounded-full border border-white/[0.06] bg-white/[0.02] flex items-center justify-center text-white/40 hover:text-white hover:border-white/20 transition-all duration-300"
               >

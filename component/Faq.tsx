@@ -27,6 +27,7 @@ function StickyShellClient({ index, total, isMobile, children }: {
   return (
     <div
       ref={ref}
+      className="relative"
       style={isMobile ? { position: "sticky", top: 80 + index * 5, zIndex: index + 1, willChange: "transform" } : undefined}
     >
       <motion.div style={isMobile ? { scale, opacity, transformOrigin: "top center", willChange: "transform" } : undefined}>
@@ -47,49 +48,9 @@ function StickyShell({ index, total, children }: { index: number; total: number;
   );
 }
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+import { MAIN_FAQS, FAQItem } from "@/lib/faqData";
 
-const faqData: FAQItem[] = [
-  {
-    question: "Do you build custom software systems?",
-    answer: "Yes, as a specialized custom software development agency, we architect and engineer bespoke, secure, and highly scalable enterprise software systems tailored to your unique business workflows. Whether you need a performant SaaS web application, complex backend APIs, or scalable cloud infrastructure, we build it to support your long-term growth.",
-  },
-  {
-    question: "Can you develop mobile apps?",
-    answer: "Absolutely. Our cross-platform app developers build high-performance mobile applications for both iOS and Android systems using React Native and Flutter. We prioritize fluid micro-animations, offline-first architectures, native performance, and seamless device integrations from early concept to final App Store and Google Play launch.",
-  },
-  {
-    question: "Do you redesign existing websites?",
-    answer: "Yes, we offer professional website redesign services aimed at modern UI/UX overhauls, conversion rate optimization (CRO), and blazing-fast loading speeds. We completely reconstruct your outdated frontends into modern, highly interactive, and SEO-optimized web experiences designed to engage visitors and capture leads.",
-  },
-  {
-    question: "Can AI automation be integrated?",
-    answer: "AI automation integration is one of our primary core disciplines. We build custom artificial intelligence layers, including Large Language Model (LLM) integrations like OpenAI GPT, automated business workflows, conversational user interfaces, and smart database search agents to automate repetitive operations and skyrocket productivity.",
-  },
-  {
-    question: "Do you provide dashboard development?",
-    answer: "Yes, we specialize in custom administrative dashboard development and real-time business intelligence (BI) systems. We build beautiful analytics portals featuring secure multi-tenant role management, live visual charts and graphs, and optimized query performance to let you track metrics at a glance.",
-  },
-  {
-    question: "How long does a project take?",
-    answer: "A typical software project takes between 4 to 12 weeks depending on scope and feature complexity. We follow an agile sprint-based delivery model, providing you with interactive, functional prototypes every 2 weeks so you can test, review, and refine progress in real-time leading up to the final launch.",
-  },
-  {
-    question: "What modern tech stack do you specialize in?",
-    answer: "We develop our products using premium, modern tech stacks centered around Next.js, React, TypeScript, Tailwind CSS, Node.js, PostgreSQL, and serverless AWS/Vercel cloud environments. This ensures extreme reliability, top-tier SEO rendering, and a highly maintainable codebase.",
-  },
-  {
-    question: "How do you handle client communication and collaboration?",
-    answer: "We support a transparent, close client collaboration process. You will have a dedicated Slack workspace for daily syncs, a shared Notion hub to track progress in real-time, and live bi-weekly video sprint reviews where we demonstrate functional updates and plan the next phase.",
-  },
-  {
-    question: "Is Nexzoa related to Nexon or Tata Nexon?",
-    answer: "No. Nexzoa is an independent, premium custom software engineering and AI automation solutions firm. We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Nexon Co., Ltd. (the video game developer and publisher) or Tata Motors (the manufacturer of Tata Nexon cars). We design and build bespoke SaaS platforms, custom CRM systems, and AI workflows for modern business operations.",
-  },
-];
+const faqData: FAQItem[] = MAIN_FAQS;
 
 function AccordionItem({ item, isOpen, onClick, index }: { item: FAQItem; isOpen: boolean; onClick: () => void; index: number }) {
   return (
@@ -205,7 +166,7 @@ export default function FAQ() {
 
         {/* ── Accordion Lists (2 Columns on Desktop) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-start">
-          {/* Left Column — sticky stack on mobile */}
+          {/* Left Column - sticky stack on mobile */}
           <div className="space-y-3 sm:space-y-4 relative">
             {faqData.slice(0, Math.ceil(faqData.length / 2)).map((item, index) => (
               <StickyShell key={index} index={index} total={Math.ceil(faqData.length / 2)}>
@@ -218,7 +179,7 @@ export default function FAQ() {
               </StickyShell>
             ))}
           </div>
-          {/* Right Column — sticky stack on mobile */}
+          {/* Right Column - sticky stack on mobile */}
           <div className="space-y-3 sm:space-y-4 relative">
             {faqData.slice(Math.ceil(faqData.length / 2)).map((item, index) => {
               const actualIndex = index + Math.ceil(faqData.length / 2);

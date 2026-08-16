@@ -1,6 +1,12 @@
 "use client";
 
 import { MouseEvent } from "react";
+import Link from "next/link";
+import {
+  SOCIAL_LINKEDIN,
+  SOCIAL_GITHUB,
+  SOCIAL_TWITTER,
+} from "@/lib/siteConfig";
 
 /* ─── Social Media Icons ─── */
 function XIcon() {
@@ -47,7 +53,7 @@ export default function Footer() {
         <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Brand Info and Social Links */}
-          <div className="col-span-12 md:col-span-5 flex flex-col gap-6">
+          <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
             <div className="flex items-center gap-1.5 select-none">
               <span className="text-[18px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                 nexzoa<span className="text-white/40 font-bold">*</span>
@@ -56,16 +62,16 @@ export default function Footer() {
 
             {/* Short SEO Optimized Text */}
             <p 
-              className="text-[14.5px] leading-[1.65] text-white/50 max-w-md"
+              className="text-[14px] leading-[1.65] text-white/50 max-w-md"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
-              Nexzoa builds <span className="text-white/80 font-medium">websites</span>, <span className="text-white/80 font-medium">AI systems</span>, <span className="text-white/80 font-medium">dashboard platforms</span>, <span className="text-white/80 font-medium">mobile apps</span>, and <span className="text-white/80 font-medium">custom software</span> for modern businesses.
+              Nexzoa is an AI-native software engineering company based in Sri Lanka, engineering <span className="text-white/80 font-medium">custom SaaS platforms</span>, <span className="text-white/80 font-medium">AI automation systems</span>, and <span className="text-white/80 font-medium">cloud software</span> for businesses worldwide.
             </p>
 
             {/* Social Links */}
             <div className="flex items-center gap-3">
               <a 
-                href="https://x.com" 
+                href={SOCIAL_TWITTER} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.06] hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
@@ -74,7 +80,7 @@ export default function Footer() {
                 <XIcon />
               </a>
               <a 
-                href="https://github.com" 
+                href={SOCIAL_GITHUB} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.06] hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
@@ -83,7 +89,7 @@ export default function Footer() {
                 <GithubIcon />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href={SOCIAL_LINKEDIN} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.06] hover:bg-white/10 hover:border-white/20 flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
@@ -95,7 +101,7 @@ export default function Footer() {
           </div>
 
           {/* Right Columns: Structured Navigation */}
-          <div className="col-span-12 md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
             
             {/* Column 1: Solutions (SEO keywords) */}
             <div className="flex flex-col gap-4">
@@ -105,57 +111,62 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 <li>
                   <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    AI systems
+                    AI Software Engineering
                   </a>
                 </li>
                 <li>
                   <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Dashboard platforms
+                    Custom SaaS Development
                   </a>
                 </li>
                 <li>
                   <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Mobile apps
+                    AI Workflow Automation
                   </a>
                 </li>
                 <li>
                   <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Custom software
+                    Dashboard Systems
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Column 2: Navigation Links */}
+            {/* Column 2: Sri Lanka Tech Hub (Topical Authority Internal Graph) */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[12px] font-bold text-white/40 tracking-wider uppercase select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Navigation
+                Sri Lanka Tech Hub
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#projects" onClick={(e) => handleScroll(e, "projects")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Work
-                  </a>
+                  <Link href="/sri-lanka-tech" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Tech Ecosystem Guide
+                  </Link>
                 </li>
                 <li>
-                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Solutions
-                  </a>
+                  <Link href="/sri-lanka-tech/ai-companies" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    AI Companies
+                  </Link>
                 </li>
                 <li>
-                  <a href="#process" onClick={(e) => handleScroll(e, "process")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Process
-                  </a>
+                  <Link href="/sri-lanka-tech/software-companies" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Software Companies
+                  </Link>
                 </li>
                 <li>
-                  <a href="#compare" onClick={(e) => handleScroll(e, "compare")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Why Us
-                  </a>
+                  <Link href="/sri-lanka-tech/saas-companies" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    SaaS Startups
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sri-lanka-tech/startups" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Ecosystem Startups
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 3: About & Contact */}
+            {/* Column 3: Company & Navigation */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[12px] font-bold text-white/40 tracking-wider uppercase select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                 Company
@@ -163,7 +174,17 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 <li>
                   <a href="#about" onClick={(e) => handleScroll(e, "about")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    About
+                    About Studio
+                  </a>
+                </li>
+                <li>
+                  <a href="#projects" onClick={(e) => handleScroll(e, "projects")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Projects &amp; Work
+                  </a>
+                </li>
+                <li>
+                  <a href="#process" onClick={(e) => handleScroll(e, "process")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Process
                   </a>
                 </li>
                 <li>

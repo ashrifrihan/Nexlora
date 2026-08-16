@@ -262,11 +262,11 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════════
-   PERFORMANCE OPTIMIZATIONS — Low-end device support
+   PERFORMANCE OPTIMIZATIONS - Low-end device support
    ═══════════════════════════════════════════════════════════ */
 
 /*
- * content-visibility: auto — the single biggest performance win.
+ * content-visibility: auto - the single biggest performance win.
  * Browsers skip layout/paint for off-screen sections entirely.
  * contain-intrinsic-size gives a height estimate so scrollbar doesn't jump.
  */
@@ -280,7 +280,7 @@ body {
  * set the data attribute, disable all expensive GPU effects.
  */
 @media (prefers-reduced-motion: reduce) {
-  /* Kill all backdrop-blur — the #1 mobile GPU killer */
+  /* Kill all backdrop-blur - the #1 mobile GPU killer */
   * {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;

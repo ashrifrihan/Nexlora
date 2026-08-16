@@ -312,7 +312,7 @@ export default function Compare() {
 
                 {/* ─── Simple Direct Collaboration Cards ─── */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 relative">
-                  {/* Client Card — sticky stack on mobile */}
+                  {/* Client Card - sticky stack on mobile */}
                   <StickyShell index={0} total={2}>
                   <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between space-y-3">
                     <div className="flex items-center justify-between">
@@ -326,7 +326,7 @@ export default function Compare() {
                   </div>
                   </StickyShell>
 
-                  {/* Lead Engineer Card — sticky stack on mobile */}
+                  {/* Lead Engineer Card - sticky stack on mobile */}
                   <StickyShell index={1} total={2}>
                   <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/[0.1] flex flex-col justify-between space-y-3 shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
                     <div className="flex items-center justify-between">
@@ -343,7 +343,7 @@ export default function Compare() {
                   </StickyShell>
                 </div>
 
-                {/* Features List — sticky stack on mobile */}
+                {/* Features List - sticky stack on mobile */}
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 pt-2 relative">
                   {nexzoaFeatures.map((feature, idx) => (
                     <StickyShell key={idx} index={idx} total={nexzoaFeatures.length}>

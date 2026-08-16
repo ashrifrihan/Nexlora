@@ -377,10 +377,10 @@ function AutomationVisual() {
         {/* Dynamic connection path */}
         <path d="M65 70 L95 70" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
         <motion.circle
-          cx="65"
           cy="70"
           r="3"
           fill="#ef4444"
+          initial={{ cx: 65 }}
           animate={{ cx: [65, 95] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
         />
@@ -395,10 +395,10 @@ function AutomationVisual() {
         {/* Dynamic connection path */}
         <path d="M145 70 L175 70" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
         <motion.circle
-          cx="145"
           cy="70"
           r="3"
           fill="#ef4444"
+          initial={{ cx: 145 }}
           animate={{ cx: [145, 175] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.55 }}
         />
@@ -452,7 +452,7 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Bento Grid — desktop keeps original colSpan; mobile stacks via StickyShell */}
+        {/* Bento Grid - desktop keeps original colSpan; mobile stacks via StickyShell */}
         <div className="grid grid-cols-12 gap-4 sm:gap-5 relative">
           {services.map((s, i) => (
             <StickyShell key={s.id} index={i} total={services.length} className={s.colSpan}>

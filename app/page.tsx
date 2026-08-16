@@ -11,15 +11,17 @@ import Compare from "@/component/Compare";
 import About from "@/component/About";
 import Contact from "@/component/Contact";
 import Footer from "@/component/Footer";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const viewport: Viewport = {
   themeColor: "#000000",
 };
 
 export const metadata: Metadata = {
-  title: "Nexzoa - Engineering Intelligent Systems | AI SaaS & Automation",
-  description: "Nexzoa delivers AI-native software, full-stack SaaS platforms, automation workflows and scalable digital solutions for ambitious businesses.",
-  alternates: { canonical: "https://nexzoa.in" }
+  title: "Nexzoa - AI-Native Software Engineering, SaaS & Automation",
+  description:
+    "Nexzoa delivers AI-native software, full-stack SaaS platforms, automation workflows, and scalable digital solutions for ambitious businesses.",
+  alternates: { canonical: SITE_URL },
 };
 
 export default function Home() {

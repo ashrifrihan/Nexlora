@@ -265,7 +265,7 @@ export default function About() {
             className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Nexzoa is a lean, independent software studio based in Sri Lanka, operating globally. We collaborate directly with founders and operations teams to ship custom databases, CRM connections, internal tooling dashboards, and cloud integrations.
+            Nexzoa is an AI-native software engineering company based in Sri Lanka, operating globally. We collaborate directly with founders and product teams to engineer custom AI software, enterprise SaaS applications, automated business pipelines, and scalable cloud platforms.
           </motion.p>
         </div>
 

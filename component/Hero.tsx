@@ -188,7 +188,7 @@ const Hero = () => {
             }}
           >
             <span className="sr-only">
-              Nexzoa — Independent Software Engineering Studio building modern web, AI, and business systems. Based in Sri Lanka.
+              Nexzoa - AI-Native Software Engineering, SaaS & Automation Studio based in Sri Lanka.
             </span>
             <div className="flex flex-col items-center gap-0">
               <div className="w-full overflow-visible">

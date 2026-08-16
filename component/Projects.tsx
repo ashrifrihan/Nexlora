@@ -223,7 +223,7 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
             >
               <Image
                 src={item.image}
-                alt={`${item.title} — Project by Nexzoa`}
+                alt={`${item.title} - Project by Nexzoa`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 priority={index < 3}
@@ -367,7 +367,7 @@ export default function Projects() {
           </motion.p>
         </div>
 
-        {/* Project Grid — 3 columns on desktop, 2 on tablet, 1 on mobile */}
+        {/* Project Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */}
         {/* On mobile the grid collapses to 1-col; StickyShell adds the stacking effect */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch relative">
           {projectsData.map((item, index) => (

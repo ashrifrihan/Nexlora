@@ -1,14 +1,24 @@
 {
-  "name": "Nexzoa — Build the System Behind Your Business",
+  "name": "Nexzoa - AI-Native Software Engineering, SaaS & Automation",
   "short_name": "Nexzoa",
-  "description": "Custom software development, AI automation workflows, and digital platforms.",
+  "description": "Custom AI-native software, SaaS platforms, and automation workflows for ambitious businesses.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait-or-landscape",
+  "orientation": "any",
   "theme_color": "#000000",
   "background_color": "#000000",
   "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
     {
       "src": "/favicon.ico",
       "sizes": "any",
