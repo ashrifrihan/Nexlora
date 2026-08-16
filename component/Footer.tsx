@@ -2,6 +2,7 @@
 
 import { MouseEvent } from "react";
 import Link from "next/link";
+import AISummary from "@/component/AISummary";
 import {
   SOCIAL_LINKEDIN,
   SOCIAL_GITHUB,
@@ -67,6 +68,9 @@ export default function Footer() {
             >
               Nexzoa is an AI-native software engineering company based in Sri Lanka, engineering <span className="text-white/80 font-medium">custom SaaS platforms</span>, <span className="text-white/80 font-medium">AI automation systems</span>, and <span className="text-white/80 font-medium">cloud software</span> for businesses worldwide.
             </p>
+
+            {/* AI Summary - inline row like Zyner */}
+            <AISummary />
 
             {/* Social Links */}
             <div className="flex items-center gap-3">
