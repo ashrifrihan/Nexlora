@@ -29,25 +29,29 @@ const PROVIDERS = [
     id: "chatgpt",
     name: "ChatGPT",
     iconSrc: "/ChatGpt.svg",
-    description: "Ask ChatGPT to evaluate Nexzoa software engineering and AI capabilities",
+    alt: "Ask ChatGPT about Nexzoa AI software engineering, SaaS development, and automation services",
+    title: "Get AI summary of Nexzoa via ChatGPT - Evaluate custom software, SaaS platforms, and AI automation capabilities",
   },
   {
     id: "claude",
     name: "Claude",
     iconSrc: "/Claude.svg",
-    description: "Ask Claude to review Nexzoa SaaS development and automation architecture",
+    alt: "Ask Claude to review Nexzoa custom SaaS development and AI workflow automation architecture",
+    title: "Get AI summary of Nexzoa via Claude - Review software engineering and cloud application services",
   },
   {
     id: "gemini",
     name: "Gemini",
     iconSrc: "/Gemini.svg",
-    description: "Ask Google Gemini to analyze Nexzoa digital product solutions",
+    alt: "Ask Google Gemini to analyze Nexzoa digital product solutions and AI engineering",
+    title: "Get AI summary of Nexzoa via Gemini - Analyze AI-native software development and dashboard systems",
   },
   {
     id: "perplexity",
     name: "Perplexity",
     iconSrc: "/perplexity.svg",
-    description: "Research Nexzoa verified engineering capabilities with live web citations",
+    alt: "Research Nexzoa software engineering capabilities with Perplexity AI and live web citations",
+    title: "Get AI summary of Nexzoa via Perplexity - Research verified engineering capabilities with citations",
   },
 ];
 
@@ -57,12 +61,12 @@ export default function AISummary() {
   }, []);
 
   return (
-    <section
+    <nav
       id="ai-summary"
-      aria-label="Get an AI summary of Nexzoa"
+      aria-label="Get an AI-powered summary of Nexzoa software engineering services"
       className="w-full flex flex-col xs:flex-row xs:items-center items-start gap-2.5 sm:gap-3 select-none"
     >
-      {/* Visual & SEO Label */}
+      {/* Visible Label */}
       <div className="flex items-center gap-1.5">
         <SparkleIcon />
         <span
@@ -73,27 +77,32 @@ export default function AISummary() {
         </span>
       </div>
 
-      {/* Screen Reader SEO Context */}
+      {/* SEO: Crawlable context for search engines and AI bots */}
       <span className="sr-only">
-        Launch ChatGPT, Claude, Gemini, or Perplexity with a structured research prompt to evaluate Nexzoa custom software, AI automation, and SaaS engineering.
+        Use ChatGPT, Claude, Gemini, or Perplexity to get an AI-generated summary of Nexzoa.
+        Nexzoa is an AI-native software engineering company based in Colombo, Sri Lanka,
+        specializing in custom SaaS platform development, AI workflow automation,
+        cloud application engineering, real-time dashboard systems, and full-stack web development.
+        These AI assistants will research and evaluate Nexzoa services, capabilities, and approach
+        for potential clients considering custom software, AI solutions, or SaaS development.
       </span>
 
-      {/* Responsive AI Buttons Grid / Row */}
-      <div className="flex items-center gap-2">
+      {/* AI Provider Buttons */}
+      <div className="flex items-center gap-2" role="list">
         {PROVIDERS.map((p) => (
           <button
             key={p.id}
             type="button"
+            role="listitem"
             onClick={() => handleClick(p.id)}
-            aria-label={p.description}
-            title={p.description}
+            aria-label={p.alt}
+            title={p.title}
             className="group relative flex items-center justify-center rounded-[8px] p-0.5 transition-transform duration-200 ease-out hover:scale-115 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#208EFF]/80 cursor-pointer touch-manipulation"
           >
-            {/* SVG Icon Container with clean hover zoom */}
             <div className="relative overflow-hidden rounded-[8px] transition-transform duration-200">
               <Image
                 src={p.iconSrc}
-                alt={`${p.name} logo`}
+                alt={p.alt}
                 width={32}
                 height={30}
                 className="w-8 h-[30px] object-contain transition-transform duration-200"
@@ -103,6 +112,6 @@ export default function AISummary() {
           </button>
         ))}
       </div>
-    </section>
+    </nav>
   );
 }

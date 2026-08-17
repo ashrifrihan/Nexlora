@@ -58,6 +58,21 @@ export const metadata: Metadata = {
     "custom web application development",
     "AI integrations",
     "enterprise software studio",
+    // Middle East & GCC Target Markets
+    "software development company Saudi Arabia",
+    "software development Dubai",
+    "software development Qatar",
+    "AI software engineering MENA",
+    "SaaS development Saudi Arabia",
+    "custom software Saudi Arabia",
+    "software startup Dubai",
+    "best software company UAE",
+    "AI automation Saudi Arabia",
+    "tech company Dubai",
+    "software development company for startups",
+    "AI development agency MENA",
+    "SaaS platform development Dubai",
+    "business automation software Riyadh",
     // Geographic & Sri Lanka tech ecosystem
     "software company Sri Lanka",
     "AI company Sri Lanka",
@@ -84,10 +99,18 @@ export const metadata: Metadata = {
   metadataBase: SITE_ORIGIN,
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      "en": SITE_URL,
+      "en-SA": `${SITE_URL}/services/saudi-arabia`,
+      "en-AE": `${SITE_URL}/services/dubai`,
+      "en-QA": `${SITE_URL}/services/qatar`,
+      "x-default": SITE_URL,
+    },
   },
   openGraph: {
     type: "website",
     locale: "en_US",
+    alternateLocale: ["en_GB", "en_AE", "en_SA", "ar_SA", "ar_AE", "ar_QA"],
     url: SITE_URL,
     siteName: SITE_NAME,
     title: `${SITE_NAME} - AI-Native Software Engineering, SaaS & Automation`,
@@ -152,13 +175,16 @@ export default function RootLayout({
     slogan: SITE_SLOGAN,
     serviceType: [...CORE_SERVICES],
     areaServed: [
+      { "@type": "Country", name: "Saudi Arabia" },
+      { "@type": "Country", name: "United Arab Emirates" },
+      { "@type": "Country", name: "Qatar" },
       { "@type": "Country", name: "Sri Lanka" },
       { "@type": "Country", name: "United States" },
       { "@type": "Country", name: "United Kingdom" },
       { "@type": "Country", name: "Australia" },
       { "@type": "Country", name: "Canada" },
       { "@type": "Country", name: "Germany" },
-      { "@type": "Country", name: "United Arab Emirates" },
+      { "@type": "AdministrativeArea", name: "MENA" },
       { "@type": "AdministrativeArea", name: "Worldwide" },
     ],
     knowsAbout: [
@@ -170,6 +196,8 @@ export default function RootLayout({
       "Next.js and React Engineering",
       "Cloud Infrastructure Architecture",
       "Sri Lankan Startup Ecosystem",
+      "Vision 2030 Digital Systems",
+      "ZATCA E-Invoicing Integration",
     ],
     sameAs: [
       SOCIAL_TWITTER,
@@ -181,7 +209,7 @@ export default function RootLayout({
       "@type": "ContactPoint",
       contactType: "Customer Support & Inquiries",
       email: CONTACT_EMAIL,
-      availableLanguage: ["English", "Sinhala", "Tamil"],
+      availableLanguage: ["English", "Arabic", "Sinhala", "Tamil"],
     },
     address: {
       "@type": "PostalAddress",
@@ -204,7 +232,10 @@ export default function RootLayout({
     },
     potentialAction: {
       "@type": "SearchAction",
-      target: `${SITE_URL}/sri-lanka-tech?q={search_term_string}`,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/sri-lanka-tech?q={search_term_string}`,
+      },
       "query-input": "required name=search_term_string",
     },
   };
@@ -279,12 +310,66 @@ export default function RootLayout({
     })),
   };
 
+  const howToLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${SITE_URL}/#process`,
+    name: "How Nexzoa Builds Your Custom Software System",
+    description: "Nexzoa's structured software development lifecycle from initial architectural discovery to global production launch.",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Discovery & Technical Blueprint",
+        text: "We define core user flows, specify API contracts, model PostgreSQL database schemas, and establish system architecture.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Design & Prototyping",
+        text: "We create interactive Figma prototypes, component design systems, and responsive layouts tailored for high conversion.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Engineering & Development Sprints",
+        text: "Full-stack development across frontend, backend, AI models, and databases in bi-weekly agile iterations.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Testing, QA & Performance Optimization",
+        text: "Rigorous automated testing, security reviews, sub-100ms TTFB tuning, and cross-browser quality assurance.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 5,
+        name: "Production Launch & Continuous CI/CD",
+        text: "Deployment to global edge networks with automated monitoring, uptime alerts, and zero-downtime releases.",
+      },
+    ],
+  };
+
+  const speakableLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: "Nexzoa - AI-Native Software Engineering Studio",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#about", ".hero-title", ".hero-description", "#faq"],
+    },
+  };
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-black`}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
@@ -301,6 +386,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-black text-white">
         <PerformanceProvider />
@@ -309,3 +402,4 @@ export default function RootLayout({
     </html>
   );
 }
+

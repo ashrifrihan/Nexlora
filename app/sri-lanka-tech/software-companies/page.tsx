@@ -65,22 +65,34 @@ export default function SoftwareCompaniesPage() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs text-white/40">
+        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+        <span>/</span>
+        <Link href="/sri-lanka-tech" className="hover:text-white transition-colors">Sri Lanka Tech</Link>
+        <span>/</span>
+        <span className="text-white/80 font-medium">Software Companies</span>
+      </nav>
+
       {/* Header */}
-      <header className="mb-10">
-        <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-950/20 px-3.5 py-1.5 text-xs font-semibold text-blue-400 mb-4">
-          <span>💻</span>
-          <span>Software Engineering &amp; Custom Development</span>
+      <header className="mb-16">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-xs font-semibold text-white/80 mb-6 font-mono">
+          <svg className="w-3.5 h-3.5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+          </svg>
+          <span className="text-[11px] uppercase tracking-wider">Software Engineering &amp; Custom Development</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.12]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
           Software Development Companies in Sri Lanka
         </h1>
-        <p className="text-base sm:text-lg text-white/60 max-w-3xl leading-relaxed font-light">
+        <p className="text-base sm:text-xl text-white/60 max-w-3xl leading-relaxed font-light">
           An overview of Sri Lanka&apos;s software development industry, top engineering consultancies, and custom software studios.
         </p>
       </header>
@@ -91,7 +103,7 @@ export default function SoftwareCompaniesPage() {
       {/* Direct Answer Box */}
       <DirectAnswerBox
         question="Who are the leading software development companies in Colombo, Sri Lanka?"
-        directAnswer="Sri Lanka’s software development sector includes enterprise solution providers like WSO2, Virtusa, and Sysco LABS; agile product studios such as 99x, Calcey, Rootcode, and Fcode Labs; and specialized custom software engineers like Nexzoa."
+        directAnswer="Sri Lanka's software development sector includes enterprise solution providers like WSO2, Virtusa, and Sysco LABS; agile product studios such as 99x, Calcey, Rootcode, and Fcode Labs; and specialized custom software engineers like Nexzoa."
         supportingFacts={[
           "Over 100,000 active IT professionals supported by SLASSCOM standards",
           "Specializations in Next.js, React, Node.js, Python, PostgreSQL, and AWS",
@@ -100,7 +112,7 @@ export default function SoftwareCompaniesPage() {
       />
 
       {/* Guide Section */}
-      <section className="my-10 rounded-2xl border border-white/[0.08] bg-[#0c0c12] p-6 sm:p-8">
+      <section className="my-10 rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-6 sm:p-8">
         <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">
           How to Choose a Software Development Partner in Sri Lanka
         </h2>
@@ -150,7 +162,7 @@ export default function SoftwareCompaniesPage() {
           {SOFTWARE_FAQS.map((faq, i) => (
             <div
               key={i}
-              className="rounded-xl border border-white/[0.08] bg-[#0d0d12] p-6"
+              className="rounded-[20px] border border-white/[0.06] bg-[#0a0a0c]/90 p-6"
             >
               <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
                 {faq.question}
@@ -164,7 +176,7 @@ export default function SoftwareCompaniesPage() {
       </section>
 
       {/* CTA Box */}
-      <section className="my-16 rounded-3xl border border-blue-500/20 bg-blue-950/10 p-8 sm:p-12 text-center">
+      <section className="my-16 rounded-3xl border border-white/[0.08] bg-[#0a0a0c]/90 p-8 sm:p-12 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
           Need Custom Software Built Fast &amp; Clean?
         </h2>

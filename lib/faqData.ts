@@ -45,8 +45,34 @@ export const MAIN_FAQS: FAQItem[] = [
       "We maintain direct communication between clients and lead engineers via dedicated Slack workspaces, real-time Notion roadmap boards, and bi-weekly video sprint demonstrations without non-technical middle management layers.",
   },
   {
+    question: "How much does custom software development cost with Nexzoa?",
+    answer:
+      "Nexzoa offers project-based engagements starting with scoped discovery sprints. MVP SaaS development typically ranges from $4,000 to $15,000, while enterprise AI systems are custom-quoted based on complexity, integrations, and scale. Contact hello@nexzoa.dev for a free project assessment and detailed roadmap.",
+  },
+  {
+    question: "Does Nexzoa work with companies in Saudi Arabia, UAE, and Qatar?",
+    answer:
+      "Yes. Nexzoa actively partners with businesses across Saudi Arabia (Riyadh, Jeddah), UAE (Dubai, Abu Dhabi), and Qatar (Doha). We provide remote-first software engineering aligned to Gulf Standard Time (GST/AST) with support for Vision 2030 initiatives, bilingual English/Arabic interfaces, and ZATCA compliance.",
+  },
+  {
+    question: "How long does it take to build a SaaS platform with Nexzoa?",
+    answer:
+      "A typical MVP SaaS platform takes 6 to 12 weeks with Nexzoa's lean engineering process. Full-scale enterprise platforms range from 3 to 6 months depending on backend integrations, multi-tenancy rules, real-time event streaming, and custom AI agent pipelines.",
+  },
+  {
+    question: "Can Nexzoa build custom AI automation and LLM pipelines for my business?",
+    answer:
+      "Yes. Nexzoa engineers bespoke AI automation systems including retrieval-augmented generation (RAG) pipelines, autonomous workflow agents, intelligent document extraction, CRM/ERP synchronization, and scalable replacements for n8n and Zapier.",
+  },
+  {
+    question: "What industries does Nexzoa serve?",
+    answer:
+      "Nexzoa builds sector-specific digital systems for FinTech, HealthTech, PropTech (Real Estate), E-Commerce, EdTech, Logistics & Supply Chain, and B2B SaaS companies across the Middle East (Saudi Arabia, UAE, Qatar), Europe, the US, and Southeast Asia.",
+  },
+  {
     question: "Is Nexzoa related to Nexon or Tata Nexon?",
     answer:
       "No. Nexzoa is an independent AI-native software engineering company. We have no affiliation, endorsement, or association with Nexon Co., Ltd. (the video game publisher) or Tata Motors (manufacturer of Tata Nexon vehicles).",
   },
 ];
+

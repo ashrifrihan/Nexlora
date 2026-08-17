@@ -80,7 +80,7 @@ export default function SriLankaTechHubPage() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
@@ -90,16 +90,23 @@ export default function SriLankaTechHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(hubFaqLd) }}
       />
 
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs text-white/40">
+        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+        <span>/</span>
+        <span className="text-white/80 font-medium">Sri Lanka Tech Hub</span>
+      </nav>
+
       {/* Header Section */}
-      <header className="mb-10">
-        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-950/20 px-3.5 py-1.5 text-xs font-semibold text-emerald-400 mb-4">
-          <span>🇱🇰</span>
-          <span>Sri Lanka Tech Ecosystem Guide</span>
+      <header className="mb-16">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-xs font-semibold text-white/80 mb-6 font-mono">
+          <img src="/flags/lk.svg" alt="Sri Lanka" width={16} height={12} className="w-4 h-3 rounded-[2px] object-cover shrink-0" />
+          <span className="text-[11px] uppercase tracking-wider">Sri Lanka Tech Ecosystem Guide</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.12]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
           Sri Lanka Technology Companies, AI &amp; Software Startups
         </h1>
-        <p className="text-base sm:text-lg text-white/60 max-w-3xl leading-relaxed font-light">
+        <p className="text-base sm:text-xl text-white/60 max-w-3xl leading-relaxed font-light">
           An authoritative, editorial directory of verified software engineering companies, AI development studios, SaaS platforms, and technology startups shaping Sri Lanka&apos;s digital economy.
         </p>
       </header>
@@ -110,7 +117,7 @@ export default function SriLankaTechHubPage() {
       {/* Direct Answer Box for Search Engine Featured Snippets & AI LLMs */}
       <DirectAnswerBox
         question="What are the leading software and technology companies in Sri Lanka?"
-        directAnswer="Sri Lanka’s technology ecosystem includes global enterprise leaders such as WSO2, Virtusa, and Sysco LABS; digital product engineering consultancies like 99x, Rootcode, and Calcey; and specialized AI-native software studios such as Nexzoa, Veracity AI, and Purple Software. The industry is supported by ICTA, SLASSCOM, and TRACE Expert City."
+        directAnswer="Sri Lanka's technology ecosystem includes global enterprise leaders such as WSO2, Virtusa, and Sysco LABS; digital product engineering consultancies like 99x, Rootcode, and Calcey; and specialized AI-native software studios such as Nexzoa, Veracity AI, and Purple Software. The industry is supported by ICTA, SLASSCOM, and TRACE Expert City."
         supportingFacts={[
           "Export target: $5 Billion national ICT revenue by 2030 (ICTA / SLASSCOM)",
           "Over 600 active digital startups with strong presence in FinTech, AI, and SaaS",
@@ -122,7 +129,7 @@ export default function SriLankaTechHubPage() {
       <EcosystemStats />
 
       {/* Editorial Landscape Overview */}
-      <section className="my-12 rounded-2xl border border-white/[0.08] bg-[#0c0c12] p-6 sm:p-10">
+      <section className="my-12 rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-6 sm:p-10">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
           The Sri Lankan Technology Landscape Explained
         </h2>
@@ -171,7 +178,7 @@ export default function SriLankaTechHubPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="my-12 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 sm:p-8">
+      <section className="my-12 rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-6 sm:p-8">
         <h2 className="text-lg font-bold text-white mb-2">
           Directory Inclusion &amp; Editorial Methodology
         </h2>
@@ -189,7 +196,7 @@ export default function SriLankaTechHubPage() {
           {HUB_FAQS.map((faq, i) => (
             <div
               key={i}
-              className="rounded-xl border border-white/[0.08] bg-[#0d0d12] p-6"
+              className="rounded-[20px] border border-white/[0.06] bg-[#0a0a0c]/90 p-6"
             >
               <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
                 {faq.question}
@@ -203,7 +210,7 @@ export default function SriLankaTechHubPage() {
       </section>
 
       {/* CTA Box */}
-      <section className="my-16 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] via-[#0e0e14] to-black p-8 sm:p-12 text-center">
+      <section className="my-16 rounded-3xl border border-white/[0.08] bg-[#0a0a0c]/90 p-8 sm:p-12 text-center">
         <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
           Looking for an AI Software Development Partner in Sri Lanka?
         </h2>

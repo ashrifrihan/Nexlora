@@ -105,46 +105,56 @@ export default function Footer() {
           </div>
 
           {/* Right Columns: Structured Navigation */}
-          <div className="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
             
-            {/* Column 1: Solutions (SEO keywords) */}
+            {/* Column 1: Services */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[12px] font-bold text-white/40 tracking-wider uppercase select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Solutions
+                Services
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    AI Software Engineering
-                  </a>
+                  <Link href="/services" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    All Services
+                  </Link>
                 </li>
                 <li>
-                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Custom SaaS Development
-                  </a>
+                  <Link href="/services/saudi-arabia" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Saudi Arabia
+                  </Link>
                 </li>
                 <li>
-                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    AI Workflow Automation
-                  </a>
+                  <Link href="/services/dubai" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Dubai, UAE
+                  </Link>
                 </li>
                 <li>
-                  <a href="#solutions" onClick={(e) => handleScroll(e, "solutions")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Dashboard Systems
-                  </a>
+                  <Link href="/services/qatar" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Qatar
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/mena" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    MENA Region
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/global" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Global
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 2: Sri Lanka Tech Hub (Topical Authority Internal Graph) */}
+            {/* Column 2: Sri Lanka Tech Ecosystem */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[12px] font-bold text-white/40 tracking-wider uppercase select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Sri Lanka Tech Hub
+                Ecosystem
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
                   <Link href="/sri-lanka-tech" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Tech Ecosystem Guide
+                    Tech Hub Guide
                   </Link>
                 </li>
                 <li>
@@ -159,37 +169,37 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/sri-lanka-tech/saas-companies" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    SaaS Startups
+                    SaaS Companies
                   </Link>
                 </li>
                 <li>
                   <Link href="/sri-lanka-tech/startups" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Ecosystem Startups
+                    Startups
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 3: Company & Navigation */}
+            {/* Column 3: Company */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[12px] font-bold text-white/40 tracking-wider uppercase select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                 Company
               </h3>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <a href="#about" onClick={(e) => handleScroll(e, "about")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    About Studio
-                  </a>
+                  <Link href="/about" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <a href="#projects" onClick={(e) => handleScroll(e, "projects")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Projects &amp; Work
-                  </a>
+                  <Link href="/blog" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Blog
+                  </Link>
                 </li>
                 <li>
-                  <a href="#process" onClick={(e) => handleScroll(e, "process")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Process
-                  </a>
+                  <Link href="/services" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Projects
+                  </Link>
                 </li>
                 <li>
                   <a href="#contact" onClick={(e) => handleScroll(e, "contact")} className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
@@ -199,22 +209,36 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Column 4: Legal */}
+            <div className="flex flex-col gap-4">
+              <h3 className="text-[12px] font-bold text-white/40 tracking-wider uppercase select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Legal
+              </h3>
+              <ul className="flex flex-col gap-3">
+                <li>
+                  <Link href="/privacy" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Legal */}
+        {/* Bottom Bar: Copyright */}
         <div className="mt-20 pt-8 border-t border-white/[0.03] flex flex-col sm:flex-row items-center justify-between gap-4 select-none">
           <p className="text-[12px] text-white/30" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             &copy; {new Date().getFullYear()} Nexzoa. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-[12px] text-white/40 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-[12px] text-white/40 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              Terms of Service
-            </Link>
-          </div>
+          <p className="text-[12px] text-white/20" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            Colombo, Sri Lanka
+          </p>
         </div>
 
       </div>

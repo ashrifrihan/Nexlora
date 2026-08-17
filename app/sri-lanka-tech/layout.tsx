@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Nav from "@/component/nav";
+import Footer from "@/component/Footer";
 import { SITE_NAME, SITE_URL, siteUrl } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
@@ -57,74 +58,21 @@ export default function SriLankaTechLayout({
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="bg-black min-h-screen text-white selection:bg-white/20 selection:text-white">
+      <Nav />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
-      {/* Top Navigation Bar for Tech Hub */}
-      <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-black/80 backdrop-blur-xl">
-        <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              className="text-lg font-black tracking-tight text-white hover:text-white/80 transition-colors"
-            >
-              nexzoa<span className="text-white/40">*</span>
-            </Link>
-            <span className="text-white/20">/</span>
-            <Link
-              href="/sri-lanka-tech"
-              className="text-xs sm:text-sm font-semibold text-white/90 hover:text-white transition-colors"
-            >
-              Sri Lanka Tech Hub
-            </Link>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Link
-              href="/#contact"
-              className="hidden sm:inline-flex rounded-xl bg-white text-black px-4 py-2 text-xs font-bold hover:bg-white/90 transition-colors"
-            >
-              Contact Nexzoa
-            </Link>
-          </div>
-        </div>
-      </header>
 
       {/* Main Content Body */}
-      <main className="flex-1">{children}</main>
+      <main className="relative pt-32 pb-24 overflow-hidden">
+        {/* Ambient background glow */}
+        <div className="pointer-events-none absolute top-12 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[350px] bg-gradient-to-b from-white/[0.03] via-white/[0.01] to-transparent blur-[100px] -z-10" />
+        {children}
+      </main>
 
-      {/* Shared Footer for Tech Hub */}
-      <footer className="border-t border-white/[0.08] bg-[#07070a] py-12 px-4 mt-20">
-        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
-          <div>
-            <p className="font-semibold text-white/80 mb-1">
-              Nexzoa Sri Lanka Technology Hub
-            </p>
-            <p>
-              An independent, editorial directory and analysis of Sri Lanka&apos;s digital product and engineering ecosystem.
-            </p>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link href="/" className="hover:text-white transition-colors">
-              Main Site
-            </Link>
-            <Link href="/sri-lanka-tech/ai-companies" className="hover:text-white transition-colors">
-              AI Companies
-            </Link>
-            <Link href="/sri-lanka-tech/software-companies" className="hover:text-white transition-colors">
-              Software Companies
-            </Link>
-            <Link href="/sri-lanka-tech/saas-companies" className="hover:text-white transition-colors">
-              SaaS Companies
-            </Link>
-            <Link href="/sri-lanka-tech/startups" className="hover:text-white transition-colors">
-              Startups
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

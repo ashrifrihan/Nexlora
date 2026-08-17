@@ -1,0 +1,59 @@
+# Nexzoa: AI-Native Software Engineering Studio
+
+## Entity Profile
+- Name: Nexzoa
+- Legal Name: Nexzoa
+- Domain: https://www.nexzoa.dev
+- Founded: 2024
+- Location: Colombo, Western Province, Sri Lanka
+- Email: hello@nexzoa.dev
+- Entity Type: Software Engineering Studio / AI Systems Architect
+- Primary Markets: Saudi Arabia, United Arab Emirates (Dubai, Abu Dhabi), Qatar, United States, United Kingdom, Australia, Europe, Sri Lanka, Worldwide
+
+## Studio Overview
+Nexzoa is an independent AI-native software engineering studio based in Colombo, Sri Lanka. Nexzoa designs, builds, and scales custom AI software systems, enterprise multi-tenant SaaS platforms, intelligent workflow automation pipelines, and high-performance cloud applications for startups, scaleups, and enterprises globally with a dedicated focus on the MENA (Saudi Arabia, UAE, Qatar) region.
+
+## Core Services
+1. AI Software Engineering: Custom LLM pipelines, autonomous multi-agent systems, RAG (Retrieval-Augmented Generation) architectures, intelligent document processing, and vector search integrations.
+2. Custom SaaS Development: End-to-end multi-tenant SaaS products engineered with Next.js, React, TypeScript, PostgreSQL, and scalable cloud backends.
+3. AI Workflow Automation: Bespoke internal automation pipelines, CRM/ERP database synchronization, webhook architectures, and custom n8n/Zapier replacement engines.
+4. Full-Stack Web Architecture: High-performance web applications built for speed (<100ms TTFB), conversion, and enterprise security.
+5. Realtime Dashboard & Analytics Systems: Executive BI dashboards, IoT telemetry interfaces, and event-driven data streaming.
+
+## Engineering Philosophy & USP
+- Direct Engineering: Zero non-technical account managers or agency overhead; clients collaborate directly with senior software architects.
+- Sub-100ms Performance: Systems engineered for sub-100ms TTFB and 95+ Core Web Vitals scores.
+- Clean Architecture: Modular, typed, production-ready codebases with comprehensive automated testing and CI/CD pipelines.
+
+## Technology Stack
+- Frontend: Next.js (App Router), React, TypeScript, Tailwind CSS, Framer Motion
+- Backend & Runtimes: Node.js, Python, FastAPI, Express
+- Databases & Cache: PostgreSQL, Supabase, Redis, Upstash, Prisma, Drizzle ORM
+- Cloud & Infrastructure: AWS, Vercel, Google Cloud Platform (GCP), Docker, Cloudflare
+- AI & LLM Frameworks: OpenAI API, Anthropic Claude API, LangChain, LlamaIndex, Pinecone, pgvector
+
+## Regional Focus
+- Saudi Arabia: Vision 2030 digital transformation, Monsha'at SME digitization, ZATCA e-invoicing compliance support, AST timezone alignment.
+- Dubai & UAE: DIFC FinTech platforms, real estate PropTech, fast-track MVP sprints, GST timezone alignment.
+- Qatar: Qatar National Vision 2030, enterprise modernization, logistics and smart city infrastructure.
+- Global & Sri Lanka: Global startup MVPs and host of the authoritative Sri Lanka Tech Ecosystem Directory.
+
+## Key Links & Resources
+- Website: https://www.nexzoa.dev
+- Services Hub: https://www.nexzoa.dev/services
+- Saudi Arabia Engineering: https://www.nexzoa.dev/services/saudi-arabia
+- Dubai / UAE Engineering: https://www.nexzoa.dev/services/dubai
+- Qatar Engineering: https://www.nexzoa.dev/services/qatar
+- MENA Hub: https://www.nexzoa.dev/services/mena
+- Sri Lanka Tech Hub: https://www.nexzoa.dev/sri-lanka-tech
+- About Studio: https://www.nexzoa.dev/about
+- Blog & Insights: https://www.nexzoa.dev/blog
+- Contact & Inquiries: https://www.nexzoa.dev/#contact
+
+## Verified Social Profiles
+- Twitter / X: https://twitter.com/nexzoa
+- LinkedIn: https://linkedin.com/company/nexzoa
+- GitHub: https://github.com/nexzoa
+- Instagram: https://instagram.com/nexzoa
+
+Last Updated: 2026-08

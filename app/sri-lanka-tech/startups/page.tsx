@@ -66,22 +66,36 @@ export default function StartupsPage() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs text-white/40">
+        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+        <span>/</span>
+        <Link href="/sri-lanka-tech" className="hover:text-white transition-colors">Sri Lanka Tech</Link>
+        <span>/</span>
+        <span className="text-white/80 font-medium">Startups</span>
+      </nav>
+
       {/* Header */}
-      <header className="mb-10">
-        <div className="inline-flex items-center gap-2 rounded-full border border-yellow-500/20 bg-yellow-950/20 px-3.5 py-1.5 text-xs font-semibold text-yellow-400 mb-4">
-          <span>🚀</span>
-          <span>Startup Ecosystem &amp; Emerging Ventures</span>
+      <header className="mb-16">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-xs font-semibold text-white/80 mb-6 font-mono">
+          <svg className="w-3.5 h-3.5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+          </svg>
+          <span className="text-[11px] uppercase tracking-wider">Startup Ecosystem &amp; Emerging Ventures</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.12]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
           Sri Lankan Startups &amp; Technology Innovation Ecosystem
         </h1>
-        <p className="text-base sm:text-lg text-white/60 max-w-3xl leading-relaxed font-light">
+        <p className="text-base sm:text-xl text-white/60 max-w-3xl leading-relaxed font-light">
           An overview of Sri Lanka&apos;s fast-growing startup community, accelerator programs, angel investor networks, and emerging tech founders.
         </p>
       </header>
@@ -92,7 +106,7 @@ export default function StartupsPage() {
       {/* Direct Answer Box */}
       <DirectAnswerBox
         question="How active is the technology startup ecosystem in Sri Lanka?"
-        directAnswer="Sri Lanka’s startup ecosystem hosts over 600 active technology ventures across FinTech, AI, Logistics, and SaaS. Supported by ICTA's Spiralation program, the Lankan Angel Network (LAN), Hatch, and TRACE Expert City, the ecosystem has experienced a 40% year-on-year increase in venture funding."
+        directAnswer="Sri Lanka's startup ecosystem hosts over 600 active technology ventures across FinTech, AI, Logistics, and SaaS. Supported by ICTA's Spiralation program, the Lankan Angel Network (LAN), Hatch, and TRACE Expert City, the ecosystem has experienced a 40% year-on-year increase in venture funding."
         supportingFacts={[
           "Ecosystem Value: Over $800M+ generated across digital initiatives",
           "Accelerators & Incubators: ICTA Spiralation, Hatch, Lankan Angel Network, TRACE",
@@ -104,7 +118,7 @@ export default function StartupsPage() {
       <EcosystemStats />
 
       {/* Startup Support Network Section */}
-      <section className="my-10 rounded-2xl border border-white/[0.08] bg-[#0c0c12] p-6 sm:p-8">
+      <section className="my-10 rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-6 sm:p-8">
         <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
           Key Pillars Supporting Sri Lankan Tech Startups
         </h2>
@@ -150,7 +164,7 @@ export default function StartupsPage() {
           {STARTUP_FAQS.map((faq, i) => (
             <div
               key={i}
-              className="rounded-xl border border-white/[0.08] bg-[#0d0d12] p-6"
+              className="rounded-[20px] border border-white/[0.06] bg-[#0a0a0c]/90 p-6"
             >
               <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
                 {faq.question}
@@ -164,7 +178,7 @@ export default function StartupsPage() {
       </section>
 
       {/* CTA Box */}
-      <section className="my-16 rounded-3xl border border-yellow-500/20 bg-yellow-950/10 p-8 sm:p-12 text-center">
+      <section className="my-16 rounded-3xl border border-white/[0.08] bg-[#0a0a0c]/90 p-8 sm:p-12 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
           Are You a Startup Founder Building the Next Big Thing?
         </h2>

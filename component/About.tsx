@@ -358,7 +358,149 @@ export default function About() {
           </AboutCard>
 
         </div>
+
+        {/* Global Operations & Studio Profile Showcase with Cursor Spotlight & Glow */}
+        <GlobalShowcaseCard />
       </div>
     </section>
   );
 }
+
+function GlobalShowcaseCard() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [mp, setMp] = useState({ x: 0, y: 0 });
+  const [hov, setHov] = useState(false);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    setMp({ x: e.clientX - r.left, y: e.clientY - r.top });
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      className="mt-8"
+    >
+      <div
+        ref={ref}
+        onMouseMove={onMove}
+        onMouseEnter={() => setHov(true)}
+        onMouseLeave={() => setHov(false)}
+        className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-7 sm:p-9 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] group transition-all duration-500 hover:border-white/[0.14]"
+      >
+        {/* Glow spotlight overlay matching AboutCard */}
+        <div
+          className="pointer-events-none absolute -inset-px rounded-[28px] transition-opacity duration-500 z-0"
+          style={{
+            opacity: hov ? 1 : 0,
+            background: `radial-gradient(500px circle at ${mp.x}px ${mp.y}px, rgba(255, 255, 255, 0.05), transparent 75%)`,
+          }}
+        />
+
+        {/* Corner luxury flare */}
+        <div className="absolute top-0 right-0 w-[220px] h-[220px] bg-gradient-to-br from-white/[0.02] to-transparent blur-[40px] rounded-tr-[28px] pointer-events-none" />
+
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="flex flex-col gap-3.5 max-w-2xl">
+            <div className="flex items-center gap-2.5">
+              <div className="w-6 h-6 rounded-md bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-white/60 group-hover:border-white/20 group-hover:text-white transition-colors duration-300">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg>
+              </div>
+              <span className="text-[10.5px] font-bold tracking-widest text-white/35 uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Global Operations
+              </span>
+            </div>
+
+            <h4 className="text-[17px] sm:text-[19px] font-medium text-white/80 tracking-tight leading-snug" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              Engineering mission-critical software across <span className="text-white font-semibold">Saudi Arabia</span>, <span className="text-white font-semibold">UAE (Dubai)</span>, <span className="text-white font-semibold">Qatar</span>, <span className="text-white font-semibold">US, Europe &amp; Sri Lanka</span>.
+            </h4>
+
+            {/* Regional Quick Links Pills */}
+            <div className="flex flex-wrap items-center gap-2 pt-0.5">
+              <a
+                href="/services/saudi-arabia"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/[0.06] hover:border-white/30 hover:bg-white/[0.06] hover:shadow-[0_0_15px_rgba(255,255,255,0.06)] text-[11.5px] text-white/70 hover:text-white transition-all duration-200 group/pill"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                <img
+                  src="/flags/sa.svg"
+                  alt="Saudi Arabia"
+                  width={16}
+                  height={12}
+                  className="w-4 h-3 rounded-[2px] object-cover shadow-[0_1px_3px_rgba(0,0,0,0.6)] shrink-0"
+                />
+                <span>Saudi Arabia</span>
+              </a>
+              <a
+                href="/services/dubai"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/[0.06] hover:border-white/30 hover:bg-white/[0.06] hover:shadow-[0_0_15px_rgba(255,255,255,0.06)] text-[11.5px] text-white/70 hover:text-white transition-all duration-200 group/pill"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                <img
+                  src="/flags/ae.svg"
+                  alt="United Arab Emirates"
+                  width={16}
+                  height={12}
+                  className="w-4 h-3 rounded-[2px] object-cover shadow-[0_1px_3px_rgba(0,0,0,0.6)] shrink-0"
+                />
+                <span>Dubai &bull; UAE</span>
+              </a>
+              <a
+                href="/services/qatar"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/[0.06] hover:border-white/30 hover:bg-white/[0.06] hover:shadow-[0_0_15px_rgba(255,255,255,0.06)] text-[11.5px] text-white/70 hover:text-white transition-all duration-200 group/pill"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                <img
+                  src="/flags/qa.svg"
+                  alt="Qatar"
+                  width={16}
+                  height={12}
+                  className="w-4 h-3 rounded-[2px] object-cover shadow-[0_1px_3px_rgba(0,0,0,0.6)] shrink-0"
+                />
+                <span>Qatar (Doha)</span>
+              </a>
+              <a
+                href="/sri-lanka-tech"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/[0.06] hover:border-white/30 hover:bg-white/[0.06] hover:shadow-[0_0_15px_rgba(255,255,255,0.06)] text-[11.5px] text-white/70 hover:text-white transition-all duration-200 group/pill"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                <img
+                  src="/flags/lk.svg"
+                  alt="Sri Lanka"
+                  width={16}
+                  height={12}
+                  className="w-4 h-3 rounded-[2px] object-cover shadow-[0_1px_3px_rgba(0,0,0,0.6)] shrink-0"
+                />
+                <span>Sri Lanka Hub</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Glowing CTA Button */}
+          <div className="shrink-0 flex items-center">
+            <a
+              href="/about"
+              className="relative overflow-hidden inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.1] hover:border-white/40 text-[13px] font-semibold text-white/90 hover:text-white transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_25px_rgba(255,255,255,0.12),inset_0_0_15px_rgba(255,255,255,0.05)] group/btn hover:scale-[1.02] active:scale-[0.98]"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
+            >
+              <span>Studio Profile</span>
+              <svg className="w-3.5 h-3.5 text-white/50 group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all duration-200 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+
