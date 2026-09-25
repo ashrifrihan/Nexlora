@@ -18,6 +18,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${SITE_URL}/team`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/team/ashrif-rihan`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/team/izzath-noory`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${SITE_URL}/services`,
       lastModified: currentDate,
       changeFrequency: "weekly",

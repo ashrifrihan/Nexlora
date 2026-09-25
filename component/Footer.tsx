@@ -192,6 +192,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/team" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Team &amp; Leadership
+                  </Link>
+                </li>
+                <li>
                   <Link href="/blog" className="text-[14px] text-white/60 hover:text-white transition-colors duration-200" style={{ fontFamily: '"Satoshi", sans-serif' }}>
                     Blog
                   </Link>

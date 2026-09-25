@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 import { motion, useInView } from "motion/react";
 
 function AboutCard({
@@ -357,6 +358,87 @@ export default function About() {
             <ScaleVisual />
           </AboutCard>
 
+        </div>
+
+        {/* The People Behind Nexzoa Spotlight */}
+        <div className="mt-8 rounded-[24px] sm:rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-7 sm:p-9 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-widest text-white/40 uppercase block mb-1">
+                Direct Engineering &bull; Leadership
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                The People Behind Nexzoa
+              </h3>
+            </div>
+            <Link
+              href="/team"
+              className="text-xs font-semibold text-white/70 hover:text-white transition-colors inline-flex items-center gap-1.5"
+            >
+              <span>Explore all profiles</span>
+              <span>→</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Ashrif Rihan */}
+            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/20 transition-all flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-3.5 mb-3">
+                  <img
+                    src="https://github.com/ashrifrihan.png"
+                    alt="Ashrif Rihan — Software Engineer & UI/UX Designer at Nexzoa"
+                    className="w-12 h-12 rounded-xl object-cover border border-white/10 shrink-0"
+                  />
+                  <div>
+                    <h4 className="text-base font-bold text-white tracking-tight">Ashrif Rihan</h4>
+                    <p className="text-xs text-white/60">Software Engineer &amp; UI/UX Designer</p>
+                  </div>
+                </div>
+                <p className="text-xs text-white/50 leading-relaxed font-light mb-3">
+                  Leads frontend architecture, Next.js engineering, and UI/UX design systems for Nexzoa&apos;s custom SaaS and AI products.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs">
+                <Link href="/team/ashrif-rihan" className="text-white hover:underline font-medium">
+                  View Profile &amp; Work →
+                </Link>
+                <div className="flex items-center gap-2 text-white/40">
+                  <a href="https://ashrifrihan.me" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Portfolio ↗</a>
+                  <span>&bull;</span>
+                  <a href="https://github.com/ashrifrihan" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub ↗</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Izzath Noory */}
+            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/20 transition-all flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-3.5 mb-3">
+                  <img
+                    src="/nexzoa.jpg"
+                    alt="Izzath Noory — Co-Founder & Operations at Nexzoa"
+                    className="w-12 h-12 rounded-xl object-cover border border-white/10 shrink-0"
+                  />
+                  <div>
+                    <h4 className="text-base font-bold text-white tracking-tight">Izzath Noory</h4>
+                    <p className="text-xs text-white/60">Co-Founder &amp; Head of Operations</p>
+                  </div>
+                </div>
+                <p className="text-xs text-white/50 leading-relaxed font-light mb-3">
+                  Directs international partnerships, client alignment across Saudi Arabia, UAE, Qatar, and agile delivery operations.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs">
+                <Link href="/team/izzath-noory" className="text-white hover:underline font-medium">
+                  View Profile &amp; Initiatives →
+                </Link>
+                <div className="flex items-center gap-2 text-white/40">
+                  <a href="https://linkedin.com/company/nexzoa" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Global Operations & Studio Profile Showcase with Cursor Spotlight & Glow */}

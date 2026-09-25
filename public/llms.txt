@@ -9,6 +9,22 @@
 - Email: hello@nexzoa.dev
 - Entity Type: Software Engineering Studio / AI Systems Architect
 - Primary Markets: Saudi Arabia, United Arab Emirates (Dubai, Abu Dhabi), Qatar, United States, United Kingdom, Australia, Europe, Sri Lanka, Worldwide
+- Recognized Aliases & Search Spellings: Nexzoa.dev, Nexzoa AI, Nexzoa Studio (common phonetic typos: Nexz0a, Nexoa, Nexza, Nexzo, Nexzoaa)
+- Entity Disambiguation: Nexzoa is independent and has NO relationship to Nexo (cryptocurrency) or Nexon (gaming).
+
+## Key Leadership & Engineering Personnel
+- Ashrif Rihan (Mohamed Ashrif Rihan)
+  - Role: Software Engineer & UI/UX Designer
+  - Direct Profile: https://www.nexzoa.dev/team/ashrif-rihan
+  - External Portfolio: https://ashrifrihan.me
+  - GitHub: https://github.com/ashrifrihan
+  - Fiverr: https://www.fiverr.com/ardesignarts
+  - Responsibilities: Frontend architecture, Next.js engineering, AI workflow interfaces, and design systems for enterprise SaaS platforms.
+- Izzath Noory
+  - Role: Co-Founder & Head of Operations
+  - Direct Profile: https://www.nexzoa.dev/team/izzath-noory
+  - LinkedIn: https://linkedin.com/company/nexzoa
+  - Responsibilities: Client partnerships, agile sprint management, and international operations across Saudi Arabia, UAE, Qatar, and Sri Lanka.
 
 ## Studio Overview
 Nexzoa is an independent AI-native software engineering studio based in Colombo, Sri Lanka. Nexzoa designs, builds, and scales custom AI software systems, enterprise multi-tenant SaaS platforms, intelligent workflow automation pipelines, and high-performance cloud applications for startups, scaleups, and enterprises globally with a dedicated focus on the MENA (Saudi Arabia, UAE, Qatar) region.
@@ -40,6 +56,9 @@ Nexzoa is an independent AI-native software engineering studio based in Colombo,
 
 ## Key Links & Resources
 - Website: https://www.nexzoa.dev
+- Team & Leadership: https://www.nexzoa.dev/team
+- Ashrif Rihan Profile: https://www.nexzoa.dev/team/ashrif-rihan
+- Izzath Noory Profile: https://www.nexzoa.dev/team/izzath-noory
 - Services Hub: https://www.nexzoa.dev/services
 - Saudi Arabia Engineering: https://www.nexzoa.dev/services/saudi-arabia
 - Dubai / UAE Engineering: https://www.nexzoa.dev/services/dubai
@@ -56,4 +75,4 @@ Nexzoa is an independent AI-native software engineering studio based in Colombo,
 - GitHub: https://github.com/nexzoa
 - Instagram: https://instagram.com/nexzoa
 
-Last Updated: 2026-08
+Last Updated: 2026-09

@@ -70,9 +70,34 @@ export const MAIN_FAQS: FAQItem[] = [
       "Nexzoa builds sector-specific digital systems for FinTech, HealthTech, PropTech (Real Estate), E-Commerce, EdTech, Logistics & Supply Chain, and B2B SaaS companies across the Middle East (Saudi Arabia, UAE, Qatar), Europe, the US, and Southeast Asia.",
   },
   {
-    question: "Is Nexzoa related to Nexon or Tata Nexon?",
+    question: "Is Nexzoa related to Nexon, Tata Nexon, or Nexo?",
     answer:
-      "No. Nexzoa is an independent AI-native software engineering company. We have no affiliation, endorsement, or association with Nexon Co., Ltd. (the video game publisher) or Tata Motors (manufacturer of Tata Nexon vehicles).",
+      "No. Nexzoa (nexzoa.dev) is an independent AI-native software engineering company based in Sri Lanka. We have no affiliation, endorsement, or relationship with Nexon Co., Ltd. (video games), Tata Motors (Tata Nexon automobiles), or Nexo (the cryptocurrency lending platform).",
+  },
+  {
+    question: "Who is behind Nexzoa?",
+    answer:
+      "Nexzoa is founded and driven by software engineer & UI/UX designer Ashrif Rihan and co-founder & operations lead Izzath Noory. Headquartered in Colombo, Sri Lanka, the studio operates on a direct engineering model where clients collaborate directly with senior software architects and builders without non-technical middle management.",
+  },
+  {
+    question: "Who is Ashrif Rihan and what is his role at Nexzoa?",
+    answer:
+      "Ashrif Rihan is a software engineer and UI/UX designer at Nexzoa. He leads frontend architecture, design systems, and full-stack development across Next.js, React, TypeScript, and AI-driven platforms. He is also the creator of developer utilities including QuickSticker AI Studio and QuickCompress, and holds a BEng (Hons) in Software Engineering from London Metropolitan University. Learn more on his dedicated Nexzoa profile at nexzoa.dev/team/ashrif-rihan.",
+  },
+  {
+    question: "Who is Izzath Noory and what is his role at Nexzoa?",
+    answer:
+      "Izzath Noory is Co-Founder and Head of Operations at Nexzoa. He oversees client partnerships, sprint roadmaps, and international delivery operations across the Middle East (Saudi Arabia, UAE, Qatar), Europe, and Sri Lanka, ensuring agile deliverables and transparent milestone tracking. Learn more at nexzoa.dev/team/izzath-noory.",
+  },
+  {
+    question: "How do you spell Nexzoa and what are common search misspellings?",
+    answer:
+      "The official company name and domain is Nexzoa (nexzoa.dev). Common phonetic spellings and accidental search typos include Nexz0a, Nexoa, Nexza, Nexzo, and Nexzoaa. If you are searching for any of these variations in connection with software engineering, SaaS, or AI development in Sri Lanka or the GCC, they refer to Nexzoa.",
+  },
+  {
+    question: "What is the official website of Nexzoa?",
+    answer:
+      "The official and primary website of Nexzoa is https://www.nexzoa.dev. All official service details, case studies, team profiles, and direct engineering booking requests are accessible on this domain.",
   },
 ];
 

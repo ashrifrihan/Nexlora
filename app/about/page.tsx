@@ -16,6 +16,7 @@ import {
   SOCIAL_GITHUB,
   siteUrl,
 } from "@/lib/siteConfig";
+import { TEAM_MEMBERS } from "@/lib/teamData";
 
 function AboutBentoCard({
   children,
@@ -109,6 +110,38 @@ export default function AboutPage() {
         addressCountry: "LK",
       },
       sameAs: [SOCIAL_TWITTER, SOCIAL_LINKEDIN, SOCIAL_GITHUB],
+      founder: [
+        {
+          "@type": "Person",
+          "@id": `${SITE_URL}/team/ashrif-rihan#person`,
+          name: "Ashrif Rihan",
+          jobTitle: "Software Engineer & UI/UX Designer",
+          url: `${SITE_URL}/team/ashrif-rihan`,
+        },
+        {
+          "@type": "Person",
+          "@id": `${SITE_URL}/team/izzath-noory#person`,
+          name: "Izzath Noory",
+          jobTitle: "Co-Founder & Head of Operations",
+          url: `${SITE_URL}/team/izzath-noory`,
+        },
+      ],
+      employee: [
+        {
+          "@type": "Person",
+          "@id": `${SITE_URL}/team/ashrif-rihan#person`,
+          name: "Ashrif Rihan",
+          jobTitle: "Software Engineer & UI/UX Designer",
+          url: `${SITE_URL}/team/ashrif-rihan`,
+        },
+        {
+          "@type": "Person",
+          "@id": `${SITE_URL}/team/izzath-noory#person`,
+          name: "Izzath Noory",
+          jobTitle: "Co-Founder & Head of Operations",
+          url: `${SITE_URL}/team/izzath-noory`,
+        },
+      ],
       knowsAbout: [
         "AI Software Engineering",
         "Custom SaaS Architecture",
@@ -272,6 +305,113 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* The People Behind Nexzoa - Team Section */}
+        <section className="mb-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <span className="font-mono text-[10.5px] font-bold text-white/40 uppercase tracking-widest block mb-2">The People Behind Nexzoa</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Engineering &amp; Operational Leadership
+              </h2>
+              <p className="text-sm text-white/60 font-light mt-2 max-w-xl">
+                Real engineers and operators who personally build, design, and take responsibility for your software. Zero agency bloat.
+              </p>
+            </div>
+            <Link
+              href="/team"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/70 hover:text-white transition-colors shrink-0"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
+            >
+              <span>Explore all team profiles</span>
+              <span>→</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {TEAM_MEMBERS.map((member) => (
+              <div
+                key={member.slug}
+                className="rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 backdrop-blur-xl p-7 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.85)] group"
+              >
+                <div>
+                  <div className="flex items-start gap-4 mb-5">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-white/[0.02]">
+                      <img
+                        src={member.avatar}
+                        alt={`${member.name} — ${member.role}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div>
+                      <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-0.5">
+                        {member.worksFor} &bull; Colombo, LK
+                      </span>
+                      <h3
+                        className="text-xl sm:text-2xl font-bold text-white tracking-tight"
+                        style={{ fontFamily: '"Satoshi", sans-serif' }}
+                      >
+                        {member.name}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-medium text-white/70 mt-0.5">
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-light mb-5">
+                    {member.shortBio}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {member.skills.slice(0, 4).map((skill, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2 py-0.5 rounded-md bg-white/[0.02] border border-white/[0.05] text-[10.5px] text-white/50 font-mono"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+                  <Link
+                    href={`/team/${member.slug}`}
+                    className="text-xs font-semibold text-white hover:text-white/80 transition-colors inline-flex items-center gap-1.5"
+                    style={{ fontFamily: '"Satoshi", sans-serif' }}
+                  >
+                    <span>View Full Profile</span>
+                    <span>→</span>
+                  </Link>
+
+                  <div className="flex items-center gap-3">
+                    {member.socials.website && (
+                      <a
+                        href={member.socials.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] text-white/40 hover:text-white transition-colors"
+                      >
+                        Portfolio ↗
+                      </a>
+                    )}
+                    {member.socials.github && (
+                      <a
+                        href={member.socials.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] text-white/40 hover:text-white transition-colors"
+                      >
+                        GitHub ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
