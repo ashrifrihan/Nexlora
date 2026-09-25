@@ -23,14 +23,14 @@ export function siteUrl(path: string = "/"): string {
 // ─── Brand & Entity Definition ───────────────────────────────────────────────
 export const SITE_NAME = "Nexzoa" as const;
 export const SITE_LEGAL_NAME = "Nexzoa" as const;
-export const SITE_TAGLINE = "AI-Native Software Engineering, SaaS & Automation" as const;
+export const SITE_TAGLINE = "AI Software Development & SaaS Engineering" as const;
 export const SITE_SLOGAN = "Build the system behind your business." as const;
 
 export const SITE_DESCRIPTION_SHORT =
-  "Nexzoa is an AI-native software engineering company based in Sri Lanka building custom SaaS platforms, AI automation systems, and scalable cloud applications for businesses worldwide." as const;
+  "Nexzoa is a software engineering studio in Sri Lanka specializing in custom software development, AI automation, SaaS platforms and scalable web applications." as const;
 
 export const SITE_DESCRIPTION_LONG =
-  "Nexzoa engineers custom AI-native software, enterprise SaaS applications, intelligent workflow automation pipelines, and high-performance digital platforms. Based in Sri Lanka and serving startups, scaleups, and enterprises globally." as const;
+  "Nexzoa is an AI-native software engineering studio based in Sri Lanka specializing in custom software development, AI automation, enterprise SaaS platforms, and scalable web applications for businesses worldwide." as const;
 
 // ─── Geographic & Headquarters ───────────────────────────────────────────────
 export const BUSINESS_CITY = "Colombo" as const;

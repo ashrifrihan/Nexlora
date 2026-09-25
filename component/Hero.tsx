@@ -168,7 +168,7 @@ const Hero = () => {
           />
           {/* Text with Shiny Effect */}
           <ShinyText
-            text="Independent Software Studio based in Sri Lanka"
+            text="Custom Software Development & AI Engineering • Sri Lanka"
             speed={3}
             color="#999999"
             shineColor="#ffffff"
@@ -188,7 +188,7 @@ const Hero = () => {
             }}
           >
             <span className="sr-only">
-              Nexzoa - AI-Native Software Engineering, SaaS & Automation Studio based in Sri Lanka.
+              Custom Software Development &amp; AI Engineering — Nexzoa
             </span>
             <div className="flex flex-col items-center gap-0">
               <div className="w-full overflow-visible">
@@ -223,7 +223,7 @@ const Hero = () => {
         {/* Description */}
         <div className="w-full max-w-3xl mb-10 md:mb-12">
           <BlurText
-            text="Nexzoa builds custom software development solutions, AI automation workflows, and digital platforms for businesses fast, scalable, and built to grow."
+            text="Nexzoa is a software engineering studio in Sri Lanka specializing in custom software development, AI automation, SaaS platforms and scalable web applications."
             delay={20}
             animateBy="words"
             direction="top"

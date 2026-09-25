@@ -18,9 +18,33 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nexzoa - AI-Native Software Engineering, SaaS & Automation",
+  title: "Nexzoa | AI Software Development & SaaS Engineering",
   description:
-    "Nexzoa delivers AI-native software, full-stack SaaS platforms, automation workflows, and scalable digital solutions for ambitious businesses.",
+    "Nexzoa is a software engineering studio in Sri Lanka specializing in custom software development, AI automation, SaaS platforms and scalable web applications.",
+  keywords: [
+    "Nexzoa",
+    "Nexzoa dev",
+    "Nexzoa Sri Lanka",
+    "Nexzoa software development",
+    "Nexzoa AI",
+    "Nexzoa SaaS",
+    "Nexzoa Colombo",
+    "Nexzoa software company",
+    "Nexzoa technologies",
+    "Custom Software Development Company in Sri Lanka",
+    "AI Software Development Company in Sri Lanka",
+    "SaaS Development Company in Sri Lanka",
+    "Web development company Sri Lanka",
+    "Software engineering company Colombo",
+    "Custom AI software development",
+    "Business automation solutions",
+    "AI workflow automation",
+    "Enterprise software development",
+    "Full-stack web development",
+    "Startup MVP development",
+    "Ashrif Rihan Nexzoa",
+    "Izzath Noory Nexzoa",
+  ],
   alternates: { canonical: SITE_URL },
 };
 

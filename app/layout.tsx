@@ -40,7 +40,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} - AI-Native Software Engineering, SaaS & Automation`,
+    default: "Nexzoa | AI Software Development & SaaS Engineering",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION_SHORT,

@@ -9,15 +9,30 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: `Custom Software Engineering Services | AI, SaaS, Automation | ${SITE_NAME}`,
+  title: "AI Development Company & Custom Software Development in Sri Lanka | Nexzoa",
   description:
-    "Explore Nexzoa's engineering capabilities: Custom AI software, multi-tenant SaaS platforms, intelligent workflow automation, and enterprise web architecture. Serving clients in Saudi Arabia, UAE, Qatar, and globally.",
+    "Nexzoa provides custom AI software development, intelligent workflow automation, SaaS platforms, and scalable digital solutions for businesses in Sri Lanka and worldwide.",
+  keywords: [
+    "Custom Software Development Company in Sri Lanka",
+    "AI Software Development Company in Sri Lanka",
+    "SaaS Development Company in Sri Lanka",
+    "AI development company Sri Lanka",
+    "Software company Colombo",
+    "Bespoke software development",
+    "Full-stack development company",
+    "Startup MVP development",
+    "AI workflow automation",
+    "Business process automation",
+    "Custom LLM development",
+    "RAG application development",
+    "Enterprise software development",
+  ],
   alternates: {
     canonical: `${SITE_URL}/services`,
   },
   openGraph: {
-    title: `Custom Software Engineering Services | ${SITE_NAME}`,
-    description: "End-to-end software engineering, AI systems, and SaaS platforms built for scale.",
+    title: "AI Development Company & Custom Software in Sri Lanka | Nexzoa",
+    description: "End-to-end custom software development, AI systems, and SaaS platforms built for scale.",
     url: `${SITE_URL}/services`,
     type: "website",
     images: [{ url: siteUrl("/og-image.png"), width: 1200, height: 630, alt: "Nexzoa Services" }],
