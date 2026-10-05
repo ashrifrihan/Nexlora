@@ -305,7 +305,7 @@ function TeamShowcaseCard() {
         onMouseMove={onMove}
         onMouseEnter={() => setHov(true)}
         onMouseLeave={() => setHov(false)}
-        className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-7 sm:p-9 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] group transition-all duration-500 hover:border-white/[0.14]"
+        className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-5 sm:p-8 md:p-9 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] group transition-all duration-500 hover:border-white/[0.14]"
       >
         {/* Glow spotlight overlay */}
         <div
@@ -352,7 +352,7 @@ function TeamShowcaseCard() {
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Ashrif Rihan */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.14] hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between group/card">
+            <div className="p-4 sm:p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.14] hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between group/card">
               <div>
                 <div className="flex items-center gap-3.5 mb-3">
                   <img
@@ -383,40 +383,40 @@ function TeamShowcaseCard() {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs">
+              <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs gap-2">
                 <Link
                   href="/team/ashrif-rihan"
-                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1.5 group/link transition-colors"
+                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1.5 group/link transition-colors whitespace-nowrap shrink-0"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
-                  <span>View Profile &amp; Work</span>
-                  <svg className="w-3.5 h-3.5 text-white/60 group-hover/link:text-white group-hover/link:translate-x-0.5 transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <span>View Profile<span className="hidden sm:inline"> &amp; Work</span></span>
+                  <svg className="w-3.5 h-3.5 text-white/60 group-hover/link:text-white group-hover/link:translate-x-0.5 transition-all duration-200 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
                 </Link>
-                <div className="flex items-center gap-2.5 text-white/40 text-[11.5px]">
+                <div className="flex items-center gap-2 sm:gap-2.5 text-white/40 text-[11px] sm:text-[11.5px] shrink-0">
                   <a
                     href="https://ashrifrihan.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
+                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext whitespace-nowrap"
                   >
                     <span>Portfolio</span>
-                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="7" y1="17" x2="17" y2="7" />
                       <polyline points="7 7 17 7 17 17" />
                     </svg>
                   </a>
-                  <span>&bull;</span>
+                  <span className="text-white/20">&bull;</span>
                   <a
                     href="https://github.com/ashrifrihan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
+                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext whitespace-nowrap"
                   >
                     <span>GitHub</span>
-                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="7" y1="17" x2="17" y2="7" />
                       <polyline points="7 7 17 7 17 17" />
                     </svg>
@@ -426,7 +426,7 @@ function TeamShowcaseCard() {
             </div>
 
             {/* Izzath Noory */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.14] hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between group/card">
+            <div className="p-4 sm:p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.14] hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between group/card">
               <div>
                 <div className="flex items-center gap-3.5 mb-3">
                   <img
@@ -457,27 +457,27 @@ function TeamShowcaseCard() {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs">
+              <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs gap-2">
                 <Link
                   href="/team/izzath-noory"
-                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1.5 group/link transition-colors"
+                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1.5 group/link transition-colors whitespace-nowrap shrink-0"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
-                  <span>View Profile &amp; Initiatives</span>
-                  <svg className="w-3.5 h-3.5 text-white/60 group-hover/link:text-white group-hover/link:translate-x-0.5 transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <span>View Profile<span className="hidden sm:inline"> &amp; Initiatives</span></span>
+                  <svg className="w-3.5 h-3.5 text-white/60 group-hover/link:text-white group-hover/link:translate-x-0.5 transition-all duration-200 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
                 </Link>
-                <div className="flex items-center gap-2 text-white/40 text-[11.5px]">
+                <div className="flex items-center gap-2 text-white/40 text-[11px] sm:text-[11.5px] shrink-0">
                   <a
                     href="https://www.linkedin.com/in/izzath-noory-6150a7287"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
+                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext whitespace-nowrap"
                   >
                     <span>LinkedIn</span>
-                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="7" y1="17" x2="17" y2="7" />
                       <polyline points="7 7 17 7 17 17" />
                     </svg>
@@ -516,7 +516,7 @@ function GlobalShowcaseCard() {
         onMouseMove={onMove}
         onMouseEnter={() => setHov(true)}
         onMouseLeave={() => setHov(false)}
-        className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-7 sm:p-9 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] group transition-all duration-500 hover:border-white/[0.14]"
+        className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] border border-white/[0.06] bg-[#0a0a0c]/90 p-5 sm:p-8 md:p-9 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] group transition-all duration-500 hover:border-white/[0.14]"
       >
         {/* Glow spotlight overlay matching AboutCard */}
         <div

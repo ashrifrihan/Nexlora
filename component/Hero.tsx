@@ -154,28 +154,43 @@ const Hero = () => {
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-4 md:mb-6 inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
+          className="mb-4 md:mb-6 inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300 max-w-[92vw] sm:max-w-none"
         >
           {/* Sparkle Icon with Shiny Effect */}
-          <ShinyText
-            text="✨"
-            speed={3}
-            color="#999999"
-            shineColor="#ffffff"
-            spread={100}
-            direction="left"
-            className="text-lg md:text-xl"
-          />
-          {/* Text with Shiny Effect */}
-          <ShinyText
-            text="Custom Software Development & AI Engineering • Sri Lanka"
-            speed={3}
-            color="#999999"
-            shineColor="#ffffff"
-            spread={100}
-            direction="left"
-            className="text-xs md:text-sm font-medium"
-          />
+          <span className="shrink-0 flex items-center">
+            <ShinyText
+              text="✨"
+              speed={3}
+              color="#999999"
+              shineColor="#ffffff"
+              spread={100}
+              direction="left"
+              className="text-sm sm:text-base md:text-xl leading-none"
+            />
+          </span>
+          {/* Text with Shiny Effect (Single line on mobile, full text on tablet/desktop) */}
+          <span className="sm:hidden flex items-center">
+            <ShinyText
+              text="Software & AI Engineering • Sri Lanka"
+              speed={3}
+              color="#999999"
+              shineColor="#ffffff"
+              spread={100}
+              direction="left"
+              className="text-[11px] font-medium whitespace-nowrap"
+            />
+          </span>
+          <span className="hidden sm:inline-flex items-center">
+            <ShinyText
+              text="Custom Software Development & AI Engineering • Sri Lanka"
+              speed={3}
+              color="#999999"
+              shineColor="#ffffff"
+              spread={100}
+              direction="left"
+              className="text-xs md:text-sm font-medium whitespace-nowrap"
+            />
+          </span>
         </motion.div>
  
         <div className="w-full mb-6 sm:mb-8 md:mb-10 flex justify-center">
