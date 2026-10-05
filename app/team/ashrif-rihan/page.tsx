@@ -214,33 +214,42 @@ export default function AshrifRihanProfilePage() {
                   href="https://ashrifrihan.me"
                   target="_blank"
                   rel="noopener noreferrer me"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)] group"
                 >
-                  <svg className="w-3.5 h-3.5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                  <svg className="w-3.5 h-3.5 text-white/60 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                   <span>ashrifrihan.me (Portfolio)</span>
-                  <span className="text-white/40">↗</span>
+                  <svg className="w-3 h-3 text-white/40 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
                 </a>
 
                 <a
                   href="https://github.com/ashrifrihan"
                   target="_blank"
                   rel="noopener noreferrer me"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)] group"
                 >
-                  <svg className="w-3.5 h-3.5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <svg className="w-3.5 h-3.5 text-white/60 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                   <span>github.com/ashrifrihan</span>
-                  <span className="text-white/40">↗</span>
+                  <svg className="w-3 h-3 text-white/40 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
                 </a>
 
                 <a
                   href="https://www.fiverr.com/ardesignarts"
                   target="_blank"
                   rel="noopener noreferrer me"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)] group"
                 >
                   <span className="text-emerald-400 font-bold text-xs">fi</span>
                   <span>Fiverr (ardesignarts)</span>
-                  <span className="text-white/40">↗</span>
+                  <svg className="w-3 h-3 text-white/40 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -396,9 +405,13 @@ export default function AshrifRihanProfilePage() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-white/50 hover:text-white transition-colors"
+                        className="text-xs text-white/50 hover:text-white transition-colors inline-flex items-center gap-1 group/link"
                       >
-                        GitHub ↗
+                        <span>GitHub</span>
+                        <svg className="w-2.5 h-2.5 text-white/40 group-hover/link:text-white group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                        </svg>
                       </a>
                     )}
                     {project.link && (
@@ -406,9 +419,13 @@ export default function AshrifRihanProfilePage() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-white/50 hover:text-white transition-colors"
+                        className="text-xs text-white/50 hover:text-white transition-colors inline-flex items-center gap-1 group/link"
                       >
-                        Details ↗
+                        <span>Details</span>
+                        <svg className="w-2.5 h-2.5 text-white/40 group-hover/link:text-white group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                        </svg>
                       </a>
                     )}
                   </div>

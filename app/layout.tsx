@@ -251,7 +251,7 @@ export default function RootLayout({
         jobTitle: "Co-Founder & Head of Operations",
         url: `${SITE_URL}/team/izzath-noory`,
         sameAs: [
-          "https://linkedin.com/company/nexzoa",
+          "https://www.linkedin.com/in/izzath-noory-6150a7287",
         ],
       },
     ],
@@ -438,6 +438,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://framerusercontent.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
@@ -463,7 +464,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-black text-white">
+      <body className="min-h-full flex flex-col bg-black text-white font-sans" style={{ fontFamily: '"Satoshi", system-ui, -apple-system, sans-serif' }}>
         <PerformanceProvider />
         {children}
       </body>

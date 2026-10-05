@@ -65,7 +65,7 @@ export default function IzzathNooryProfilePage() {
       image: siteUrl(member.avatar),
       url: `${SITE_URL}/team/izzath-noory`,
       sameAs: [
-        "https://linkedin.com/company/nexzoa",
+        "https://www.linkedin.com/in/izzath-noory-6150a7287",
       ],
       worksFor: {
         "@type": "Organization",
@@ -191,14 +191,17 @@ export default function IzzathNooryProfilePage() {
               {/* Social / External Verification Links */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
-                  href="https://linkedin.com/company/nexzoa"
+                  href="https://www.linkedin.com/in/izzath-noory-6150a7287"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                  rel="noopener noreferrer me"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/30 text-xs font-medium text-white transition-all shadow-[0_2px_10px_rgba(0,0,0,0.5)] group"
                 >
-                  <svg className="w-3.5 h-3.5 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                  <span>Nexzoa LinkedIn</span>
-                  <span className="text-white/40">↗</span>
+                  <svg className="w-3.5 h-3.5 text-white/60 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  <span>LinkedIn Profile</span>
+                  <svg className="w-3 h-3 text-white/40 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
                 </a>
 
                 <a

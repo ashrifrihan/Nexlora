@@ -244,7 +244,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
       },
     ],
     socials: {
-      linkedin: "https://linkedin.com/company/nexzoa",
+      linkedin: "https://www.linkedin.com/in/izzath-noory-6150a7287",
       email: "izzath@nexzoa.dev",
     },
   },

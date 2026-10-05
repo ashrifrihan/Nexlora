@@ -210,10 +210,14 @@ export default function TeamPage() {
                         href={member.socials.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-white/40 hover:text-white transition-colors"
+                        className="text-xs text-white/40 hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
                         title="Personal Website"
                       >
-                        Portfolio ↗
+                        <span>Portfolio</span>
+                        <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                        </svg>
                       </a>
                     )}
                     {member.socials.github && (
@@ -221,10 +225,29 @@ export default function TeamPage() {
                         href={member.socials.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-white/40 hover:text-white transition-colors"
+                        className="text-xs text-white/40 hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
                         title="GitHub"
                       >
-                        GitHub ↗
+                        <span>GitHub</span>
+                        <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                      </a>
+                    )}
+                    {member.socials.linkedin && (
+                      <a
+                        href={member.socials.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-white/40 hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
+                        title="LinkedIn"
+                      >
+                        <span>LinkedIn</span>
+                        <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                        </svg>
                       </a>
                     )}
                   </div>
@@ -246,10 +269,13 @@ export default function TeamPage() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/about"
-              className="text-xs font-semibold text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
+              className="text-xs font-semibold text-white/70 hover:text-white transition-colors flex items-center gap-1.5 group/about"
             >
               <span>Learn more about Nexzoa&apos;s background &amp; philosophy</span>
-              <span>→</span>
+              <svg className="w-3.5 h-3.5 text-white/60 group-hover/about:text-white group-hover/about:translate-x-0.5 transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
           </div>
         </section>

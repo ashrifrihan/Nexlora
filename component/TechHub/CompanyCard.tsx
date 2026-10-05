@@ -49,10 +49,14 @@ export function CompanyCard({ company }: CompanyCardProps) {
               href={company.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+              className="shrink-0 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-colors inline-flex items-center gap-1.5 group/btn"
               aria-label={`Visit official website of ${company.name}`}
             >
-              Website ↗
+              <span>Website</span>
+              <svg className="w-3 h-3 text-white/60 group-hover/btn:text-white group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
             </a>
           )}
         </div>

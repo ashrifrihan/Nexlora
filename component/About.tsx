@@ -471,7 +471,7 @@ function TeamShowcaseCard() {
                 </Link>
                 <div className="flex items-center gap-2 text-white/40 text-[11.5px]">
                   <a
-                    href="https://linkedin.com/company/nexzoa"
+                    href="https://www.linkedin.com/in/izzath-noory-6150a7287"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext"

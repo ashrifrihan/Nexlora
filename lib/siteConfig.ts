@@ -45,7 +45,7 @@ export const CONTACT_PHONE_RAW = "+94772008364" as const;
 
 // ─── Social profiles (Verified) ──────────────────────────────────────────────
 export const SOCIAL_TWITTER = "https://twitter.com/nexzoa" as const;
-export const SOCIAL_LINKEDIN = "https://linkedin.com/company/nexzoa" as const;
+export const SOCIAL_LINKEDIN = "https://www.linkedin.com/company/nexzoa-io/" as const;
 export const SOCIAL_GITHUB = "https://github.com/nexzoa" as const;
 export const SOCIAL_INSTAGRAM = "https://instagram.com/nexzoa" as const;
 

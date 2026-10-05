@@ -21,7 +21,7 @@ export default function Nav() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-0 lg:top-6 lg:px-4">
       <nav className="mx-auto max-w-none border-b border-white/10 bg-black px-6 py-3 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-12 sm:py-5 lg:max-w-[956px] lg:animate-[nav-drop-in_760ms_cubic-bezier(0.16,1,0.3,1)_120ms_both] lg:rounded-2xl lg:border lg:border-white/10 lg:bg-[#0c0c0c]/90 lg:px-7 lg:py-4 lg:shadow-[0_18px_60px_rgba(0,0,0,0.45)] motion-reduce:lg:animate-none">
-        <div className="flex items-center justify-between gap-5 [font-family:Satoshi,Inter,sans-serif]">
+        <div className="flex items-center justify-between gap-5 [font-family:Satoshi,sans-serif]">
           <a
             href="#"
             onClick={(e) => {
@@ -107,7 +107,7 @@ export default function Nav() {
           }`}
         >
           <div className="min-h-0">
-            <div className="mt-5 border-t border-white/10 pt-6 [font-family:Satoshi,Inter,sans-serif] sm:mt-7 sm:pt-7">
+            <div className="mt-5 border-t border-white/10 pt-6 [font-family:Satoshi,sans-serif] sm:mt-7 sm:pt-7">
               <div className="grid gap-3 px-1">
                 {links.map((link, index) => {
                   let href = `#${link.toLowerCase().replaceAll(" ", "-")}`;

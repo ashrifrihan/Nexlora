@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="relative grid min-h-screen place-items-center overflow-hidden bg-black px-6 py-20 text-white [font-family:Satoshi,Inter,sans-serif]">
+    <main className="relative grid min-h-screen place-items-center overflow-hidden bg-black px-6 py-20 text-white [font-family:Satoshi,sans-serif]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.13),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.04),transparent_24%,rgba(255,255,255,0.03))]" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.03] blur-3xl" />
 

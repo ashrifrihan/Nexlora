@@ -298,11 +298,15 @@ function ProjectCard({ item, index }: { item: ProjectItem; index: number }) {
                 href={item.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] text-white/25 hover:text-white/60 transition-colors duration-300 font-medium"
+                className="text-[11px] text-white/35 hover:text-white/80 transition-colors duration-300 font-medium inline-flex items-center gap-1 group/gh"
                 style={{ fontFamily: '"Satoshi", sans-serif' }}
                 onClick={(e) => e.stopPropagation()}
               >
-                GitHub ↗
+                <span>GitHub</span>
+                <svg className="w-2.5 h-2.5 text-white/35 group-hover/gh:text-white/80 group-hover/gh:translate-x-0.5 group-hover/gh:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
               </a>
             )}
           </div>

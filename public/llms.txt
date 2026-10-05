@@ -24,7 +24,7 @@
 - Izzath Noory
   - Role: Co-Founder & Head of Operations
   - Direct Profile: https://www.nexzoa.dev/team/izzath-noory
-  - LinkedIn: https://linkedin.com/company/nexzoa
+  - LinkedIn: https://www.linkedin.com/in/izzath-noory-6150a7287
   - Responsibilities: Client partnerships, agile sprint management, and international operations across Saudi Arabia, UAE, Qatar, and Sri Lanka.
 
 ## Studio Overview
@@ -72,7 +72,7 @@ Nexzoa is an independent AI-native software engineering studio based in Colombo,
 
 ## Verified Social Profiles
 - Twitter / X: https://twitter.com/nexzoa
-- LinkedIn: https://linkedin.com/company/nexzoa
+- LinkedIn: https://www.linkedin.com/company/nexzoa-io/
 - GitHub: https://github.com/nexzoa
 - Instagram: https://instagram.com/nexzoa
 
