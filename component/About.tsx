@@ -431,7 +431,10 @@ function TeamShowcaseCard() {
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               <span>Explore all profiles</span>
-              <span className="group-hover/all:translate-x-0.5 transition-transform duration-200">→</span>
+              <svg className="w-3.5 h-3.5 text-white/50 group-hover/all:text-white group-hover/all:translate-x-0.5 transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
           </div>
 
@@ -472,29 +475,40 @@ function TeamShowcaseCard() {
               <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs">
                 <Link
                   href="/team/ashrif-rihan"
-                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1 group/link transition-colors"
+                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1.5 group/link transition-colors"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
                   <span>View Profile &amp; Work</span>
-                  <span className="group-hover/link:translate-x-0.5 transition-transform duration-200">→</span>
+                  <svg className="w-3.5 h-3.5 text-white/60 group-hover/link:text-white group-hover/link:translate-x-0.5 transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </Link>
-                <div className="flex items-center gap-2 text-white/40 text-[11.5px]">
+                <div className="flex items-center gap-2.5 text-white/40 text-[11.5px]">
                   <a
                     href="https://ashrifrihan.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
                   >
-                    Portfolio ↗
+                    <span>Portfolio</span>
+                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
                   </a>
                   <span>&bull;</span>
                   <a
                     href="https://github.com/ashrifrihan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
                   >
-                    GitHub ↗
+                    <span>GitHub</span>
+                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -535,20 +549,27 @@ function TeamShowcaseCard() {
               <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs">
                 <Link
                   href="/team/izzath-noory"
-                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1 group/link transition-colors"
+                  className="text-white hover:text-white/80 font-medium inline-flex items-center gap-1.5 group/link transition-colors"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
                   <span>View Profile &amp; Initiatives</span>
-                  <span className="group-hover/link:translate-x-0.5 transition-transform duration-200">→</span>
+                  <svg className="w-3.5 h-3.5 text-white/60 group-hover/link:text-white group-hover/link:translate-x-0.5 transition-all duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </Link>
                 <div className="flex items-center gap-2 text-white/40 text-[11.5px]">
                   <a
                     href="https://linkedin.com/company/nexzoa"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white transition-colors inline-flex items-center gap-1 group/ext"
                   >
-                    LinkedIn ↗
+                    <span>LinkedIn</span>
+                    <svg className="w-2.5 h-2.5 text-white/40 group-hover/ext:text-white group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
                   </a>
                 </div>
               </div>
