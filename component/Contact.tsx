@@ -2,9 +2,11 @@
 
 import { useRef, useState, MouseEvent, FormEvent } from "react";
 import { motion, useInView } from "motion/react";
-import { FaLinkedin, FaGithub, FaPaperPlane, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaPaperPlane, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import {
   CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_RAW,
   BUSINESS_CITY,
   BUSINESS_COUNTRY,
   SOCIAL_LINKEDIN,
@@ -137,6 +139,35 @@ export default function Contact() {
                   >
                     {CONTACT_EMAIL}
                   </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-center text-white/40 shrink-0">
+                  <FaPhoneAlt className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                    Direct Call / WhatsApp
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2.5">
+                    <a
+                      href={`tel:${CONTACT_PHONE_RAW}`}
+                      className="text-[17px] font-bold text-white hover:text-white/70 transition-colors"
+                      style={{ fontFamily: '"Satoshi", sans-serif' }}
+                    >
+                      {CONTACT_PHONE}
+                    </a>
+                    <a
+                      href={`https://wa.me/94772008364`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/[0.08] hover:bg-emerald-500/[0.16] border border-emerald-500/25 text-[10.5px] font-mono font-medium text-emerald-400 hover:text-emerald-300 transition-all"
+                    >
+                      <span>WhatsApp</span>
+                      <span className="text-[9px]">↗</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 

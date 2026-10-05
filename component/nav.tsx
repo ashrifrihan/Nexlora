@@ -2,7 +2,7 @@
 
 import { useState, MouseEvent } from "react";
 import Link from "next/link";
-import { CONTACT_EMAIL } from "@/lib/siteConfig";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/siteConfig";
 
 const links = ["Work", "Services", "Process", "Why Us", "About", "FAQ", "Contact"];
 
@@ -155,13 +155,20 @@ export default function Nav() {
                   Start a Project
                 </a>
 
-                  <div className="mt-5 flex items-center justify-center text-[14px] font-medium tracking-[-0.02em] text-white/85 sm:text-[15px]">
+                  <div className="mt-5 flex flex-col items-center justify-center gap-1 text-[14px] font-medium tracking-[-0.02em] text-white/85 sm:text-[15px]">
                     <a
                       href={`mailto:${CONTACT_EMAIL}`}
                       className="transition-colors hover:text-white"
                       onClick={() => setIsOpen(false)}
                     >
                       {CONTACT_EMAIL}
+                    </a>
+                    <a
+                      href={`tel:${CONTACT_PHONE_RAW}`}
+                      className="text-xs text-white/50 transition-colors hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {CONTACT_PHONE}
                     </a>
                   </div>
                 </div>

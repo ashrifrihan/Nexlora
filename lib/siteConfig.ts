@@ -40,6 +40,8 @@ export const BUSINESS_COUNTRY_CODE = "LK" as const;
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
 export const CONTACT_EMAIL = "hello@nexzoa.dev" as const;
+export const CONTACT_PHONE = "+94 77 200 8364" as const;
+export const CONTACT_PHONE_RAW = "+94772008364" as const;
 
 // ─── Social profiles (Verified) ──────────────────────────────────────────────
 export const SOCIAL_TWITTER = "https://twitter.com/nexzoa" as const;

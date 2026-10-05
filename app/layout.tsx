@@ -14,6 +14,7 @@ import {
   BUSINESS_COUNTRY,
   BUSINESS_COUNTRY_CODE,
   CONTACT_EMAIL,
+  CONTACT_PHONE,
   SOCIAL_TWITTER,
   SOCIAL_LINKEDIN,
   SOCIAL_GITHUB,
@@ -274,6 +275,7 @@ export default function RootLayout({
       "@type": "ContactPoint",
       contactType: "Customer Support & Inquiries",
       email: CONTACT_EMAIL,
+      telephone: CONTACT_PHONE,
       availableLanguage: ["English", "Arabic", "Sinhala", "Tamil"],
     },
     address: {

@@ -4,6 +4,9 @@ import { MouseEvent } from "react";
 import Link from "next/link";
 import AISummary from "@/component/AISummary";
 import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_RAW,
   SOCIAL_LINKEDIN,
   SOCIAL_GITHUB,
   SOCIAL_TWITTER,
@@ -71,6 +74,29 @@ export default function Footer() {
 
             {/* AI Summary - compact inline buttons */}
             <AISummary />
+
+            {/* Direct Contact Links */}
+            <div className="flex flex-col gap-1 text-[13px] pt-1">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-white/60 hover:text-white transition-colors"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                {CONTACT_EMAIL}
+              </a>
+              <div className="flex items-center gap-2">
+                <a
+                  href={`tel:${CONTACT_PHONE_RAW}`}
+                  className="text-white/60 hover:text-white transition-colors"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
+                  {CONTACT_PHONE}
+                </a>
+                <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full">
+                  WhatsApp
+                </span>
+              </div>
+            </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-3">

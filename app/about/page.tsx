@@ -11,6 +11,8 @@ import {
   SITE_DESCRIPTION_LONG,
   BUSINESS_CITY,
   CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_RAW,
   SOCIAL_TWITTER,
   SOCIAL_LINKEDIN,
   SOCIAL_GITHUB,
@@ -569,6 +571,13 @@ export default function AboutPage() {
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
               Email Directly
+            </a>
+            <a
+              href={`tel:${CONTACT_PHONE_RAW}`}
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] text-white/80 hover:text-white text-[14px] font-medium border border-white/[0.08] hover:border-white/20 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+              style={{ fontFamily: '"Satoshi", sans-serif' }}
+            >
+              Call: {CONTACT_PHONE}
             </a>
           </div>
         </section>
