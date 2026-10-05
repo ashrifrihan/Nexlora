@@ -300,9 +300,12 @@ export default function Trust() {
                   `}
                 </style>
 
-                {/* Small indicator light */}
-                <div className="absolute top-7 right-10 flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#10b981]/10 border border-[#10b981]/20">
-                  <div className="w-1 h-1 rounded-full bg-[#10b981] animate-ping" />
+                {/* Small indicator badge */}
+                <div className="absolute top-7 right-10 flex items-center gap-1 px-2 py-0.5 rounded bg-[#10b981]/10 border border-[#10b981]/20">
+                  <svg className="w-2.5 h-2.5 text-[#10b981] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
                   <span className="text-[7.5px] text-[#10b981] font-semibold tracking-wide" style={{ fontFamily: '"Satoshi", sans-serif' }}>SECURE</span>
                 </div>
               </div>

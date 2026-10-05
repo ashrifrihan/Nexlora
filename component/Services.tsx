@@ -283,7 +283,7 @@ function AIVisual() {
       <svg className="w-full max-w-[220px] h-auto" viewBox="0 0 220 140" fill="none">
         {/* Prompt Input Widget */}
         <rect x="15" y="15" width="190" height="32" rx="8" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.25)" strokeWidth="1.5" />
-        <circle cx="32" cy="31" r="5" fill="#a855f7" className="animate-pulse" />
+        <circle cx="32" cy="31" r="5" fill="#a855f7" />
         <rect x="46" y="27" width="90" height="8" rx="2.5" fill="rgba(255,255,255,0.2)" />
         <rect x="146" y="25" width="48" height="12" rx="4" fill="rgba(168,85,247,0.2)" />
         

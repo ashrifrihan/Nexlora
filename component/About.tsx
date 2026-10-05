@@ -141,8 +141,10 @@ export default function About() {
                 >
                   01 &bull; PARADIGM
                 </span>
-                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/[0.08] border border-emerald-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/[0.08] border border-emerald-500/20">
+                  <svg className="w-3 h-3 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span className="font-mono text-[9px] font-semibold text-emerald-400/90 tracking-wide uppercase">
                     Zero Bloat
                   </span>
@@ -178,8 +180,10 @@ export default function About() {
                 >
                   02 &bull; RUNTIME
                 </span>
-                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-500/[0.08] border border-blue-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/[0.08] border border-blue-500/20">
+                  <svg className="w-3 h-3 text-blue-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
                   <span className="font-mono text-[9px] font-semibold text-blue-400/90 tracking-wide uppercase">
                     Sub-100ms
                   </span>
@@ -215,8 +219,10 @@ export default function About() {
                 >
                   03 &bull; INTELLIGENCE
                 </span>
-                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-purple-500/[0.08] border border-purple-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-500/[0.08] border border-purple-500/20">
+                  <svg className="w-3 h-3 text-purple-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
                   <span className="font-mono text-[9px] font-semibold text-purple-400/90 tracking-wide uppercase">
                     AI-Native
                   </span>

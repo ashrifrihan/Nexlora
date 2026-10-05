@@ -231,8 +231,7 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-10 flex flex-col items-center justify-center relative z-10"
                 >
-                  <div className="w-16 h-16 rounded-full bg-white/5 border border-white/20 flex items-center justify-center mb-6 shadow-lg relative">
-                    <span className="absolute inset-0 rounded-full bg-white/10 animate-ping opacity-25" />
+                  <div className="w-16 h-16 rounded-full bg-white/5 border border-white/20 flex items-center justify-center mb-6 shadow-lg">
                     <svg width="20" height="20" viewBox="0 0 16 16" fill="none" className="text-white">
                       <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

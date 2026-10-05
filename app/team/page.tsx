@@ -115,8 +115,11 @@ export default function TeamPage() {
 
         {/* Header */}
         <header className="mb-16">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-white/70 text-xs font-medium mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-white/70 text-xs font-medium mb-6">
+            <svg className="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
             <span className="font-mono text-[10.5px] tracking-wider text-white/60 uppercase">Direct Engineering Culture</span>
           </div>
 

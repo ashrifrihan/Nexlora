@@ -394,7 +394,9 @@ function LaunchVisual() {
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}>
         <div className="flex items-center justify-between mb-2 sm:mb-3">
           <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <svg className="w-3 h-3 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span className="text-[10px] sm:text-[11px] font-semibold text-white/70">Production</span>
           </div>
           <span className="text-[8px] sm:text-[9px] font-mono text-emerald-400/50">v1.0.0</span>
