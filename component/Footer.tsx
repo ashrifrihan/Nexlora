@@ -84,18 +84,13 @@ export default function Footer() {
               >
                 {CONTACT_EMAIL}
               </a>
-              <div className="flex items-center gap-2">
-                <a
-                  href={`tel:${CONTACT_PHONE_RAW}`}
-                  className="text-white/60 hover:text-white transition-colors"
-                  style={{ fontFamily: '"Satoshi", sans-serif' }}
-                >
-                  {CONTACT_PHONE}
-                </a>
-                <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full">
-                  WhatsApp
-                </span>
-              </div>
+              <a
+                href={`tel:${CONTACT_PHONE_RAW}`}
+                className="text-white/60 hover:text-white transition-colors"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                {CONTACT_PHONE}
+              </a>
             </div>
 
             {/* Social Links */}

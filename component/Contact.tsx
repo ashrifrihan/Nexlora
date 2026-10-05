@@ -148,26 +148,15 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Direct Call / WhatsApp
+                    Direct Call
                   </p>
-                  <div className="flex flex-wrap items-center gap-2.5">
-                    <a
-                      href={`tel:${CONTACT_PHONE_RAW}`}
-                      className="text-[17px] font-bold text-white hover:text-white/70 transition-colors"
-                      style={{ fontFamily: '"Satoshi", sans-serif' }}
-                    >
-                      {CONTACT_PHONE}
-                    </a>
-                    <a
-                      href={`https://wa.me/94772008364`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/[0.08] hover:bg-emerald-500/[0.16] border border-emerald-500/25 text-[10.5px] font-mono font-medium text-emerald-400 hover:text-emerald-300 transition-all"
-                    >
-                      <span>WhatsApp</span>
-                      <span className="text-[9px]">↗</span>
-                    </a>
-                  </div>
+                  <a
+                    href={`tel:${CONTACT_PHONE_RAW}`}
+                    className="text-[17px] font-bold text-white hover:text-white/70 transition-colors"
+                    style={{ fontFamily: '"Satoshi", sans-serif' }}
+                  >
+                    {CONTACT_PHONE}
+                  </a>
                 </div>
               </div>
 
