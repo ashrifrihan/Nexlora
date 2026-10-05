@@ -56,147 +56,6 @@ function AboutCard({
   );
 }
 
-function DirectEngineeringVisual() {
-  return (
-    <div className="relative h-32 w-full overflow-hidden flex items-center justify-center bg-white/[0.01] border border-white/[0.04] rounded-2xl p-4 mt-auto">
-      <div className="flex items-center justify-between w-full max-w-[220px] relative">
-        {/* Client node */}
-        <div className="flex flex-col items-center gap-1 z-10 shrink-0">
-          <div className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-white/40 text-[9px] font-bold select-none">
-            YOU
-          </div>
-          <span className="text-[8px] text-white/45 font-medium tracking-wide">Client</span>
-        </div>
-
-        {/* Pulse Line */}
-        <div className="flex-1 relative h-[1.5px] mx-3 bg-white/[0.08] overflow-hidden">
-          <motion.div
-            className="absolute top-0 left-0 w-10 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
-            animate={{ x: ["-100%", "300%"] }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
-
-        {/* Lead Engineer node */}
-        <div className="flex flex-col items-center gap-1 z-10 shrink-0">
-          <div className="w-9 h-9 rounded-full bg-white border border-white/10 flex items-center justify-center text-black text-[9px] font-black select-none shadow-[0_0_15px_rgba(255,255,255,0.15)]">
-            NZ
-          </div>
-          <span className="text-[8px] text-white/90 font-bold tracking-wide">Lead Engineer</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function PerformanceVisual() {
-  return (
-    <div className="relative h-32 w-full overflow-hidden flex items-center justify-center bg-white/[0.01] border border-white/[0.04] rounded-2xl p-4 mt-auto">
-      <div className="flex items-center gap-5">
-        {/* Animated Gauge */}
-        <div className="relative w-16 h-16 flex items-center justify-center">
-          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-            <path
-              className="text-white/[0.05]"
-              strokeWidth="2.5"
-              stroke="currentColor"
-              fill="none"
-              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <motion.path
-              className="text-white/80"
-              strokeWidth="2.5"
-              strokeDasharray="99, 100"
-              strokeLinecap="round"
-              stroke="currentColor"
-              fill="none"
-              initial={{ strokeDasharray: "0, 100" }}
-              whileInView={{ strokeDasharray: "99, 100" }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-          </svg>
-          <div className="absolute flex flex-col items-center justify-center text-center">
-            <span className="text-[15px] font-black text-white leading-none">99</span>
-            <span className="text-[6px] text-white/40 font-bold uppercase tracking-wider mt-0.5">MS</span>
-          </div>
-        </div>
-
-        {/* Spec list */}
-        <div className="flex flex-col gap-1 justify-center font-sans">
-          <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[9.5px] font-semibold text-white/80">Lighthouse Performance</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
-            <span className="text-[9.5px] font-medium text-white/50">Core Web Vitals Optimized</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
-            <span className="text-[9.5px] font-medium text-white/50">&lt; 100ms TTFB globally</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ScaleVisual() {
-  return (
-    <div className="relative h-32 w-full overflow-hidden flex items-center justify-center bg-white/[0.01] border border-white/[0.04] rounded-2xl p-4 mt-auto">
-      <svg className="w-full max-w-[240px] h-full" viewBox="0 0 240 80">
-        {/* Connecting lines */}
-        <line x1="25" y1="40" x2="70" y2="20" stroke="rgba(255,255,255,0.06)" strokeWidth="1.2" />
-        <line x1="25" y1="40" x2="70" y2="60" stroke="rgba(255,255,255,0.06)" strokeWidth="1.2" />
-        <line x1="70" y1="20" x2="140" y2="20" stroke="rgba(255,255,255,0.06)" strokeWidth="1.2" />
-        <line x1="70" y1="60" x2="140" y2="60" stroke="rgba(255,255,255,0.06)" strokeWidth="1.2" />
-        <line x1="140" y1="20" x2="195" y2="40" stroke="rgba(255,255,255,0.06)" strokeWidth="1.2" />
-        <line x1="140" y1="60" x2="195" y2="40" stroke="rgba(255,255,255,0.06)" strokeWidth="1.2" />
-        <line x1="70" y1="20" x2="70" y2="60" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" />
-        <line x1="140" y1="20" x2="140" y2="60" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" />
-        <line x1="70" y1="20" x2="140" y2="60" stroke="rgba(255,255,255,0.06)" strokeWidth="0.8" />
-
-        {/* Nodes */}
-        <circle cx="25" cy="40" r="3" fill="#ffffff" />
-        <circle cx="70" cy="20" r="4" fill="#ffffff" />
-        <circle cx="70" cy="60" r="4" fill="#ffffff" />
-        <circle cx="140" cy="20" r="4" fill="#ffffff" />
-        <circle cx="140" cy="60" r="4" fill="#ffffff" />
-        <circle cx="195" cy="40" r="3" fill="#ffffff" />
-
-        {/* Pulsating animation overlay on nodes */}
-        <motion.circle
-          cx="70"
-          cy="20"
-          r="7"
-          stroke="#ffffff"
-          strokeWidth="1"
-          fill="none"
-          animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.circle
-          cx="140"
-          cy="60"
-          r="7"
-          stroke="#ffffff"
-          strokeWidth="1"
-          fill="none"
-          animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
-        />
-
-        {/* Label overlays */}
-        <text x="25" y="30" textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="6" fontWeight="bold">Ingress</text>
-        <text x="105" y="14" textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize="6" fontWeight="bold">Distributed Nodes</text>
-        <text x="195" y="30" textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="6" fontWeight="bold">Egress</text>
-      </svg>
-    </div>
-  );
-}
-
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -270,94 +129,146 @@ export default function About() {
           </motion.p>
         </div>
 
-        {/* Content Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          
-          {/* Row 1: Studio Philosophy Card (8 cols) & Direct Engineering Card (4 cols) */}
-          <AboutCard index={0} className="lg:col-span-8">
-            <div className="flex flex-col gap-6">
-              <p className="text-white/20 text-[11px] font-semibold uppercase tracking-widest" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                STUDIO APPROACH
-              </p>
-              
-              <div className="flex items-center gap-5">
-                {/* Sleek Code Symbol Badge */}
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-white/10 to-white/5 border border-white/25 flex items-center justify-center shadow-xl shrink-0 select-none">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/85">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-[19px] font-bold text-white tracking-[-0.01em]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                    Nexzoa Engineering
-                  </h3>
-                  <p className="text-[12.5px] text-white/50 font-medium">
-                    Lean, action-oriented systems
-                  </p>
+        {/* Studio Engineering Architecture - 3 Core Pillars */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+          {/* Pillar 01: Direct Principal Engineering */}
+          <AboutCard index={0}>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span
+                  className="font-mono text-[11px] font-bold text-white/35 uppercase tracking-widest"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
+                  01 &bull; PARADIGM
+                </span>
+                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/[0.08] border border-emerald-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="font-mono text-[9px] font-semibold text-emerald-400/90 tracking-wide uppercase">
+                    Zero Bloat
+                  </span>
                 </div>
               </div>
-
-              <blockquote className="text-[15.5px] sm:text-[17px] leading-relaxed text-white/80 font-light italic mt-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                "We treat software as vital infrastructure. We bypass bloated template builders and excessive management layers. Our focus is entirely on custom, direct development to streamline operations, automate workflows, and build reliable software platforms."
-              </blockquote>
-            </div>
-
-            <div className="pt-6 border-t border-white/[0.05] flex flex-wrap gap-x-5 gap-y-2 text-[10.5px] font-bold text-white/35 tracking-widest uppercase" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              <span>UI/UX DESIGN</span>
-              <span>•</span>
-              <span>SYSTEMS ARCHITECTURE</span>
-              <span>•</span>
-              <span>FULL-STACK DEVELOPMENT</span>
-            </div>
-          </AboutCard>
-
-          <AboutCard index={1} className="lg:col-span-4">
-            <div className="flex flex-col gap-3">
-              <span className="text-[12px] font-bold text-white/20 select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                01
-              </span>
-              <h4 className="text-[16px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Direct Engineering
-              </h4>
-              <p className="text-[13px] leading-relaxed text-white/45 font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                No project managers or account executives. You speak directly with the engineers building your systems.
+              <h3
+                className="text-xl sm:text-[22px] font-bold text-white tracking-tight leading-snug"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                Direct Principal Engineering
+              </h3>
+              <p
+                className="text-[13.5px] leading-relaxed text-white/55 font-light"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                Zero non-technical account managers or communication silos. You collaborate directly with senior full-stack architects and UI/UX designers who build and own your systems with daily async velocity.
               </p>
             </div>
-            <DirectEngineeringVisual />
+
+            <div className="pt-5 border-t border-white/[0.05] flex items-center justify-between text-xs text-white/40 font-mono">
+              <span>SLACK / GITHUB SYNC</span>
+              <span className="text-white/70 font-semibold">100% TECHNICAL</span>
+            </div>
           </AboutCard>
 
-          {/* Row 2: Performance First Card (6 cols) & Built to Scale Card (6 cols) */}
-          <AboutCard index={2} className="lg:col-span-6">
-            <div className="flex flex-col gap-3">
-              <span className="text-[12px] font-bold text-white/20 select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                02
-              </span>
-              <h4 className="text-[16px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Performance First
-              </h4>
-              <p className="text-[13px] leading-relaxed text-white/45 font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                We optimize every line of code, database query, and assets pack to achieve extreme operational speed.
+          {/* Pillar 02: Sub-100ms Edge Performance */}
+          <AboutCard index={1}>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span
+                  className="font-mono text-[11px] font-bold text-white/35 uppercase tracking-widest"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
+                  02 &bull; RUNTIME
+                </span>
+                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-500/[0.08] border border-blue-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                  <span className="font-mono text-[9px] font-semibold text-blue-400/90 tracking-wide uppercase">
+                    Sub-100ms
+                  </span>
+                </div>
+              </div>
+              <h3
+                className="text-xl sm:text-[22px] font-bold text-white tracking-tight leading-snug"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                High-Velocity Edge Runtime
+              </h3>
+              <p
+                className="text-[13.5px] leading-relaxed text-white/55 font-light"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                Speed is a core architectural feature. Built on Next.js server streaming, globally distributed edge CDNs, Redis caches, and optimized PostgreSQL indexes to guarantee 99+ Core Web Vitals worldwide.
               </p>
             </div>
-            <PerformanceVisual />
+
+            <div className="pt-5 border-t border-white/[0.05] flex items-center justify-between text-xs text-white/40 font-mono">
+              <span>GLOBAL EDGE CDN</span>
+              <span className="text-white/70 font-semibold">&lt; 45ms TTFB</span>
+            </div>
           </AboutCard>
 
-          <AboutCard index={3} className="lg:col-span-6">
-            <div className="flex flex-col gap-3">
-              <span className="text-[12px] font-bold text-white/20 select-none" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                03
-              </span>
-              <h4 className="text-[16px] font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Built to Scale
-              </h4>
-              <p className="text-[13px] leading-relaxed text-white/45 font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Our architectures utilize fault-tolerant infrastructures that scale seamlessly as your userbase expands.
+          {/* Pillar 03: Production-Grade AI Systems */}
+          <AboutCard index={2}>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span
+                  className="font-mono text-[11px] font-bold text-white/35 uppercase tracking-widest"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
+                  03 &bull; INTELLIGENCE
+                </span>
+                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-purple-500/[0.08] border border-purple-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                  <span className="font-mono text-[9px] font-semibold text-purple-400/90 tracking-wide uppercase">
+                    AI-Native
+                  </span>
+                </div>
+              </div>
+              <h3
+                className="text-xl sm:text-[22px] font-bold text-white tracking-tight leading-snug"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                Autonomous AI Systems
+              </h3>
+              <p
+                className="text-[13.5px] leading-relaxed text-white/55 font-light"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                We architect bespoke LLM pipelines, retrieval-augmented generation (RAG) on proprietary datasets, and deterministic agent orchestration that automate heavy operational workflows with measurable ROI.
               </p>
             </div>
-            <ScaleVisual />
-          </AboutCard>
 
+            <div className="pt-5 border-t border-white/[0.05] flex items-center justify-between text-xs text-white/40 font-mono">
+              <span>LLM AGENTS &bull; RAG</span>
+              <span className="text-white/70 font-semibold">ENTERPRISE SCALE</span>
+            </div>
+          </AboutCard>
+        </div>
+
+        {/* Studio Technical Precision Metrics Strip */}
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Architecture</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              Sub-100ms TTFB
+            </span>
+          </div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Collaboration</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              100% Principal
+            </span>
+          </div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Runtime</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              AI-Native Cloud
+            </span>
+          </div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Presence</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              GCC &bull; Global
+            </span>
+          </div>
         </div>
 
         {/* The People Behind Nexzoa Spotlight */}
