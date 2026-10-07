@@ -60,42 +60,42 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "Rihan Ashrif",
       "ashrifrihan",
     ],
-    role: "Founder & CEO",
-    jobTitle: "Founder & CEO at Nexzoa",
-    tagline: "Leading product engineering, AI systems architecture, and scalable SaaS platforms.",
+    role: "Software Engineer & UI/UX Designer",
+    jobTitle: "Software Engineer & UI/UX Designer at Nexzoa",
+    tagline: "Architecting high-velocity web apps, AI systems, and ergonomic UI/UX experiences.",
     shortBio:
-      "Ashrif Rihan is the Founder & CEO of Nexzoa, leading product strategy, full-stack software architecture, AI systems, and design systems for proprietary and client SaaS platforms.",
+      "Ashrif Rihan is a software engineer and UI/UX designer at Nexzoa, specializing in modern full-stack web applications, AI-driven digital systems, intuitive user interfaces, and scalable SaaS platforms.",
     fullBio: [
-      "Ashrif Rihan is the Founder & CEO of Nexzoa, based in Colombo, Sri Lanka. He blends full-stack software engineering with product vision to architect mission-critical AI-native software and scalable SaaS platforms.",
-      "At Nexzoa, Ashrif directs product development and engineering architecture, translating complex business problems into autonomous AI workflows, multi-tenant SaaS products, and high-performance cloud applications.",
-      "Prior to and alongside building Nexzoa, Ashrif created popular software utilities and AI tools including QuickSticker AI Studio, QuickCompress batch optimizer, and comprehensive enterprise management suites.",
+      "Ashrif Rihan is a software engineer and UI/UX designer based in Colombo, Sri Lanka, and a core member of the engineering team at Nexzoa. He blends technical software engineering with rigorous user experience design to build mission-critical digital systems for startups, scaleups, and global enterprises.",
+      "At Nexzoa, Ashrif leads frontend architecture and design systems across production Next.js and React applications, translating complex operational workflows into intuitive interfaces. His work spans AI workflow tools, full-stack multi-tenant SaaS products, and sub-100ms web platforms for clients across Saudi Arabia, UAE, Qatar, and international markets.",
+      "Prior to and alongside his work with Nexzoa, Ashrif created popular developer utilities and AI tools including QuickSticker AI Studio, QuickCompress batch optimizer, and comprehensive enterprise management suites like the Smart Rice Mill Management System and QuickStay booking platform.",
     ],
     location: "Colombo, Sri Lanka",
     worksFor: "Nexzoa",
     avatar: "https://github.com/ashrifrihan.png",
     skills: [
-      "Product Strategy & SaaS Architecture",
       "React / Next.js (App Router)",
       "TypeScript & JavaScript",
-      "AI Pipelines & Anthropic Claude Integration",
       "UI/UX Design & Design Systems",
-      "PostgreSQL, Prisma & Supabase",
-      "Node.js, Express & REST APIs",
       "Tailwind CSS & Responsive Layouts",
+      "PostgreSQL, Prisma & Supabase",
+      "AI Pipelines & Prompt Engineering",
+      "Node.js, Express & REST APIs",
+      "Figma Prototyping & User Research",
     ],
     highlights: [
-      "Founder & CEO at Nexzoa",
-      "Architect of BookingPartner.lk transportation platform",
+      "Core Software Engineer and UI/UX Designer at Nexzoa",
       "Creator of QuickSticker AI Studio and QuickCompress Optimizer",
+      "Architect of sub-100ms Core Web Vitals optimized frontend interfaces",
       "BEng (Hons) in Software Engineering from London Metropolitan University",
     ],
     experience: [
       {
         period: "2024 – Present",
-        role: "Founder & CEO",
+        role: "Software Engineer & UI/UX Designer",
         company: "Nexzoa",
         description:
-          "Directing company vision, proprietary SaaS product engineering, and AI system architecture from Colombo, Sri Lanka.",
+          "Leading web application engineering, UI/UX design systems, and frontend architecture for enterprise SaaS platforms and AI automation tools across Sri Lanka, the Middle East, and global markets.",
       },
       {
         period: "2023 – Present",
@@ -129,14 +129,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
       },
     ],
     featuredProjects: [
-      {
-        title: "BookingPartner.lk",
-        description:
-          "Nexzoa's flagship transportation booking and partner management platform connecting passengers, bus operators, and booking agents across Sri Lanka with real-time seat reservation and Claude AI assistance.",
-        category: "Mobility SaaS & Transportation",
-        tags: ["Next.js", "PostgreSQL", "Real-Time Seating", "Claude AI", "Redis"],
-        link: "https://bookingpartner.lk",
-      },
       {
         title: "QuickSticker AI Studio",
         description:

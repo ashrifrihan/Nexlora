@@ -117,7 +117,7 @@ export default function AboutPage() {
           "@type": "Person",
           "@id": `${SITE_URL}/team/ashrif-rihan#person`,
           name: "Ashrif Rihan",
-          jobTitle: "Founder & CEO",
+          jobTitle: "Software Engineer & UI/UX Designer",
           url: `${SITE_URL}/team/ashrif-rihan`,
         },
         {
@@ -133,7 +133,7 @@ export default function AboutPage() {
           "@type": "Person",
           "@id": `${SITE_URL}/team/ashrif-rihan#person`,
           name: "Ashrif Rihan",
-          jobTitle: "Founder & CEO",
+          jobTitle: "Software Engineer & UI/UX Designer",
           url: `${SITE_URL}/team/ashrif-rihan`,
         },
         {
@@ -175,7 +175,7 @@ export default function AboutPage() {
         <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs text-white/40">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
-          <span className="text-white/80 font-medium">About Nexzoa</span>
+          <span className="text-white/80 font-medium">About Studio</span>
         </nav>
 
         {/* Hero Section */}
@@ -195,7 +195,7 @@ export default function AboutPage() {
             We treat software as vital infrastructure for ambitious businesses.
           </h1>
           <p className="text-base sm:text-xl text-white/60 leading-relaxed max-w-3xl font-light">
-            Nexzoa is an AI software technology company founded in Colombo, Sri Lanka in 2024. We build proprietary AI-powered SaaS platforms, intelligent automation workflows, and high-performance cloud applications for modern businesses across Sri Lanka, the Middle East, and globally.
+            Nexzoa is an independent AI-native software engineering studio founded in Colombo, Sri Lanka in 2024. We build custom AI software systems, multi-tenant SaaS platforms, and intelligent automation pipelines for startups, scaleups, and enterprises across Saudi Arabia, UAE, Qatar, US, and worldwide.
           </p>
 
           {/* Quick Metrics Strip */}
@@ -256,7 +256,7 @@ export default function AboutPage() {
                   Sub-100ms Architecture
                 </h3>
                 <p className="text-sm text-white/55 leading-relaxed font-light">
-                  Speed is a non-negotiable feature. We build on edge compute networks, Redis caching layers, optimized PostgreSQL schemas, and Next.js server components engineered for 95+ Core Web Vitals globally.
+                  Speed is a non-negotiable feature. We build on edge compute networks, Redis caching layers, optimized PostgreSQL schemas, and Next.js server components to guarantee 95+ Core Web Vitals globally.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center justify-between text-xs text-white/40 font-mono">
@@ -472,74 +472,8 @@ export default function AboutPage() {
             </div>
             <div className="p-6 rounded-[22px] bg-[#0a0a0c]/90 border border-white/[0.06] hover:border-white/[0.14] transition-colors">
               <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest font-mono block mb-2">AI &amp; Cloud</span>
-              <p className="text-sm font-semibold text-white mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>Anthropic Claude &bull; OpenAI &bull; AWS</p>
-              <p className="text-xs text-white/45 font-light">Claude 3.5 Sonnet, Tool Calling, Vector RAG, Vercel</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Building with Anthropic Claude Section */}
-        <section className="mb-20 p-8 sm:p-10 rounded-[28px] bg-[#0a0a0c]/90 border border-amber-500/20 backdrop-blur-xl relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
-          <div className="pointer-events-none absolute -inset-px rounded-[28px] bg-gradient-to-br from-amber-500/[0.05] via-transparent to-transparent z-0" />
-          <div className="relative z-10">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-              <div>
-                <span className="font-mono text-[10px] font-bold tracking-widest text-amber-400 uppercase block mb-1">
-                  AI Engineering &bull; Anthropic Ecosystem
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                  Building with Anthropic Claude
-                </h2>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/[0.08] border border-amber-500/20 self-start sm:self-auto">
-                <svg className="w-3.5 h-3.5 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-                <span className="font-mono text-[10px] font-semibold text-amber-300 uppercase tracking-wide">
-                  Claude 3.5 Sonnet / 3.7
-                </span>
-              </div>
-            </div>
-
-            <p className="text-sm sm:text-base text-white/60 leading-relaxed font-light mb-8 max-w-3xl">
-              Nexzoa integrates Anthropic&apos;s frontier Claude models to power intelligent customer support, passenger travel assistance, transit schedule reasoning, and automated workflow logic within BookingPartner.lk and future Nexzoa SaaS platforms.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-amber-500/30 transition-all">
-                <span className="font-mono text-[10px] text-amber-400 uppercase block mb-2 font-bold">01 &bull; Reasoning</span>
-                <h3 className="text-base font-bold text-white mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                  Workflow Intelligence
-                </h3>
-                <p className="text-xs text-white/50 leading-relaxed font-light">
-                  Executing deterministic multi-step business logic with Claude tool use, structured schema outputs, and automated operational validation.
-                </p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-amber-500/30 transition-all">
-                <span className="font-mono text-[10px] text-amber-400 uppercase block mb-2 font-bold">02 &bull; Context Window</span>
-                <h3 className="text-base font-bold text-white mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                  Document &amp; Schedule Analysis
-                </h3>
-                <p className="text-xs text-white/50 leading-relaxed font-light">
-                  Parsing dense contracts, transit schedules, and operational manifests with Claude&apos;s 200k+ token context window and high extraction fidelity.
-                </p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-amber-500/30 transition-all">
-                <span className="font-mono text-[10px] text-amber-400 uppercase block mb-2 font-bold">03 &bull; Grounding</span>
-                <h3 className="text-base font-bold text-white mb-2" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                  Domain-Grounded Copilots
-                </h3>
-                <p className="text-xs text-white/50 leading-relaxed font-light">
-                  High-reliability domain assistants using hybrid RAG embeddings, prompt caching, and Claude semantic classification for fast, grounded responses.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-white/[0.05] flex flex-wrap items-center justify-between gap-3 text-xs text-white/40 font-mono">
-              <span>ANTHROPIC SDK &bull; TOOL CALLING &bull; PROMPT CACHING</span>
-              <span className="text-amber-400/80 font-semibold">PRODUCTION INTEGRATIONS</span>
+              <p className="text-sm font-semibold text-white mb-1" style={{ fontFamily: '"Satoshi", sans-serif' }}>OpenAI &bull; Claude &bull; AWS &bull; Vercel</p>
+              <p className="text-xs text-white/45 font-light">LangChain, Docker, Cloudflare Workers, GCP</p>
             </div>
           </div>
         </section>

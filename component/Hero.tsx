@@ -171,7 +171,7 @@ const Hero = () => {
           {/* Text with Shiny Effect (Single line on mobile, full text on tablet/desktop) */}
           <span className="sm:hidden flex items-center">
             <ShinyText
-              text="AI Software & SaaS Products • Sri Lanka"
+              text="Software & AI Engineering • Sri Lanka"
               speed={3}
               color="#999999"
               shineColor="#ffffff"
@@ -182,7 +182,7 @@ const Hero = () => {
           </span>
           <span className="hidden sm:inline-flex items-center">
             <ShinyText
-              text="AI Software Technology & SaaS Products • Sri Lanka"
+              text="Custom Software Development & AI Engineering • Sri Lanka"
               speed={3}
               color="#999999"
               shineColor="#ffffff"
@@ -203,7 +203,7 @@ const Hero = () => {
             }}
           >
             <span className="sr-only">
-              AI Software Technology &amp; SaaS Products — Nexzoa
+              Custom Software Development &amp; AI Engineering — Nexzoa
             </span>
             <div className="flex flex-col items-center gap-0">
               <div className="w-full overflow-visible">
@@ -238,7 +238,7 @@ const Hero = () => {
         {/* Description */}
         <div className="w-full max-w-3xl mb-10 md:mb-12">
           <BlurText
-            text="Nexzoa is an AI software technology company in Sri Lanka, engineering proprietary AI-powered SaaS platforms and intelligent systems for modern businesses."
+            text="Nexzoa is a software engineering studio in Sri Lanka specializing in custom software development, AI automation, SaaS platforms and scalable web applications."
             delay={20}
             animateBy="words"
             direction="top"
@@ -256,20 +256,20 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto select-none"
         >
           <a
-            href="#products"
-            onClick={(e) => handleScroll(e, "products")}
+            href="#contact"
+            onClick={(e) => handleScroll(e, "contact")}
             className="start-project-button flex items-center justify-center rounded-2xl px-8 py-4 text-[15px] md:text-[16px] font-semibold w-full sm:w-auto"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Explore Our Products
+            Start Your Project
           </a>
           <a
-            href="#contact"
-            onClick={(e) => handleScroll(e, "contact")}
+            href="#solutions"
+            onClick={(e) => handleScroll(e, "solutions")}
             className="flex items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/10 hover:border-white/20 px-8 py-4 text-[15px] md:text-[16px] font-semibold text-white transition-colors duration-300 w-full sm:w-auto"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Start a Conversation
+            Explore Solutions
           </a>
         </motion.div>
 

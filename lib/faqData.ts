@@ -70,11 +70,6 @@ export const MAIN_FAQS: FAQItem[] = [
       "Nexzoa builds sector-specific digital systems for FinTech, HealthTech, PropTech (Real Estate), E-Commerce, EdTech, Logistics & Supply Chain, and B2B SaaS companies across the Middle East (Saudi Arabia, UAE, Qatar), Europe, the US, and Southeast Asia.",
   },
   {
-    question: "What software products does Nexzoa build?",
-    answer:
-      "Nexzoa builds proprietary AI-powered SaaS platforms and developer tools, prominently including BookingPartner.lk (a bus booking and fleet operations platform connecting passengers, operators, and agents across Sri Lanka), QuickSticker AI Studio (an AI-powered sticker generator), and QuickCompress Optimizer (a private browser-based image compression utility).",
-  },
-  {
     question: "Is Nexzoa related to Nexon, Tata Nexon, or Nexo?",
     answer:
       "No. Nexzoa (nexzoa.dev) is an independent AI-native software engineering company based in Sri Lanka. We have no affiliation, endorsement, or relationship with Nexon Co., Ltd. (video games), Tata Motors (Tata Nexon automobiles), or Nexo (the cryptocurrency lending platform).",
@@ -82,12 +77,12 @@ export const MAIN_FAQS: FAQItem[] = [
   {
     question: "Who is behind Nexzoa?",
     answer:
-      "Nexzoa is founded and driven by Founder & CEO Ashrif Rihan alongside Co-Founder & Head of Operations Izzath Noory. Headquartered in Colombo, Sri Lanka, the company builds proprietary AI SaaS platforms and direct engineering systems without non-technical middle management.",
+      "Nexzoa is founded and driven by software engineer & UI/UX designer Ashrif Rihan and co-founder & operations lead Izzath Noory. Headquartered in Colombo, Sri Lanka, the studio operates on a direct engineering model where clients collaborate directly with senior software architects and builders without non-technical middle management.",
   },
   {
     question: "Who is Ashrif Rihan and what is his role at Nexzoa?",
     answer:
-      "Ashrif Rihan is the Founder & CEO of Nexzoa. He leads product strategy, full-stack architecture, UI/UX design systems, and AI workflows utilizing Anthropic Claude and Next.js. He is also the creator of developer utilities including QuickSticker AI Studio and QuickCompress, and holds a BEng (Hons) in Software Engineering from London Metropolitan University. Learn more on his dedicated Nexzoa profile at nexzoa.dev/team/ashrif-rihan.",
+      "Ashrif Rihan is a software engineer and UI/UX designer at Nexzoa. He leads frontend architecture, design systems, and full-stack development across Next.js, React, TypeScript, and AI-driven platforms. He is also the creator of developer utilities including QuickSticker AI Studio and QuickCompress, and holds a BEng (Hons) in Software Engineering from London Metropolitan University. Learn more on his dedicated Nexzoa profile at nexzoa.dev/team/ashrif-rihan.",
   },
   {
     question: "Who is Izzath Noory and what is his role at Nexzoa?",

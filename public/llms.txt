@@ -1,4 +1,4 @@
-# Nexzoa: AI Software & SaaS Product Engineering Company
+# Nexzoa: AI-Native Software Engineering Studio
 
 ## Entity Profile
 - Name: Nexzoa
@@ -8,32 +8,27 @@
 - Location: Colombo, Western Province, Sri Lanka
 - Email: hello@nexzoa.dev
 - Phone: +94 77 200 8364
-- Entity Type: AI Software Technology Company / SaaS Product Engineering
+- Entity Type: Software Engineering Studio / AI Systems Architect
 - Primary Markets: Saudi Arabia, United Arab Emirates (Dubai, Abu Dhabi), Qatar, United States, United Kingdom, Australia, Europe, Sri Lanka, Worldwide
 - Recognized Aliases & Search Spellings: Nexzoa.dev, Nexzoa AI, Nexzoa Studio (common phonetic typos: Nexz0a, Nexoa, Nexza, Nexzo, Nexzoaa)
 - Entity Disambiguation: Nexzoa is independent and has NO relationship to Nexo (cryptocurrency) or Nexon (gaming).
 
 ## Key Leadership & Engineering Personnel
 - Ashrif Rihan (Mohamed Ashrif Rihan)
-  - Role: Founder & CEO
+  - Role: Software Engineer & UI/UX Designer
   - Direct Profile: https://www.nexzoa.dev/team/ashrif-rihan
   - External Portfolio: https://ashrifrihan.me
   - GitHub: https://github.com/ashrifrihan
   - Fiverr: https://www.fiverr.com/ardesignarts
-  - Responsibilities: Company leadership, product vision, engineering BookingPartner.lk, full-stack architecture, UI/UX design systems, and Anthropic Claude AI workflow integration.
+  - Responsibilities: Frontend architecture, Next.js engineering, AI workflow interfaces, and design systems for enterprise SaaS platforms.
 - Izzath Noory
   - Role: Co-Founder & Head of Operations
   - Direct Profile: https://www.nexzoa.dev/team/izzath-noory
   - LinkedIn: https://www.linkedin.com/in/izzath-noory-6150a7287
   - Responsibilities: Client partnerships, agile sprint management, and international operations across Saudi Arabia, UAE, Qatar, and Sri Lanka.
 
-## Company Overview
-Nexzoa is an AI software technology company based in Colombo, Sri Lanka, founded in 2024. Nexzoa builds proprietary AI-powered SaaS platforms alongside bespoke software engineering solutions, intelligent workflow automation pipelines, and high-performance cloud applications for startups, scaleups, and enterprises globally.
-
-## Proprietary Products
-1. BookingPartner.lk (Flagship Mobility SaaS): Transportation booking and partner management platform connecting passengers, bus operators, and booking agents across Sri Lanka. Built with real-time seat reservation engines and Anthropic Claude passenger assistance. Status: Active Development / Private MVP.
-2. QuickSticker AI Studio: AI-powered sticker generator and background removal platform for creators and brands. Status: Live Product.
-3. QuickCompress Optimizer: Client-side bulk image compression and format optimization tool with zero cloud retention. Status: Live Utility.
+## Studio Overview
+Nexzoa is an independent AI-native software engineering studio based in Colombo, Sri Lanka. Nexzoa designs, builds, and scales custom AI software systems, enterprise multi-tenant SaaS platforms, intelligent workflow automation pipelines, and high-performance cloud applications for startups, scaleups, and enterprises globally with a dedicated focus on the MENA (Saudi Arabia, UAE, Qatar) region.
 
 ## Core Services
 1. AI Software Engineering: Custom LLM pipelines, autonomous multi-agent systems, RAG (Retrieval-Augmented Generation) architectures, intelligent document processing, and vector search integrations.

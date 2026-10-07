@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import Hero from "@/component/Hero";
 import Nav from "@/component/nav";
 import Trust from "@/component/Trust";
-import Products from "@/component/Products";
 import Services from "@/component/Services";
 import Projects from "@/component/Projects";
 import Process from "@/component/Process";
@@ -19,9 +18,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nexzoa | AI Software Technology & SaaS Products",
+  title: "Nexzoa | AI Software Development & SaaS Engineering",
   description:
-    "Nexzoa is an AI software technology company based in Colombo, Sri Lanka, building proprietary SaaS products and intelligent software systems for modern businesses.",
+    "Nexzoa is a software engineering studio in Sri Lanka specializing in custom software development, AI automation, SaaS platforms and scalable web applications.",
   keywords: [
     "Nexzoa",
     "Nexzoa dev",
@@ -56,7 +55,6 @@ export default function Home() {
       <main className="relative bg-black">
         <Hero/>
         <Trust />
-        <Products />
         <Services />
         <Projects />
         <Process />
