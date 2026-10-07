@@ -199,7 +199,7 @@ export default function About() {
                 className="text-[13.5px] leading-relaxed text-white/55 font-light"
                 style={{ fontFamily: '"Satoshi", sans-serif' }}
               >
-                Speed is a core architectural feature. Built on Next.js server streaming, globally distributed edge CDNs, Redis caches, and optimized PostgreSQL indexes to guarantee 99+ Core Web Vitals worldwide.
+                Speed is a core architectural feature. Built on Next.js server streaming, globally distributed edge CDNs, Redis caches, and optimized PostgreSQL indexes engineered for high-performance Core Web Vitals worldwide.
               </p>
             </div>
 
@@ -363,7 +363,7 @@ function ClaudeShowcaseCard() {
             className="text-[13.5px] sm:text-sm text-white/60 leading-relaxed max-w-3xl font-light mb-6"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Nexzoa leverages Anthropic&apos;s state-of-the-art Claude models to power high-reliability workflow automation, complex unstructured data reasoning, and domain-grounded copilot interfaces across our SaaS platforms and enterprise systems.
+            Nexzoa integrates Anthropic&apos;s frontier Claude models to power intelligent customer support, passenger travel assistance, transit schedule reasoning, and automated workflow logic within BookingPartner.lk and future Nexzoa SaaS platforms.
           </p>
 
           {/* 3 Use-Case Pillars */}
@@ -378,7 +378,7 @@ function ClaudeShowcaseCard() {
                 Workflow Intelligence
               </h4>
               <p className="text-xs text-white/50 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Orchestrating multi-step operational logic with Claude tool calling, guaranteed schema outputs, and deterministic safeguards.
+                Orchestrating multi-step operational logic with Claude tool calling, guaranteed schema outputs, and automated booking dispatch workflows.
               </p>
             </div>
 
@@ -393,10 +393,10 @@ function ClaudeShowcaseCard() {
                 </svg>
               </div>
               <h4 className="text-sm font-bold text-white mb-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Deep Document Reasoning
+                Schedule &amp; Document Reasoning
               </h4>
               <p className="text-xs text-white/50 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Extracting structured data from long-form manifests, contracts, and financial documents with Claude&apos;s 200k+ context window.
+                Parsing dense bus schedules, operator route manifests, and operational contracts with Claude&apos;s 200k+ context window.
               </p>
             </div>
 
@@ -407,10 +407,10 @@ function ClaudeShowcaseCard() {
                 </svg>
               </div>
               <h4 className="text-sm font-bold text-white mb-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Domain-Grounded Copilots
+                Domain-Grounded Travel Copilots
               </h4>
               <p className="text-xs text-white/50 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-                Zero-hallucination customer support and operational assistants powered by hybrid RAG embeddings and Claude semantic routing.
+                High-reliability passenger booking assistants and route navigators powered by hybrid RAG embeddings and Claude semantic routing.
               </p>
             </div>
           </div>

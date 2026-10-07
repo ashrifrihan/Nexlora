@@ -4,7 +4,7 @@ import { useState, MouseEvent } from "react";
 import Link from "next/link";
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/siteConfig";
 
-const links = ["Work", "Services", "Process", "Why Us", "About", "FAQ", "Contact"];
+const links = ["Products", "Work", "Services", "Why Us", "About", "FAQ", "Contact"];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +39,7 @@ export default function Nav() {
             {links.map((link) => {
               let href = `#${link.toLowerCase().replaceAll(" ", "-")}`;
               let targetId = link.toLowerCase().replaceAll(" ", "-");
+              if (link === "Products") { href = "#products"; targetId = "products"; }
               if (link === "Work") { href = "#projects"; targetId = "projects"; }
               if (link === "Services") { href = "#solutions"; targetId = "solutions"; }
               if (link === "Why Us") { href = "#compare"; targetId = "compare"; }
@@ -112,6 +113,7 @@ export default function Nav() {
                 {links.map((link, index) => {
                   let href = `#${link.toLowerCase().replaceAll(" ", "-")}`;
                   let targetId = link.toLowerCase().replaceAll(" ", "-");
+                  if (link === "Products") { href = "#products"; targetId = "products"; }
                   if (link === "Work") { href = "#projects"; targetId = "projects"; }
                   if (link === "Services") { href = "#solutions"; targetId = "solutions"; }
                   if (link === "Why Us") { href = "#compare"; targetId = "compare"; }

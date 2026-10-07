@@ -256,7 +256,7 @@ export default function AboutPage() {
                   Sub-100ms Architecture
                 </h3>
                 <p className="text-sm text-white/55 leading-relaxed font-light">
-                  Speed is a non-negotiable feature. We build on edge compute networks, Redis caching layers, optimized PostgreSQL schemas, and Next.js server components to guarantee 95+ Core Web Vitals globally.
+                  Speed is a non-negotiable feature. We build on edge compute networks, Redis caching layers, optimized PostgreSQL schemas, and Next.js server components engineered for 95+ Core Web Vitals globally.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center justify-between text-xs text-white/40 font-mono">
@@ -502,7 +502,7 @@ export default function AboutPage() {
             </div>
 
             <p className="text-sm sm:text-base text-white/60 leading-relaxed font-light mb-8 max-w-3xl">
-              Nexzoa leverages Anthropic&apos;s frontier Claude models to power intelligent automation workflows, complex unstructured data reasoning, and domain-grounded copilots across our SaaS products and custom enterprise platforms.
+              Nexzoa integrates Anthropic&apos;s frontier Claude models to power intelligent customer support, passenger travel assistance, transit schedule reasoning, and automated workflow logic within BookingPartner.lk and future Nexzoa SaaS platforms.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -532,7 +532,7 @@ export default function AboutPage() {
                   Domain-Grounded Copilots
                 </h3>
                 <p className="text-xs text-white/50 leading-relaxed font-light">
-                  Zero-hallucination domain assistants using hybrid RAG embeddings, prompt caching, and Claude semantic classification for sub-second responses.
+                  High-reliability domain assistants using hybrid RAG embeddings, prompt caching, and Claude semantic classification for fast, grounded responses.
                 </p>
               </div>
             </div>

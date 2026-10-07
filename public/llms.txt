@@ -20,7 +20,7 @@
   - External Portfolio: https://ashrifrihan.me
   - GitHub: https://github.com/ashrifrihan
   - Fiverr: https://www.fiverr.com/ardesignarts
-  - Responsibilities: Company leadership, product vision, full-stack architecture, UI/UX design systems, and Anthropic Claude AI workflow integration.
+  - Responsibilities: Company leadership, product vision, engineering BookingPartner.lk, full-stack architecture, UI/UX design systems, and Anthropic Claude AI workflow integration.
 - Izzath Noory
   - Role: Co-Founder & Head of Operations
   - Direct Profile: https://www.nexzoa.dev/team/izzath-noory
@@ -29,6 +29,11 @@
 
 ## Company Overview
 Nexzoa is an AI software technology company based in Colombo, Sri Lanka, founded in 2024. Nexzoa builds proprietary AI-powered SaaS platforms alongside bespoke software engineering solutions, intelligent workflow automation pipelines, and high-performance cloud applications for startups, scaleups, and enterprises globally.
+
+## Proprietary Products
+1. BookingPartner.lk (Flagship Mobility SaaS): Transportation booking and partner management platform connecting passengers, bus operators, and booking agents across Sri Lanka. Built with real-time seat reservation engines and Anthropic Claude passenger assistance. Status: Active Development / Private MVP.
+2. QuickSticker AI Studio: AI-powered sticker generator and background removal platform for creators and brands. Status: Live Product.
+3. QuickCompress Optimizer: Client-side bulk image compression and format optimization tool with zero cloud retention. Status: Live Utility.
 
 ## Core Services
 1. AI Software Engineering: Custom LLM pipelines, autonomous multi-agent systems, RAG (Retrieval-Augmented Generation) architectures, intelligent document processing, and vector search integrations.

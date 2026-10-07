@@ -85,7 +85,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     ],
     highlights: [
       "Founder & CEO at Nexzoa",
-      "Architect of AI-native SaaS systems and multi-agent pipelines",
+      "Architect of BookingPartner.lk transportation platform",
       "Creator of QuickSticker AI Studio and QuickCompress Optimizer",
       "BEng (Hons) in Software Engineering from London Metropolitan University",
     ],
@@ -129,6 +129,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
       },
     ],
     featuredProjects: [
+      {
+        title: "BookingPartner.lk",
+        description:
+          "Nexzoa's flagship transportation booking and partner management platform connecting passengers, bus operators, and booking agents across Sri Lanka with real-time seat reservation and Claude AI assistance.",
+        category: "Mobility SaaS & Transportation",
+        tags: ["Next.js", "PostgreSQL", "Real-Time Seating", "Claude AI", "Redis"],
+        link: "https://bookingpartner.lk",
+      },
       {
         title: "QuickSticker AI Studio",
         description:

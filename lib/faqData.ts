@@ -70,6 +70,11 @@ export const MAIN_FAQS: FAQItem[] = [
       "Nexzoa builds sector-specific digital systems for FinTech, HealthTech, PropTech (Real Estate), E-Commerce, EdTech, Logistics & Supply Chain, and B2B SaaS companies across the Middle East (Saudi Arabia, UAE, Qatar), Europe, the US, and Southeast Asia.",
   },
   {
+    question: "What software products does Nexzoa build?",
+    answer:
+      "Nexzoa builds proprietary AI-powered SaaS platforms and developer tools, prominently including BookingPartner.lk (a bus booking and fleet operations platform connecting passengers, operators, and agents across Sri Lanka), QuickSticker AI Studio (an AI-powered sticker generator), and QuickCompress Optimizer (a private browser-based image compression utility).",
+  },
+  {
     question: "Is Nexzoa related to Nexon, Tata Nexon, or Nexo?",
     answer:
       "No. Nexzoa (nexzoa.dev) is an independent AI-native software engineering company based in Sri Lanka. We have no affiliation, endorsement, or relationship with Nexon Co., Ltd. (video games), Tata Motors (Tata Nexon automobiles), or Nexo (the cryptocurrency lending platform).",
