@@ -8,7 +8,7 @@ import { TEAM_MEMBERS } from "@/lib/teamData";
 export const metadata: Metadata = {
   title: "The People Behind Nexzoa | Leadership & Engineering Team",
   description:
-    "Meet the engineers, designers, and operators behind Nexzoa: Ashrif Rihan (Software Engineer & UI/UX Designer) and Izzath Noory (Co-Founder & Operations). Direct engineering without agency overhead.",
+    "Meet the engineers, designers, and operators behind Nexzoa: Ashrif Rihan (Founder & CEO) and Izzath Noory (Co-Founder & Head of Operations). Direct engineering without agency overhead.",
   keywords: [
     "Nexzoa team",
     "People behind Nexzoa",

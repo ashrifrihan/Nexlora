@@ -8,9 +8,9 @@ import { getTeamMember } from "@/lib/teamData";
 const member = getTeamMember("ashrif-rihan")!;
 
 export const metadata: Metadata = {
-  title: "Ashrif Rihan | Software Engineer & UI/UX Designer at Nexzoa",
+  title: "Ashrif Rihan | Founder & CEO at Nexzoa",
   description:
-    "Meet Ashrif Rihan, a software engineer and UI/UX designer associated with Nexzoa, an AI-native software engineering studio based in Sri Lanka. Explore his experience, background, and projects.",
+    "Meet Ashrif Rihan, Founder & CEO at Nexzoa, an AI software technology company based in Sri Lanka. Explore his leadership, technical architecture, and projects.",
   keywords: [
     "Ashrif Rihan",
     "Ashrif",
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     "Mohamed Ashrif Rihan",
     "Ashrif Rihan Nexzoa",
     "Nexzoa Ashrif Rihan",
+    "Founder CEO Nexzoa",
     "Software Engineer Nexzoa",
     "UI UX Designer Sri Lanka",
     "ashrifrihan",
@@ -29,18 +30,18 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/team/ashrif-rihan`,
   },
   openGraph: {
-    title: "Ashrif Rihan | Software Engineer & UI/UX Designer at Nexzoa",
+    title: "Ashrif Rihan | Founder & CEO at Nexzoa",
     description:
-      "Meet Ashrif Rihan, software engineer and UI/UX designer at Nexzoa. Building AI software systems, Next.js SaaS platforms, and digital products.",
+      "Meet Ashrif Rihan, Founder & CEO at Nexzoa. Building proprietary AI software systems, Next.js SaaS platforms, and digital products.",
     url: `${SITE_URL}/team/ashrif-rihan`,
     siteName: SITE_NAME,
-    images: [{ url: member.avatar, width: 800, height: 800, alt: "Ashrif Rihan" }],
+    images: [{ url: member.avatar, width: 800, height: 800, alt: "Ashrif Rihan — Founder & CEO at Nexzoa" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ashrif Rihan | Software Engineer & UI/UX Designer at Nexzoa",
+    title: "Ashrif Rihan | Founder & CEO at Nexzoa",
     description:
-      "Meet Ashrif Rihan, software engineer and UI/UX designer at Nexzoa in Colombo, Sri Lanka.",
+      "Meet Ashrif Rihan, Founder & CEO at Nexzoa in Colombo, Sri Lanka.",
     images: [member.avatar],
   },
 };
@@ -51,7 +52,7 @@ export default function AshrifRihanProfilePage() {
     "@type": "ProfilePage",
     "@id": `${SITE_URL}/team/ashrif-rihan#profilepage`,
     url: `${SITE_URL}/team/ashrif-rihan`,
-    name: "Ashrif Rihan | Software Engineer & UI/UX Designer at Nexzoa",
+    name: "Ashrif Rihan | Founder & CEO at Nexzoa",
     isPartOf: {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
@@ -65,7 +66,7 @@ export default function AshrifRihanProfilePage() {
       givenName: "Ashrif",
       familyName: "Rihan",
       additionalName: "Mohamed Ashrif Rihan",
-      jobTitle: "Software Engineer & UI/UX Designer",
+      jobTitle: "Founder & CEO",
       description: member.shortBio,
       image: member.avatar,
       url: `${SITE_URL}/team/ashrif-rihan`,
@@ -168,7 +169,7 @@ export default function AshrifRihanProfilePage() {
               <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden border-2 border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.6)] bg-white/[0.02]">
                 <img
                   src={member.avatar}
-                  alt="Ashrif Rihan — Software Engineer & UI/UX Designer at Nexzoa"
+                  alt="Ashrif Rihan — Founder & CEO at Nexzoa"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -201,7 +202,7 @@ export default function AshrifRihanProfilePage() {
                 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-white via-white/80 to-white/50 bg-clip-text text-transparent mb-4"
                 style={{ fontFamily: '"Satoshi", sans-serif' }}
               >
-                Software Engineering &amp; UI/UX Design at Nexzoa
+                Founder &amp; CEO at Nexzoa
               </h2>
 
               <p className="text-sm sm:text-base text-white/60 leading-relaxed font-light mb-6">
@@ -320,7 +321,7 @@ export default function AshrifRihanProfilePage() {
                 </div>
                 <div>
                   <span className="text-white/40 block text-[10px] uppercase">Primary Role</span>
-                  <span className="text-white/80">Software Engineer &amp; UI/UX Designer</span>
+                  <span className="text-white/80">Founder &amp; CEO</span>
                 </div>
                 <div>
                   <span className="text-white/40 block text-[10px] uppercase">Headquarters</span>

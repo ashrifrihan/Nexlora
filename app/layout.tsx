@@ -236,7 +236,7 @@ export default function RootLayout({
         "@type": "Person",
         "@id": `${SITE_URL}/team/ashrif-rihan#person`,
         name: "Ashrif Rihan",
-        jobTitle: "Software Engineer & UI/UX Designer",
+        jobTitle: "Founder & CEO",
         url: `${SITE_URL}/team/ashrif-rihan`,
         sameAs: [
           "https://ashrifrihan.me",
@@ -260,7 +260,7 @@ export default function RootLayout({
         "@type": "Person",
         "@id": `${SITE_URL}/team/ashrif-rihan#person`,
         name: "Ashrif Rihan",
-        jobTitle: "Software Engineer & UI/UX Designer",
+        jobTitle: "Founder & CEO",
         url: `${SITE_URL}/team/ashrif-rihan`,
       },
       {

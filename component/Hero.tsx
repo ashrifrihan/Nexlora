@@ -238,7 +238,7 @@ const Hero = () => {
         {/* Description */}
         <div className="w-full max-w-3xl mb-10 md:mb-12">
           <BlurText
-            text="Nexzoa is a software engineering studio in Sri Lanka specializing in custom software development, AI automation, SaaS platforms and scalable web applications."
+            text="Nexzoa is an AI software technology company in Sri Lanka, engineering proprietary AI-powered SaaS platforms and intelligent systems for modern businesses."
             delay={20}
             animateBy="words"
             direction="top"

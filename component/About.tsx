@@ -100,7 +100,7 @@ export default function About() {
               className="text-[14px] font-medium tracking-[-0.02em] text-white"
               style={{ fontFamily: '"Satoshi", sans-serif' }}
             >
-              About The Studio
+              About The Company
             </span>
           </motion.div>
 
@@ -125,7 +125,7 @@ export default function About() {
             className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Nexzoa is an AI-native software engineering company based in Sri Lanka, operating globally. We collaborate directly with founders and product teams to engineer custom AI software, enterprise SaaS applications, automated business pipelines, and scalable cloud platforms.
+            Nexzoa is an AI software technology company founded in Sri Lanka in 2024. We build proprietary AI-powered SaaS platforms and engineer high-performance software systems for modern businesses.
           </motion.p>
         </div>
 
@@ -238,12 +238,12 @@ export default function About() {
                 className="text-[13.5px] leading-relaxed text-white/55 font-light"
                 style={{ fontFamily: '"Satoshi", sans-serif' }}
               >
-                We architect bespoke LLM pipelines, retrieval-augmented generation (RAG) on proprietary datasets, and deterministic agent orchestration that automate heavy operational workflows with measurable ROI.
+                We architect bespoke LLM pipelines utilizing Anthropic Claude and modern frontier models, retrieval-augmented generation (RAG) on proprietary datasets, and deterministic agent orchestration that automate heavy operational workflows with measurable ROI.
               </p>
             </div>
 
             <div className="pt-5 border-t border-white/[0.05] flex items-center justify-between text-xs text-white/40 font-mono">
-              <span>LLM AGENTS &bull; RAG</span>
+              <span>CLAUDE &bull; LLM AGENTS &bull; RAG</span>
               <span className="text-white/70 font-semibold">ENTERPRISE SCALE</span>
             </div>
           </AboutCard>
@@ -264,26 +264,165 @@ export default function About() {
             </span>
           </div>
           <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
-            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Runtime</span>
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">AI Stack</span>
             <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              AI-Native Cloud
+              Anthropic Claude
             </span>
           </div>
           <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
-            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Presence</span>
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Founded</span>
             <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              GCC &bull; Global
+              2024 &bull; Colombo
             </span>
           </div>
         </div>
 
+        {/* Building with Anthropic Claude Showcase Card */}
+        <ClaudeShowcaseCard />
+
         {/* The People Behind Nexzoa Spotlight */}
         <TeamShowcaseCard />
 
-        {/* Global Operations & Studio Profile Showcase with Cursor Spotlight & Glow */}
+        {/* Global Operations & Profile Showcase with Cursor Spotlight & Glow */}
         <GlobalShowcaseCard />
       </div>
     </section>
+  );
+}
+
+function ClaudeShowcaseCard() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [mp, setMp] = useState({ x: 0, y: 0 });
+  const [hov, setHov] = useState(false);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    setMp({ x: e.clientX - r.left, y: e.clientY - r.top });
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className="mt-8"
+    >
+      <div
+        ref={ref}
+        onMouseMove={onMove}
+        onMouseEnter={() => setHov(true)}
+        onMouseLeave={() => setHov(false)}
+        className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] border border-amber-500/15 bg-[#0a0a0c]/90 p-5 sm:p-8 md:p-9 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] group transition-all duration-500 hover:border-amber-500/30"
+      >
+        {/* Glow spotlight overlay */}
+        <div
+          className="pointer-events-none absolute -inset-px rounded-[28px] transition-opacity duration-500 z-0"
+          style={{
+            opacity: hov ? 1 : 0,
+            background: `radial-gradient(500px circle at ${mp.x}px ${mp.y}px, rgba(217, 119, 6, 0.08), transparent 75%)`,
+          }}
+        />
+
+        {/* Corner luxury flare */}
+        <div className="absolute top-0 right-0 w-[240px] h-[240px] bg-gradient-to-br from-amber-500/[0.04] to-transparent blur-[50px] rounded-tr-[28px] pointer-events-none" />
+
+        <div className="relative z-10">
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <span
+                  className="font-mono text-[10px] font-bold tracking-widest text-amber-400/90 uppercase"
+                  style={{ fontFamily: '"Satoshi", sans-serif' }}
+                >
+                  AI Infrastructure &bull; Anthropic Ecosystem
+                </span>
+                <span className="inline-block w-1 h-1 rounded-full bg-amber-400/80" />
+                <span className="text-[10px] text-white/40 font-mono">FRONTIER INTELLIGENCE</span>
+              </div>
+              <h3
+                className="text-xl sm:text-2xl font-bold text-white tracking-tight"
+                style={{ fontFamily: '"Satoshi", sans-serif' }}
+              >
+                Building with Anthropic Claude
+              </h3>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/[0.08] border border-amber-500/20 self-start sm:self-auto">
+              <svg className="w-3.5 h-3.5 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <span className="font-mono text-[10px] font-semibold text-amber-300 uppercase tracking-wide">
+                Claude 3.5 Sonnet / 3.7
+              </span>
+            </div>
+          </div>
+
+          <p
+            className="text-[13.5px] sm:text-sm text-white/60 leading-relaxed max-w-3xl font-light mb-6"
+            style={{ fontFamily: '"Satoshi", sans-serif' }}
+          >
+            Nexzoa leverages Anthropic&apos;s state-of-the-art Claude models to power high-reliability workflow automation, complex unstructured data reasoning, and domain-grounded copilot interfaces across our SaaS platforms and enterprise systems.
+          </p>
+
+          {/* 3 Use-Case Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-amber-500/25 hover:bg-white/[0.03] transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3 text-amber-400">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+              </div>
+              <h4 className="text-sm font-bold text-white mb-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Workflow Intelligence
+              </h4>
+              <p className="text-xs text-white/50 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Orchestrating multi-step operational logic with Claude tool calling, guaranteed schema outputs, and deterministic safeguards.
+              </p>
+            </div>
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-amber-500/25 hover:bg-white/[0.03] transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3 text-amber-400">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
+              </div>
+              <h4 className="text-sm font-bold text-white mb-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Deep Document Reasoning
+              </h4>
+              <p className="text-xs text-white/50 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Extracting structured data from long-form manifests, contracts, and financial documents with Claude&apos;s 200k+ context window.
+              </p>
+            </div>
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-amber-500/25 hover:bg-white/[0.03] transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3 text-amber-400">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+              <h4 className="text-sm font-bold text-white mb-1.5" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Domain-Grounded Copilots
+              </h4>
+              <p className="text-xs text-white/50 leading-relaxed font-light" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+                Zero-hallucination customer support and operational assistants powered by hybrid RAG embeddings and Claude semantic routing.
+              </p>
+            </div>
+          </div>
+
+          {/* Footer Bar */}
+          <div className="mt-5 pt-4 border-t border-white/[0.05] flex flex-wrap items-center justify-between gap-3 text-xs text-white/40 font-mono">
+            <span>ANTHROPIC SDK &bull; FUNCTION CALLING &bull; PROMPT CACHING</span>
+            <span className="text-amber-400/80 font-semibold">PRODUCTION INTEGRATIONS</span>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
@@ -363,7 +502,7 @@ function TeamShowcaseCard() {
                 <div className="flex items-center gap-3.5 mb-3">
                   <img
                     src="https://github.com/ashrifrihan.png"
-                    alt="Ashrif Rihan — Software Engineer & UI/UX Designer at Nexzoa"
+                    alt="Ashrif Rihan — Founder & CEO at Nexzoa"
                     className="w-12 h-12 rounded-xl object-cover border border-white/10 shrink-0"
                   />
                   <div>
@@ -377,7 +516,7 @@ function TeamShowcaseCard() {
                       className="text-xs text-white/60 mt-0.5"
                       style={{ fontFamily: '"Satoshi", sans-serif' }}
                     >
-                      Software Engineer &amp; UI/UX Designer
+                      Founder &amp; CEO
                     </p>
                   </div>
                 </div>
@@ -385,7 +524,7 @@ function TeamShowcaseCard() {
                   className="text-xs text-white/50 leading-relaxed font-light mb-3"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
-                  Leads frontend architecture, Next.js engineering, and UI/UX design systems for Nexzoa&apos;s custom SaaS and AI products.
+                  Directs company vision, product architecture, Next.js engineering, and UI/UX design systems for Nexzoa&apos;s proprietary SaaS and AI platforms.
                 </p>
               </div>
 

@@ -77,12 +77,12 @@ export const MAIN_FAQS: FAQItem[] = [
   {
     question: "Who is behind Nexzoa?",
     answer:
-      "Nexzoa is founded and driven by software engineer & UI/UX designer Ashrif Rihan and co-founder & operations lead Izzath Noory. Headquartered in Colombo, Sri Lanka, the studio operates on a direct engineering model where clients collaborate directly with senior software architects and builders without non-technical middle management.",
+      "Nexzoa is founded and driven by Founder & CEO Ashrif Rihan alongside Co-Founder & Head of Operations Izzath Noory. Headquartered in Colombo, Sri Lanka, the company builds proprietary AI SaaS platforms and direct engineering systems without non-technical middle management.",
   },
   {
     question: "Who is Ashrif Rihan and what is his role at Nexzoa?",
     answer:
-      "Ashrif Rihan is a software engineer and UI/UX designer at Nexzoa. He leads frontend architecture, design systems, and full-stack development across Next.js, React, TypeScript, and AI-driven platforms. He is also the creator of developer utilities including QuickSticker AI Studio and QuickCompress, and holds a BEng (Hons) in Software Engineering from London Metropolitan University. Learn more on his dedicated Nexzoa profile at nexzoa.dev/team/ashrif-rihan.",
+      "Ashrif Rihan is the Founder & CEO of Nexzoa. He leads product strategy, full-stack architecture, UI/UX design systems, and AI workflows utilizing Anthropic Claude and Next.js. He is also the creator of developer utilities including QuickSticker AI Studio and QuickCompress, and holds a BEng (Hons) in Software Engineering from London Metropolitan University. Learn more on his dedicated Nexzoa profile at nexzoa.dev/team/ashrif-rihan.",
   },
   {
     question: "Who is Izzath Noory and what is his role at Nexzoa?",
