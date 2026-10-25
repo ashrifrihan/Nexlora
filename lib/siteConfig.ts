@@ -25,6 +25,8 @@ export const SITE_NAME = "Nexzoa" as const;
 export const SITE_LEGAL_NAME = "Nexzoa" as const;
 export const SITE_TAGLINE = "AI Software Development & SaaS Engineering" as const;
 export const SITE_SLOGAN = "Build the system behind your business." as const;
+export const COMPANY_FOUNDING_DATE = "2025-03-01" as const;
+export const COMPANY_FOUNDING_DATE_DISPLAY = "March 1, 2025" as const;
 
 export const SITE_DESCRIPTION_SHORT =
   "Nexzoa is a software engineering studio in Sri Lanka specializing in custom software development, AI automation, SaaS platforms and scalable web applications." as const;
@@ -40,14 +42,15 @@ export const BUSINESS_COUNTRY_CODE = "LK" as const;
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
 export const CONTACT_EMAIL = "hello@nexzoa.dev" as const;
-export const CONTACT_PHONE = "+94 77 200 8364" as const;
-export const CONTACT_PHONE_RAW = "+94772008364" as const;
+export const CONTACT_PHONE = "+94 77 869 3717" as const;
+export const CONTACT_PHONE_RAW = "+94778693717" as const;
 
 // ─── Social profiles (Verified) ──────────────────────────────────────────────
 export const SOCIAL_TWITTER = "https://twitter.com/nexzoa" as const;
 export const SOCIAL_LINKEDIN = "https://www.linkedin.com/company/nexzoa-io/" as const;
 export const SOCIAL_GITHUB = "https://github.com/nexzoa" as const;
 export const SOCIAL_INSTAGRAM = "https://instagram.com/nexzoa" as const;
+export const SOCIAL_FACEBOOK = "https://facebook.com/nexzoa" as const;
 
 // ─── Core Services ───────────────────────────────────────────────────────────
 export const CORE_SERVICES = [

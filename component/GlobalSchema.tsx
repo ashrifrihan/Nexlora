@@ -19,7 +19,23 @@ export function GlobalSchema() {
     logo: siteUrl("/nexzoa.jpg"),
     description:
       "Nexzoa is a global AI-native software engineering company building custom SaaS platforms, AI automation workflows, and digital systems for businesses worldwide.",
-    foundingDate: "2024",
+    foundingDate: "2025-03-01",
+    founder: [
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/team/ashrif-rihan#person`,
+        name: "Ashrif Rihan",
+        jobTitle: "Founder & CEO",
+        url: `${SITE_URL}/team/ashrif-rihan`,
+      },
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/team/izzath-noory#person`,
+        name: "Izzath Noory",
+        jobTitle: "Co-Founder & Head of Operations",
+        url: `${SITE_URL}/team/izzath-noory`,
+      },
+    ],
     sameAs: [SOCIAL_LINKEDIN, SOCIAL_TWITTER, SOCIAL_INSTAGRAM],
     contactPoint: {
       "@type": "ContactPoint",

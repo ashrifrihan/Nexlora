@@ -8,7 +8,7 @@ import { TEAM_MEMBERS } from "@/lib/teamData";
 export const metadata: Metadata = {
   title: "The People Behind Nexzoa | Leadership & Engineering Team",
   description:
-    "Meet the engineers, designers, and operators behind Nexzoa: Ashrif Rihan (Software Engineer & UI/UX Designer) and Izzath Noory (Co-Founder & Operations). Direct engineering without agency overhead.",
+    "Meet the leadership and engineering team behind Nexzoa: Ashrif Rihan (Founder & CEO) and Izzath Noory (Co-Founder & Operations). Direct engineering without agency overhead.",
   keywords: [
     "Nexzoa team",
     "People behind Nexzoa",
@@ -16,8 +16,12 @@ export const metadata: Metadata = {
     "Ashrif",
     "Rihan",
     "Mohamed Ashrif Rihan",
+    "Ashrif Rihan CEO",
+    "CEO Ashrif Rihan",
+    "Founder Ashrif Rihan",
     "Izzath Noory",
     "Nexzoa founders",
+    "Nexzoa CEO",
     "Nexzoa engineers",
     "Software Engineer Sri Lanka",
     "UI UX Designer Sri Lanka",
@@ -130,7 +134,7 @@ export default function TeamPage() {
             The People Behind Nexzoa
           </h1>
           <p className="text-base sm:text-xl text-white/60 leading-relaxed max-w-3xl font-light">
-            We are an AI-native engineering studio founded in Colombo, Sri Lanka. No account executives or disconnected management layers—you collaborate directly with the engineers, designers, and operators building your systems.
+            We are an AI-native engineering studio founded on March 1, 2025 in Colombo, Sri Lanka. No account executives or disconnected management layers—you collaborate directly with the engineers, designers, and operators building your systems.
           </p>
         </header>
 

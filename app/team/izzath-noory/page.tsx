@@ -10,7 +10,7 @@ const member = getTeamMember("izzath-noory")!;
 export const metadata: Metadata = {
   title: "Izzath Noory | Product & Engineering Operations at Nexzoa",
   description:
-    "Meet Izzath Noory, Co-Founder and Head of Operations at Nexzoa, an AI-native software engineering studio based in Sri Lanka. Discover his role in product strategy, sprint operations, and global client delivery.",
+    "Meet Izzath Noory, Co-Founder and Head of Operations at Nexzoa, an AI-native software engineering studio founded on March 1, 2025. Discover his role in product strategy, sprint operations, and global client delivery.",
   keywords: [
     "Izzath Noory",
     "Izzath",
@@ -280,6 +280,10 @@ export default function IzzathNooryProfilePage() {
                 <div>
                   <span className="text-white/40 block text-[10px] uppercase">Primary Role</span>
                   <span className="text-white/80">Co-Founder &amp; Head of Operations</span>
+                </div>
+                <div>
+                  <span className="text-white/40 block text-[10px] uppercase">Founded</span>
+                  <span className="text-white/80">March 1, 2025</span>
                 </div>
                 <div>
                   <span className="text-white/40 block text-[10px] uppercase">Headquarters</span>

@@ -60,6 +60,14 @@ interface ProjectItem {
 const projectsData: ProjectItem[] = [
   {
     id: 1,
+    title: "Ocean Chef Restaurant Suite",
+    description: "An integrated restaurant management ecosystem combining fast POS billing, waiter table ordering, live admin ops, and thermal receipt printing.",
+    category: "Enterprise System",
+    image: "/Ocean-Chef.jpg",
+    accent: "#0ea5e9",
+  },
+  {
+    id: 2,
     title: "Smart Rice Mill System",
     description: "A business platform digitizing mill operations, inventory, and sales with real-time analytics.",
     category: "System Design",
@@ -67,7 +75,7 @@ const projectsData: ProjectItem[] = [
     accent: "#f59e0b",
   },
   {
-    id: 2,
+    id: 3,
     title: "QuickStay Booking Engine",
     description: "A unified reservation and front-desk platform for online bookings, billing, and role workflows.",
     category: "Full Stack Development",
@@ -75,7 +83,7 @@ const projectsData: ProjectItem[] = [
     accent: "#3b82f6",
   },
   {
-    id: 3,
+    id: 4,
     title: "Photography CMS & Portal",
     description: "A dynamic portfolio website with custom galleries and integrated client booking management.",
     category: "Web Application",
@@ -83,7 +91,7 @@ const projectsData: ProjectItem[] = [
     accent: "#a855f7",
   },
   {
-    id: 4,
+    id: 5,
     title: "QuickSticker AI Studio",
     description: "An AI sticker generator converting images and text prompts into WhatsApp stickers.",
     category: "AI/ML App",
@@ -92,7 +100,7 @@ const projectsData: ProjectItem[] = [
     github: "https://github.com/ashrifrihan/QuickSticker",
   },
   {
-    id: 5,
+    id: 6,
     title: "QuickCompress Batch Optimizer",
     description: "A batch compression utility supporting custom formats and secure local processing.",
     category: "Web Application",
@@ -101,20 +109,12 @@ const projectsData: ProjectItem[] = [
     github: "https://github.com/ashrifrihan/QuickCompress",
   },
   {
-    id: 6,
+    id: 7,
     title: "Wander Sphere Platform",
     description: "A travel planning UI/UX concept focused on seamless discovery and itineraries.",
     category: "Product Design",
     image: "/projects/Wander-Spheres/Wander-Spheres.jpg",
     accent: "#10b981",
-  },
-  {
-    id: 7,
-    title: "Quick Eats Ordering App",
-    description: "A mobile-first delivery interface designed to simplify ordering, search, and checkout.",
-    category: "UI/UX Design",
-    image: "/projects/QucikEats/QucikEats.jpg",
-    accent: "#ef4444",
   },
   {
     id: 8,

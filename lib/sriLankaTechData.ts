@@ -386,7 +386,8 @@ export const SRI_LANKA_TECH_COMPANIES: TechCompany[] = [
     categoryLabel: "AI-Native Software Engineering & SaaS Studio",
     location: "Colombo, Sri Lanka",
     headquarters: "Colombo, Sri Lanka",
-    foundedYear: 2024,
+    foundedYear: 2025,
+    founders: ["Ashrif Rihan (CEO)", "Izzath Noory"],
     specialization: [
       "AI Software Engineering",
       "Custom SaaS Development",

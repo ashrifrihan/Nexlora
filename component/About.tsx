@@ -363,7 +363,7 @@ function TeamShowcaseCard() {
                 <div className="flex items-center gap-3.5 mb-3">
                   <img
                     src="https://github.com/ashrifrihan.png"
-                    alt="Ashrif Rihan — Software Engineer & UI/UX Designer at Nexzoa"
+                    alt="Ashrif Rihan — Founder & CEO at Nexzoa"
                     className="w-12 h-12 rounded-xl object-cover border border-white/10 shrink-0"
                   />
                   <div>
@@ -377,7 +377,7 @@ function TeamShowcaseCard() {
                       className="text-xs text-white/60 mt-0.5"
                       style={{ fontFamily: '"Satoshi", sans-serif' }}
                     >
-                      Software Engineer &amp; UI/UX Designer
+                      Founder &amp; CEO
                     </p>
                   </div>
                 </div>
@@ -385,7 +385,7 @@ function TeamShowcaseCard() {
                   className="text-xs text-white/50 leading-relaxed font-light mb-3"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
-                  Leads frontend architecture, Next.js engineering, and UI/UX design systems for Nexzoa&apos;s custom SaaS and AI products.
+                  Founder &amp; CEO directing Nexzoa&apos;s technical vision, full-stack architecture, Next.js engineering, and UI/UX design systems.
                 </p>
               </div>
 
@@ -437,7 +437,7 @@ function TeamShowcaseCard() {
                 <div className="flex items-center gap-3.5 mb-3">
                   <img
                     src="/nexzoa.jpg"
-                    alt="Izzath Noory — Co-Founder & Operations at Nexzoa"
+                    alt="Izzath Noory — Co-Founder & Head of Operations at Nexzoa"
                     className="w-12 h-12 rounded-xl object-cover border border-white/10 shrink-0"
                   />
                   <div>
@@ -459,7 +459,7 @@ function TeamShowcaseCard() {
                   className="text-xs text-white/50 leading-relaxed font-light mb-3"
                   style={{ fontFamily: '"Satoshi", sans-serif' }}
                 >
-                  Directs international partnerships, client alignment across Saudi Arabia, UAE, Qatar, and agile delivery operations.
+                  Co-Founder and integral part of Nexzoa, directing international partnerships, client alignment across Saudi Arabia, UAE, Qatar, and agile delivery operations.
                 </p>
               </div>
 

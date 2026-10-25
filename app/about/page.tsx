@@ -105,7 +105,7 @@ export default function AboutPage() {
       name: SITE_NAME,
       url: SITE_URL,
       logo: siteUrl("/nexzoa.jpg"),
-      foundingDate: "2024",
+      foundingDate: "2025-03-01",
       address: {
         "@type": "PostalAddress",
         addressLocality: BUSINESS_CITY,
@@ -117,7 +117,7 @@ export default function AboutPage() {
           "@type": "Person",
           "@id": `${SITE_URL}/team/ashrif-rihan#person`,
           name: "Ashrif Rihan",
-          jobTitle: "Software Engineer & UI/UX Designer",
+          jobTitle: "Founder & CEO",
           url: `${SITE_URL}/team/ashrif-rihan`,
         },
         {
@@ -133,7 +133,7 @@ export default function AboutPage() {
           "@type": "Person",
           "@id": `${SITE_URL}/team/ashrif-rihan#person`,
           name: "Ashrif Rihan",
-          jobTitle: "Software Engineer & UI/UX Designer",
+          jobTitle: "Founder & CEO",
           url: `${SITE_URL}/team/ashrif-rihan`,
         },
         {
@@ -195,14 +195,14 @@ export default function AboutPage() {
             We treat software as vital infrastructure for ambitious businesses.
           </h1>
           <p className="text-base sm:text-xl text-white/60 leading-relaxed max-w-3xl font-light">
-            Nexzoa is an independent AI-native software engineering studio founded in Colombo, Sri Lanka in 2024. We build custom AI software systems, multi-tenant SaaS platforms, and intelligent automation pipelines for startups, scaleups, and enterprises across Saudi Arabia, UAE, Qatar, US, and worldwide.
+            Nexzoa is an independent AI-native software engineering studio founded in Colombo, Sri Lanka on March 1, 2025. We build custom AI software systems, multi-tenant SaaS platforms, and intelligent automation pipelines for startups, scaleups, and enterprises across Saudi Arabia, UAE, Qatar, US, and worldwide.
           </p>
 
           {/* Quick Metrics Strip */}
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="p-4 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05]">
               <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Founded</span>
-              <span className="text-lg font-bold text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>2024 &bull; Colombo</span>
+              <span className="text-lg font-bold text-white" style={{ fontFamily: '"Satoshi", sans-serif' }}>March 1, 2025 &bull; Colombo</span>
             </div>
             <div className="p-4 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05]">
               <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Architecture</span>

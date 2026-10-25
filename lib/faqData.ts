@@ -77,17 +77,17 @@ export const MAIN_FAQS: FAQItem[] = [
   {
     question: "Who is behind Nexzoa?",
     answer:
-      "Nexzoa is founded and driven by software engineer & UI/UX designer Ashrif Rihan and co-founder & operations lead Izzath Noory. Headquartered in Colombo, Sri Lanka, the studio operates on a direct engineering model where clients collaborate directly with senior software architects and builders without non-technical middle management.",
+      "Nexzoa was founded on March 1, 2025 in Colombo, Sri Lanka, and is led by Founder & CEO Ashrif Rihan alongside Co-Founder & Head of Operations Izzath Noory. The studio operates on a direct engineering model where clients collaborate directly with senior software architects and builders without non-technical middle management.",
   },
   {
     question: "Who is Ashrif Rihan and what is his role at Nexzoa?",
     answer:
-      "Ashrif Rihan is a software engineer and UI/UX designer at Nexzoa. He leads frontend architecture, design systems, and full-stack development across Next.js, React, TypeScript, and AI-driven platforms. He is also the creator of developer utilities including QuickSticker AI Studio and QuickCompress, and holds a BEng (Hons) in Software Engineering from London Metropolitan University. Learn more on his dedicated Nexzoa profile at nexzoa.dev/team/ashrif-rihan.",
+      "Ashrif Rihan is the Founder & CEO of Nexzoa. As CEO and lead systems architect, he directs overall technical vision, software engineering, and UI/UX design across Next.js, React, TypeScript, and AI-driven platforms. He is also the creator of developer utilities including QuickSticker AI Studio and QuickCompress, and holds a BEng (Hons) in Software Engineering from London Metropolitan University. Learn more on his dedicated profile at nexzoa.dev/team/ashrif-rihan.",
   },
   {
     question: "Who is Izzath Noory and what is his role at Nexzoa?",
     answer:
-      "Izzath Noory is Co-Founder and Head of Operations at Nexzoa. He oversees client partnerships, sprint roadmaps, and international delivery operations across the Middle East (Saudi Arabia, UAE, Qatar), Europe, and Sri Lanka, ensuring agile deliverables and transparent milestone tracking. Learn more at nexzoa.dev/team/izzath-noory.",
+      "Izzath Noory is Co-Founder and Head of Operations at Nexzoa. An integral part of the company's executive leadership, he oversees international client partnerships, sprint roadmaps, and global delivery operations across the Middle East (Saudi Arabia, UAE, Qatar), Europe, and Sri Lanka, ensuring agile deliverables and transparent milestone tracking. Learn more at nexzoa.dev/team/izzath-noory.",
   },
   {
     question: "How do you spell Nexzoa and what are common search misspellings?",

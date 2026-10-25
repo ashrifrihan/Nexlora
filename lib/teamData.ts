@@ -59,16 +59,18 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "Mohamed Ashrif",
       "Rihan Ashrif",
       "ashrifrihan",
+      "Ashrif Rihan CEO",
+      "CEO Ashrif Rihan",
     ],
-    role: "Software Engineer & UI/UX Designer",
-    jobTitle: "Software Engineer & UI/UX Designer at Nexzoa",
-    tagline: "Architecting high-velocity web apps, AI systems, and ergonomic UI/UX experiences.",
+    role: "Founder & CEO",
+    jobTitle: "Founder & CEO at Nexzoa",
+    tagline: "Founder & CEO architecting high-velocity web apps, AI systems, and ergonomic UI/UX experiences.",
     shortBio:
-      "Ashrif Rihan is a software engineer and UI/UX designer at Nexzoa, specializing in modern full-stack web applications, AI-driven digital systems, intuitive user interfaces, and scalable SaaS platforms.",
+      "Ashrif Rihan is the Founder & CEO of Nexzoa, leading the studio's technical vision, full-stack web applications, AI-driven digital systems, intuitive user interfaces, and scalable SaaS platforms.",
     fullBio: [
-      "Ashrif Rihan is a software engineer and UI/UX designer based in Colombo, Sri Lanka, and a core member of the engineering team at Nexzoa. He blends technical software engineering with rigorous user experience design to build mission-critical digital systems for startups, scaleups, and global enterprises.",
-      "At Nexzoa, Ashrif leads frontend architecture and design systems across production Next.js and React applications, translating complex operational workflows into intuitive interfaces. His work spans AI workflow tools, full-stack multi-tenant SaaS products, and sub-100ms web platforms for clients across Saudi Arabia, UAE, Qatar, and international markets.",
-      "Prior to and alongside his work with Nexzoa, Ashrif created popular developer utilities and AI tools including QuickSticker AI Studio, QuickCompress batch optimizer, and comprehensive enterprise management suites like the Smart Rice Mill Management System and QuickStay booking platform.",
+      "Ashrif Rihan is Founder & CEO of Nexzoa, an AI-native software engineering studio based in Colombo, Sri Lanka, founded on March 1, 2025. He blends technical software engineering with rigorous user experience design to build mission-critical digital systems for startups, scaleups, and global enterprises.",
+      "As CEO and principal architect, Ashrif leads frontend architecture and design systems across production Next.js and React applications, translating complex operational workflows into intuitive interfaces. His work spans AI workflow tools, full-stack multi-tenant SaaS products, and sub-100ms web platforms for clients across Saudi Arabia, UAE, Qatar, and international markets.",
+      "Prior to founding Nexzoa, Ashrif created popular developer utilities and AI tools including QuickSticker AI Studio, QuickCompress batch optimizer, and comprehensive enterprise management suites like the Smart Rice Mill Management System and QuickStay booking platform.",
     ],
     location: "Colombo, Sri Lanka",
     worksFor: "Nexzoa",
@@ -84,18 +86,19 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "Figma Prototyping & User Research",
     ],
     highlights: [
-      "Core Software Engineer and UI/UX Designer at Nexzoa",
+      "Founder & CEO of Nexzoa (Founded March 1, 2025)",
+      "Directs studio technical vision, software architecture, and UI/UX engineering",
       "Creator of QuickSticker AI Studio and QuickCompress Optimizer",
       "Architect of sub-100ms Core Web Vitals optimized frontend interfaces",
       "BEng (Hons) in Software Engineering from London Metropolitan University",
     ],
     experience: [
       {
-        period: "2024 – Present",
-        role: "Software Engineer & UI/UX Designer",
+        period: "March 2025 – Present",
+        role: "Founder & CEO",
         company: "Nexzoa",
         description:
-          "Leading web application engineering, UI/UX design systems, and frontend architecture for enterprise SaaS platforms and AI automation tools across Sri Lanka, the Middle East, and global markets.",
+          "Founded Nexzoa on March 1, 2025. Directing overall company strategy, web application engineering, UI/UX design systems, and frontend architecture for enterprise SaaS platforms and AI automation tools across Sri Lanka, the Middle East, and global markets.",
       },
       {
         period: "2023 – Present",
@@ -182,15 +185,15 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Izzath Noory",
     givenName: "Izzath",
     familyName: "Noory",
-    aliases: ["Izzath", "Noory", "Izzath Noory Nexzoa"],
+    aliases: ["Izzath", "Noory", "Izzath Noory Nexzoa", "Noory Nexzoa"],
     role: "Co-Founder & Head of Operations",
     jobTitle: "Co-Founder & Head of Operations at Nexzoa",
     tagline: "Bridging technical engineering with strategic product delivery and global client expansion.",
     shortBio:
-      "Izzath Noory is Co-Founder and Head of Operations at Nexzoa, overseeing client partnerships, product delivery workflows, and market expansion across the Middle East, Sri Lanka, and worldwide.",
+      "Izzath Noory is Co-Founder and Head of Operations at Nexzoa, an integral part of the company leadership overseeing client partnerships, product delivery workflows, and market expansion across the Middle East, Sri Lanka, and worldwide.",
     fullBio: [
-      "Izzath Noory is Co-Founder and Head of Operations at Nexzoa. Based in Colombo, Sri Lanka, Izzath oversees business operations, client project alignment, sprint roadmaps, and strategic ecosystem partnerships.",
-      "Working closely with Nexzoa's engineering leadership, Izzath ensures that every client engagement—from rapid MVP prototyping to multi-month enterprise AI rollouts—is executed with transparent milestones, rigorous quality standards, and continuous async communication.",
+      "Izzath Noory is Co-Founder and Head of Operations at Nexzoa, an AI-native software engineering studio founded on March 1, 2025. Based in Colombo, Sri Lanka, Izzath is a key executive part of the company, overseeing business operations, client project alignment, sprint roadmaps, and strategic ecosystem partnerships.",
+      "Working closely with Founder & CEO Ashrif Rihan, Izzath ensures that every client engagement—from rapid MVP prototyping to multi-month enterprise AI rollouts—is executed with transparent milestones, rigorous quality standards, and continuous async communication.",
       "His operational oversight has been central to Nexzoa's expansion into the Gulf Cooperation Council (GCC) markets including Saudi Arabia, UAE, and Qatar, as well as maintaining strong connections within Sri Lanka's burgeoning tech and startup community.",
     ],
     location: "Colombo, Sri Lanka",
@@ -205,17 +208,17 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "Quality Assurance & Milestone Tracking",
     ],
     highlights: [
-      "Co-Founder and Head of Operations at Nexzoa",
+      "Co-Founder and Head of Operations at Nexzoa (Part of the founding team)",
       "Oversees global client engagements across GCC (Saudi Arabia, UAE, Qatar) and Sri Lanka",
       "Manages agile delivery sprints and asynchronous client collaboration channels",
     ],
     experience: [
       {
-        period: "2024 – Present",
+        period: "March 2025 – Present",
         role: "Co-Founder & Head of Operations",
         company: "Nexzoa",
         description:
-          "Directing operational strategy, client project scoping, sprint coordination, and partnership growth for Nexzoa's global software engineering engagements.",
+          "Directing operational strategy, client project scoping, sprint coordination, and partnership growth for Nexzoa's global software engineering engagements since founding in March 2025.",
       },
     ],
     education: [

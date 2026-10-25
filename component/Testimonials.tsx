@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect, MouseEvent } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 
 function useIsMobile() {
@@ -54,9 +55,22 @@ interface TestimonialItem {
   rating: number;
   initials: string;
   badgeBg: string; // CSS background value (gradient or solid)
+  image?: string;
+  verified?: boolean;
 }
 
 const testimonialsData: TestimonialItem[] = [
+  {
+    name: "Ocean Chef Operations",
+    role: "Management & Operations",
+    company: "Ocean Chef Restaurant",
+    content: "Nexzoa built and deployed our complete restaurant management ecosystem — POS billing, thermal printing, waiter handheld ordering, and owner live monitoring. Order accuracy reached 100% and our table turnover improved by 35%.",
+    rating: 5,
+    initials: "OC",
+    badgeBg: "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)", // Ocean Cyan-Blue
+    image: "/Ocean-Chef.jpg",
+    verified: true,
+  },
   {
     name: "Liam Carter",
     role: "Founder & CEO",
@@ -101,15 +115,6 @@ const testimonialsData: TestimonialItem[] = [
     rating: 5,
     initials: "DK",
     badgeBg: "linear-gradient(135deg, #6366f1 0%, #4338ca 100%)", // Indigo
-  },
-  {
-    name: "Aria Bennett",
-    role: "VP of Engineering",
-    company: "Zenith Systems",
-    content: "They redesigned our legacy platform into a modern, SEO-optimized web application. Our website loading speed improved by 300% and conversions increased instantly.",
-    rating: 5,
-    initials: "AB",
-    badgeBg: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)", // Pink
   },
 ];
 
@@ -159,11 +164,19 @@ function TestimonialCard({ item, index }: { item: TestimonialItem; index: number
       </div>
 
       <div className="relative z-10">
-        {/* Rating Stars */}
-        <div className="flex gap-1 mb-6">
-          {[...Array(item.rating)].map((_, i) => (
-            <StarIcon key={i} className="w-4 h-4 text-amber-400" />
-          ))}
+        {/* Rating Stars & Verified Client Badge */}
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex gap-1">
+            {[...Array(item.rating)].map((_, i) => (
+              <StarIcon key={i} className="w-4 h-4 text-amber-400" />
+            ))}
+          </div>
+          {item.verified && (
+            <span className="inline-flex items-center gap-1.5 text-[10.5px] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full select-none">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Verified Client
+            </span>
+          )}
         </div>
 
         {/* Feedback Text */}
@@ -175,16 +188,26 @@ function TestimonialCard({ item, index }: { item: TestimonialItem; index: number
       {/* Author Profile */}
       <div className="relative z-10 flex items-center gap-4 border-t border-white/[0.05] pt-6 mt-auto">
         <motion.div
-          className="w-11 h-11 rounded-full flex items-center justify-center border border-white/[0.08] text-[13.5px] font-bold text-white shadow-[0_4px_12px_rgba(0,0,0,0.3)] shrink-0 select-none"
+          className="w-11 h-11 rounded-full flex items-center justify-center border border-white/[0.08] text-[13.5px] font-bold text-white shadow-[0_4px_12px_rgba(0,0,0,0.3)] shrink-0 select-none relative overflow-hidden"
           style={{ background: item.badgeBg, y: isMobile ? avatarY : 0, willChange: "transform" }}
         >
-          {item.initials}
+          {item.image ? (
+            <Image
+              src={item.image}
+              alt={`${item.company} POS deployment`}
+              fill
+              className="object-cover"
+              sizes="44px"
+            />
+          ) : (
+            item.initials
+          )}
         </motion.div>
         <div className="min-w-0">
           <h4 className="text-[14.5px] font-bold text-white tracking-[-0.01em]" style={{ fontFamily: '"Satoshi", sans-serif' }}>
             {item.name}
           </h4>
-          <p className="text-[12px] text-white/40 font-medium">
+          <p className="text-[12px] text-white/40 font-medium truncate">
             {item.role} <span className="text-white/20">•</span> <span className="text-white/70">{item.company}</span>
           </p>
         </div>
@@ -252,7 +275,7 @@ export default function Testimonials() {
         {/* Confidentiality Disclaimer */}
         <div className="mt-12 text-center select-none opacity-40 hover:opacity-100 transition-opacity duration-300">
           <p className="text-[10px] sm:text-[11px] text-white/30 uppercase tracking-widest" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            * Names and corporate entities modified for client confidentiality.
+            * Verified live deployment reviews alongside confidentiality-protected enterprise cases.
           </p>
         </div>
       </div>
