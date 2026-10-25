@@ -125,7 +125,7 @@ export default function About() {
             className="mx-auto mt-4 max-w-2xl text-[clamp(15px,2vw,20px)] font-medium leading-[1.4] tracking-[-0.02em] text-white/50"
             style={{ fontFamily: '"Satoshi", sans-serif' }}
           >
-            Nexzoa is an AI-native software engineering company based in Sri Lanka, operating globally. We collaborate directly with founders and product teams to engineer custom AI software, enterprise SaaS applications, automated business pipelines, and scalable cloud platforms.
+            Nexzoa is an independent AI-native software engineering company founded on March 1, 2025 in Colombo, Sri Lanka, operating globally. We collaborate directly with founders and product teams to engineer custom AI software, enterprise SaaS applications, automated business pipelines, and scalable cloud platforms.
           </motion.p>
         </div>
 
@@ -199,7 +199,7 @@ export default function About() {
                 className="text-[13.5px] leading-relaxed text-white/55 font-light"
                 style={{ fontFamily: '"Satoshi", sans-serif' }}
               >
-                Speed is a core architectural feature. Built on Next.js server streaming, globally distributed edge CDNs, Redis caches, and optimized PostgreSQL indexes to guarantee 99+ Core Web Vitals worldwide.
+                Speed is a core architectural feature. Built on Next.js server streaming, globally distributed edge CDNs, Redis caches, and optimized PostgreSQL indexes to guarantee 95+ Core Web Vitals worldwide.
               </p>
             </div>
 
@@ -250,11 +250,23 @@ export default function About() {
         </div>
 
         {/* Studio Technical Precision Metrics Strip */}
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Founded</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              March 1, 2025
+            </span>
+          </div>
           <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
             <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Architecture</span>
             <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               Sub-100ms TTFB
+            </span>
+          </div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Performance</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+              95+ Web Vitals
             </span>
           </div>
           <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
@@ -263,13 +275,7 @@ export default function About() {
               100% Principal
             </span>
           </div>
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
-            <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Runtime</span>
-            <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-              AI-Native Cloud
-            </span>
-          </div>
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#0a0a0c]/80 border border-white/[0.05] hover:border-white/[0.12] transition-colors col-span-2 sm:col-span-1">
             <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">Presence</span>
             <span className="text-base sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: '"Satoshi", sans-serif' }}>
               GCC &bull; Global

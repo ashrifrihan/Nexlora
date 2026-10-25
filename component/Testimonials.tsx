@@ -56,7 +56,6 @@ interface TestimonialItem {
   initials: string;
   badgeBg: string; // CSS background value (gradient or solid)
   image?: string;
-  verified?: boolean;
 }
 
 const testimonialsData: TestimonialItem[] = [
@@ -69,7 +68,6 @@ const testimonialsData: TestimonialItem[] = [
     initials: "OC",
     badgeBg: "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)", // Ocean Cyan-Blue
     image: "/Ocean-Chef.jpg",
-    verified: true,
   },
   {
     name: "Liam Carter",
@@ -164,19 +162,11 @@ function TestimonialCard({ item, index }: { item: TestimonialItem; index: number
       </div>
 
       <div className="relative z-10">
-        {/* Rating Stars & Verified Client Badge */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex gap-1">
-            {[...Array(item.rating)].map((_, i) => (
-              <StarIcon key={i} className="w-4 h-4 text-amber-400" />
-            ))}
-          </div>
-          {item.verified && (
-            <span className="inline-flex items-center gap-1.5 text-[10.5px] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full select-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Verified Client
-            </span>
-          )}
+        {/* Rating Stars */}
+        <div className="flex gap-1 mb-6">
+          {[...Array(item.rating)].map((_, i) => (
+            <StarIcon key={i} className="w-4 h-4 text-amber-400" />
+          ))}
         </div>
 
         {/* Feedback Text */}
@@ -272,10 +262,10 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Confidentiality Disclaimer */}
-        <div className="mt-12 text-center select-none opacity-40 hover:opacity-100 transition-opacity duration-300">
-          <p className="text-[10px] sm:text-[11px] text-white/30 uppercase tracking-widest" style={{ fontFamily: '"Satoshi", sans-serif' }}>
-            * Verified live deployment reviews alongside confidentiality-protected enterprise cases.
+        {/* Client Trust & Verification Note */}
+        <div className="mt-12 text-center select-none opacity-50 hover:opacity-100 transition-opacity duration-300">
+          <p className="text-[11px] sm:text-[12px] text-white/40 tracking-wide" style={{ fontFamily: '"Satoshi", sans-serif' }}>
+            Production deployments and direct engineering partnerships verified across Sri Lanka, GCC, and global startups.
           </p>
         </div>
       </div>
